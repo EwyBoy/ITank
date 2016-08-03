@@ -1,0 +1,134 @@
+#########################################
+###             Blocks                ###
+#########################################
+
+## Ores #################################
+tile.rocketry.ore.copper.name=Copper Ore
+tile.rocketry.ore.tin.name=Tin Ore
+tile.rocketry.ore.silver.name=Silver Ore
+tile.rocketry.ore.lead.name=Lead Ore
+tile.rocketry.ore.graphite.name=Graphite Ore
+tile.rocketry.ore.magnesium.name=Magnesium Ore
+tile.rocketry.ore.aluminum.name=Aluminum Ore
+
+## Blocks of XXX ########################
+tile.rocketry.ore_block.copper.name=Block of Copper
+tile.rocketry.ore_block.tin.name=Block of Tin
+tile.rocketry.ore_block.silver.name=Block of Silver
+tile.rocketry.ore_block.lead.name=Block of Lead
+tile.rocketry.ore_block.graphite.name=Block of Graphite
+tile.rocketry.ore_block.magnesium.name=Block of Magnesium
+tile.rocketry.ore_block.aluminum.name=Block of Aluminum
+tile.rocketry.alloy_block.titanium.name=Block of Titanium
+tile.rocketry.alloy_block.bronze.name=Block of Bronze
+tile.rocketry.alloy_block.electrum.name=Block of Electrum
+tile.rocketry.alloy_block.steel.name=Block of Steel
+
+## Machines #############################
+tile.compressor.name=Compressor
+tile.platingpress.name=Plating Press
+tile.engine.name=Engine
+tile.refinery.name=Refinery
+tile.tank.name=Liquid Storage Tank
+tile.pipe.name=Pipe
+
+#########################################
+###              Items                ###
+#########################################
+
+## Gears ################################
+item.rocketry.material_gear.iron.name=Iron Gear
+item.rocketry.material_gear.gold.name=Gold Gear
+item.rocketry.material_gear.copper.name=Copper Gear
+item.rocketry.material_gear.tin.name=Tin Gear
+item.rocketry.material_gear.silver.name=Silver Gear
+item.rocketry.material_gear.lead.name=Lead Gear
+item.rocketry.material_gear.graphite.name=Graphite Gear
+item.rocketry.material_gear.titanium.name=Titanium Gear
+item.rocketry.material_gear.bronze.name=Bronze Gear
+item.rocketry.material_gear.electrum.name=Electrum Gear
+item.rocketry.material_gear.steel.name=Steel Gear
+item.rocketry.material_gear.aluminum.name=Aluminum Gear
+item.rocketry.material_gear.wood.name=Wooden Gear
+item.rocketry.material_gear.stone.name=Stone Gear
+
+## Ingots ###############################
+item.rocketry.ore_ingot.copper.name=Copper Ingot
+item.rocketry.ore_ingot.tin.name=Tin Ingot
+item.rocketry.ore_ingot.silver.name=Silver Ingot
+item.rocketry.ore_ingot.lead.name=Lead Ingot
+item.rocketry.ore_ingot.graphite.name=Graphite Ingot
+item.rocketry.ore_ingot.magnesium.name=Magnesium Ingot
+item.rocketry.ore_ingot.aluminum.name=Aluminum Ingot
+item.rocketry.alloy_ingot.titanium.name=Titanium Ingot
+item.rocketry.alloy_ingot.bronze.name=Bronze Ingot
+item.rocketry.alloy_ingot.electrum.name=Electrum Ingot
+item.rocketry.alloy_ingot.steel.name=Steel Ingot
+
+## Dusts ################################
+item.rocketry.ore_dust.iron.name=Iron Dust
+item.rocketry.ore_dust.gold.name=Gold Dust
+item.rocketry.ore_dust.diamond.name=Diamond Dust
+item.rocketry.ore_dust.copper.name=Copper Dust
+item.rocketry.ore_dust.tin.name=Tin Dust
+item.rocketry.ore_dust.silver.name=Silver Dust
+item.rocketry.ore_dust.lead.name=Lead Dust
+item.rocketry.ore_dust.graphite.name=Graphite Dust
+item.rocketry.ore_dust.magnesium.name=Magnesium Dust
+item.rocketry.ore_dust.aluminum.name=Aluminum Dust
+item.rocketry.alloy_dust.titanium.name=Titanium Dust
+item.rocketry.alloy_dust.bronze.name=Bronze Dust
+item.rocketry.alloy_dust.electrum.name=Electrum Dust
+item.rocketry.alloy_dust.steel.name=Steel Dust
+
+## Nuggets ##############################
+item.rocketry.ore_nugget.iron.name=Iron Nugget
+item.rocketry.ore_nugget.diamond.name=Diamond Shard
+item.rocketry.ore_nugget.copper.name=Copper Nugget
+item.rocketry.ore_nugget.tin.name=Tin Nugget
+item.rocketry.ore_nugget.silver.name=Silver Nugget
+item.rocketry.ore_nugget.lead.name=Lead Nugget
+item.rocketry.ore_nugget.graphite.name=Graphite Nugget
+item.rocketry.ore_nugget.magnesium.name=Magnesium Nugget
+item.rocketry.ore_nugget.aluminum.name=Aluminum Nugget
+item.rocketry.alloy_nugget.titanium.name=Titanium Nugget
+item.rocketry.alloy_nugget.bronze.name=Bronze Nugget
+item.rocketry.alloy_nugget.electrum.name=Electrum Nugget
+item.rocketry.alloy_nugget.steel.name=Steel Nugget
+
+## Plates #################################
+item.rocketry.ore_plate.iron.name=Iron Plate
+item.rocketry.ore_plate.gold.name=Gold Plate
+item.rocketry.ore_plate.diamond.name=Diamond Plate
+item.rocketry.ore_plate.copper.name=Copper Plate
+item.rocketry.ore_plate.tin.name=Tin Plate
+item.rocketry.ore_plate.silver.name=Silver Plate
+item.rocketry.ore_plate.lead.name=Lead Plate
+item.rocketry.ore_plate.graphite.name=Graphite Plate
+item.rocketry.ore_plate.magnesium.name=Magnesium Plate
+item.rocketry.ore_plate.aluminum.name=Aluminum Plate
+item.rocketry.alloy_plate.titanium.name=Titanium Plate
+item.rocketry.alloy_plate.bronze.name=Bronze Plate
+item.rocketry.alloy_plate.electrum.name=Electrum Plate
+item.rocketry.alloy_plate.steel.name=Steel Plate
+
+## Fluids ##################################
+fluid.rocketry.iron.name=Molten Iron
+fluid.rocketry.gold.name=Molten Gold
+fluid.rocketry.copper.name=Molten Copper
+fluid.rocketry.tin.name=Molten Tin
+fluid.rocketry.silver.name=Molten Silver
+fluid.rocketry.lead.name=Molten Lead
+fluid.rocketry.graphite.name=Molten Graphite
+fluid.rocketry.magnesium.name=Molten Magnesium
+fluid.rocketry.aluminum.name=Molten Aluminum
+fluid.rocketry.titanium.name=Molten Titanium
+fluid.rocketry.bronze.name=Molten Bronze
+fluid.rocketry.electrum.name=Molten Electrum
+fluid.rocketry.steel.name=Molten Steel
+
+#########################################
+###         Creative Tabs             ###
+#########################################
+
+itemGroup.Rocketry=Rocketry

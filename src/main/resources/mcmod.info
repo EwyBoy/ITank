@@ -1,0 +1,16 @@
+[
+    {
+      "modid": "ewysstorage",
+      "name": "Ewy's Storage",
+      "description": "A Storage Mod by EwyBoy",
+      "version": "${version}",
+      "mcversion": "${mcversion}",
+      "url": "",
+      "updateUrl": "",
+      "authorList": ["EwyBoy"],
+      "credits": "",
+      "logoFile": "",
+      "screenshots": [],
+      "dependencies": []
+    }
+]
