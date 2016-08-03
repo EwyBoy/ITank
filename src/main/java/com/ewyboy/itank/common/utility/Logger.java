@@ -1,4 +1,4 @@
-package com.ewyboy.ewysstorage.common.utility;
+package com.ewyboy.itank.common.utility;
 
 import net.minecraftforge.fml.common.FMLLog;
 import org.apache.logging.log4j.Level;

@@ -1,4 +1,4 @@
-package com.ewyboy.ewysstorage.common.tiles;
+package com.ewyboy.itank.common.tiles;
 
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;

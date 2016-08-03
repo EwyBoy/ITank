@@ -1,10 +1,10 @@
-package com.ewyboy.ewysstorage.common.utility.helpers;
+package com.ewyboy.itank.common.utility.helpers;
 
-import com.ewyboy.ewysstorage.common.blocks.BlockBase;
-import com.ewyboy.ewysstorage.common.utility.Logger;
-import com.ewyboy.ewysstorage.common.utility.Platform;
-import com.ewyboy.ewysstorage.common.utility.Reference;
-import com.ewyboy.ewysstorage.common.utility.interfaces.IBlockRenderer;
+import com.ewyboy.itank.common.blocks.BlockBase;
+import com.ewyboy.itank.common.utility.Logger;
+import com.ewyboy.itank.common.utility.Platform;
+import com.ewyboy.itank.common.utility.Reference;
+import com.ewyboy.itank.common.utility.interfaces.IBlockRenderer;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.fml.common.registry.GameRegistry;

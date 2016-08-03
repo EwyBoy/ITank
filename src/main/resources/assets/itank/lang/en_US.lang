@@ -1,0 +1,6 @@
+################################
+###         ITank            ###
+################################
+
+itemGroup.ITank=ITank
+tile.tank.name=Liquid Tank

@@ -1,4 +1,4 @@
-package com.ewyboy.ewysstorage.common.utility.helpers;
+package com.ewyboy.itank.common.utility.helpers;
 
 import net.minecraft.client.renderer.VertexBuffer;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;

@@ -37,6 +37,34 @@ minecraft {
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
 }
 
+repositories {
+
+	maven {
+        name "Mobius Repo"
+        url "http://mobiusstrip.eu/maven"
+    }
+
+    maven {
+        url 'http://maven.rubbix.net'
+    }
+
+	maven {
+		url "http://dvs1.progwml6.com/files/maven"
+	}
+
+	maven {
+		url "http://maven.amadornes.com/"
+	}
+
+}
+
+dependencies {
+    deobfCompile "net.darkhax.tesla:Tesla:1.9.4-1.1.0.24"
+	deobfCompile "mcp.mobius.waila:Waila:1.7.0-B3_1.9.4"
+	deobfCompile "mezz.jei:jei_1.9.4:3.4.0.204"
+	deobfCompile "MCMultiPart:MCMultiPart-experimental:1.2.0_72:universal"
+}
+
 dependencies {
     // you may put jars on which you depend on in ./libs
     // or you may define them like so..

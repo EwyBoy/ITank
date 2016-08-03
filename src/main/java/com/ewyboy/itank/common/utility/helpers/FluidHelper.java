@@ -1,6 +1,6 @@
-package com.ewyboy.ewysstorage.common.utility.helpers;
+package com.ewyboy.itank.common.utility.helpers;
 
-import com.ewyboy.ewysstorage.common.utility.Reference;
+import com.ewyboy.itank.common.utility.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.ResourceLocation;

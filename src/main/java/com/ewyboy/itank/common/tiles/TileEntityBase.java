@@ -1,8 +1,8 @@
-package com.ewyboy.ewysstorage.common.tiles;
+package com.ewyboy.itank.common.tiles;
 
-import com.ewyboy.ewysstorage.common.utility.helpers.TileHelper;
-import com.ewyboy.ewysstorage.common.utility.interfaces.IOrientable;
-import com.ewyboy.ewysstorage.common.utility.interfaces.IRotatable;
+import com.ewyboy.itank.common.utility.helpers.TileHelper;
+import com.ewyboy.itank.common.utility.interfaces.IOrientable;
+import com.ewyboy.itank.common.utility.interfaces.IRotatable;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;

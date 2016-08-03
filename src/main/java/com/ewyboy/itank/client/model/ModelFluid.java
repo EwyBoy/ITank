@@ -1,4 +1,4 @@
-package com.ewyboy.ewysstorage.client.model;
+package com.ewyboy.itank.client.model;
 
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelBox;

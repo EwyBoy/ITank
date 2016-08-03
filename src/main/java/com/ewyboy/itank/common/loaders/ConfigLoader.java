@@ -1,4 +1,4 @@
-package com.ewyboy.ewysstorage.common.loaders;
+package com.ewyboy.itank.common.loaders;
 
 import net.minecraftforge.common.config.Configuration;
 

@@ -1,4 +1,4 @@
-package com.ewyboy.ewysstorage.common.utility;
+package com.ewyboy.itank.common.utility;
 
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.item.ItemStack;

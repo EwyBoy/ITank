@@ -1,6 +1,6 @@
-package com.ewyboy.ewysstorage.proxy;
+package com.ewyboy.itank.proxy;
 
-import com.ewyboy.ewysstorage.common.loaders.BlockLoader;
+import com.ewyboy.itank.common.loaders.BlockLoader;
 
 public class ClientProxy extends CommonProxy {
 

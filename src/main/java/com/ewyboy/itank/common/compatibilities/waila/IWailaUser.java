@@ -1,4 +1,4 @@
-package com.ewyboy.ewysstorage.common.compatibilities.waila;
+package com.ewyboy.itank.common.compatibilities.waila;
 
 import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaDataAccessor;

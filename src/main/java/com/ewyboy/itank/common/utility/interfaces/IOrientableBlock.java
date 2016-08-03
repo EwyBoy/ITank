@@ -1,4 +1,4 @@
-package com.ewyboy.ewysstorage.common.utility.interfaces;
+package com.ewyboy.itank.common.utility.interfaces;
 
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;

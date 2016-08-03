@@ -1,4 +1,4 @@
-package com.ewyboy.ewysstorage.common.utility.helpers;
+package com.ewyboy.itank.common.utility.helpers;
 
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.inventory.IInventory;

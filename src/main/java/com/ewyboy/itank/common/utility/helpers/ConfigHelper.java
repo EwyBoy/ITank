@@ -1,4 +1,4 @@
-package com.ewyboy.ewysstorage.common.utility.helpers;
+package com.ewyboy.itank.common.utility.helpers;
 
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;

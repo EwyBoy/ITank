@@ -1,6 +1,6 @@
-package com.ewyboy.ewysstorage.common.compatibilities;
+package com.ewyboy.itank.common.compatibilities;
 
-import com.ewyboy.ewysstorage.common.compatibilities.waila.WailaCompatibility;
+import com.ewyboy.itank.common.compatibilities.waila.WailaCompatibility;
 import net.minecraftforge.fml.common.Loader;
 
 /** Created by EwyBoy **/

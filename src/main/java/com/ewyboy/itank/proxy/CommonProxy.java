@@ -1,4 +1,4 @@
-package com.ewyboy.ewysstorage.proxy;
+package com.ewyboy.itank.proxy;
 
 public abstract class CommonProxy {
 

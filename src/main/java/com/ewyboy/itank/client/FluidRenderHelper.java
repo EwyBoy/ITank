@@ -1,4 +1,4 @@
-package com.ewyboy.ewysstorage.client;
+package com.ewyboy.itank.client;
 
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.Fluid;

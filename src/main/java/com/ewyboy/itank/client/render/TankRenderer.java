@@ -1,8 +1,8 @@
-package com.ewyboy.ewysstorage.client.render;
+package com.ewyboy.itank.client.render;
 
-import com.ewyboy.ewysstorage.client.FluidRenderHelper;
-import com.ewyboy.ewysstorage.client.model.ModelFluid;
-import com.ewyboy.ewysstorage.common.tiles.TileTank;
+import com.ewyboy.itank.client.FluidRenderHelper;
+import com.ewyboy.itank.client.model.ModelFluid;
+import com.ewyboy.itank.common.tiles.TileTank;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;

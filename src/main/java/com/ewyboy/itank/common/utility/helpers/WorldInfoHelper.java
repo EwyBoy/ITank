@@ -1,4 +1,4 @@
-package com.ewyboy.ewysstorage.common.utility.helpers;
+package com.ewyboy.itank.common.utility.helpers;
 
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.common.DimensionManager;

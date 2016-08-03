@@ -1,9 +1,9 @@
 {
     "parent": "block/cube",
     "textures": {
-        "particle": "ewysstorage:blocks/Steel",
-        "0": "ewysstorage:blocks/Steel",
-        "1": "ewysstorage:blocks/Glass"
+        "particle": "itank:blocks/Steel",
+        "0": "itank:blocks/Steel",
+        "1": "itank:blocks/Glass"
     },
     "elements": [
         {

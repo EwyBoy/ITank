@@ -1,7 +1,7 @@
-package com.ewyboy.ewysstorage.common.compatibilities.waila;
+package com.ewyboy.itank.common.compatibilities.waila;
 
-import com.ewyboy.ewysstorage.common.blocks.BlockTank;
-import com.ewyboy.ewysstorage.common.utility.Reference;
+import com.ewyboy.itank.common.blocks.BlockTank;
+import com.ewyboy.itank.common.utility.Reference;
 import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaDataAccessor;
 import mcp.mobius.waila.api.IWailaDataProvider;

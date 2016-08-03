@@ -1,12 +1,12 @@
-package com.ewyboy.ewysstorage.common.blocks;
+package com.ewyboy.itank.common.blocks;
 
-import com.ewyboy.ewysstorage.common.tiles.TileEntityBase;
-import com.ewyboy.ewysstorage.common.utility.Platform;
-import com.ewyboy.ewysstorage.common.utility.Reference;
-import com.ewyboy.ewysstorage.common.utility.helpers.TileHelper;
-import com.ewyboy.ewysstorage.common.utility.interfaces.IBlockRenderer;
-import com.ewyboy.ewysstorage.common.utility.interfaces.IOrientable;
-import com.ewyboy.ewysstorage.common.utility.interfaces.IOrientableBlock;
+import com.ewyboy.itank.common.tiles.TileEntityBase;
+import com.ewyboy.itank.common.utility.Platform;
+import com.ewyboy.itank.common.utility.Reference;
+import com.ewyboy.itank.common.utility.helpers.TileHelper;
+import com.ewyboy.itank.common.utility.interfaces.IBlockRenderer;
+import com.ewyboy.itank.common.utility.interfaces.IOrientable;
+import com.ewyboy.itank.common.utility.interfaces.IOrientableBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;

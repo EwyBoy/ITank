@@ -1,6 +1,6 @@
-package com.ewyboy.ewysstorage.common.loaders;
+package com.ewyboy.itank.common.loaders;
 
-import com.ewyboy.ewysstorage.common.blocks.BlockTank;
+import com.ewyboy.itank.common.blocks.BlockTank;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 

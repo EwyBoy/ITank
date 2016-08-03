@@ -1,10 +1,10 @@
-package com.ewyboy.ewysstorage;
+package com.ewyboy.itank;
 
-import com.ewyboy.ewysstorage.common.compatibilities.CompatibilityHandler;
-import com.ewyboy.ewysstorage.common.loaders.BlockLoader;
-import com.ewyboy.ewysstorage.common.utility.Logger;
-import com.ewyboy.ewysstorage.common.utility.Reference;
-import com.ewyboy.ewysstorage.proxy.CommonProxy;
+import com.ewyboy.itank.common.compatibilities.CompatibilityHandler;
+import com.ewyboy.itank.common.loaders.BlockLoader;
+import com.ewyboy.itank.common.utility.Logger;
+import com.ewyboy.itank.common.utility.Reference;
+import com.ewyboy.itank.proxy.CommonProxy;
 import com.google.common.base.Stopwatch;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.Mod;
@@ -19,12 +19,12 @@ import java.util.concurrent.TimeUnit;
 
 /** Created by EwyBoy **/
 @Mod(modid = Reference.ModInfo.ModID, name = Reference.ModInfo.ModName, version = Reference.ModInfo.BuildVersion)
-public class EwysStorage {
+public class ITank {
 
     public static FMLEventChannel packetHandler;
 
     @Mod.Instance(Reference.ModInfo.ModID)
-    public static EwysStorage instance;
+    public static ITank instance;
 
     @SidedProxy(modId = Reference.ModInfo.ModID, clientSide = Reference.Path.clientProxyPath, serverSide = Reference.Path.commonProxyPath)
     public static CommonProxy proxy;

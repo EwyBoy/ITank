@@ -1,4 +1,4 @@
-package com.ewyboy.ewysstorage.common.utility.helpers;
+package com.ewyboy.itank.common.utility.helpers;
 
 import com.google.common.collect.Maps;
 import net.minecraft.client.renderer.GlStateManager;

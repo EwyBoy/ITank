@@ -1,11 +1,11 @@
-package com.ewyboy.ewysstorage.common.blocks;
+package com.ewyboy.itank.common.blocks;
 
-import com.ewyboy.ewysstorage.client.render.TankRenderer;
-import com.ewyboy.ewysstorage.common.compatibilities.waila.IWailaUser;
-import com.ewyboy.ewysstorage.common.loaders.CreativeTabLoader;
-import com.ewyboy.ewysstorage.common.tiles.TileTank;
-import com.ewyboy.ewysstorage.common.utility.Reference;
-import com.ewyboy.ewysstorage.common.utility.interfaces.IBlockRenderer;
+import com.ewyboy.itank.client.render.TankRenderer;
+import com.ewyboy.itank.common.compatibilities.waila.IWailaUser;
+import com.ewyboy.itank.common.loaders.CreativeTabLoader;
+import com.ewyboy.itank.common.tiles.TileTank;
+import com.ewyboy.itank.common.utility.Reference;
+import com.ewyboy.itank.common.utility.interfaces.IBlockRenderer;
 import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaDataAccessor;
 import net.minecraft.block.Block;
@@ -49,7 +49,7 @@ public class BlockTank extends Block implements ITileEntityProvider, IWailaUser,
         GameRegistry.register(this);
         GameRegistry.register(new ItemBlock(this), getRegistryName());
         GameRegistry.registerTileEntity(TileTank.class, "tank");
-        setCreativeTab(CreativeTabLoader.EwysStorage);
+        setCreativeTab(CreativeTabLoader.ITank);
         setDefaultState(blockState.getBaseState());
     }
 
