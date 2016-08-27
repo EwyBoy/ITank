@@ -59,7 +59,6 @@ public class BlockTank extends Block implements ITileEntityProvider, IWailaUser,
 
         if (te instanceof TileTank) {
             TileTank barrel = (TileTank)te;
-
             if (barrel.tank.getFluid() != null && barrel.tank.getFluidAmount() > 0) {
                 return barrel.tank.getFluid().getFluid().getLuminosity(barrel.tank.getFluid());
             }
