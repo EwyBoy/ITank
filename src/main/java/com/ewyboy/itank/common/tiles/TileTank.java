@@ -1,5 +1,6 @@
 package com.ewyboy.itank.common.tiles;
 
+import com.ewyboy.itank.common.nbt.*;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
@@ -14,8 +15,8 @@ import net.minecraftforge.fluids.capability.IFluidHandler;
 
 public class TileTank extends TileEntityBase implements ITickable {
 
+    @NBT(EnumConverter.FLUIDTANK)
     public FluidTank tank = new FluidTank(Fluid.BUCKET_VOLUME * 8);
-    private int prevAmount = tank.getFluidAmount();
 
     public TileTank() {}
 

@@ -1,9 +1,7 @@
 package com.ewyboy.itank.common.blocks;
 
-import com.ewyboy.itank.common.tiles.TileEntityBase;
 import com.ewyboy.itank.common.utility.Platform;
 import com.ewyboy.itank.common.utility.Reference;
-import com.ewyboy.itank.common.utility.helpers.TileHelper;
 import com.ewyboy.itank.common.utility.interfaces.IBlockRenderer;
 import com.ewyboy.itank.common.utility.interfaces.IOrientable;
 import com.ewyboy.itank.common.utility.interfaces.IOrientableBlock;
@@ -105,21 +103,6 @@ public abstract class BlockBase extends Block implements IBlockRenderer {
     public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, TileEntity te, ItemStack stack) {
         super.harvestBlock(worldIn, player, pos, state, te, stack);
         worldIn.setBlockToAir(pos);
-    }
-
-    @Override
-    public List<ItemStack> getDrops(IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
-        TileEntityBase tileEntity = TileHelper.getTileEntity(world, pos, TileEntityBase.class);
-        if (tileEntity != null && tileEntity.hasCustomName()) {
-            final ItemStack itemStack = new ItemStack(this, 1, tileEntity.getBlockMetadata());
-            itemStack.setStackDisplayName(tileEntity.getCustomName());
-
-            ArrayList<ItemStack> drops = new ArrayList<ItemStack>();
-            drops.add(itemStack);
-
-            return drops;
-        }
-        return super.getDrops(world, pos, state, fortune);
     }
 
     @Override
