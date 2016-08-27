@@ -54,6 +54,22 @@ public class BlockTank extends Block implements ITileEntityProvider, IWailaUser,
     }
 
     @Override
+    public int getLightValue(IBlockState state, IBlockAccess world, BlockPos pos) {
+        TileEntity te = world.getTileEntity(pos);
+
+        if (te instanceof TileTank) {
+            TileTank barrel = (TileTank)te;
+
+            if (barrel.tank.getFluid() != null && barrel.tank.getFluidAmount() > 0) {
+                return barrel.tank.getFluid().getFluid().getLuminosity(barrel.tank.getFluid());
+            }
+        }
+
+        return 0;
+    }
+
+
+    @Override
     public void neighborChanged(IBlockState state, World world, BlockPos pos, Block blockIn) {
         if (world.getBlockState(pos.up()).getBlock() == this && world.getBlockState(pos.down()).getBlock() == this) {
             world.setBlockState(pos, state.withProperty(STATE, 1));
@@ -90,13 +106,13 @@ public class BlockTank extends Block implements ITileEntityProvider, IWailaUser,
     public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ) {
         TileTank te = getTE(world, pos);
 
-        /**Fluid input to TE*/
+        /**Fluid input to TileEntity*/
         if (te != null) {
             ItemStack input = player.getHeldItem(hand);
             if (FluidUtil.interactWithFluidHandler(input, te.tank, player)) return true;
         }
 
-        /**Smart / Easy - tank building*/
+        /**Smart / Easy - Tank building*/
         if (!world.isRemote) {
             if (player.getHeldItem(hand) != null) {
                 if (player.getHeldItem(hand).getItem().equals(Item.getItemFromBlock(this))) {
@@ -110,7 +126,6 @@ public class BlockTank extends Block implements ITileEntityProvider, IWailaUser,
                 }
             }
         }
-
         return true;
     }
 

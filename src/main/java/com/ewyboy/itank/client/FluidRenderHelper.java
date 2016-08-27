@@ -12,7 +12,6 @@ public class FluidRenderHelper {
     private static final Map<Fluid, ResourceLocation> cache = new HashMap<>();
 
     public static ResourceLocation getTexture(Fluid fluid) {
-
         if (cache.containsKey(fluid)) {
             return cache.get(fluid);
         }
@@ -26,5 +25,4 @@ public class FluidRenderHelper {
 
         return null;
     }
-
 }

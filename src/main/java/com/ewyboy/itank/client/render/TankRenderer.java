@@ -25,23 +25,21 @@ public class TankRenderer extends TileEntitySpecialRenderer <TileTank> {
             ResourceLocation fluidTexture = FluidRenderHelper.getTexture(te.tank.getFluid().getFluid());
 
             int color = te.tank.getFluid().getFluid().getColor(te.tank.getFluid());
-            float r, g, b, a;
+            float r, g, b;
 
-            a = (color >> 24) / 255f;
             r = ((color >> 16) & 0xFF) / 255f;
             g = ((color >> 8) & 0xFF) / 255f;
             b = (color & 0xFF) / 255f;
 
             if (fluidTexture != null) {
                 glPushMatrix();
-                translate((float) x + 0.5f, (float) y, (float) z + 0.5f);
-                rotate(180, 1, 0, 0);
+                    translate((float) x + 0.5f, (float) y, (float) z + 0.5f);
+                    rotate(180, 1, 0, 0);
                     enableBlend();
                         blendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
                         double fluidPercent = (int) (((double) te.tank.getFluidAmount() / (double) te.tank.getCapacity()) * 100);
-                        translate(0,(-(fluidPercent / 90) / 2), 0);
-                        scale(1.125, (fluidPercent / 90), 1.125);
-                        translate(0, 0.1, 0);
+                        scale(0.85, (fluidPercent / 100), 0.85);
+                        translate(0, -0.5, 0);
                         bindTexture(fluidTexture);
                         color(r, g, b);
                         fluidModel.renderAll();

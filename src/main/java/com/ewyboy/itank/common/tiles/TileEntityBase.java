@@ -151,14 +151,6 @@ public class TileEntityBase extends TileEntity implements /*IWailaHeadMessage,*/
         return worldObj.getBlockState(pos);
     }
 
-    /*@Override
-    public List<String> getWailaHeadToolTip(ItemStack itemStack, List<String> currentTip, IWailaDataAccessor accessor, IWailaConfigHandler config) {
-        if (customName != null)
-            currentTip.add(String.format("%s%s%s", TextFormatting.BLUE, TextFormatting.ITALIC, customName));
-
-        return currentTip;
-    }*/
-
     @Override
     public boolean canBeRotated() {
         return false;
