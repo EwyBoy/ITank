@@ -1,32 +1,45 @@
 package com.ewyboy.itank.common.tiles;
 
-import com.ewyboy.itank.common.nbt.EnumConverter;
-import com.ewyboy.itank.common.nbt.NBT;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidTank;
 import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
 import net.minecraftforge.fluids.capability.IFluidHandler;
 
-public class TileTank extends TileEntityBase implements ITickable {
+public class TileTank extends TileEntity implements ITickable {
 
-    @NBT(EnumConverter.FLUIDTANK)
     public FluidTank tank = new FluidTank(Fluid.BUCKET_VOLUME * 8);
 
     public TileTank() {}
 
     @Override
-    public void readFromNBT(NBTTagCompound nbt) {
-        super.readFromNBT(nbt);
+    public NBTTagCompound writeToNBT(NBTTagCompound nbt) {
+        FluidStack fluidStack = tank.getFluid();
+        if (fluidStack != null && fluidStack.getFluid() != null) {
+            nbt.setString("fluidType", fluidStack.getFluid().getName());
+            nbt.setInteger("fluidAmount", fluidStack.amount);
+        }
+        return super.writeToNBT(nbt);
     }
 
     @Override
-    public NBTTagCompound writeToNBT(NBTTagCompound nbt) {
-        return super.writeToNBT(nbt);
+    public void readFromNBT(NBTTagCompound nbt) {
+        super.readFromNBT(nbt);
+
+        String fluidType = nbt.getString("fluidType");
+        int fluidAmount = nbt.getInteger("fluidAmount");
+
+        if (FluidRegistry.getFluid(fluidType) != null) {
+            tank.setFluid(new FluidStack(FluidRegistry.getFluid(fluidType), fluidAmount));
+        } else {
+            tank.setFluid(null);
+        }
     }
 
     @Override

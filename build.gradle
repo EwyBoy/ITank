@@ -20,14 +20,18 @@ plugins {
     id "net.minecraftforge.gradle.forge" version "2.0.2"
 }
 */
-version = "1.0"
-group= "com.yourname.modid" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "modid"
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+version = "1.0.0-1.10.2"
+group= "com.ewyboy.itank"
+archivesBaseName = "ITank"
 
 minecraft {
     version = "1.10.2-12.18.1.2045"
     runDir = "run"
-    
+
     // the mappings can be changed at any time, and must be in the following format.
     // snapshot_YYYYMMDD   snapshot are built nightly.
     // stable_#            stables are built at the discretion of the MCP team.
@@ -59,7 +63,7 @@ repositories {
 }
 
 dependencies {
-    deobfCompile "net.darkhax.tesla:Tesla:1.9.4-1.1.0.24"
+  deobfCompile "net.darkhax.tesla:Tesla:1.9.4-1.1.0.24"
 	deobfCompile "mcp.mobius.waila:Waila:1.7.0-B3_1.9.4"
 	deobfCompile "mezz.jei:jei_1.9.4:3.4.0.204"
 	deobfCompile "MCMultiPart:MCMultiPart-experimental:1.2.0_72:universal"
@@ -70,7 +74,7 @@ dependencies {
     // or you may define them like so..
     //compile "some.group:artifact:version:classifier"
     //compile "some.group:artifact:version"
-      
+
     // real examples
     //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
     //compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
@@ -98,11 +102,11 @@ processResources
     // replace stuff in mcmod.info, nothing else
     from(sourceSets.main.resources.srcDirs) {
         include 'mcmod.info'
-                
+
         // replace version and mcversion
         expand 'version':project.version, 'mcversion':project.minecraft.version
     }
-        
+
     // copy everything else, thats not the mcmod.info
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
