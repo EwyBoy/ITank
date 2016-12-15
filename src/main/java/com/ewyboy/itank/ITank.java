@@ -2,6 +2,7 @@ package com.ewyboy.itank;
 
 import com.ewyboy.itank.common.compatibilities.CompatibilityHandler;
 import com.ewyboy.itank.common.loaders.BlockLoader;
+import com.ewyboy.itank.common.network.ITankPacketHandler;
 import com.ewyboy.itank.common.utility.Logger;
 import com.ewyboy.itank.common.utility.Reference;
 import com.ewyboy.itank.proxy.CommonProxy;
@@ -12,16 +13,12 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.network.FMLEventChannel;
-import net.minecraftforge.fml.common.network.NetworkRegistry;
 
 import java.util.concurrent.TimeUnit;
 
 /** Created by EwyBoy **/
 @Mod(modid = Reference.ModInfo.ModID, name = Reference.ModInfo.ModName, version = Reference.ModInfo.BuildVersion)
 public class ITank {
-
-    public static FMLEventChannel packetHandler;
 
     @Mod.Instance(Reference.ModInfo.ModID)
     public static ITank instance;
@@ -37,7 +34,7 @@ public class ITank {
     public void preInit(FMLPreInitializationEvent event) {
         Stopwatch watch = Stopwatch.createStarted();
             Logger.info("Pre-Initialization started");
-                packetHandler = NetworkRegistry.INSTANCE.newEventDrivenChannel(Reference.ModInfo.ModID);
+                ITankPacketHandler.registerMessages();
                 CompatibilityHandler.registerWaila();
                 BlockLoader.loadBlocks();
                 proxy.loadModels();
