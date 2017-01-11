@@ -55,11 +55,13 @@ repositories {
 	maven {
 		url "http://maven.amadornes.com/"
 	}
-
+    maven {
+        url 'http://maven.epoxide.xyz'
+    }
 }
 
 dependencies {
-  deobfCompile "net.darkhax.tesla:Tesla:1.9.4-1.1.0.24"
+    deobfCompile "net.darkhax.tesla:Tesla:1.9.4-1.1.0.24"
 	deobfCompile "mcp.mobius.waila:Waila:1.7.0-B3_1.9.4"
 	deobfCompile "MCMultiPart:MCMultiPart-experimental:1.2.0_72:universal"
 }
