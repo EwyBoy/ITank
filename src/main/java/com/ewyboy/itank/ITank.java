@@ -3,6 +3,7 @@ package com.ewyboy.itank;
 import com.ewyboy.itank.common.compatibilities.CompatibilityHandler;
 import com.ewyboy.itank.common.loaders.BlockLoader;
 import com.ewyboy.itank.common.loaders.ConfigLoader;
+import com.ewyboy.itank.common.loaders.RecipeLoader;
 import com.ewyboy.itank.common.utility.Logger;
 import com.ewyboy.itank.common.utility.Reference;
 import com.ewyboy.itank.proxy.CommonProxy;
@@ -48,6 +49,7 @@ public class ITank {
     public void init(FMLInitializationEvent event) {
         Stopwatch watch = Stopwatch.createStarted();
             Logger.info("Initialization started");
+                RecipeLoader.registerRecipes();
                 launchTime += watch.elapsed(TimeUnit.MILLISECONDS);
             Logger.info("Initialization finished after " + watch.elapsed(TimeUnit.MILLISECONDS) + "ms");
         Logger.info("Initialization process successfully done");

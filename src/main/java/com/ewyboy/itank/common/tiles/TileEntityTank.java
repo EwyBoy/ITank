@@ -19,7 +19,7 @@ public class TileEntityTank extends TileEntityBase implements ITickable {
     public TileTank tank;
 
     public TileEntityTank() {
-        this.tank = new TileTank(0);
+        this.tank = new TileTank(Fluid.BUCKET_VOLUME * (ConfigLoader.maxTankCapacity / 1000));
         this.tank.setTileEntity(this);
     }
 

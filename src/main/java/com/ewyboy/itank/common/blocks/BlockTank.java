@@ -2,11 +2,9 @@ package com.ewyboy.itank.common.blocks;
 
 import com.ewyboy.itank.client.render.TankRenderer;
 import com.ewyboy.itank.common.compatibilities.waila.IWailaUser;
-import com.ewyboy.itank.common.loaders.BlockLoader;
 import com.ewyboy.itank.common.loaders.CreativeTabLoader;
 import com.ewyboy.itank.common.tiles.TileEntityTank;
 import com.ewyboy.itank.common.utility.ItemStackUtils;
-import com.ewyboy.itank.common.utility.Logger;
 import com.ewyboy.itank.common.utility.Reference;
 import com.ewyboy.itank.common.utility.interfaces.IBlockRenderer;
 import mcp.mobius.waila.api.IWailaConfigHandler;
@@ -21,8 +19,6 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.DefaultStateMapper;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
@@ -33,7 +29,6 @@ import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
@@ -45,6 +40,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
 import java.util.List;
+import java.util.Random;
 
 public class BlockTank extends BlockContainer implements IWailaUser, IBlockRenderer {
 
@@ -52,6 +48,7 @@ public class BlockTank extends BlockContainer implements IWailaUser, IBlockRende
 
     public BlockTank() {
         super(Material.GLASS);
+        setHardness(1.0f);
         setUnlocalizedName(Reference.Blocks.tank);
         setRegistryName(Reference.Blocks.tank);
         GameRegistry.register(this);
@@ -59,24 +56,17 @@ public class BlockTank extends BlockContainer implements IWailaUser, IBlockRende
         GameRegistry.registerTileEntity(TileEntityTank.class, "tank");
         setCreativeTab(CreativeTabLoader.ITank);
         setDefaultState(blockState.getBaseState());
-        recipe();
     }
 
     public void setState(World world, BlockPos pos, int state) {
         TileEntity tileEntityOriginal = world.getTileEntity(pos);
         NBTTagCompound tag = new NBTTagCompound();
 
-        Logger.info(tag);
-
         tileEntityOriginal.writeToNBT(tag);
         world.setBlockState(pos, getDefaultState().withProperty(STATE, state));
 
-        Logger.info(tag);
-
         TileEntity tileEntityNew = world.getTileEntity(pos);
         tileEntityNew.readFromNBT(tag);
-
-        Logger.info(tag);
     }
 
     @Override
@@ -134,22 +124,8 @@ public class BlockTank extends BlockContainer implements IWailaUser, IBlockRende
         return true;
     }
 
-    /**
-     * Adds the recipe for the tank
-     * */
-    public void recipe() {
-        GameRegistry.addShapedRecipe(
-                new ItemStack(BlockLoader.tank),
-                    "III", "GCG", "III",
-                    'I', Items.IRON_INGOT,
-                    'G', Blocks.GLASS,
-                    'C', Blocks.CAULDRON
-        );
-    }
-
-    @Override
-    public ItemStack getPickBlock (IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
-        return ItemStackUtils.createStackFromTileEntity(world.getTileEntity(pos));
+    public Item getItemDropped(IBlockState state, Random rand, int fortune) {
+        return Item.getItemFromBlock(this);
     }
 
     @Override
@@ -163,8 +139,9 @@ public class BlockTank extends BlockContainer implements IWailaUser, IBlockRende
 
     @Override
     public void onBlockPlacedBy (World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack) {
+        final TileEntityTank tank = (TileEntityTank) worldIn.getTileEntity(pos);
+
         if (stack.hasTagCompound()) {
-            final TileEntityTank tank = (TileEntityTank) worldIn.getTileEntity(pos);
             if (tank != null) tank.readNBT(stack.getTagCompound().getCompoundTag("TileData"));
         }
     }
