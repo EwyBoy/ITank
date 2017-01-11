@@ -2,7 +2,7 @@ package com.ewyboy.itank;
 
 import com.ewyboy.itank.common.compatibilities.CompatibilityHandler;
 import com.ewyboy.itank.common.loaders.BlockLoader;
-import com.ewyboy.itank.common.network.ITankPacketHandler;
+import com.ewyboy.itank.common.loaders.ConfigLoader;
 import com.ewyboy.itank.common.utility.Logger;
 import com.ewyboy.itank.common.utility.Reference;
 import com.ewyboy.itank.proxy.CommonProxy;
@@ -34,8 +34,8 @@ public class ITank {
     public void preInit(FMLPreInitializationEvent event) {
         Stopwatch watch = Stopwatch.createStarted();
             Logger.info("Pre-Initialization started");
-                ITankPacketHandler.registerMessages();
                 CompatibilityHandler.registerWaila();
+                ConfigLoader.init(event.getSuggestedConfigurationFile());
                 BlockLoader.loadBlocks();
                 proxy.loadModels();
                 proxy.loadItemModels();

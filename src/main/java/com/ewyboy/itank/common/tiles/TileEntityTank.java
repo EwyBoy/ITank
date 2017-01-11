@@ -1,5 +1,6 @@
 package com.ewyboy.itank.common.tiles;
 
+import com.ewyboy.itank.common.loaders.ConfigLoader;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
@@ -35,11 +36,7 @@ public class TileEntityTank extends TileEntityBase implements ITickable {
 
     @Override
     public void readNBT (NBTTagCompound dataTag) {
-        if (dataTag.hasKey("FluidData")) {
-            this.tank = new TileTank(FluidStack.loadFluidStackFromNBT(dataTag.getCompoundTag("FluidData")), Fluid.BUCKET_VOLUME * 8);
-        } else {
-            this.tank = new TileTank(Fluid.BUCKET_VOLUME * 8);
-        }
+        this.tank = dataTag.hasKey("FluidData") ? new TileTank(FluidStack.loadFluidStackFromNBT(dataTag.getCompoundTag("FluidData")), Fluid.BUCKET_VOLUME * (ConfigLoader.maxTankCapacity / 1000)) : new TileTank(Fluid.BUCKET_VOLUME * (ConfigLoader.maxTankCapacity / 1000));
         this.tank.setTileEntity(this);
     }
 

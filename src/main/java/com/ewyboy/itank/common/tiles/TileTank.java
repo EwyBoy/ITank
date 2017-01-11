@@ -12,12 +12,10 @@ public class TileTank extends FluidTank {
     }
 
     public TileTank(FluidStack fluidStack, int capacity) {
-
         super(fluidStack, capacity);
     }
 
     public TileTank(Fluid fluid, int amount, int capacity) {
-
         super(fluid, amount, capacity);
     }
 

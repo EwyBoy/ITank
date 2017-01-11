@@ -1,6 +1,7 @@
 package com.ewyboy.itank.common.compatibilities.waila;
 
 import com.ewyboy.itank.common.blocks.BlockTank;
+import com.ewyboy.itank.common.loaders.BlockLoader;
 import com.ewyboy.itank.common.utility.Reference;
 import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaDataAccessor;
@@ -35,6 +36,7 @@ public class WailaCompatibility implements IWailaDataProvider {
         }
 
         if (!loaded) {
+            registrar.registerStackProvider(INSTANCE, BlockTank.class);
             registrar.registerHeadProvider(INSTANCE, BlockTank.class);
             registrar.registerBodyProvider(INSTANCE, BlockTank.class);
             registrar.registerTailProvider(INSTANCE, BlockTank.class);
@@ -43,8 +45,7 @@ public class WailaCompatibility implements IWailaDataProvider {
     }
 
     public static void register() {
-        if (registered) return;
-        registered = true;
+        if (registered) return; registered = true;
         FMLInterModComms.sendMessage("Waila", "register", Reference.Path.wailaPath);
     }
 
@@ -56,7 +57,7 @@ public class WailaCompatibility implements IWailaDataProvider {
 
     @Override
     public ItemStack getWailaStack(IWailaDataAccessor accessor, IWailaConfigHandler config) {
-        return null;
+        return new ItemStack(BlockLoader.tank);
     }
 
     @Override

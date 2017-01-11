@@ -1,5 +1,6 @@
 package com.ewyboy.itank.client.render;
 
+import com.ewyboy.itank.common.loaders.ConfigLoader;
 import com.ewyboy.itank.common.tiles.TileEntityTank;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
@@ -10,6 +11,7 @@ import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -21,7 +23,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.opengl.GL11;
 
 @SideOnly(Side.CLIENT)
-public class RenderUtils {
+public class FluidRenderer {
 
     /**
      * Translates the render state to be relative to the player's position. Allows for
@@ -30,7 +32,6 @@ public class RenderUtils {
      * @param pos The BlockPos The position to translate to within the world.
      */
     public static void translateAgainstPlayer(BlockPos pos, boolean offset) {
-
         final float x = (float) (pos.getX() - TileEntityRendererDispatcher.staticPlayerX);
         final float y = (float) (pos.getY() - TileEntityRendererDispatcher.staticPlayerY);
         final float z = (float) (pos.getZ() - TileEntityRendererDispatcher.staticPlayerZ);
@@ -55,7 +56,6 @@ public class RenderUtils {
      * @param z2    The max Z position.
      */
     public static void renderFluid(TileEntityTank te, FluidStack fluid, BlockPos pos, double x, double y, double z, double x1, double y1, double z1, double x2, double y2, double z2) {
-
         final int color = fluid.getFluid().getColor(fluid);
         renderFluid(te, fluid, pos, x, y, z, x1, y1, z1, x2, y2, z2, color);
     }
@@ -90,20 +90,29 @@ public class RenderUtils {
         final TextureAtlasSprite still = mc.getTextureMapBlocks().getTextureExtry(fluid.getFluid().getStill(fluid).toString());
         final TextureAtlasSprite flowing = mc.getTextureMapBlocks().getTextureExtry(fluid.getFluid().getFlowing(fluid).toString());
 
-        //addTexturedQuad(buffer, still, x1, y1, z1, x2 - x1, y2 - y1, z2 - z1, EnumFacing.DOWN, color, brightness);
         addTexturedQuad(buffer, flowing, x1, y1, z1, x2 - x1, y2 - y1, z2 - z1, EnumFacing.NORTH, color, brightness);
         addTexturedQuad(buffer, flowing, x1, y1, z1, x2 - x1, y2 - y1, z2 - z1, EnumFacing.EAST, color, brightness);
         addTexturedQuad(buffer, flowing, x1, y1, z1, x2 - x1, y2 - y1, z2 - z1, EnumFacing.SOUTH, color, brightness);
         addTexturedQuad(buffer, flowing, x1, y1, z1, x2 - x1, y2 - y1, z2 - z1, EnumFacing.WEST, color, brightness);
 
-        final FluidTank liquid = te.tank;
         World world = te.getWorld();
-        if(liquid.getFluidAmount() != Fluid.BUCKET_VOLUME * 8) {
+        final FluidTank liquid = te.tank;
+        final TileEntity tankAbove = world.getTileEntity(te.getPos().up());
+        final TileEntity tankBelow = world.getTileEntity(te.getPos().down());
+
+        if(liquid.getFluidAmount() != Fluid.BUCKET_VOLUME * ConfigLoader.maxTankCapacity/1000
+                || (tankAbove != null
+                && tankAbove instanceof TileEntityTank&& (((TileEntityTank)tankAbove).tank.getFluidAmount() <= 0
+                || (((TileEntityTank)tankAbove).tank.getFluid() != null
+                && ((TileEntityTank)tankAbove).tank.getFluid().getFluid() != te.tank.getFluid().getFluid())))) {
             addTexturedQuad(buffer, still, x1, y1, z1, x2 - x1, y2 - y1, z2 - z1, EnumFacing.UP, color, brightness);
         }
 
-        tessellator.draw();
+        if(tankBelow != null && tankBelow instanceof TileEntityTank && ((TileEntityTank)tankBelow).tank.getFluid() != null && ((TileEntityTank)tankBelow).tank.getFluid().getFluid() != te.tank.getFluid().getFluid()) {
+            addTexturedQuad(buffer, flowing, x1, y1, z1, x2 - x1, y2 - y1, z2 - z1, EnumFacing.DOWN, color, brightness);
+        }
 
+        tessellator.draw();
         cleanupRenderState();
     }
 
@@ -173,20 +182,17 @@ public class RenderUtils {
         final double u = x % 1d;
         double u1 = u + width;
 
-        while (u1 > 1f)
-            u1 -= 1f;
+        while (u1 > 1f) u1 -= 1f;
 
         final double vy = y % 1d;
         double vy1 = vy + height;
 
-        while (vy1 > 1f)
-            vy1 -= 1f;
+        while (vy1 > 1f) vy1 -= 1f;
 
         final double vz = z % 1d;
         double vz1 = vz + length;
 
-        while (vz1 > 1f)
-            vz1 -= 1f;
+        while (vz1 > 1f) vz1 -= 1f;
 
         switch (face) {
 
@@ -286,10 +292,8 @@ public class RenderUtils {
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
 
-        if (Minecraft.isAmbientOcclusionEnabled())
-            GL11.glShadeModel(GL11.GL_SMOOTH);
-        else
-            GL11.glShadeModel(GL11.GL_FLAT);
+        if (Minecraft.isAmbientOcclusionEnabled()) GL11.glShadeModel(GL11.GL_SMOOTH);
+        else GL11.glShadeModel(GL11.GL_FLAT);
 
         GlStateManager.translate(x, y, z);
     }
