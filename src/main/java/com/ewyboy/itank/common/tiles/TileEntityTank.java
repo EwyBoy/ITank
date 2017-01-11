@@ -1,12 +1,10 @@
 package com.ewyboy.itank.common.tiles;
 
-import com.ewyboy.itank.common.loaders.ConfigLoader;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
 import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
 import net.minecraftforge.fluids.capability.IFluidHandler;
@@ -16,51 +14,46 @@ import net.minecraftforge.fluids.capability.IFluidHandler;
  **/
 public class TileEntityTank extends TileEntityBase implements ITickable {
 
-    public TileTank tank;
+    protected TileTank tank;
 
     public TileEntityTank() {
-        this.tank = new TileTank(Fluid.BUCKET_VOLUME * (ConfigLoader.maxTankCapacity / 1000));
-        this.tank.setTileEntity(this);
+        this.tank = new TileTank(TileTank.MAX, this);
     }
 
     @Override
-    public void writeNBT (NBTTagCompound dataTag) {
-        if (this.tank != null) {
-            if (this.tank.getFluid() != null) {
-                final NBTTagCompound tankTag = new NBTTagCompound();
-                this.tank.getFluid().writeToNBT(tankTag);
-                dataTag.setTag("FluidData", tankTag);
-            }
+    public void writeNBT(NBTTagCompound dataTag) {
+        if (getTank() != null && getTank().getFluid() != null) {
+            dataTag.setTag("FluidData", getTank().getFluid().writeToNBT(new NBTTagCompound()));
         }
     }
 
     @Override
-    public void readNBT (NBTTagCompound dataTag) {
-        this.tank = dataTag.hasKey("FluidData") ? new TileTank(FluidStack.loadFluidStackFromNBT(dataTag.getCompoundTag("FluidData")), Fluid.BUCKET_VOLUME * (ConfigLoader.maxTankCapacity / 1000)) : new TileTank(Fluid.BUCKET_VOLUME * (ConfigLoader.maxTankCapacity / 1000));
-        this.tank.setTileEntity(this);
+    public void readNBT(NBTTagCompound dataTag) {
+        this.tank = dataTag.hasKey("FluidData") ?
+                new TileTank(FluidStack.loadFluidStackFromNBT(dataTag.getCompoundTag("FluidData")), TileTank.MAX, this) :
+                new TileTank(TileTank.MAX, this);
     }
 
     @Override
-    public boolean hasCapability (Capability<?> capability, EnumFacing facing) {
+    public boolean hasCapability(Capability<?> capability, EnumFacing facing) {
         return capability.equals(CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY) || super.hasCapability(capability, facing);
     }
 
     @Override
-    public <T> T getCapability (Capability<T> capability, EnumFacing facing) {
-        if (capability.equals(CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY)) {
-            return (T)this.tank;
-        }
-        return super.getCapability(capability, facing);
+    public <T> T getCapability(Capability<T> capability, EnumFacing facing) {
+        return capability.equals(CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY) ? (T) this.tank : super.getCapability(capability, facing);
     }
 
-    /** @author shadowfacts Auto Drain*/
+    /**
+     * @author shadowfacts Auto Drain
+     */
     @Override
     public void update() {
-        if (tank.getFluid() != null && tank.getFluidAmount() > 0) {
-            TileEntity te = worldObj.getTileEntity(pos.down());
+        if (getTank().getFluid() != null && getTank().getFluidAmount() > 0) {
+            TileEntity te = getWorld().getTileEntity(getPos().down());
             if (te != null && te.hasCapability(CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY, EnumFacing.UP)) {
                 IFluidHandler fluidHandler = te.getCapability(CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY, EnumFacing.UP);
-                tank.drain(fluidHandler.fill(tank.drain(tank.getCapacity(), false), true), true);
+                getTank().drain(fluidHandler.fill(getTank().drain(getTank().getCapacity(), false), true), true);
             }
         }
     }

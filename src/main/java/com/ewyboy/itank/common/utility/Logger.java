@@ -5,10 +5,8 @@ import org.apache.logging.log4j.Level;
 
 public class Logger {
 
-    public Logger() {}
-
     public static void log(Level logLevel, Object object) {
-        FMLLog.log(Reference.ModInfo.ModName, logLevel, String.valueOf(object));
+        FMLLog.log(Reference.ModInfo.MOD_NAME, logLevel, String.valueOf(object));
     }
 
     public static void all(Object object) {

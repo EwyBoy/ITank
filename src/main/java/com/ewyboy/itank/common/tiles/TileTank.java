@@ -1,5 +1,6 @@
 package com.ewyboy.itank.common.tiles;
 
+import com.ewyboy.itank.common.loaders.ConfigLoader;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.fluids.Fluid;
@@ -8,21 +9,19 @@ import net.minecraftforge.fluids.FluidTank;
 
 public class TileTank extends FluidTank {
 
-    public TileTank(int capacity) {
-        super(capacity);
+    protected static final int MAX = Fluid.BUCKET_VOLUME * (ConfigLoader.maxTankCapacity / 1000);
+
+    public TileTank(int capacity, TileEntityTank tile) {
+        this(null, capacity, tile);
     }
 
-    public TileTank(FluidStack fluidStack, int capacity) {
+    public TileTank(FluidStack fluidStack, int capacity, TileEntityTank tile) {
         super(fluidStack, capacity);
+        this.tile = tile;
     }
 
-    public TileTank(Fluid fluid, int amount, int capacity) {
-        super(fluid, amount, capacity);
-    }
-
-    @Override
-    public boolean canFillFluidType(FluidStack fluid) {
-        return super.canFillFluidType(fluid);
+    public TileTank(Fluid fluid, int amount, int capacity, TileEntityTank tile) {
+        this(new FluidStack(fluid, amount), capacity, tile);
     }
 
     @Override
