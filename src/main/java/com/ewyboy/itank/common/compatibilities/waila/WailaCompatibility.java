@@ -18,12 +18,15 @@ import net.minecraftforge.fml.common.event.FMLInterModComms;
 
 import java.util.List;
 
-/** Created by EwyBoy **/
+/**
+ * Created by EwyBoy
+ **/
 public class WailaCompatibility implements IWailaDataProvider {
 
     public static final WailaCompatibility INSTANCE = new WailaCompatibility();
 
-    private WailaCompatibility() {}
+    private WailaCompatibility() {
+    }
 
     private static boolean registered;
     private static boolean loaded;
@@ -31,24 +34,23 @@ public class WailaCompatibility implements IWailaDataProvider {
     public static void load(IWailaRegistrar registrar) {
         System.out.println("WailaCompatibility.load");
 
-        if (!registered) {
-            throw new RuntimeException("Please register this handler using the provided method.");
-        }
+        if (!registered) throw new RuntimeException("Please register this handler using the provided method.");
 
         if (!loaded) {
             registrar.registerStackProvider(INSTANCE, BlockTank.class);
             registrar.registerHeadProvider(INSTANCE, BlockTank.class);
             registrar.registerBodyProvider(INSTANCE, BlockTank.class);
             registrar.registerTailProvider(INSTANCE, BlockTank.class);
+
             loaded = true;
         }
     }
 
     public static void register() {
-        if (registered) return; registered = true;
-        FMLInterModComms.sendMessage("Waila", "register", Reference.Path.wailaPath);
+        if (registered) return;
+        registered = true;
+        FMLInterModComms.sendMessage("Waila", "register", Reference.Path.WAILA_PATH);
     }
-
 
     @Override
     public NBTTagCompound getNBTData(EntityPlayerMP player, TileEntity te, NBTTagCompound tag, World world, BlockPos pos) {

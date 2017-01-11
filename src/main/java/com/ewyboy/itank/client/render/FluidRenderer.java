@@ -55,7 +55,8 @@ public class FluidRenderer {
      * @param y2    The max Y position.
      * @param z2    The max Z position.
      */
-    public static void renderFluid(TileEntityTank te, FluidStack fluid, BlockPos pos, double x, double y, double z, double x1, double y1, double z1, double x2, double y2, double z2) {
+    public static void renderFluid(TileEntityTank te, FluidStack fluid, BlockPos pos, double x, double y, double z, double x1, double y1, double z1,
+            double x2, double y2, double z2) {
         final int color = fluid.getFluid().getColor(fluid);
         renderFluid(te, fluid, pos, x, y, z, x1, y1, z1, x2, y2, z2, color);
     }
@@ -76,7 +77,8 @@ public class FluidRenderer {
      * @param z2    The max Z position.
      * @param color The color offset used by the fluid. Default is white.
      */
-    public static void renderFluid(TileEntityTank te, FluidStack fluid, BlockPos pos, double x, double y, double z, double x1, double y1, double z1, double x2, double y2, double z2, int color) {
+    public static void renderFluid(TileEntityTank te, FluidStack fluid, BlockPos pos, double x, double y, double z, double x1, double y1, double z1,
+            double x2, double y2, double z2, int color) {
 
         final Minecraft mc = Minecraft.getMinecraft();
         final Tessellator tessellator = Tessellator.getInstance();
@@ -96,19 +98,19 @@ public class FluidRenderer {
         addTexturedQuad(buffer, flowing, x1, y1, z1, x2 - x1, y2 - y1, z2 - z1, EnumFacing.WEST, color, brightness);
 
         World world = te.getWorld();
-        final FluidTank liquid = te.tank;
+        final FluidTank liquid = te.getTank();
         final TileEntity tankAbove = world.getTileEntity(te.getPos().up());
         final TileEntity tankBelow = world.getTileEntity(te.getPos().down());
 
-        if(liquid.getFluidAmount() != Fluid.BUCKET_VOLUME * ConfigLoader.maxTankCapacity/1000
-                || (tankAbove != null
-                && tankAbove instanceof TileEntityTank&& (((TileEntityTank)tankAbove).tank.getFluidAmount() <= 0
-                || (((TileEntityTank)tankAbove).tank.getFluid() != null
-                && ((TileEntityTank)tankAbove).tank.getFluid().getFluid() != te.tank.getFluid().getFluid())))) {
+        if (liquid.getFluidAmount() != Fluid.BUCKET_VOLUME * ConfigLoader.maxTankCapacity / 1000 || (tankAbove != null
+                && tankAbove instanceof TileEntityTank && (((TileEntityTank) tankAbove).getTank().getFluidAmount() <= 0 || (
+                ((TileEntityTank) tankAbove).getTank().getFluid() != null && ((TileEntityTank) tankAbove).getTank().getFluid().getFluid() != te
+                        .getTank().getFluid().getFluid())))) {
             addTexturedQuad(buffer, still, x1, y1, z1, x2 - x1, y2 - y1, z2 - z1, EnumFacing.UP, color, brightness);
         }
 
-        if(tankBelow != null && tankBelow instanceof TileEntityTank && ((TileEntityTank)tankBelow).tank.getFluid() != null && ((TileEntityTank)tankBelow).tank.getFluid().getFluid() != te.tank.getFluid().getFluid()) {
+        if (tankBelow != null && tankBelow instanceof TileEntityTank && ((TileEntityTank) tankBelow).getTank().getFluid() != null
+                && ((TileEntityTank) tankBelow).getTank().getFluid().getFluid() != te.getTank().getFluid().getFluid()) {
             addTexturedQuad(buffer, flowing, x1, y1, z1, x2 - x1, y2 - y1, z2 - z1, EnumFacing.DOWN, color, brightness);
         }
 
@@ -131,7 +133,8 @@ public class FluidRenderer {
      * @param color      The color multiplier to apply.
      * @param brightness The brightness of the cube.
      */
-    public static void addTexturedQuad(VertexBuffer buffer, TextureAtlasSprite sprite, double x, double y, double z, double width, double height, double length, EnumFacing face, int color, int brightness) {
+    public static void addTexturedQuad(VertexBuffer buffer, TextureAtlasSprite sprite, double x, double y, double z, double width, double height,
+            double length, EnumFacing face, int color, int brightness) {
 
         if (sprite == null) {
             return;
@@ -166,7 +169,8 @@ public class FluidRenderer {
      * @param light1 The first light map value.
      * @param light2 The second light map value.
      */
-    public static void addTextureQuad(VertexBuffer buffer, TextureAtlasSprite sprite, double x, double y, double z, double width, double height, double length, EnumFacing face, int red, int green, int blue, int alpha, int light1, int light2) {
+    public static void addTextureQuad(VertexBuffer buffer, TextureAtlasSprite sprite, double x, double y, double z, double width, double height,
+            double length, EnumFacing face, int red, int green, int blue, int alpha, int light1, int light2) {
 
         double minU;
         double maxU;
@@ -196,83 +200,83 @@ public class FluidRenderer {
 
         switch (face) {
 
-            case DOWN:
+        case DOWN:
 
-            case UP:
-                minU = sprite.getInterpolatedU(u * size);
-                maxU = sprite.getInterpolatedU(u1 * size);
-                minV = sprite.getInterpolatedV(vz * size);
-                maxV = sprite.getInterpolatedV(vz1 * size);
-                break;
+        case UP:
+            minU = sprite.getInterpolatedU(u * size);
+            maxU = sprite.getInterpolatedU(u1 * size);
+            minV = sprite.getInterpolatedV(vz * size);
+            maxV = sprite.getInterpolatedV(vz1 * size);
+            break;
 
-            case NORTH:
+        case NORTH:
 
-            case SOUTH:
-                minU = sprite.getInterpolatedU(u1 * size);
-                maxU = sprite.getInterpolatedU(u * size);
-                minV = sprite.getInterpolatedV(vy * size);
-                maxV = sprite.getInterpolatedV(vy1 * size);
-                break;
+        case SOUTH:
+            minU = sprite.getInterpolatedU(u1 * size);
+            maxU = sprite.getInterpolatedU(u * size);
+            minV = sprite.getInterpolatedV(vy * size);
+            maxV = sprite.getInterpolatedV(vy1 * size);
+            break;
 
-            case WEST:
+        case WEST:
 
-            case EAST:
-                minU = sprite.getInterpolatedU(vz1 * size);
-                maxU = sprite.getInterpolatedU(vz * size);
-                minV = sprite.getInterpolatedV(vy * size);
-                maxV = sprite.getInterpolatedV(vy1 * size);
-                break;
+        case EAST:
+            minU = sprite.getInterpolatedU(vz1 * size);
+            maxU = sprite.getInterpolatedU(vz * size);
+            minV = sprite.getInterpolatedV(vy * size);
+            maxV = sprite.getInterpolatedV(vy1 * size);
+            break;
 
-            default:
-                minU = sprite.getMinU();
-                maxU = sprite.getMaxU();
-                minV = sprite.getMinV();
-                maxV = sprite.getMaxV();
+        default:
+            minU = sprite.getMinU();
+            maxU = sprite.getMaxU();
+            minV = sprite.getMinV();
+            maxV = sprite.getMaxV();
         }
 
         switch (face) {
 
-            case DOWN:
-                buffer.pos(x, y, z).color(red, green, blue, alpha).tex(minU, minV).lightmap(light1, light2).endVertex();
-                buffer.pos(x2, y, z).color(red, green, blue, alpha).tex(maxU, minV).lightmap(light1, light2).endVertex();
-                buffer.pos(x2, y, z2).color(red, green, blue, alpha).tex(maxU, maxV).lightmap(light1, light2).endVertex();
-                buffer.pos(x, y, z2).color(red, green, blue, alpha).tex(minU, maxV).lightmap(light1, light2).endVertex();
-                break;
+        case DOWN:
+            buffer.pos(x, y, z).color(red, green, blue, alpha).tex(minU, minV).lightmap(light1, light2).endVertex();
+            buffer.pos(x2, y, z).color(red, green, blue, alpha).tex(maxU, minV).lightmap(light1, light2).endVertex();
+            buffer.pos(x2, y, z2).color(red, green, blue, alpha).tex(maxU, maxV).lightmap(light1, light2).endVertex();
+            buffer.pos(x, y, z2).color(red, green, blue, alpha).tex(minU, maxV).lightmap(light1, light2).endVertex();
+            break;
 
-            case UP:
-                buffer.pos(x, y2, z).color(red, green, blue, alpha).tex(minU, minV).lightmap(light1, light2).endVertex();
-                buffer.pos(x, y2, z2).color(red, green, blue, alpha).tex(minU, maxV).lightmap(light1, light2).endVertex();
-                buffer.pos(x2, y2, z2).color(red, green, blue, alpha).tex(maxU, maxV).lightmap(light1, light2).endVertex();
-                buffer.pos(x2, y2, z).color(red, green, blue, alpha).tex(maxU, minV).lightmap(light1, light2).endVertex();
-                break;
+        case UP:
+            buffer.pos(x, y2, z).color(red, green, blue, alpha).tex(minU, minV).lightmap(light1, light2).endVertex();
+            buffer.pos(x, y2, z2).color(red, green, blue, alpha).tex(minU, maxV).lightmap(light1, light2).endVertex();
+            buffer.pos(x2, y2, z2).color(red, green, blue, alpha).tex(maxU, maxV).lightmap(light1, light2).endVertex();
+            buffer.pos(x2, y2, z).color(red, green, blue, alpha).tex(maxU, minV).lightmap(light1, light2).endVertex();
+            break;
 
-            case NORTH:
-                buffer.pos(x, y, z).color(red, green, blue, alpha).tex(minU, maxV).lightmap(light1, light2).endVertex();
-                buffer.pos(x, y2, z).color(red, green, blue, alpha).tex(minU, minV).lightmap(light1, light2).endVertex();
-                buffer.pos(x2, y2, z).color(red, green, blue, alpha).tex(maxU, minV).lightmap(light1, light2).endVertex();
-                buffer.pos(x2, y, z).color(red, green, blue, alpha).tex(maxU, maxV).lightmap(light1, light2).endVertex();
-                break;
+        case NORTH:
+            buffer.pos(x, y, z).color(red, green, blue, alpha).tex(minU, maxV).lightmap(light1, light2).endVertex();
+            buffer.pos(x, y2, z).color(red, green, blue, alpha).tex(minU, minV).lightmap(light1, light2).endVertex();
+            buffer.pos(x2, y2, z).color(red, green, blue, alpha).tex(maxU, minV).lightmap(light1, light2).endVertex();
+            buffer.pos(x2, y, z).color(red, green, blue, alpha).tex(maxU, maxV).lightmap(light1, light2).endVertex();
+            break;
 
-            case SOUTH:
-                buffer.pos(x, y, z2).color(red, green, blue, alpha).tex(maxU, maxV).lightmap(light1, light2).endVertex();
-                buffer.pos(x2, y, z2).color(red, green, blue, alpha).tex(minU, maxV).lightmap(light1, light2).endVertex();
-                buffer.pos(x2, y2, z2).color(red, green, blue, alpha).tex(minU, minV).lightmap(light1, light2).endVertex();
-                buffer.pos(x, y2, z2).color(red, green, blue, alpha).tex(maxU, minV).lightmap(light1, light2).endVertex();
-                break;
+        case SOUTH:
+            buffer.pos(x, y, z2).color(red, green, blue, alpha).tex(maxU, maxV).lightmap(light1, light2).endVertex();
+            buffer.pos(x2, y, z2).color(red, green, blue, alpha).tex(minU, maxV).lightmap(light1, light2).endVertex();
+            buffer.pos(x2, y2, z2).color(red, green, blue, alpha).tex(minU, minV).lightmap(light1, light2).endVertex();
+            buffer.pos(x, y2, z2).color(red, green, blue, alpha).tex(maxU, minV).lightmap(light1, light2).endVertex();
+            break;
 
-            case WEST:
-                buffer.pos(x, y, z).color(red, green, blue, alpha).tex(maxU, maxV).lightmap(light1, light2).endVertex();
-                buffer.pos(x, y, z2).color(red, green, blue, alpha).tex(minU, maxV).lightmap(light1, light2).endVertex();
-                buffer.pos(x, y2, z2).color(red, green, blue, alpha).tex(minU, minV).lightmap(light1, light2).endVertex();
-                buffer.pos(x, y2, z).color(red, green, blue, alpha).tex(maxU, minV).lightmap(light1, light2).endVertex();
-                break;
+        case WEST:
+            buffer.pos(x, y, z).color(red, green, blue, alpha).tex(maxU, maxV).lightmap(light1, light2).endVertex();
+            buffer.pos(x, y, z2).color(red, green, blue, alpha).tex(minU, maxV).lightmap(light1, light2).endVertex();
+            buffer.pos(x, y2, z2).color(red, green, blue, alpha).tex(minU, minV).lightmap(light1, light2).endVertex();
+            buffer.pos(x, y2, z).color(red, green, blue, alpha).tex(maxU, minV).lightmap(light1, light2).endVertex();
+            break;
 
-            case EAST:
-                buffer.pos(x2, y, z).color(red, green, blue, alpha).tex(minU, maxV).lightmap(light1, light2).endVertex();
-                buffer.pos(x2, y2, z).color(red, green, blue, alpha).tex(minU, minV).lightmap(light1, light2).endVertex();
-                buffer.pos(x2, y2, z2).color(red, green, blue, alpha).tex(maxU, minV).lightmap(light1, light2).endVertex();
-                buffer.pos(x2, y, z2).color(red, green, blue, alpha).tex(maxU, maxV).lightmap(light1, light2).endVertex();
-                break;
+        case EAST:
+            buffer.pos(x2, y, z).color(red, green, blue, alpha).tex(minU, maxV).lightmap(light1, light2).endVertex();
+            buffer.pos(x2, y2, z).color(red, green, blue, alpha).tex(minU, minV).lightmap(light1, light2).endVertex();
+            buffer.pos(x2, y2, z2).color(red, green, blue, alpha).tex(maxU, minV).lightmap(light1, light2).endVertex();
+            buffer.pos(x2, y, z2).color(red, green, blue, alpha).tex(maxU, maxV).lightmap(light1, light2).endVertex();
+            break;
         }
     }
 
