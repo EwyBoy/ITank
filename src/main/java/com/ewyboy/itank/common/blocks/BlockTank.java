@@ -4,7 +4,6 @@ import com.ewyboy.itank.client.render.TankRenderer;
 import com.ewyboy.itank.common.compatibilities.waila.IWailaUser;
 import com.ewyboy.itank.common.loaders.CreativeTabLoader;
 import com.ewyboy.itank.common.tiles.TileEntityTank;
-import com.ewyboy.itank.common.utility.ItemStackUtils;
 import com.ewyboy.itank.common.utility.Reference;
 import com.ewyboy.itank.common.utility.interfaces.IBlockRenderer;
 import mcp.mobius.waila.api.IWailaConfigHandler;
@@ -129,18 +128,8 @@ public class BlockTank extends BlockContainer implements IWailaUser, IBlockRende
     }
 
     @Override
-    public boolean removedByPlayer (IBlockState state, World world, BlockPos pos, EntityPlayer player, boolean willHarvest) {
-        if (!player.capabilities.isCreativeMode) {
-            final TileEntityTank tank = (TileEntityTank) world.getTileEntity(pos);
-            ItemStackUtils.dropStackInWorld(world, pos, ItemStackUtils.createStackFromTileEntity(tank));
-        }
-        return world.setBlockToAir(pos);
-    }
-
-    @Override
     public void onBlockPlacedBy (World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack) {
         final TileEntityTank tank = (TileEntityTank) worldIn.getTileEntity(pos);
-
         if (stack.hasTagCompound()) {
             if (tank != null) tank.readNBT(stack.getTagCompound().getCompoundTag("TileData"));
         }

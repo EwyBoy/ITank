@@ -1,6 +1,6 @@
 package com.ewyboy.itank.proxy;
 
-public abstract class CommonProxy {
+public class CommonProxy {
 
     public void loadModels() {}
 

@@ -13,10 +13,10 @@ public class RecipeLoader {
     //TODO Add Oredictionary support for glass
     public static void registerRecipes() {
         GameRegistry.addRecipe(new ItemStack(BlockLoader.tank),
-                "III", "GCG", "III",
+                "IGI", "GBG", "IGI",
                 'I', Items.IRON_INGOT,
                 'G', Blocks.GLASS,
-                'C', Items.CAULDRON
+                'B', Items.BUCKET
         );
     }
 }
