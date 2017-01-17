@@ -3,13 +3,13 @@ package com.ewyboy.itank.common.utility;
 public class Reference {
 
     public static final class ModInfo {
-        public static final String ModID = "itank";
-        public static final String ModName = "ITank";
-        static final String VersionMajor = "1";
-        static final String VersionMinor = "0";
-        static final String VersionPatch = "2";
-        static final String MinecraftVersion = "1.10.2";
-        public static final String BuildVersion = VersionMajor + "." + VersionMinor + "." + VersionPatch + "-" + MinecraftVersion;
+        public static final String MODID = "itank";
+        public static final String NAME = "ITank";
+        static final String VERSION_MAJOR = "1";
+        static final String VERSION_MINOR = "1";
+        static final String VERSION_PATCH = "0";
+        static final String MINECRAFT_VERSION = "1.10.2";
+        public static final String BUILD_VERSION = VERSION_MAJOR + "." + VERSION_MINOR + "." + VERSION_PATCH + "-" + MINECRAFT_VERSION;
     }
 
     public static final class Path {

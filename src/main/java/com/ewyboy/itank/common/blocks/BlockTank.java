@@ -4,7 +4,6 @@ import com.ewyboy.itank.client.render.TankRenderer;
 import com.ewyboy.itank.common.compatibilities.waila.IWailaUser;
 import com.ewyboy.itank.common.loaders.CreativeTabLoader;
 import com.ewyboy.itank.common.tiles.TileEntityTank;
-import com.ewyboy.itank.common.utility.Reference;
 import com.ewyboy.itank.common.utility.interfaces.IBlockRenderer;
 import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaDataAccessor;
@@ -41,6 +40,9 @@ import javax.annotation.Nonnull;
 import java.util.List;
 import java.util.Random;
 
+import static com.ewyboy.itank.common.utility.Reference.Blocks.tank;
+import static com.ewyboy.itank.common.utility.Reference.ModInfo.MODID;
+
 public class BlockTank extends BlockContainer implements IWailaUser, IBlockRenderer {
 
     public static final PropertyInteger STATE = PropertyInteger.create("state", 0, 3);
@@ -48,11 +50,11 @@ public class BlockTank extends BlockContainer implements IWailaUser, IBlockRende
     public BlockTank() {
         super(Material.GLASS);
         setHardness(1.0f);
-        setUnlocalizedName(Reference.Blocks.tank);
-        setRegistryName(Reference.Blocks.tank);
+        setUnlocalizedName(MODID + ":" + tank);
+        setRegistryName(MODID + ":" + tank);
         GameRegistry.register(this);
         GameRegistry.register(new ItemBlock(this), getRegistryName());
-        GameRegistry.registerTileEntity(TileEntityTank.class, "tank");
+        GameRegistry.registerTileEntity(TileEntityTank.class, MODID + ":" + tank);
         setCreativeTab(CreativeTabLoader.ITank);
         setDefaultState(blockState.getBaseState());
     }

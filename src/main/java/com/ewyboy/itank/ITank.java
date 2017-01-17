@@ -18,13 +18,13 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import java.util.concurrent.TimeUnit;
 
 /** Created by EwyBoy **/
-@Mod(modid = Reference.ModInfo.ModID, name = Reference.ModInfo.ModName, version = Reference.ModInfo.BuildVersion)
+@Mod(modid = Reference.ModInfo.MODID, name = Reference.ModInfo.MODID, version = Reference.ModInfo.BUILD_VERSION)
 public class ITank {
 
-    @Mod.Instance(Reference.ModInfo.ModID)
+    @Mod.Instance(Reference.ModInfo.MODID)
     public static ITank instance;
 
-    @SidedProxy(modId = Reference.ModInfo.ModID, clientSide = Reference.Path.clientProxyPath, serverSide = Reference.Path.commonProxyPath)
+    @SidedProxy(modId = Reference.ModInfo.MODID, clientSide = Reference.Path.clientProxyPath, serverSide = Reference.Path.commonProxyPath)
     public static CommonProxy proxy;
 
     public static Configuration configuration;
