@@ -1,14 +1,13 @@
 package com.ewyboy.itank.common.blocks;
 
+import com.ewyboy.bibliotheca.common.block.BlockBaseModeled;
+import com.ewyboy.bibliotheca.common.compatibilities.waila.IWailaInformationUser;
+import com.ewyboy.bibliotheca.common.interfaces.IBlockRenderer;
 import com.ewyboy.itank.client.render.TankRenderer;
-import com.ewyboy.itank.common.compatibilities.waila.IWailaUser;
 import com.ewyboy.itank.common.loaders.CreativeTabLoader;
 import com.ewyboy.itank.common.tiles.TileEntityTank;
-import com.ewyboy.itank.common.utility.interfaces.IBlockRenderer;
-import mcp.mobius.waila.api.IWailaConfigHandler;
-import mcp.mobius.waila.api.IWailaDataAccessor;
+import com.ewyboy.itank.common.utility.ItemStackUtils;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
@@ -18,7 +17,6 @@ import net.minecraft.client.renderer.block.statemap.DefaultStateMapper;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
@@ -27,34 +25,27 @@ import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.Explosion;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fluids.FluidUtil;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
 
-import static com.ewyboy.itank.common.utility.Reference.Blocks.tank;
-import static com.ewyboy.itank.common.utility.Reference.ModInfo.MODID;
-
-public class BlockTank extends BlockContainer implements IWailaUser, IBlockRenderer {
+public class BlockTank extends BlockBaseModeled implements IBlockRenderer, IWailaInformationUser {
 
     public static final PropertyInteger STATE = PropertyInteger.create("state", 0, 3);
 
     public BlockTank() {
         super(Material.GLASS);
         setHardness(1.0f);
-        setUnlocalizedName(MODID + ":" + tank);
-        setRegistryName(MODID + ":" + tank);
-        GameRegistry.register(this);
-        GameRegistry.register(new ItemBlock(this), getRegistryName());
-        GameRegistry.registerTileEntity(TileEntityTank.class, MODID + ":" + tank);
         setCreativeTab(CreativeTabLoader.ITank);
         setDefaultState(blockState.getBaseState());
     }
@@ -71,7 +62,7 @@ public class BlockTank extends BlockContainer implements IWailaUser, IBlockRende
     }
 
     @Override
-    public void neighborChanged(IBlockState state, World world, BlockPos pos, Block block) {
+    public void neighborChanged(IBlockState state, World world, BlockPos pos, Block blockIn, BlockPos fromPos) {
         if (world.getBlockState(pos.up()).getBlock() == this && world.getBlockState(pos.down()).getBlock() == this) {
             setState(world, pos, 1);
         } else if (world.getBlockState(pos.up()).getBlock() == this && world.getBlockState(pos.down()).getBlock() != this) {
@@ -82,7 +73,6 @@ public class BlockTank extends BlockContainer implements IWailaUser, IBlockRende
             setState(world, pos, 0);
         }
     }
-
 
     @Override
     public IBlockState getStateFromMeta(int meta) {
@@ -100,12 +90,29 @@ public class BlockTank extends BlockContainer implements IWailaUser, IBlockRende
     }
 
     @Override
-    public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ) {
+    public int quantityDropped (Random random) {
+        return 0;
+    }
+
+    @Override
+    public boolean removedByPlayer (IBlockState state, World world, BlockPos pos, EntityPlayer player, boolean willHarvest) {
+        if (!player.capabilities.isCreativeMode) {
+            if (player.isSneaking()) {
+                ItemStackUtils.dropStackInWorld(world, pos, new ItemStack(this));
+            } else {
+                final TileEntityTank tank = (TileEntityTank) world.getTileEntity(pos);
+                ItemStackUtils.dropStackInWorld(world, pos, ItemStackUtils.createStackFromTileEntity(tank));
+            }
+        }
+        return world.setBlockToAir(pos);
+    }
+
+    @Override
+    public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
         TileEntityTank te = getTE(world, pos);
         /**Fluid input to TileEntity*/
         if (te != null) {
-            ItemStack input = player.getHeldItem(hand);
-            if (FluidUtil.interactWithFluidHandler(input, te.tank, player)) return true;
+            if (FluidUtil.interactWithFluidHandler(player, EnumHand.MAIN_HAND, world, pos, facing)) return true;
         }
 
         /**Smart / Easy - Tank building*/
@@ -113,11 +120,12 @@ public class BlockTank extends BlockContainer implements IWailaUser, IBlockRende
             if (player.getHeldItem(hand) != null) {
                 if (player.getHeldItem(hand).getItem().equals(Item.getItemFromBlock(this))) {
                     for (int i = 0; i < pos.getY() + 4; i++) {
-                        if (world.isAirBlock(pos.add(0,i,0))) {
-                            if (!player.isCreative()) player.getHeldItem(hand).stackSize--;
-                            world.setBlockState(pos.add(0,i,0), this.getDefaultState(), 3);
+                        if (world.isAirBlock(pos.add(0, i, 0))) {
+                            if (!player.isCreative()) player.getHeldItem(hand).shrink(1);
+                            world.setBlockState(pos.add(0, i, 0), this.getDefaultState(), 3);
                             break;
-                        } else if (!world.isAirBlock(pos.add(0,i,0)) && world.getBlockState(pos.add(0,i,0)).getBlock() != this) break;
+                        } else if (!world.isAirBlock(pos.add(0, i, 0)) && world.getBlockState(pos.add(0, i, 0)).getBlock() != this)
+                            break;
                     }
                 }
             }
@@ -130,18 +138,27 @@ public class BlockTank extends BlockContainer implements IWailaUser, IBlockRende
     }
 
     @Override
-    public void onBlockPlacedBy (World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack) {
-        final TileEntityTank tank = (TileEntityTank) worldIn.getTileEntity(pos);
+    public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack) {
         if (stack.hasTagCompound()) {
-            if (tank != null) tank.readNBT(stack.getTagCompound().getCompoundTag("TileData"));
+            final TileEntityTank tank = (TileEntityTank) worldIn.getTileEntity(pos);
+            if (tank != null) {
+                tank.readNBT(stack.getTagCompound().getCompoundTag("TileData"));
+            }
         }
+    }
+
+    @Override
+    public void onBlockExploded (World world, BlockPos pos, Explosion explosion) {
+        ItemStackUtils.dropStackInWorld(world, pos, ItemStackUtils.createStackFromTileEntity(world.getTileEntity(pos)));
+        world.setBlockToAir(pos);
+        this.onBlockDestroyedByExplosion(world, pos, explosion);
     }
 
     @Override
     public int getLightValue(IBlockState state, IBlockAccess world, BlockPos pos) {
         TileEntity te = world.getTileEntity(pos);
         if (te instanceof TileEntityTank) {
-            TileEntityTank barrel = (TileEntityTank)te;
+            TileEntityTank barrel = (TileEntityTank) te;
             if (barrel.tank.getFluid() != null && barrel.tank.getFluidAmount() > 0) {
                 return barrel.tank.getFluid().getFluid().getLuminosity(barrel.tank.getFluid());
             }
@@ -177,12 +194,13 @@ public class BlockTank extends BlockContainer implements IWailaUser, IBlockRende
         return EnumBlockRenderType.MODEL;
     }
 
-    @SideOnly(Side.CLIENT)
     @Override
+    @SideOnly(Side.CLIENT)
     public void registerBlockRenderer() {
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityTank.class, new TankRenderer());
         ModelLoader.setCustomStateMapper(this, new DefaultStateMapper() {
             @Override
+            @SideOnly(Side.CLIENT)
             protected ModelResourceLocation getModelResourceLocation(IBlockState state) {
                 return new ModelResourceLocation(getRegistryName(), getPropertyString(state.getProperties()));
             }
@@ -195,7 +213,7 @@ public class BlockTank extends BlockContainer implements IWailaUser, IBlockRende
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), new ItemStack(this).getMetadata(), new ModelResourceLocation(getRegistryName(), "inventory"));
     }
 
-    private TileEntityTank getTE(IBlockAccess world, BlockPos pos) {
+    public TileEntityTank getTE(IBlockAccess world, BlockPos pos) {
         return (TileEntityTank) world.getTileEntity(pos);
     }
 
@@ -204,19 +222,20 @@ public class BlockTank extends BlockContainer implements IWailaUser, IBlockRende
         return true;
     }
 
+    @Nullable
     @Override
-    public TileEntity createNewTileEntity(World world, int meta) {
+    public TileEntity createTileEntity(World world, IBlockState state) {
         return new TileEntityTank();
     }
 
     @Override
-    public List<String> getWailaBody(ItemStack itemStack, List<String> currenttip, IWailaDataAccessor accessor, IWailaConfigHandler config) {
+    public List<String> getWailaBody(ItemStack itemStack, List<String> currenttip, mcp.mobius.waila.api.IWailaDataAccessor accessor, mcp.mobius.waila.api.IWailaConfigHandler iWailaConfigHandler) {
         BlockPos pos = accessor.getPosition();
         World world = accessor.getWorld();
         TileEntityTank te = getTE(world, pos);
 
         if (te != null) {
-            currenttip.add(te.tank.getFluid() != null ? "Liquid: " + te.tank.getFluid().getLocalizedName() : "Liquid: " + "EMPTY");
+            currenttip.add(te.tank.getFluid() != null ? te.tank.getFluid().getLocalizedName() : "EMPTY");
             currenttip.add(te.tank.getFluidAmount() + "/" + te.tank.getCapacity() + " mB");
         }
         return currenttip;

@@ -1,12 +1,12 @@
 [
     {
-      "modid": "ewysstorage",
-      "name": "Ewy's Storage",
-      "description": "A Storage Mod by EwyBoy",
+      "modid": "itank",
+      "name": "ITank",
+      "description": "A lightweight fancy looking smart tank alternative!",
       "version": "${version}",
       "mcversion": "${mcversion}",
-      "url": "",
-      "updateUrl": "",
+      "url": "https://minecraft.curseforge.com/projects/itank",
+      "updateUrl": "https://minecraft.curseforge.com/projects/itank/files",
       "authorList": ["EwyBoy"],
       "credits": "",
       "logoFile": "",

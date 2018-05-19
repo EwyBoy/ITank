@@ -8,7 +8,7 @@
     "inventory": [{}],
     "state=0": { "model": "itank:tank"},
     "state=1": { "model": "itank:tank_mid"},
-    "state=2": { "model": "itank:tank_end0"},
-    "state=3": { "model": "itank:tank_end1"}
+    "state=2": { "model": "itank:tank_bottom"},
+    "state=3": { "model": "itank:tank_top"}
   }
 }

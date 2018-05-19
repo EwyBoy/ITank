@@ -61,7 +61,7 @@ public class TileEntityTank extends TileEntityBase implements ITickable {
     @Override
     public void update() {
         if (tank.getFluid() != null && tank.getFluidAmount() > 0) {
-            TileEntity te = worldObj.getTileEntity(pos.down());
+            TileEntity te = world.getTileEntity(pos.down());
             if (te != null && te.hasCapability(CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY, EnumFacing.UP)) {
                 IFluidHandler fluidHandler = te.getCapability(CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY, EnumFacing.UP);
                 tank.drain(fluidHandler.fill(tank.drain(tank.getCapacity(), false), true), true);

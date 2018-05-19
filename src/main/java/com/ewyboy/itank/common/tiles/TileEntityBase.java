@@ -1,6 +1,5 @@
 package com.ewyboy.itank.common.tiles;
 
-
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
@@ -8,6 +7,8 @@ import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class TileEntityBase extends TileEntity {
 
@@ -29,6 +30,7 @@ public class TileEntityBase extends TileEntity {
     }
 
     @Override
+    @SideOnly(Side.CLIENT)
     public void onDataPacket (NetworkManager net, SPacketUpdateTileEntity packet) {
         super.onDataPacket(net, packet);
         this.readNBT(packet.getNbtCompound());
