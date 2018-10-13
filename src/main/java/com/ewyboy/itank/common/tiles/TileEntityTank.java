@@ -37,9 +37,9 @@ public class TileEntityTank extends TileEntityBase implements ITickable {
     @Override
     public void readNBT (NBTTagCompound dataTag) {
         if (dataTag.hasKey("FluidData")) {
-            this.tank = dataTag.hasKey("FluidData")
-                    ? new TileTank(FluidStack.loadFluidStackFromNBT(dataTag.getCompoundTag("FluidData")), Fluid.BUCKET_VOLUME * (ConfigLoader.maxTankCapacity / 1000))
-                    : new TileTank(Fluid.BUCKET_VOLUME * (ConfigLoader.maxTankCapacity / 1000));
+            if (dataTag.hasKey("FluidData"))
+                this.tank = new TileTank(FluidStack.loadFluidStackFromNBT(dataTag.getCompoundTag("FluidData")), Fluid.BUCKET_VOLUME * (ConfigLoader.maxTankCapacity / 1000));
+            else this.tank = new TileTank(Fluid.BUCKET_VOLUME * (ConfigLoader.maxTankCapacity / 1000));
         }
         this.tank.setTileEntity(this);
     }
@@ -57,7 +57,7 @@ public class TileEntityTank extends TileEntityBase implements ITickable {
         return super.getCapability(capability, facing);
     }
 
-    /** @author shadowfacts Auto Drain*/
+    /** @author shadowfacts Auto Drain **/
     @Override
     public void update() {
         if (tank.getFluid() != null && tank.getFluidAmount() > 0) {

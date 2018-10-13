@@ -1,5 +1,13 @@
 package com.ewyboy.itank.proxy;
 
+import com.ewyboy.itank.common.regsiter.Register;
+import com.ewyboy.itank.common.tiles.TileEntityTank;
+import com.ewyboy.itank.common.tiles.TileTank;
+import net.minecraft.item.Item;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraftforge.client.ForgeHooksClient;
+import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.common.ForgeHooks;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
