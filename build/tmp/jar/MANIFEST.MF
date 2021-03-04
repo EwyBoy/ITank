@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: ITank
+Implementation-Version: 1.3.0
+Specification-Vendor: Ewy
+Specification-Title: ITank
+Implementation-Timestamp: 2021-03-04T14:36:52+0100
+Specification-Version: 1
+Implementation-Vendor: Ewy
+

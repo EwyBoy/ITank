@@ -522,3 +522,4 @@ com.mojang.authlib.exceptions.AuthenticationUnavailableException: null
 [04Mar2021 14:31:21.367] [Render thread/INFO] [net.minecraft.client.renderer.texture.AtlasTexture/]: Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
 [04Mar2021 14:31:21.368] [Render thread/INFO] [net.minecraft.client.renderer.texture.AtlasTexture/]: Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
 [04Mar2021 14:31:22.540] [Realms Notification Availability checker #1/INFO] [com.mojang.realmsclient.client.RealmsClient/]: Could not authorize you against Realms server: Invalid session id
+[04Mar2021 14:35:36.640] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Stopping!

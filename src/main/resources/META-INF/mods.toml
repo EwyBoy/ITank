@@ -8,7 +8,7 @@ modId="itank"
 displayName="ITank"
 version="${file.jarVersion}"
 authors="Ewy"
-credits="Is anyone actually reading the credits?"
+credits="Does anyone actually reading the credits?"
 description="Lightweight - Fancy looking - Liquid & fluid storage tank"
 
 [[dependencies.itank]]
