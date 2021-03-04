@@ -1,0 +1,22 @@
+{
+  "result": {
+    "item": "itank:itemtank"
+  },
+  "pattern": [
+    "XOX",
+    "OBO",
+    "XOX"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": {
+      "item": "minecraft:bucket"
+    },
+    "X": {
+      "item": "minecraft:iron_ingot"
+    },
+    "O": {
+      "item": "minecraft:glass"
+    }
+  }
+}

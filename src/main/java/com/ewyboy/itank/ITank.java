@@ -1,35 +1,33 @@
 package com.ewyboy.itank;
 
-import com.ewyboy.itank.common.utility.Reference;
-import com.ewyboy.itank.proxy.CommonProxy;
+import com.ewyboy.bibliotheca.common.loaders.ContentLoader;
+import com.ewyboy.itank.common.register.Register;
+import com.ewyboy.itank.config.Config;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.SidedProxy;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.config.ModConfig;
 
-/** Created by EwyBoy **/
-@Mod(modid = Reference.ModInfo.MOD_ID, name = Reference.ModInfo.MOD_ID, version = Reference.ModInfo.BUILD_VERSION, dependencies = Reference.ModInfo.BIBLIOTHECA_VERSION)
+@Mod(ITank.MODID)
+@Mod.EventBusSubscriber(modid = ITank.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ITank {
 
-    @Mod.Instance(Reference.ModInfo.MOD_ID)
-    public static ITank instance;
+    public static final String MODID = "itank";
 
-    @SidedProxy(modId = Reference.ModInfo.MOD_ID, clientSide = Reference.Path.clientProxyPath, serverSide = Reference.Path.commonProxyPath)
-    public static CommonProxy proxy;
-
-    @Mod.EventHandler
-    public void preInit(FMLPreInitializationEvent event) {
-        proxy.preInit(event);
+    public ITank() {
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.settingSpec);
+        ContentLoader.init(ITank.MODID, ITank.itemGroup, Register.BLOCK.class, Register.ITEM.class, Register.TILE.class);
     }
 
-    @Mod.EventHandler
-    public void init(FMLInitializationEvent event) {
-        proxy.init(event);
-    }
+    public static final ItemGroup itemGroup = new ItemGroup(ITank.MODID) {
+        @Override
+        @OnlyIn(Dist.CLIENT)
+        public ItemStack createIcon() {
+            return new ItemStack(Register.BLOCK.TANK);
+        }
+    };
 
-    @Mod.EventHandler
-    public void PostInit(FMLPostInitializationEvent event) {
-        proxy.postInit(event);
-    }
 }

@@ -1,48 +1,153 @@
 buildscript {
     repositories {
+        maven { url = 'https://files.minecraftforge.net/maven' }
         jcenter()
-        maven { url = "http://files.minecraftforge.net/maven" }
+        mavenCentral()
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '3.+', changing: true
     }
 }
 
-apply plugin: 'net.minecraftforge.gradle.forge'
+apply plugin: 'net.minecraftforge.gradle'
+apply plugin: 'maven-publish'
+apply plugin: 'java'
+apply plugin: 'idea'
 
-version = "1.2.1-1.12.2"
-group = "com.ewyboy.itank"
-archivesBaseName = "ITank"
+version = "${MC_VERSION}-${VERSION}"
+group = "com.ewyboy.${MODID}"
+archivesBaseName = MODNAME
 
-sourceCompatibility = targetCompatibility = '1.8'
-compileJava {
-    sourceCompatibility = targetCompatibility = '1.8'
+sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
+
+minecraft {
+
+    apply plugin: 'idea'
+    mappings channel: MCP_CHANNEL, version: MCP_MAPPINGS
+
+    runs {
+
+        client {
+            workingDirectory project.file('run')
+            ideaModule "${project.name}.main"
+
+            mods {
+                bibliotheca {
+                    source project(":Bibliotheca").sourceSets.main
+                }
+                quickharvest {
+                    source project(":Quick-Harvest").sourceSets.main
+                }
+                worldstripper {
+                    source project(":World-Stripper").sourceSets.main
+                }
+               /* cultivatedtech {
+                    source project(":Cultivated-Tech").sourceSets.main
+                }*/
+                itank {
+                    source project(":ITank").sourceSets.main
+                }
+            }
+        }
+
+        server {
+            workingDirectory project.file('run')
+            ideaModule "${project.name}.main"
+
+            mods {
+
+                bibliotheca {
+                    source project(":Bibliotheca").sourceSets.main
+                }
+                quickharvest {
+                    source project(":Quick-Harvest").sourceSets.main
+                }
+                worldstripper {
+                    source project(":World-Stripper").sourceSets.main
+                }
+                /*cultivatedtech {
+                    source project(":Cultivated-Tech").sourceSets.main
+                }*/
+                itank {
+                    source project(":ITank").sourceSets.main
+                }
+            }
+        }
+
+        data {
+            workingDirectory project.file('run')
+            args '--mod', 'cultivatedtech', '--all', '--output', file('src/generated/resources/')
+            ideaModule "${project.name}.main"
+
+            mods {
+                bibliotheca {
+                    source project(":Bibliotheca").sourceSets.main
+                }
+                quickharvest {
+                    source project(":Quick-Harvest").sourceSets.main
+                }
+                worldstripper {
+                    source project(":World-Stripper").sourceSets.main
+                }
+               /* cultivatedtech {
+                    source project(":Cultivated-Tech").sourceSets.main
+                }*/
+                itank {
+                    source project(":ITank").sourceSets.main
+                }
+            }
+        }
+    }
 }
 
-repositories {  
-    maven {url "http://tehnut.info/maven"}
+repositories {
+    mavenLocal()
+    maven {
+        // Hwyla
+        name "tehnut"
+        url "https://maven.tehnut.info"
+    }
 }
 
 dependencies {
-    deobfCompile "mcp.mobius.waila:Hwyla:1.8.20-B35_1.12"
+    minecraft "net.minecraftforge:forge:${MC_VERSION}-${FORGE_VERSION}"
+
+    compile project(':Bibliotheca')
+    compile project(':Quick-Harvest')
+    compile project(':World-Stripper')
+
+    compileOnly fg.deobf("mcp.mobius.waila:Hwyla:${HWYLA_VERSION}:api")
+    runtimeOnly fg.deobf("mcp.mobius.waila:Hwyla:${HWYLA_VERSION}")
 }
 
-minecraft {
-    version = "1.12.2-14.23.0.2546"
-    runDir = "run"    
-    mappings = "snapshot_20170624"
-}
-
-processResources {
-    inputs.property "version", project.version
-    inputs.property "mcversion", project.minecraft.version
-
-    from(sourceSets.main.resources.srcDirs) {
-        include 'mcmod.info'
-        expand 'version':project.version, 'mcversion':project.minecraft.version
+jar {
+    manifest {
+        attributes([
+                "Specification-Title": MODNAME,
+                "Specification-Vendor": AUTHOR,
+                "Specification-Version": "1",
+                "Implementation-Title": project.name,
+                "Implementation-Version": VERSION,
+                "Implementation-Vendor" : AUTHOR,
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+        ])
     }
-        
-    from(sourceSets.main.resources.srcDirs) {
-        exclude 'mcmod.info'
+}
+
+def reobfFile = file("$buildDir/reobfJar/output.jar")
+def reobfArtifact = artifacts.add('default', reobfFile) {
+    type 'jar'
+    builtBy 'reobfJar'
+}
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifact reobfArtifact
+        }
+    }
+    repositories {
+        maven {
+            url "file:///${project.projectDir}/mcmodsrepo"
+        }
     }
 }

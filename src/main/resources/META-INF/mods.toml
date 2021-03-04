@@ -1,0 +1,33 @@
+modLoader="javafml"
+loaderVersion="[32,)"
+license="MIT"
+issueTrackerURL="https://github.com/EwyBoy/ITank/issues"
+
+[[mods]]
+modId="itank"
+displayName="ITank"
+version="${file.jarVersion}"
+authors="Ewy"
+credits="Is anyone actually reading the credits?"
+description="Lightweight - Fancy looking - Liquid & fluid storage tank"
+
+[[dependencies.itank]]
+    modId="bibliotheca"
+    mandatory=true
+    versionRange="[1.5.0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.itank]]
+    modId="forge"
+    mandatory=true
+    versionRange="[33.0.+,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.itank]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.16.+,]"
+    ordering="NONE"
+    side="BOTH"
