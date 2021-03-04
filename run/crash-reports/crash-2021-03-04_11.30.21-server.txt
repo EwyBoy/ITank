@@ -5,7 +5,7 @@ Time: 3/4/21 11:30 AM
 Description: Ticking block entity
 
 java.lang.NullPointerException: Ticking block entity
-	at com.ewyboy.itank.common.content.tile.TankTile.tick(TankTile.java:215) ~[?:?] {re:classloading}
+	at com.ewyboy.itank.common.content.tank.TankTile.tick(TankTile.java:215) ~[?:?] {re:classloading}
 	at net.minecraft.world.World.tickBlockEntities(World.java:538) ~[?:?] {re:classloading,pl:accesstransformer:B}
 	at net.minecraft.world.server.ServerWorld.tick(ServerWorld.java:374) ~[?:?] {re:classloading}
 	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:885) ~[?:?] {re:classloading,pl:accesstransformer:B}
@@ -22,10 +22,10 @@ A detailed walkthrough of the error, its code path and all known details is as f
 -- Head --
 Thread: Server thread
 Stacktrace:
-	at com.ewyboy.itank.common.content.tile.TankTile.tick(TankTile.java:215) ~[?:?] {re:classloading}
+	at com.ewyboy.itank.common.content.tank.TankTile.tick(TankTile.java:215) ~[?:?] {re:classloading}
 -- Block entity being ticked --
 Details:
-	Name: itank:tank // com.ewyboy.itank.common.content.tile.TankTile
+	Name: itank:tank // com.ewyboy.itank.common.content.tank.TankTile
 	Block: Block{itank:tank}[state=bot]
 	Block location: World: (38,1,29), Chunk: (at 6,0,13 in 2,1; contains blocks 32,0,16 to 47,255,31), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
 	Block: Block{itank:tank}[state=bot]

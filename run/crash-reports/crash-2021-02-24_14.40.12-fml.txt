@@ -38,7 +38,7 @@ Stacktrace:
 -- MOD itank --
 Details:
 	Caused by 0: java.lang.ExceptionInInitializerError
-		at com.ewyboy.itank.common.content.block.TankBlock.<clinit>(TankBlock.java:21) ~[?:?] {re:classloading}
+		at com.ewyboy.itank.common.content.tank.TankBlock.<clinit>(TankBlock.java:21) ~[?:?] {re:classloading}
 		at com.ewyboy.itank.common.register.Register$BLOCK.<clinit>(Register.java:17) ~[?:?] {re:classloading}
 		at sun.misc.Unsafe.ensureClassInitialized(Native Method) ~[?:1.8.0_261] {}
 		at sun.reflect.UnsafeFieldAccessorFactory.newFieldAccessor(UnsafeFieldAccessorFactory.java:43) ~[?:1.8.0_261] {}
@@ -76,8 +76,8 @@ Stacktrace:
 	at net.minecraft.state.EnumProperty.create(EnumProperty.java:92) ~[forge:?] {re:classloading}
 	at net.minecraft.state.EnumProperty.create(EnumProperty.java:78) ~[forge:?] {re:classloading}
 	at net.minecraft.state.EnumProperty.create(EnumProperty.java:71) ~[forge:?] {re:classloading}
-	at com.ewyboy.itank.common.states.ModBlockStateProperties.<clinit>(ModBlockStateProperties.java:7) ~[?:?] {re:classloading}
-	at com.ewyboy.itank.common.content.block.TankBlock.<clinit>(TankBlock.java:21) ~[?:?] {re:classloading}
+	at com.ewyboy.itank.common.states.TankStateProperties.<clinit>(ModBlockStateProperties.java:7) ~[?:?] {re:classloading}
+	at com.ewyboy.itank.common.content.tank.TankBlock.<clinit>(TankBlock.java:21) ~[?:?] {re:classloading}
 	at com.ewyboy.itank.common.register.Register$BLOCK.<clinit>(Register.java:17) ~[?:?] {re:classloading}
 	at sun.misc.Unsafe.ensureClassInitialized(Native Method) ~[?:1.8.0_261] {}
 	at sun.reflect.UnsafeFieldAccessorFactory.newFieldAccessor(UnsafeFieldAccessorFactory.java:43) ~[?:1.8.0_261] {}

@@ -5,7 +5,7 @@ Time: 2/25/21 2:35 PM
 Description: Ticking block entity
 
 java.lang.ClassCastException: net.minecraftforge.common.util.LazyOptional cannot be cast to net.minecraftforge.fluids.capability.IFluidHandler
-	at com.ewyboy.itank.common.content.tile.TankTile.tick(TankTile.java:69) ~[?:?] {re:classloading}
+	at com.ewyboy.itank.common.content.tank.TankTile.tick(TankTile.java:69) ~[?:?] {re:classloading}
 	at net.minecraft.world.World.tickBlockEntities(World.java:538) ~[?:?] {re:classloading,pl:accesstransformer:B}
 	at net.minecraft.world.server.ServerWorld.tick(ServerWorld.java:374) ~[?:?] {re:classloading}
 	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:885) ~[?:?] {re:classloading,pl:accesstransformer:B}
@@ -22,10 +22,10 @@ A detailed walkthrough of the error, its code path and all known details is as f
 -- Head --
 Thread: Server thread
 Stacktrace:
-	at com.ewyboy.itank.common.content.tile.TankTile.tick(TankTile.java:69) ~[?:?] {re:classloading}
+	at com.ewyboy.itank.common.content.tank.TankTile.tick(TankTile.java:69) ~[?:?] {re:classloading}
 -- Block entity being ticked --
 Details:
-	Name: itank:tank // com.ewyboy.itank.common.content.tile.TankTile
+	Name: itank:tank // com.ewyboy.itank.common.content.tank.TankTile
 	Block: Block{itank:tank}[state=top]
 	Block location: World: (42,2,33), Chunk: (at 10,0,1 in 2,2; contains blocks 32,0,32 to 47,255,47), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
 	Block: Block{itank:tank}[state=top]

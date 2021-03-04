@@ -1,11 +1,11 @@
 {
   "result": {
-    "item": "itank:itemtank"
+    "item": "itank:tank"
   },
   "pattern": [
-    "XOX",
+    "XXX",
     "OBO",
-    "XOX"
+    "XXX"
   ],
   "type": "minecraft:crafting_shaped",
   "key": {

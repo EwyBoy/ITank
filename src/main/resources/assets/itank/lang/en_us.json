@@ -1,6 +1,4 @@
-################################
-###         ITank            ###
-################################
-
-itemGroup.ITank=ITank
-tile.itank.blocktank.name=Liquid Tank
+{
+  "itemGroup.itank": "ITank",
+  "item.itank.tank": "Liquid Tank"
+}

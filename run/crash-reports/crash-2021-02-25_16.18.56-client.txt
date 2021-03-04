@@ -54,7 +54,7 @@ Stacktrace:
 	at net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher.lambda$renderTileEntity$0(TileEntityRendererDispatcher.java:85) ~[?:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
 -- Block Entity Details --
 Details:
-	Name: itank:tank // com.ewyboy.itank.common.content.tile.TankTile
+	Name: itank:tank // com.ewyboy.itank.common.content.tank.TankTile
 	Block: Block{itank:tank}[state=bot]
 	Block location: World: (42,1,32), Chunk: (at 10,0,0 in 2,2; contains blocks 32,0,32 to 47,255,47), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
 	Block: Block{itank:tank}[state=bot]
