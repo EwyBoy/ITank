@@ -1,6 +1,6 @@
-Args: "--in-jar", "C:\Users\Eivind\Documents\Development\Modding\ITank\build\libs\ITank-1.16.5-1.3.0.jar", "--out-jar", "C:\Users\Eivind\Documents\Development\Modding\ITank\build\reobfJar\output.jar", "--srg-in", "C:\Users\Eivind\Documents\Development\Modding\ITank\build\createMcpToSrg\output.tsrg", "--live"
+Args: "--in-jar", "C:\Users\Eivind\Documents\Development\Modding\ITank\build\libs\ITank-1.16.5-1.3.1.jar", "--out-jar", "C:\Users\Eivind\Documents\Development\Modding\ITank\build\reobfJar\output.jar", "--srg-in", "C:\Users\Eivind\Documents\Development\Modding\ITank\build\createMcpToSrg\output.tsrg", "--live"
 Classpath: C:\Users\Eivind\.gradle\caches\forge_gradle\maven_downloader\net\md-5\SpecialSource\1.8.3\SpecialSource-1.8.3-shaded.jar
-Classpath: C:\Users\Eivind\Documents\Development\Modding\Bibliotheca\build\libs\Bibliotheca-1.16.5-1.5.0.jar
+Classpath: C:\Users\Eivind\Documents\Development\Modding\Bibliotheca\build\libs\Bibliotheca-1.16.5-1.5.1.jar
 Classpath: C:\Users\Eivind\Documents\Development\Modding\Quick-Harvest\build\libs\Quick Harvest-1.16.5-1.1.3.jar
 Classpath: C:\Users\Eivind\Documents\Development\Modding\World-Stripper\build\libs\World Stripper-1.16.5-2.0.0.jar
 Classpath: C:\Users\Eivind\.gradle\caches\forge_gradle\deobf_dependencies\mcp\mobius\waila\Hwyla\1.10.11-B78_1.16.2_mapped_snapshot_20201028-1.16.3\Hwyla-1.10.11-B78_1.16.2_mapped_snapshot_20201028-1.16.3-api.jar

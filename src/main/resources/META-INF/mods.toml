@@ -14,7 +14,7 @@ description="Lightweight - Fancy looking - Liquid & fluid storage tank"
 [[dependencies.itank]]
     modId="bibliotheca"
     mandatory=true
-    versionRange="[1.5.0,)"
+    versionRange="[1.5.1,)"
     ordering="AFTER"
     side="BOTH"
 
