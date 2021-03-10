@@ -1,0 +1,55 @@
+[10Mar2021 12:55:01.537] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--gameDir, ., --launchTarget, fmluserdevserver, --fml.mcpVersion, 20210115.111550, --fml.mcVersion, 1.16.5, --fml.forgeGroup, net.minecraftforge, --fml.forgeVersion, 36.0.45]
+[10Mar2021 12:55:01.547] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 8.0.9+86+master.3cf110c starting: java version 1.8.0_181 by Oracle Corporation
+[10Mar2021 12:55:01.590] [main/WARN] [cpw.mods.modlauncher.SecureJarHandler/]: LEGACY JDK DETECTED, SECURED JAR HANDLING DISABLED
+[10Mar2021 12:55:02.398] [main/INFO] [net.minecraftforge.fml.loading.FixSSL/CORE]: Added Lets Encrypt root certificates as additional trust
+[10Mar2021 12:55:02.593] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.2 Source=file:/C:/Users/Eivind/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.2/1cf212283d26f706fd3074318870bebd14d2a9ed/mixin-0.8.2.jar Service=ModLauncher Env=SERVER
+[10Mar2021 12:55:04.942] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'fmluserdevserver' with arguments [--gameDir, .]
+[10Mar2021 12:55:21.763] [modloading-worker-3/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 36.0.45, for MC 1.16.5 with MCP 20210115.111550
+[10Mar2021 12:55:21.777] [modloading-worker-3/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v36.0.45 Initialized
+[10Mar2021 12:55:22.159] [modloading-worker-7/INFO] [itank/]: Registering content for itank
+[10Mar2021 12:55:22.687] [modloading-worker-7/INFO] [itank/]: [BLOCK]: tank has been registered by Bibliotheca for ITank
+[10Mar2021 12:55:22.797] [modloading-worker-7/INFO] [itank/]: [ITEM]: tank has been registered by Bibliotheca for ITank
+[10Mar2021 12:55:22.885] [modloading-worker-7/INFO] [itank/]: [TILE-ENTITY]: tank has been registered by Bibliotheca for ITank
+[10Mar2021 12:55:24.328] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/maven/net/minecraftforge/forge/promotions_slim.json
+[10Mar2021 12:55:25.008] [modloading-worker-6/INFO] [waila/]: Waila information registered for itank:tank
+[10Mar2021 12:55:25.009] [modloading-worker-6/INFO] [Waila/]: Registered plugin at com.ewyboy.bibliotheca.compatibilities.hwyla.WailaCompatibility
+[10Mar2021 12:55:25.247] [modloading-worker-6/INFO] [Waila/]: Registered plugin at mcp.mobius.waila.addons.minecraft.PluginMinecraft
+[10Mar2021 12:55:25.955] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Found status: BETA_OUTDATED Current: 36.0.45 Target: 36.0.48
+[10Mar2021 12:55:31.659] [main/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[10Mar2021 12:55:36.206] [main/WARN] [net.minecraft.command.Commands/]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[10Mar2021 12:55:36.207] [main/WARN] [net.minecraft.command.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[10Mar2021 12:55:36.209] [main/WARN] [net.minecraft.command.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
+[10Mar2021 12:55:36.213] [main/WARN] [net.minecraft.command.Commands/]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[10Mar2021 12:55:36.224] [main/WARN] [net.minecraft.command.Commands/]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[10Mar2021 12:55:36.251] [main/INFO] [net.minecraft.resources.SimpleReloadableResourceManager/]: Reloading ResourceManager: Default, forge-1.16.5-36.0.45_mapped_snapshot_20201028-1.16.3.jar, main, main, main, main, Hwyla-1.10.11-B78_1.16.2_mapped_snapshot_20201028-1.16.3.jar
+[10Mar2021 12:55:47.946] [Worker-Main-13/INFO] [net.minecraft.item.crafting.RecipeManager/]: Loaded 7 recipes
+[10Mar2021 12:55:52.101] [Worker-Main-13/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 927 advancements
+[10Mar2021 12:55:54.143] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Starting minecraft server version 1.16.5
+[10Mar2021 12:55:54.144] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Loading properties
+[10Mar2021 12:55:54.144] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Default game type: CREATIVE
+[10Mar2021 12:55:54.144] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
+[10Mar2021 12:55:54.255] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Starting Minecraft server on *:25565
+[10Mar2021 12:55:54.275] [Server thread/INFO] [net.minecraft.network.NetworkSystem/]: Using default channel type
+[10Mar2021 12:55:55.484] [Server thread/WARN] [net.minecraft.server.dedicated.DedicatedServer/]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[10Mar2021 12:55:55.485] [Server thread/WARN] [net.minecraft.server.dedicated.DedicatedServer/]: The server will make no attempt to authenticate usernames. Beware.
+[10Mar2021 12:55:55.485] [Server thread/WARN] [net.minecraft.server.dedicated.DedicatedServer/]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[10Mar2021 12:55:55.486] [Server thread/WARN] [net.minecraft.server.dedicated.DedicatedServer/]: To change this, set "online-mode" to "true" in the server.properties file.
+[10Mar2021 12:55:55.589] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Preparing level "world"
+[10Mar2021 12:55:55.893] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld
+[10Mar2021 12:55:57.011] [Server thread/INFO] [net.minecraft.world.chunk.listener.LoggingChunkStatusListener/]: Preparing spawn area: 0%
+[10Mar2021 12:55:57.012] [Server thread/INFO] [net.minecraft.world.chunk.listener.LoggingChunkStatusListener/]: Preparing spawn area: 0%
+[10Mar2021 12:55:57.012] [Server thread/INFO] [net.minecraft.world.chunk.listener.LoggingChunkStatusListener/]: Preparing spawn area: 0%
+[10Mar2021 12:55:57.494] [Server thread/INFO] [net.minecraft.world.chunk.listener.LoggingChunkStatusListener/]: Preparing spawn area: 47%
+[10Mar2021 12:55:59.220] [Worker-Main-9/INFO] [net.minecraft.world.chunk.listener.LoggingChunkStatusListener/]: Preparing spawn area: 83%
+[10Mar2021 12:55:59.226] [Worker-Main-11/INFO] [net.minecraft.world.chunk.listener.LoggingChunkStatusListener/]: Preparing spawn area: 83%
+[10Mar2021 12:55:59.227] [Worker-Main-11/INFO] [net.minecraft.world.chunk.listener.LoggingChunkStatusListener/]: Preparing spawn area: 83%
+[10Mar2021 12:55:59.452] [Worker-Main-12/INFO] [net.minecraft.world.chunk.listener.LoggingChunkStatusListener/]: Preparing spawn area: 83%
+[10Mar2021 12:55:59.901] [Worker-Main-8/INFO] [net.minecraft.world.chunk.listener.LoggingChunkStatusListener/]: Preparing spawn area: 83%
+[10Mar2021 12:56:00.976] [Worker-Main-14/INFO] [net.minecraft.world.chunk.listener.LoggingChunkStatusListener/]: Preparing spawn area: 83%
+[10Mar2021 12:56:00.988] [Worker-Main-12/INFO] [net.minecraft.world.chunk.listener.LoggingChunkStatusListener/]: Preparing spawn area: 83%
+[10Mar2021 12:56:01.399] [Worker-Main-9/INFO] [net.minecraft.world.chunk.listener.LoggingChunkStatusListener/]: Preparing spawn area: 83%
+[10Mar2021 12:56:01.896] [Server thread/INFO] [net.minecraft.world.chunk.listener.LoggingChunkStatusListener/]: Preparing spawn area: 83%
+[10Mar2021 12:56:02.403] [Worker-Main-9/INFO] [net.minecraft.world.chunk.listener.LoggingChunkStatusListener/]: Preparing spawn area: 88%
+[10Mar2021 12:56:02.900] [Worker-Main-8/INFO] [net.minecraft.world.chunk.listener.LoggingChunkStatusListener/]: Preparing spawn area: 93%
+[10Mar2021 12:56:03.406] [Server thread/INFO] [net.minecraft.world.chunk.listener.LoggingChunkStatusListener/]: Time elapsed: 7511 ms
+[10Mar2021 12:56:03.407] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Done (7.869s)! For help, type "help"

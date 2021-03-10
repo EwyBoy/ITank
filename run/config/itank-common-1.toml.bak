@@ -1,0 +1,7 @@
+
+#ITank - Config File
+[SETTINGS]
+	#Sets tank capacity : 1 Bucket = 1000mB - [Max: 2147483647mB]
+	#Range: > 1000
+	tankCapacity = 8000
+

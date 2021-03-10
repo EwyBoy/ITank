@@ -42,7 +42,9 @@ public class TankTile extends TileEntity implements ITickableTileEntity {
             public int fill(FluidStack resource, FluidAction action) {
                 TileEntity tankBelow = null;
                 if(world != null) {
-                    tankBelow = world.getTileEntity(pos.down());
+                    if (world.getTileEntity(pos.down()) instanceof TankTile) {
+                        tankBelow = world.getTileEntity(pos.down());
+                    }
                 }
                 // Fills bottom tank
                 if(tankBelow instanceof TankTile) {
@@ -66,7 +68,9 @@ public class TankTile extends TileEntity implements ITickableTileEntity {
             TankTile tank_below = null;
 
             if(world != null) {
-                tank_below = (TankTile) world.getTileEntity(pos.down());
+                if (world.getTileEntity(pos.down()) instanceof TankTile) {
+                    tank_below = (TankTile) world.getTileEntity(pos.down());
+                }
             }
 
             if(tank_below != null) {
