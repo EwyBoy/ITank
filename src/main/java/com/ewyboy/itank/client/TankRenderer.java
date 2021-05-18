@@ -12,11 +12,14 @@ import net.minecraft.client.renderer.tileentity.TileEntityRenderer;
 import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.inventory.container.PlayerContainer;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Matrix3f;
 import net.minecraft.util.math.vector.Matrix4f;
 import net.minecraft.util.math.vector.Vector3f;
+import net.minecraft.util.math.vector.Vector3i;
 import net.minecraft.world.IBlockDisplayReader;
+import net.minecraftforge.fluids.FluidAttributes;
 import net.minecraftforge.fluids.FluidStack;
 
 import java.util.Objects;
@@ -33,36 +36,43 @@ public class TankRenderer extends TileEntityRenderer<TankTile> {
         if (!fluidStack.isEmpty()) {
             int amount = fluidStack.getAmount();
             int total = tank.getTank().getTankCapacity(0);
-            this.renderFluidInTank(tank.getWorld(), tank.getPos(), fluidStack, matrix, buffer, (amount / (float) total));
+            this.renderFluidInTank(tank.getLevel(), tank.getBlockPos(), fluidStack, matrix, buffer, (amount / (float) total));
         }
     }
 
-    private void renderFluidInTank(IBlockDisplayReader world, BlockPos pos, FluidStack fluid, MatrixStack matrix, IRenderTypeBuffer buffer, float percent) {
-        matrix.push();
+    private void renderFluidInTank(IBlockDisplayReader world, BlockPos pos, FluidStack fluidStack, MatrixStack matrix, IRenderTypeBuffer buffer, float percent) {
+        matrix.pushPose();
         matrix.translate(0.5d, 0.5d, 0.5d);
-        Matrix4f matrix4f = matrix.getLast().getMatrix();
-        Matrix3f matrix3f = matrix.getLast().getNormal();
-        int color = fluid.getFluid().getAttributes().getColor(world, pos);
-        TextureAtlasSprite sprite = this.getFluidStillSprite(fluid.getFluid());
-        IVertexBuilder builder = buffer.getBuffer(RenderType.getText(sprite.getAtlasTexture().getTextureLocation()));
+        Matrix4f matrix4f = matrix.last().pose();
+        Matrix3f matrix3f = matrix.last().normal();
+
+        Fluid fluid = fluidStack.getFluid();
+        FluidAttributes fluidAttributes = fluid.getAttributes();
+        TextureAtlasSprite fluidTexture = Minecraft.getInstance()
+                .getTextureAtlas(PlayerContainer.BLOCK_ATLAS)
+                .apply(fluidAttributes.getStillTexture(fluidStack));
+
+        int color = fluidAttributes.getColor(fluidStack);
+
+        IVertexBuilder builder = buffer.getBuffer(RenderType.translucent());
+
         for (int i = 0; i < 4; i++) {
-            this.renderNorthFluidFace(sprite, matrix4f, matrix3f, builder, color, percent);
-            matrix.rotate(Vector3f.YP.rotationDegrees(90));
+            this.renderNorthFluidFace(fluidTexture, matrix4f, matrix3f, builder, color, percent);
+            matrix.mulPose(Vector3f.YP.rotationDegrees(90));
         }
 
         TankTile above;
 
-        if (world.getTileEntity(pos.up()) instanceof TankTile) {
-            above = (TankTile) world.getTileEntity(pos.up());
-            if(Objects.requireNonNull(above).getFluid() == null || above.getFluid().getAmount() <= 0 || !fluid.isFluidEqual(above.getFluid())) {
-                this.renderTopFluidFace(sprite, matrix4f, matrix3f, builder, color, percent);
+        if (world.getBlockEntity(pos.above()) instanceof TankTile) {
+            above = (TankTile) world.getBlockEntity(pos.above());
+            if(Objects.requireNonNull(above).getFluid() == null || above.getFluid().getAmount() <= 0 || !fluidStack.isFluidEqual(above.getFluid())) {
+                this.renderTopFluidFace(fluidTexture, matrix4f, matrix3f, builder, color, percent);
             }
         } else {
-            if (percent != 1.0f) this.renderTopFluidFace(sprite, matrix4f, matrix3f, builder, color, percent);
+            if (percent != 1.0f) this.renderTopFluidFace(fluidTexture, matrix4f, matrix3f, builder, color, percent);
         }
 
-
-        matrix.pop();
+        matrix.popPose();
     }
 
     private void renderTopFluidFace(TextureAtlasSprite sprite, Matrix4f matrix4f, Matrix3f normalMatrix, IVertexBuilder builder, int color, float percent) {
@@ -74,29 +84,37 @@ public class TankRenderer extends TileEntityRenderer<TankTile> {
         float width = 12 / 16f;
         float height = 16 / 16f;
 
-        float minU = sprite.getInterpolatedU(3);
-        float maxU = sprite.getInterpolatedU(13);
-        float minV = sprite.getInterpolatedV(3);
-        float maxV = sprite.getInterpolatedV(13);
+        float minU = sprite.getU(3);
+        float maxU = sprite.getU(13);
+        float minV = sprite.getV(3);
+        float maxV = sprite.getV(13);
 
-        builder.pos(matrix4f, -width / 2, -height / 2 + percent * height, -width / 2).color(r, g, b, a)
-                .tex(minU, minV)
-                .overlay(OverlayTexture.NO_OVERLAY).lightmap(15728880).normal(normalMatrix, 0, 1, 0)
+        builder.vertex(matrix4f, -width / 2, -height / 2 + percent * height, -width / 2).color(r, g, b, a)
+                .uv(minU, minV)
+                .overlayCoords(OverlayTexture.NO_OVERLAY)
+                .uv2(15728880)
+                .normal(normalMatrix, 0, 1, 0)
                 .endVertex();
 
-        builder.pos(matrix4f, -width / 2, -height / 2 + percent * height, width / 2).color(r, g, b, a)
-                .tex(minU, maxV)
-                .overlay(OverlayTexture.NO_OVERLAY).lightmap(15728880).normal(normalMatrix, 0, 1, 0)
+        builder.vertex(matrix4f, -width / 2, -height / 2 + percent * height, width / 2).color(r, g, b, a)
+                .uv(minU, maxV)
+                .overlayCoords(OverlayTexture.NO_OVERLAY)
+                .uv2(15728880)
+                .normal(normalMatrix, 0, 1, 0)
                 .endVertex();
 
-        builder.pos(matrix4f, width / 2, -height / 2 + percent * height, width / 2).color(r, g, b, a)
-                .tex(maxU, maxV)
-                .overlay(OverlayTexture.NO_OVERLAY).lightmap(15728880).normal(normalMatrix, 0, 1, 0)
+        builder.vertex(matrix4f, width / 2, -height / 2 + percent * height, width / 2).color(r, g, b, a)
+                .uv(maxU, maxV)
+                .overlayCoords(OverlayTexture.NO_OVERLAY)
+                .uv2(15728880)
+                .normal(normalMatrix, 0, 1, 0)
                 .endVertex();
 
-        builder.pos(matrix4f, width / 2, -height / 2 + percent * height, -width / 2).color(r, g, b, a)
-                .tex(maxU, minV)
-                .overlay(OverlayTexture.NO_OVERLAY).lightmap(15728880).normal(normalMatrix, 0, 1, 0)
+        builder.vertex(matrix4f, width / 2, -height / 2 + percent * height, -width / 2).color(r, g, b, a)
+                .uv(maxU, minV)
+                .overlayCoords(OverlayTexture.NO_OVERLAY)
+                .uv2(15728880)
+                .normal(normalMatrix, 0, 1, 0)
                 .endVertex();
     }
 
@@ -109,42 +127,60 @@ public class TankRenderer extends TileEntityRenderer<TankTile> {
         float width = 12 / 16f;
         float height = 16 / 16f;
 
-        float minU = sprite.getInterpolatedU(3);
-        float maxU = sprite.getInterpolatedU(13);
-        float minV = sprite.getInterpolatedV(1);
-        float maxV = sprite.getInterpolatedV(15 * percent);
+        float minU = sprite.getU(3);
+        float maxU = sprite.getU(13);
+        float minV = sprite.getV(1);
+        float maxV = sprite.getV(15 * percent);
 
-        builder.pos(matrix4f, -width / 2, -height / 2 + height * percent, (-width / 2) + 0.001f).color(r, g, b, a)
-                .tex(minU, minV)
-                .overlay(OverlayTexture.NO_OVERLAY).lightmap(15728880).normal(normalMatrix, 0, 0, 1)
+        builder.vertex(matrix4f, -width / 2, -height / 2 + height * percent, (-width / 2) + 0.001f).color(r, g, b, a)
+                .uv(minU, minV)
+                .overlayCoords(OverlayTexture.NO_OVERLAY)
+                .uv2(15728880)
+                .normal(normalMatrix, 0, 0, 1)
                 .endVertex();
 
-        builder.pos(matrix4f, width / 2, -height / 2 + height * percent, (-width / 2) + 0.001f).color(r, g, b, a)
-                .tex(maxU, minV)
-                .overlay(OverlayTexture.NO_OVERLAY).lightmap(15728880).normal(normalMatrix, 0, 0, 1)
+        builder.vertex(matrix4f, width / 2, -height / 2 + height * percent, (-width / 2) + 0.001f).color(r, g, b, a)
+                .uv(maxU, minV)
+                .overlayCoords(OverlayTexture.NO_OVERLAY)
+                .uv2(15728880)
+                .normal(normalMatrix, 0, 0, 1)
                 .endVertex();
 
-        builder.pos(matrix4f, width / 2, -height / 2, (-width / 2) + 0.001f).color(r, g, b, a)
-                .tex(maxU, maxV)
-                .overlay(OverlayTexture.NO_OVERLAY).lightmap(15728880).normal(normalMatrix, 0, 0, 1)
+        builder.vertex(matrix4f, width / 2, -height / 2, (-width / 2) + 0.001f).color(r, g, b, a)
+                .uv(maxU, maxV)
+                .overlayCoords(OverlayTexture.NO_OVERLAY)
+                .uv2(15728880)
+                .normal(normalMatrix, 0, 0, 1)
                 .endVertex();
 
-        builder.pos(matrix4f, -width / 2, -height / 2, (-width / 2) + 0.001f).color(r, g, b, a)
-                .tex(minU, maxV)
-                .overlay(OverlayTexture.NO_OVERLAY).lightmap(15728880).normal(normalMatrix, 0, 0, 1)
+        builder.vertex(matrix4f, -width / 2, -height / 2, (-width / 2) + 0.001f).color(r, g, b, a)
+                .uv(minU, maxV)
+                .overlayCoords(OverlayTexture.NO_OVERLAY)
+                .uv2(15728880)
+                .normal(normalMatrix, 0, 0, 1)
                 .endVertex();
     }
 
-    private TextureAtlasSprite getFluidStillSprite(Fluid fluid) {
-        return Minecraft.getInstance()
-                .getAtlasSpriteGetter(PlayerContainer.LOCATION_BLOCKS_TEXTURE)
-                .apply(fluid.getAttributes().getStillTexture());
-    }
 
-    private TextureAtlasSprite getFluidFlowingSprite(Fluid fluid) {
-        return Minecraft.getInstance()
-                .getAtlasSpriteGetter(PlayerContainer.LOCATION_BLOCKS_TEXTURE)
-                .apply(fluid.getAttributes().getFlowingTexture());
+    private static void putVertex(IVertexBuilder builder, MatrixStack ms, float x, float y, float z, int color, float u,
+                                  float v, Direction face, int light) {
+
+        Vector3i n = face.getNormal();
+        MatrixStack.Entry peek = ms.last();
+
+        int ff = 0xff;
+        int a = color >> 24 & ff;
+        int r = color >> 16 & ff;
+        int g = color >> 8 & ff;
+        int b = color & ff;
+
+        builder.vertex(peek.pose(), x, y, z)
+                .color(r, g, b, a)
+                .uv(u, v)
+                .overlayCoords(OverlayTexture.NO_OVERLAY)
+                .uv2(light)
+                .normal(n.getX(), n.getY(), n.getZ())
+                .endVertex();
     }
 
 }

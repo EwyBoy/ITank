@@ -5,8 +5,6 @@ import com.ewyboy.itank.common.register.Register;
 import com.ewyboy.itank.config.Config;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
@@ -24,8 +22,7 @@ public class ITank {
 
     public static final ItemGroup itemGroup = new ItemGroup(ITank.MODID) {
         @Override
-        @OnlyIn(Dist.CLIENT)
-        public ItemStack createIcon() {
+        public ItemStack makeIcon() {
             return new ItemStack(Register.BLOCK.TANK);
         }
     };

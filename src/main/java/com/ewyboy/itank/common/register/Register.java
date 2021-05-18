@@ -15,7 +15,6 @@ import java.util.Set;
 
 public class Register {
 
-
     public static final class BLOCK {
         
         public static final TankBlock TANK = new TankBlock();
@@ -28,7 +27,7 @@ public class Register {
 
     public static final class ITEM {
 
-        public static final TankItem TANK = new TankItem(BLOCK.TANK, new Item.Properties().group(ITank.itemGroup));
+        public static final TankItem TANK = new TankItem(BLOCK.TANK, new Item.Properties().tab(ITank.itemGroup));
         //public static final TankItem TANK_BLUE = new TankItem(BLOCK.TANK_BLUE, new Item.Properties().group(ITank.itemGroup));
         //public static final TankItem TANK_RED = new TankItem(BLOCK.TANK_RED, new Item.Properties().group(ITank.itemGroup));
         //public static final TankItem TANK_GREEN = new TankItem(BLOCK.TANK_GREEN, new Item.Properties().group(ITank.itemGroup));

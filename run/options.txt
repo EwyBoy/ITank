@@ -62,9 +62,9 @@ tutorialStep:none
 mouseWheelSensitivity:1.0
 rawMouseInput:true
 glDebugVerbosity:1
-skipMultiplayerWarning:true
+skipMultiplayerWarning:false
 hideMatchedNames:true
-joinedFirstServer:true
+joinedFirstServer:false
 syncChunkWrites:true
 key_key.attack:key.mouse.left
 key_key.use:key.mouse.right
@@ -100,22 +100,16 @@ key_key.hotbar.6:key.keyboard.6
 key_key.hotbar.7:key.keyboard.7
 key_key.hotbar.8:key.keyboard.8
 key_key.hotbar.9:key.keyboard.9
-key_Strip World:key.keyboard.delete
-key_Dress World:key.keyboard.insert
-key_Open Config:key.keyboard.home
-key_Add Block:key.keyboard.page.up
-key_Remove Block:key.keyboard.page.down
-key_Cycle Profile:key.keyboard.end
 key_key.waila.config:key.keyboard.keypad.0
 key_key.waila.show_overlay:key.keyboard.keypad.1
 key_key.waila.toggle_liquid:key.keyboard.keypad.2
-soundCategory_master:0.205298
+soundCategory_master:0.147351
 soundCategory_music:0.0
 soundCategory_record:1.0
 soundCategory_weather:1.0
 soundCategory_block:1.0
-soundCategory_hostile:0.0
-soundCategory_neutral:0.0
+soundCategory_hostile:1.0
+soundCategory_neutral:1.0
 soundCategory_player:1.0
 soundCategory_ambient:1.0
 soundCategory_voice:1.0

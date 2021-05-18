@@ -41,9 +41,9 @@ public class TankTile extends TileEntity implements ITickableTileEntity {
             @Override
             public int fill(FluidStack resource, FluidAction action) {
                 TileEntity tankBelow = null;
-                if(world != null) {
-                    if (world.getTileEntity(pos.down()) instanceof TankTile) {
-                        tankBelow = world.getTileEntity(pos.down());
+                if(level != null) {
+                    if (level.getBlockEntity(worldPosition.below()) instanceof TankTile) {
+                        tankBelow = level.getBlockEntity(worldPosition.below());
                     }
                 }
                 // Fills bottom tank
@@ -67,9 +67,9 @@ public class TankTile extends TileEntity implements ITickableTileEntity {
         if(tank.getFluidAmount() > 0) {
             TankTile tank_below = null;
 
-            if(world != null) {
-                if (world.getTileEntity(pos.down()) instanceof TankTile) {
-                    tank_below = (TankTile) world.getTileEntity(pos.down());
+            if(level != null) {
+                if (level.getBlockEntity(worldPosition.below()) instanceof TankTile) {
+                    tank_below = (TankTile) level.getBlockEntity(worldPosition.below());
                 }
             }
 
@@ -91,50 +91,50 @@ public class TankTile extends TileEntity implements ITickableTileEntity {
     // Data Handling Section
 
     public void clientSync() {
-        if(Objects.requireNonNull(this.getWorld()).isRemote) {
+        if(Objects.requireNonNull(this.getLevel()).isClientSide) {
             return;
         }
-        ServerWorld world = (ServerWorld) this.getWorld();
-        Stream<ServerPlayerEntity> entities = world.getChunkProvider().chunkManager.getTrackingPlayers(new ChunkPos(this.pos), false);
+        ServerWorld world = (ServerWorld) this.getLevel();
+        Stream<ServerPlayerEntity> entities = world.getChunkSource().chunkMap.getPlayers(new ChunkPos(this.worldPosition), false);
         SUpdateTileEntityPacket updatePacket = this.getUpdatePacket();
-        entities.forEach(e -> {
+        entities.forEach(entity -> {
             if(updatePacket != null) {
-                e.connection.sendPacket(updatePacket);
+                entity.connection.send(updatePacket);
             }
         });
     }
 
     @Override
     public CompoundNBT getUpdateTag() {
-        return this.write(new CompoundNBT());
+        return this.save(new CompoundNBT());
     }
 
     @Nullable
     @Override
     public SUpdateTileEntityPacket getUpdatePacket() {
-        return new SUpdateTileEntityPacket(this.pos, 0, this.getUpdateTag());
+        return new SUpdateTileEntityPacket(this.worldPosition, 0, this.getUpdateTag());
     }
 
     @Override
     public void handleUpdateTag(BlockState state, CompoundNBT tag) {
-        this.read(state, tag);
+        this.load(state, tag);
     }
 
     @Override
     public void onDataPacket(NetworkManager net, SUpdateTileEntityPacket pkt) {
-        this.read(world.getBlockState(getPos()), pkt.getNbtCompound());
+        this.load(level.getBlockState(getBlockPos()), pkt.getTag());
     }
 
     @Override
-    public void read(BlockState state, CompoundNBT nbt) {
-        super.read(state, nbt);
+    public void load(BlockState state, CompoundNBT nbt) {
+        super.load(state, nbt);
         tank.readFromNBT(nbt);
         tank.setCapacity(nbt.getInt(compoundKey));
     }
 
     @Override
-    public CompoundNBT write(CompoundNBT nbt) {
-        nbt = super.write(nbt);
+    public CompoundNBT save(CompoundNBT nbt) {
+        nbt = super.save(nbt);
         tank.writeToNBT(nbt);
         nbt.putInt(compoundKey, tank.getCapacity());
 

@@ -34,4 +34,9 @@ public enum TankColor implements IStringSerializable {
     public String toString() {
         return this.color;
     }
+
+    @Override
+    public String getSerializedName() {
+        return this.color;
+    }
 }
