@@ -12,12 +12,10 @@ import net.minecraft.client.renderer.tileentity.TileEntityRenderer;
 import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.inventory.container.PlayerContainer;
-import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Matrix3f;
 import net.minecraft.util.math.vector.Matrix4f;
 import net.minecraft.util.math.vector.Vector3f;
-import net.minecraft.util.math.vector.Vector3i;
 import net.minecraft.world.IBlockDisplayReader;
 import net.minecraftforge.fluids.FluidAttributes;
 import net.minecraftforge.fluids.FluidStack;
@@ -48,9 +46,7 @@ public class TankRenderer extends TileEntityRenderer<TankTile> {
 
         Fluid fluid = fluidStack.getFluid();
         FluidAttributes fluidAttributes = fluid.getAttributes();
-        TextureAtlasSprite fluidTexture = Minecraft.getInstance()
-                .getTextureAtlas(PlayerContainer.BLOCK_ATLAS)
-                .apply(fluidAttributes.getStillTexture(fluidStack));
+        TextureAtlasSprite fluidTexture = getFluidStillSprite(fluidAttributes, fluidStack);
 
         int color = fluidAttributes.getColor(fluidStack);
 
@@ -161,26 +157,16 @@ public class TankRenderer extends TileEntityRenderer<TankTile> {
                 .endVertex();
     }
 
+    private TextureAtlasSprite getFluidStillSprite(FluidAttributes attributes, FluidStack fluidStack) {
+        return Minecraft.getInstance()
+                .getTextureAtlas(PlayerContainer.BLOCK_ATLAS)
+                .apply(attributes.getStillTexture(fluidStack));
+    }
 
-    private static void putVertex(IVertexBuilder builder, MatrixStack ms, float x, float y, float z, int color, float u,
-                                  float v, Direction face, int light) {
-
-        Vector3i n = face.getNormal();
-        MatrixStack.Entry peek = ms.last();
-
-        int ff = 0xff;
-        int a = color >> 24 & ff;
-        int r = color >> 16 & ff;
-        int g = color >> 8 & ff;
-        int b = color & ff;
-
-        builder.vertex(peek.pose(), x, y, z)
-                .color(r, g, b, a)
-                .uv(u, v)
-                .overlayCoords(OverlayTexture.NO_OVERLAY)
-                .uv2(light)
-                .normal(n.getX(), n.getY(), n.getZ())
-                .endVertex();
+    private TextureAtlasSprite getFluidFlowingSprite(FluidAttributes attributes, FluidStack fluidStack) {
+        return Minecraft.getInstance()
+                .getTextureAtlas(PlayerContainer.BLOCK_ATLAS)
+                .apply(attributes.getFlowingTexture(fluidStack));
     }
 
 }
