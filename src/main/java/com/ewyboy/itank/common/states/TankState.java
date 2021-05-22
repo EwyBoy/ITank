@@ -22,9 +22,4 @@ public enum TankState implements IStringSerializable {
     public String toString() {
         return this.state;
     }
-
-    @Override
-    public String getSerializedName() {
-        return this.state;
-    }
 }

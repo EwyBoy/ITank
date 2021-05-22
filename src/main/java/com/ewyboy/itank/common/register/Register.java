@@ -15,6 +15,7 @@ import java.util.Set;
 
 public class Register {
 
+
     public static final class BLOCK {
         
         public static final TankBlock TANK = new TankBlock();
@@ -27,7 +28,7 @@ public class Register {
 
     public static final class ITEM {
 
-        public static final TankItem TANK = new TankItem(BLOCK.TANK, new Item.Properties().tab(ITank.itemGroup));
+        public static final TankItem TANK = new TankItem(BLOCK.TANK, new Item.Properties().group(ITank.itemGroup));
         //public static final TankItem TANK_BLUE = new TankItem(BLOCK.TANK_BLUE, new Item.Properties().group(ITank.itemGroup));
         //public static final TankItem TANK_RED = new TankItem(BLOCK.TANK_RED, new Item.Properties().group(ITank.itemGroup));
         //public static final TankItem TANK_GREEN = new TankItem(BLOCK.TANK_GREEN, new Item.Properties().group(ITank.itemGroup));
@@ -35,19 +36,19 @@ public class Register {
 
     }
 
-    //private static final Set<Block> TANKS = new HashSet<>();
+    private static final Set<Block> TANKS = new HashSet<>();
 
-   /* static {
+    static {
         TANKS.add(BLOCK.TANK);
         //TANKS.add(BLOCK.TANK_BLUE);
         //TANKS.add(BLOCK.TANK_RED);
         //TANKS.add(BLOCK.TANK_GREEN);
         //TANKS.add(BLOCK.TANK_YELLOW);
-    }*/
+    }
 
     public static final class TILE {
 
-        public static final TileEntityType<TankTile> TANK = new TileEntityType<>(TankTile :: new, Sets.newHashSet(BLOCK.TANK), null);
+        public static final TileEntityType<TankTile> TANK = new TileEntityType<>(TankTile :: new, Sets.newHashSet(TANKS), null);
 
     }
 

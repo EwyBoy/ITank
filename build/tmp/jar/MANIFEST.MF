@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
-Specification-Title: ITank
+Implementation-Title: Aytank
+Implementation-Version: 1.4.1
 Specification-Vendor: Ewy
+Specification-Title: ITank
+Implementation-Timestamp: 2021-05-22T20:31:08+0200
 Specification-Version: 1
-Implementation-Title: ITank
-Implementation-Version: 1.4.0
 Implementation-Vendor: Ewy
-Implementation-Timestamp: 2021-05-18T18:21:33+0200
 
