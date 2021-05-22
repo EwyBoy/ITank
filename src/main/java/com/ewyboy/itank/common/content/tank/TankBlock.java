@@ -54,7 +54,7 @@ public class TankBlock extends BaseTileBlock<TankTile> implements IHasRenderType
         //this.colorIndex = ColorHandler.stateColorToIntegerColorMap.get(color);
     }
 
-    @Override
+    /*@Override
     public void neighborChanged(BlockState state, World world, BlockPos pos, Block blockIn, BlockPos fromPos, boolean isMoving) {
         if (world.getBlockState(pos.above()).getBlock() == this && world.getBlockState(pos.below()).getBlock() == this) {
             setState(world, pos, TankState.MID);
@@ -65,9 +65,13 @@ public class TankBlock extends BaseTileBlock<TankTile> implements IHasRenderType
         } else {
             setState(world, pos, TankState.ONE);
         }
-    }
+    }*/
 
+<<<<<<< Updated upstream
     @Override
+=======
+    /*@Override
+>>>>>>> Stashed changes
     public ActionResultType use(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockRayTraceResult hit) {
         ItemStack held = player.getItemInHand(hand);
 
@@ -93,7 +97,7 @@ public class TankBlock extends BaseTileBlock<TankTile> implements IHasRenderType
         }
 
         return ActionResultType.SUCCESS;
-    }
+    }*/
 
     @Override
     public RenderType getRenderType() {
@@ -102,7 +106,7 @@ public class TankBlock extends BaseTileBlock<TankTile> implements IHasRenderType
 
     @Override
     public void initSpecialRenderer() {
-        ClientRegistry.bindTileEntityRenderer(Register.TILE.TANK, TankRenderer :: new);
+        //ClientRegistry.bindTileEntityRenderer(Register.TILE.TANK, TankRenderer :: new);
     }
 
     private void setState(World world, BlockPos pos, TankState state) {

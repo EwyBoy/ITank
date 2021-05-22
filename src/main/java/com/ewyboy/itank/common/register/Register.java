@@ -35,19 +35,19 @@ public class Register {
 
     }
 
-    private static final Set<Block> TANKS = new HashSet<>();
+    //private static final Set<Block> TANKS = new HashSet<>();
 
-    static {
+   /* static {
         TANKS.add(BLOCK.TANK);
         //TANKS.add(BLOCK.TANK_BLUE);
         //TANKS.add(BLOCK.TANK_RED);
         //TANKS.add(BLOCK.TANK_GREEN);
         //TANKS.add(BLOCK.TANK_YELLOW);
-    }
+    }*/
 
     public static final class TILE {
 
-        public static final TileEntityType<TankTile> TANK = new TileEntityType<>(TankTile :: new, Sets.newHashSet(TANKS), null);
+        public static final TileEntityType<TankTile> TANK = new TileEntityType<>(TankTile :: new, Sets.newHashSet(BLOCK.TANK), null);
 
     }
 
