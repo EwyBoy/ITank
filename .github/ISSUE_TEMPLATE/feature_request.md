@@ -1,13 +1,13 @@
 ---
 name: Feature request
-about: Suggest an idea for this project
-title: ''
-labels: ''
-assignees: ''
+about: Suggest an idea or feature for this project
+title: "[Feature] Relevant title here "
+labels: feature-request
+assignees: EwyBoy
 
 ---
 
-**Is your feature request related to a problem? Please describe.**
+**Is your feature request related to a problem?**
 A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
 
 **Describe the solution you'd like**
