@@ -42,16 +42,11 @@ import java.util.Objects;
 
 public class TankBlock extends BaseTileBlock<TankTile> implements IHasRenderType, IHasSpecialRenderer, ContentLoader.IHasNoBlockItem, IWailaInfo {
 
-    public int colorIndex;
-
     public static final EnumProperty<TankState> STATE = TankStateProperties.TANK_STATE;
-    public static final EnumProperty<TankColor> COLOR = TankStateProperties.TANK_COLOR;
 
     public TankBlock() {
         super(TankBlock.Properties.create(Material.GLASS).notSolid().sound(SoundType.GLASS).hardnessAndResistance(2.0f, 6.0f));
         setDefaultState(this.getDefaultState().with(STATE, TankState.ONE));
-        //setDefaultState(this.getDefaultState().with(STATE, TankState.ONE).with(COLOR, color));
-        //this.colorIndex = ColorHandler.stateColorToIntegerColorMap.get(color);
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.ewyboy.itank.util;
 
 import com.ewyboy.itank.common.states.TankColor;
+import com.ewyboy.itank.config.ConfigOptions;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 
@@ -9,28 +10,32 @@ import java.util.HashMap;
 
 public class ColorHandler {
 
-    public static final HashMap<TankColor, Integer> stateColorToIntegerColorMap = new HashMap<>();
+    private static final HashMap<TankColor, Integer> stateColorToIntegerColorMap = new HashMap<>();
 
     static {
-        stateColorToIntegerColorMap.put(TankColor.WHITE, Color.WHITE.getRGB());
-        stateColorToIntegerColorMap.put(TankColor.RED, 0xe64040);
-        stateColorToIntegerColorMap.put(TankColor.ORANGE, Color.ORANGE.getRGB());
-        stateColorToIntegerColorMap.put(TankColor.PINK, Color.PINK.getRGB());
-        stateColorToIntegerColorMap.put(TankColor.YELLOW, Color.YELLOW.getRGB());
-        stateColorToIntegerColorMap.put(TankColor.LIME, Color.GREEN.brighter().getRGB());
-        stateColorToIntegerColorMap.put(TankColor.GREEN, Color.GREEN.getRGB());
-        stateColorToIntegerColorMap.put(TankColor.LIGHT_BLUE, Color.BLUE.brighter().getRGB());
-        stateColorToIntegerColorMap.put(TankColor.CYAN, Color.CYAN.getRGB());
-        stateColorToIntegerColorMap.put(TankColor.BLUE, Color.BLUE.getRGB());
-        stateColorToIntegerColorMap.put(TankColor.MAGENTA, Color.MAGENTA.getRGB());
-        stateColorToIntegerColorMap.put(TankColor.PURPLE, Color.MAGENTA.darker().getRGB());
-        stateColorToIntegerColorMap.put(TankColor.BROWN, 0xffAAAA);
-        stateColorToIntegerColorMap.put(TankColor.GRAY, Color.GRAY.getRGB());
-        stateColorToIntegerColorMap.put(TankColor.LIGHT_GRAY, Color.LIGHT_GRAY.getRGB());
-        stateColorToIntegerColorMap.put(TankColor.BLACK, Color.BLACK.getRGB());
+        stateColorToIntegerColorMap.put(TankColor.WHITE, ConfigOptions.Colors.tankColorWhite);
+        stateColorToIntegerColorMap.put(TankColor.RED, ConfigOptions.Colors.tankColorRed);
+        stateColorToIntegerColorMap.put(TankColor.ORANGE, ConfigOptions.Colors.tankColorOrange);
+        stateColorToIntegerColorMap.put(TankColor.PINK, ConfigOptions.Colors.tankColorPink);
+        stateColorToIntegerColorMap.put(TankColor.YELLOW, ConfigOptions.Colors.tankColorYellow);
+        stateColorToIntegerColorMap.put(TankColor.LIME, ConfigOptions.Colors.tankColorLime);
+        stateColorToIntegerColorMap.put(TankColor.GREEN, ConfigOptions.Colors.tankColorGreen);
+        stateColorToIntegerColorMap.put(TankColor.LIGHT_BLUE, ConfigOptions.Colors.tankColorLightBlue);
+        stateColorToIntegerColorMap.put(TankColor.CYAN, ConfigOptions.Colors.tankColorCyan);
+        stateColorToIntegerColorMap.put(TankColor.BLUE, ConfigOptions.Colors.tankColorBlue);
+        stateColorToIntegerColorMap.put(TankColor.MAGENTA, ConfigOptions.Colors.tankColorMagenta);
+        stateColorToIntegerColorMap.put(TankColor.PURPLE, ConfigOptions.Colors.tankColorPurple);
+        stateColorToIntegerColorMap.put(TankColor.BROWN, ConfigOptions.Colors.tankColorBrown);
+        stateColorToIntegerColorMap.put(TankColor.GRAY, ConfigOptions.Colors.tankColorGray);
+        stateColorToIntegerColorMap.put(TankColor.LIGHT_GRAY, ConfigOptions.Colors.tankColorLightGray);
+        stateColorToIntegerColorMap.put(TankColor.BLACK, ConfigOptions.Colors.tankColorBlack);
     }
 
-    public static final HashMap<TankColor, Item> stateColorToDyeColorMap = new HashMap<>();
+    public static int getIntegerColorFromState(TankColor colorState) {
+        return stateColorToIntegerColorMap.get(colorState);
+    }
+
+    private static final HashMap<TankColor, Item> stateColorToDyeColorMap = new HashMap<>();
 
     static {
         stateColorToDyeColorMap.put(TankColor.WHITE, Items.WHITE_DYE);

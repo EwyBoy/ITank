@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "state=one": {
+      "model": "itank:block/tank"
+    },
+    "state=bot": {
+      "model": "itank:block/tank_bot"
+    },
+    "state=mid": {
+      "model": "itank:block/tank_mid"
+    },
+    "state=top": {
+      "model": "itank:block/tank_top"
+    }
+  }
+}

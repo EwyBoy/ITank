@@ -115,6 +115,11 @@ curseforge {
         addGameVersion '1.16.2'
         addGameVersion '1.16.1'
         addGameVersion '1.16'
+
+        relations {
+            requiredDependency 'bibliotheca'
+        }
+
         mainArtifact(jar) {
             displayName = "${MODNAME}-${MC_VERSION}-${VERSION}.jar"
         }

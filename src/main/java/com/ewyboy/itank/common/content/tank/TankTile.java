@@ -2,6 +2,7 @@ package com.ewyboy.itank.common.content.tank;
 
 import com.ewyboy.itank.common.register.Register;
 import com.ewyboy.itank.config.Config;
+import com.ewyboy.itank.config.ConfigOptions;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
@@ -27,14 +28,14 @@ import java.util.stream.Stream;
 public class TankTile extends TileEntity implements ITickableTileEntity {
 
     private FluidTank tank;
-    public static int capacity = Config.SETTINGS.tankCapacity.get();
+    public static int capacity = ConfigOptions.Tanks.tankCapacity;
     private final String compoundKey = "FluidCap";
     private final LazyOptional<IFluidHandler> handler = LazyOptional.of(() -> tank);
 
     public TankTile() {
         super(Register.TILE.TANK);
 
-        capacity = Config.SETTINGS.tankCapacity.get();
+        capacity = ConfigOptions.Tanks.tankCapacity;
 
         this.tank = new FluidTank(capacity) {
 

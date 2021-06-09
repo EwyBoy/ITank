@@ -9,14 +9,4 @@ public class TankItem extends BlockNamedItem {
         super(block, properties);
     }
 
-   /* @Override
-    public Item itemToColor() {
-        return this;
-    }
-
-    @Override
-    public int getColor(ItemStack itemStack, int tint) {
-        return 0x000000;
-    }*/
-
 }

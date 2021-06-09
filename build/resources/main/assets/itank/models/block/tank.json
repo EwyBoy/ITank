@@ -2,8 +2,8 @@
     "parent": "block/cube",
 	"textures": {
 		"glass": "itank:block/glass",
-		"frame": "itank:block/frame",
-		"particle": "itank:block/frame"
+		"frame": "itank:block/frame_tint",
+		"particle": "itank:block/frame_tint"
 	},
 	"elements": [
 		{
