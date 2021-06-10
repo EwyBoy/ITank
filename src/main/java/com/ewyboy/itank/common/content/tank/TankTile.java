@@ -42,15 +42,20 @@ public class TankTile extends TileEntity implements ITickableTileEntity {
             @Override
             public int fill(FluidStack resource, FluidAction action) {
                 TileEntity tankBelow = null;
-                if(world != null) {
+                if (world != null) {
                     if (world.getTileEntity(pos.down()) instanceof TankTile) {
                         tankBelow = world.getTileEntity(pos.down());
                     }
                 }
-                // Fills bottom tank
-                if(tankBelow instanceof TankTile) {
-                    int tankFill = ((TankTile) tankBelow).tank.fill(resource, action);
-                    return tankFill != 0 ? tankFill : super.fill(resource, action);
+                if (tankBelow != null) {
+                    // Fills bottom tank
+                    if (tankBelow instanceof TankTile && tankBelow.getBlockState().get(TankBlock.COLOR) == getBlockState().get(TankBlock.COLOR)) {
+                        int tankFill = ((TankTile) tankBelow).tank.fill(resource, action);
+                        if (tankFill != 0) {
+                            return tankFill;
+                        }
+                        return super.fill(resource, action);
+                    }
                 }
                 return super.fill(resource, action);
             }
@@ -65,16 +70,16 @@ public class TankTile extends TileEntity implements ITickableTileEntity {
 
     @Override
     public void tick() {
-        if(tank.getFluidAmount() > 0) {
+        if (tank.getFluidAmount() > 0) {
             TankTile tank_below = null;
 
-            if(world != null) {
+            if (world != null) {
                 if (world.getTileEntity(pos.down()) instanceof TankTile) {
                     tank_below = (TankTile) world.getTileEntity(pos.down());
                 }
             }
 
-            if(tank_below != null) {
+            if (tank_below != null && tank_below.getBlockState().get(TankBlock.COLOR) == getBlockState().get(TankBlock.COLOR)) {
                 // Fluid always drain to the bottom tank
                 tank_below.getCapability(CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY, Direction.UP).ifPresent(
                         fluidHandler -> tank.drain(
@@ -92,14 +97,14 @@ public class TankTile extends TileEntity implements ITickableTileEntity {
     // Data Handling Section
 
     public void clientSync() {
-        if(Objects.requireNonNull(this.getWorld()).isRemote) {
+        if (Objects.requireNonNull(this.getWorld()).isRemote) {
             return;
         }
         ServerWorld world = (ServerWorld) this.getWorld();
         Stream<ServerPlayerEntity> entities = world.getChunkProvider().chunkManager.getTrackingPlayers(new ChunkPos(this.pos), false);
         SUpdateTileEntityPacket updatePacket = this.getUpdatePacket();
         entities.forEach(e -> {
-            if(updatePacket != null) {
+            if (updatePacket != null) {
                 e.connection.sendPacket(updatePacket);
             }
         });
@@ -156,7 +161,7 @@ public class TankTile extends TileEntity implements ITickableTileEntity {
     @Override
     @Nonnull
     public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> capability, @Nullable Direction facing) {
-        if(capability == CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY) {
+        if (capability == CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY) {
             return handler.cast();
         }
         return super.getCapability(capability, facing);

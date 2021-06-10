@@ -1,3 +1,27 @@
+#### **v1.16.5 - 1.5.0**
+#####Colored Tanks!
+__Now Requires Bibliotheca 1.6.x or higher__
+* Added Tank Colored WHITE
+* Added Tank Colored RED
+* Added Tank Colored ORANGE
+* Added Tank Colored PINK
+* Added Tank Colored YELLOW
+* Added Tank Colored LIME
+* Added Tank Colored GREEN
+* Added Tank Colored LIGHT_BLUE
+* Added Tank Colored CYAN
+* Added Tank Colored BLUE
+* Added Tank Colored MAGENTA
+* Added Tank Colored PURPLE
+* Added Tank Colored BROWN
+* Added Tank Colored GRAY
+* Added Tank Colored LIGHT_GRAY
+  
+* Updated config to new dynamic config system
+* Configure all tank colors in config
+* Changed default tank texture to a white texture to allow colorization
+
+
 #### **v1.16.5 - 1.4.2**
 * Updated toolchain
 * Updated to Gradle 6.9

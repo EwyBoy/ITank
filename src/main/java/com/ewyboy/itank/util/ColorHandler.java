@@ -1,7 +1,10 @@
 package com.ewyboy.itank.util;
 
+import com.ewyboy.itank.common.content.tank.TankBlock;
+import com.ewyboy.itank.common.register.Register;
 import com.ewyboy.itank.common.states.TankColor;
 import com.ewyboy.itank.config.ConfigOptions;
+import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 
@@ -31,9 +34,27 @@ public class ColorHandler {
         stateColorToIntegerColorMap.put(TankColor.BLACK, ConfigOptions.Colors.tankColorBlack);
     }
 
-    public static int getIntegerColorFromState(TankColor colorState) {
-        return stateColorToIntegerColorMap.get(colorState);
+    private static final HashMap<TankColor, TankBlock> stateColorToBlockColorMap = new HashMap<>();
+
+    static {
+        stateColorToBlockColorMap.put(TankColor.WHITE, Register.BLOCK.TANK_WHITE);
+        stateColorToBlockColorMap.put(TankColor.RED, Register.BLOCK.TANK_RED);
+        stateColorToBlockColorMap.put(TankColor.ORANGE, Register.BLOCK.TANK_ORANGE);
+        stateColorToBlockColorMap.put(TankColor.PINK, Register.BLOCK.TANK_PINK);
+        stateColorToBlockColorMap.put(TankColor.YELLOW, Register.BLOCK.TANK_YELLOW);
+        stateColorToBlockColorMap.put(TankColor.GREEN, Register.BLOCK.TANK_GREEN);
+        stateColorToBlockColorMap.put(TankColor.LIME, Register.BLOCK.TANK_LIME);
+        stateColorToBlockColorMap.put(TankColor.LIGHT_BLUE, Register.BLOCK.TANK_LIGHT_BLUE);
+        stateColorToBlockColorMap.put(TankColor.CYAN, Register.BLOCK.TANK_CYAN);
+        stateColorToBlockColorMap.put(TankColor.BLUE, Register.BLOCK.TANK_BLUE);
+        stateColorToBlockColorMap.put(TankColor.MAGENTA, Register.BLOCK.TANK_MAGENTA);
+        stateColorToBlockColorMap.put(TankColor.PURPLE, Register.BLOCK.TANK_PURPLE);
+        stateColorToBlockColorMap.put(TankColor.BROWN, Register.BLOCK.TANK_BROWN);
+        stateColorToBlockColorMap.put(TankColor.GRAY, Register.BLOCK.TANK);
+        stateColorToBlockColorMap.put(TankColor.LIGHT_GRAY, Register.BLOCK.TANK_LIGHT_GRAY);
+        stateColorToBlockColorMap.put(TankColor.BLACK, Register.BLOCK.TANK_BLACK);
     }
+
 
     private static final HashMap<TankColor, Item> stateColorToDyeColorMap = new HashMap<>();
 
@@ -54,6 +75,14 @@ public class ColorHandler {
         stateColorToDyeColorMap.put(TankColor.GRAY, Items.GRAY_DYE);
         stateColorToDyeColorMap.put(TankColor.LIGHT_GRAY, Items.LIGHT_GRAY_DYE);
         stateColorToDyeColorMap.put(TankColor.BLACK, Items.BLACK_DYE);
+    }
+
+    public static TankBlock getBlockColorFromState(TankColor color) {
+        return stateColorToBlockColorMap.get(color);
+    }
+
+    public static int getIntegerColorFromState(TankColor colorState) {
+        return stateColorToIntegerColorMap.get(colorState);
     }
 
 }
