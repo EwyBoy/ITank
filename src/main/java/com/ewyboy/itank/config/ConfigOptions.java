@@ -4,6 +4,7 @@ public class ConfigOptions {
 
     public static class Tanks {
         public static int tankCapacity;
+        public static boolean retainFluidAfterExplosions;
     }
 
     public static class Colors {

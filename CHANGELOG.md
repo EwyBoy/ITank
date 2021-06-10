@@ -1,6 +1,7 @@
 #### **v1.16.5 - 1.5.0**
 #####Colored Tanks!
 __Now Requires Bibliotheca 1.6.x or higher__
+
 * Added Tank Colored WHITE
 * Added Tank Colored RED
 * Added Tank Colored ORANGE
@@ -17,10 +18,16 @@ __Now Requires Bibliotheca 1.6.x or higher__
 * Added Tank Colored GRAY
 * Added Tank Colored LIGHT_GRAY
   
-* Updated config to new dynamic config system
-* Configure all tank colors in config
-* Changed default tank texture to a white texture to allow colorization
 
+* Updated config to new dynamic config system (Might need to regenerate config)
+* Configure all tank colors in config ()
+* Changed default tank texture to a white texture to allow colorization
+* Tanks now retain fluids when broken
+* Improved smart stacking feature to work with colors and retained fluids
+* Fixed potential null pointers & refactored large amounts of code
+* Tanks can be dyed for free by right-clicking with a dye or crafted in a crafting table (Consumes dye)
+* Tanks now render their color on maps
+* Config option if tank should retain fluid when exploded
 
 #### **v1.16.5 - 1.4.2**
 * Updated toolchain

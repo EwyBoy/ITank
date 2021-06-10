@@ -15,6 +15,7 @@ public class ConfigHelper {
         Config config = ConfigHolder.config;
 
         ConfigOptions.Tanks.tankCapacity = config.tanks.tankCapacity.get();
+        ConfigOptions.Tanks.retainFluidAfterExplosions = config.tanks.retainFluidAfterExplosions.get();
 
         ConfigOptions.Colors.tankColorWhite = config.colors.tankColorWhite.get();
         ConfigOptions.Colors.tankColorRed = config.colors.tankColorRed.get();
@@ -40,6 +41,7 @@ public class ConfigHelper {
         Config config = ConfigHolder.config;
 
         config.tanks.tankCapacity.set(ConfigOptions.Tanks.tankCapacity);
+        config.tanks.retainFluidAfterExplosions.set(ConfigOptions.Tanks.retainFluidAfterExplosions);
 
         config.colors.tankColorWhite.set(ConfigOptions.Colors.tankColorWhite);
         config.colors.tankColorRed.set(ConfigOptions.Colors.tankColorRed);

@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "itank:tank"
+          "name": "itank:tank_light_blue"
         }
       ]
     }

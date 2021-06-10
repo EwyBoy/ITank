@@ -81,6 +81,7 @@ dependencies {
     compileOnly fg.deobf("mcp.mobius.waila:Hwyla:${HWYLA_VERSION}:api")
     runtimeOnly fg.deobf("mcp.mobius.waila:Hwyla:${HWYLA_VERSION}")
     implementation fg.deobf("curse.maven:bibliotheca-268210:${BIBLIOTHECA}")
+    implementation fg.deobf("curse.maven:jei-238222:${JEI}")
 }
 
 jar {

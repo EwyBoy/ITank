@@ -79,8 +79,8 @@ public class TankTile extends TileEntity implements ITickableTileEntity {
                 }
             }
 
+            // Fluid always drain to the bottom tank
             if (tank_below != null && tank_below.getBlockState().get(TankBlock.COLOR) == getBlockState().get(TankBlock.COLOR)) {
-                // Fluid always drain to the bottom tank
                 tank_below.getCapability(CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY, Direction.UP).ifPresent(
                         fluidHandler -> tank.drain(
                                 fluidHandler.fill(

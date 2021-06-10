@@ -5,6 +5,7 @@ import com.ewyboy.itank.common.register.Register;
 import com.ewyboy.itank.common.states.TankColor;
 import com.ewyboy.itank.config.ConfigOptions;
 import net.minecraft.block.Block;
+import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 
@@ -75,6 +76,32 @@ public class ColorHandler {
         stateColorToDyeColorMap.put(TankColor.GRAY, Items.GRAY_DYE);
         stateColorToDyeColorMap.put(TankColor.LIGHT_GRAY, Items.LIGHT_GRAY_DYE);
         stateColorToDyeColorMap.put(TankColor.BLACK, Items.BLACK_DYE);
+    }
+
+
+    private static final HashMap<TankColor, MaterialColor> stateColorToMaterialColorMap = new HashMap<>();
+
+    static {
+        stateColorToMaterialColorMap.put(TankColor.WHITE, MaterialColor.SNOW);
+        stateColorToMaterialColorMap.put(TankColor.RED, MaterialColor.RED);
+        stateColorToMaterialColorMap.put(TankColor.ORANGE, MaterialColor.ADOBE);
+        stateColorToMaterialColorMap.put(TankColor.PINK, MaterialColor.PINK);
+        stateColorToMaterialColorMap.put(TankColor.YELLOW, MaterialColor.YELLOW);
+        stateColorToMaterialColorMap.put(TankColor.GREEN, MaterialColor.GREEN);
+        stateColorToMaterialColorMap.put(TankColor.LIME, MaterialColor.LIME);
+        stateColorToMaterialColorMap.put(TankColor.LIGHT_BLUE, MaterialColor.BLUE);
+        stateColorToMaterialColorMap.put(TankColor.CYAN, MaterialColor.CYAN);
+        stateColorToMaterialColorMap.put(TankColor.BLUE, MaterialColor.BLUE);
+        stateColorToMaterialColorMap.put(TankColor.MAGENTA, MaterialColor.MAGENTA);
+        stateColorToMaterialColorMap.put(TankColor.PURPLE, MaterialColor.MAGENTA);
+        stateColorToMaterialColorMap.put(TankColor.BROWN, MaterialColor.BROWN);
+        stateColorToMaterialColorMap.put(TankColor.GRAY, MaterialColor.GRAY);
+        stateColorToMaterialColorMap.put(TankColor.LIGHT_GRAY, MaterialColor.LIGHT_GRAY);
+        stateColorToMaterialColorMap.put(TankColor.BLACK, MaterialColor.BLACK);
+    }
+
+    public static MaterialColor getMaterialColorFromState(TankColor color) {
+        return stateColorToMaterialColorMap.get(color);
     }
 
     public static TankBlock getBlockColorFromState(TankColor color) {

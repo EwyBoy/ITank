@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "dyed_tank",
+  "ingredients": [
+    {
+      "item": "itank:tank"
+    },
+    {
+      "item": "minecraft:light_gray_dye"
+    }
+  ],
+  "result": {
+    "item": "itank:tank_light_gray"
+  }
+}

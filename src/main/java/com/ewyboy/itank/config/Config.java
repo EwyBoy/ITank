@@ -7,6 +7,7 @@ public class Config {
 
     public static class Tanks {
         ForgeConfigSpec.IntValue tankCapacity;
+        ForgeConfigSpec.BooleanValue retainFluidAfterExplosions;
     }
 
     public static class Colors {
@@ -43,6 +44,11 @@ public class Config {
                         .comment("Sets tank capacity : 1 Bucket = 1000mB - [Max: " + Integer.MAX_VALUE + "mB]")
                         .translation("itank.config.tanks.tankCapacity")
                         .defineInRange("tank_capacity", 8000, 1000, Integer.MAX_VALUE)
+                ;
+                tanks.retainFluidAfterExplosions = builder
+                        .comment("Tanks destroyed by explosions will retain their fluids")
+                        .translation("itank.config.tanks.retainFluidAfterExplosions")
+                        .define("retain_fluid_after_explosions", true)
                 ;
             }
             builder.pop();
@@ -115,9 +121,9 @@ public class Config {
                         .defineInRange("tank_color_brown", 0x49311d, 0x000000, 0xFFFFFF)
                 ;
                 colors.tankColorGray = builder
-                        .comment("Configure gray tanks color -> Default Hex: 0x808080")
+                        .comment("Configure gray tanks color -> Default Hex: 0x696969")
                         .translation("itank.config.color.tankColorGray")
-                        .defineInRange("tank_color_gray", 0x808080, 0x000000, 0xFFFFFF)
+                        .defineInRange("tank_color_gray", 0x696969, 0x000000, 0xFFFFFF)
                 ;
                 colors.tankColorLightGray = builder
                         .comment("Configure gray tanks color -> Default Hex: 0xc0c0c0")

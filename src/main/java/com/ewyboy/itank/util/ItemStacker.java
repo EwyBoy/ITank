@@ -14,7 +14,7 @@ public class ItemStacker {
         return stack.getTag();
     }
 
-    public static void dropStackInWorld (World world, BlockPos pos, ItemStack stack) {
+    public static void dropStackInWorld(World world, BlockPos pos, ItemStack stack) {
         if (!world.isRemote) {
             final float offset = 0.7F;
             final double offX = world.rand.nextFloat() * offset + (1.0F - offset) * 0.5D;
