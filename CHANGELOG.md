@@ -17,7 +17,7 @@ __Now Requires Bibliotheca 1.6.x or higher__
 * Added Tank Colored BROWN
 * Added Tank Colored GRAY
 * Added Tank Colored LIGHT_GRAY
-  
+
 
 * Updated config to new dynamic config system (Might need to regenerate config)
 * Configure all tank colors in config ()

@@ -1,9 +1,10 @@
-Args: "--in-jar", "C:\Users\Eivind\Documents\Development\Modding\Forge\ITank\build\libs\ITank-1.16.5-1.4.2.jar", "--out-jar", "C:\Users\Eivind\Documents\Development\Modding\Forge\ITank\build\reobfJar\output.jar", "--srg-in", "C:\Users\Eivind\Documents\Development\Modding\Forge\ITank\build\createMcpToSrg\output.tsrg", "--live"
+Args: "--in-jar", "C:\Users\Eivind\Documents\Development\Modding\Forge\ITank\build\libs\ITank-1.16.5-1.5.0.jar", "--out-jar", "C:\Users\Eivind\Documents\Development\Modding\Forge\ITank\build\reobfJar\output.jar", "--srg-in", "C:\Users\Eivind\Documents\Development\Modding\Forge\ITank\build\createMcpToSrg\output.tsrg", "--live"
 Classpath: C:\Users\Eivind\.gradle\caches\forge_gradle\maven_downloader\net\md-5\SpecialSource\1.9.0\SpecialSource-1.9.0-shaded.jar
 Classpath: C:\Users\Eivind\.gradle\caches\forge_gradle\deobf_dependencies\mcp\mobius\waila\Hwyla\1.10.11-B78_1.16.2_mapped_snapshot_20210309-1.16.5\Hwyla-1.10.11-B78_1.16.2_mapped_snapshot_20210309-1.16.5-api.jar
-Classpath: C:\Users\Eivind\.gradle\caches\forge_gradle\deobf_dependencies\curse\maven\bibliotheca-268210\3334930_mapped_snapshot_20210309-1.16.5\bibliotheca-268210-3334930_mapped_snapshot_20210309-1.16.5.jar
-Classpath: C:\Users\Eivind\.gradle\caches\forge_gradle\minecraft_user_repo\net\minecraftforge\forge\1.16.5-36.1.25_mapped_snapshot_20210309-1.16.5\forge-1.16.5-36.1.25_mapped_snapshot_20210309-1.16.5-recomp.jar
-Classpath: C:\Users\Eivind\.gradle\caches\forge_gradle\minecraft_user_repo\net\minecraftforge\forge\1.16.5-36.1.25_mapped_snapshot_20210309-1.16.5\forge-1.16.5-36.1.25_mapped_snapshot_20210309-1.16.5-launcher.jar
+Classpath: C:\Users\Eivind\.gradle\caches\forge_gradle\deobf_dependencies\curse\maven\bibliotheca-268210\3346785_mapped_snapshot_20210309-1.16.5\bibliotheca-268210-3346785_mapped_snapshot_20210309-1.16.5.jar
+Classpath: C:\Users\Eivind\.gradle\caches\forge_gradle\deobf_dependencies\curse\maven\jei-238222\3345971_mapped_snapshot_20210309-1.16.5\jei-238222-3345971_mapped_snapshot_20210309-1.16.5.jar
+Classpath: C:\Users\Eivind\.gradle\caches\forge_gradle\minecraft_user_repo\net\minecraftforge\forge\1.16.5-36.1.30_mapped_snapshot_20210309-1.16.5\forge-1.16.5-36.1.30_mapped_snapshot_20210309-1.16.5-recomp.jar
+Classpath: C:\Users\Eivind\.gradle\caches\forge_gradle\minecraft_user_repo\net\minecraftforge\forge\1.16.5-36.1.30_mapped_snapshot_20210309-1.16.5\forge-1.16.5-36.1.30_mapped_snapshot_20210309-1.16.5-launcher.jar
 Classpath: C:\Users\Eivind\.gradle\caches\forge_gradle\minecraft_repo\versions\1.16.5\client-extra.jar
 Classpath: C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\3.0.1\f7be08ec23c21485b9b5a1cf1654c2ec8c58168d\jsr305-3.0.1.jar
 Classpath: C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mergetool\1.0.9\d1e1ba354a40b5703340b5cb02fdca489cff3646\mergetool-1.0.9-api.jar
@@ -77,14 +78,14 @@ Loading mappings... 40%
 Loading mappings... 50%
 0 packages, 5447 classes, 21481 fields, 38359 methods
 Remapping final jar
-Remapping jar...  2%
-Remapping jar... 11%
-Remapping jar... 21%
+Remapping jar...  1%
+Remapping jar... 10%
+Remapping jar... 20%
 Remapping jar... 30%
-Remapping jar... 41%
+Remapping jar... 40%
 Remapping jar... 50%
-Remapping jar... 61%
-Remapping jar... 71%
+Remapping jar... 60%
+Remapping jar... 70%
 Remapping jar... 80%
-Remapping jar... 91%
+Remapping jar... 90%
 Remapping jar... 100%
