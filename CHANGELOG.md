@@ -1,3 +1,6 @@
+#### **v1.16.5 - 1.5.1**  
+* Fixed [Bug] Missing liquid rendering [#25](https://github.com/EwyBoy/ITank/issues/25)
+
 #### **v1.16.5 - 1.5.0**
 #####Colored Tanks!
 __Now Requires Bibliotheca 1.6.x or higher__
