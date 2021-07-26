@@ -5,7 +5,6 @@ import com.ewyboy.bibliotheca.client.interfaces.IHasSpecialRenderer;
 import com.ewyboy.bibliotheca.common.content.block.BaseTileBlock;
 import com.ewyboy.bibliotheca.common.helpers.TextHelper;
 import com.ewyboy.bibliotheca.common.loaders.ContentLoader;
-import com.ewyboy.bibliotheca.compatibilities.hwyla.IWailaInfo;
 import com.ewyboy.bibliotheca.util.ItemStacker;
 import com.ewyboy.itank.client.TankRenderer;
 import com.ewyboy.itank.common.register.Register;
@@ -14,46 +13,23 @@ import com.ewyboy.itank.common.states.TankState;
 import com.ewyboy.itank.common.states.TankStateProperties;
 import com.ewyboy.itank.config.ConfigOptions;
 import com.ewyboy.itank.util.ColorHandler;
-import mcp.mobius.waila.api.IDataAccessor;
-import mcp.mobius.waila.api.IPluginConfig;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
-import net.minecraft.block.material.MaterialColor;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.fluid.FluidState;
-import net.minecraft.item.DyeItem;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.state.EnumProperty;
-import net.minecraft.state.StateContainer;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.util.SoundCategory;
-import net.minecraft.util.SoundEvents;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.BlockRayTraceResult;
-import net.minecraft.util.math.RayTraceResult;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.text.TextFormatting;
-import net.minecraft.world.Explosion;
-import net.minecraft.world.IBlockReader;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidUtil;
 import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
-import net.minecraftforge.fml.client.registry.ClientRegistry;
 
 import javax.annotation.Nullable;
-import java.util.List;
 import java.util.Objects;
 
-public class TankBlock extends BaseTileBlock<TankTile> implements IHasRenderType, IHasSpecialRenderer, ContentLoader.IHasNoBlockItem, IWailaInfo {
+public class TankBlock extends BaseTileBlock<TankTile> implements IHasRenderType, IHasSpecialRenderer, ContentLoader.IHasNoBlockItem {
 
     public static final EnumProperty<TankState> STATE = TankStateProperties.TANK_STATE;
     public static final EnumProperty<TankColor> COLOR = TankStateProperties.TANK_COLOR;
@@ -69,7 +45,7 @@ public class TankBlock extends BaseTileBlock<TankTile> implements IHasRenderType
     }
 
     @Override
-    public void neighborChanged(BlockState state, World world, BlockPos pos, Block blockIn, BlockPos fromPos, boolean isMoving) {
+    public void neighborChanged(BlockState state, Level world, BlockPos pos, Block blockIn, BlockPos fromPos, boolean isMoving) {
         if (world.getBlockState(pos.above()).getBlock() == this && world.getBlockState(pos.below()).getBlock() == this) {
             setTankState(world, pos, TankState.MID);
         } else if (world.getBlockState(pos.above()).getBlock() == this && world.getBlockState(pos.below()).getBlock() != this) {
@@ -82,7 +58,7 @@ public class TankBlock extends BaseTileBlock<TankTile> implements IHasRenderType
     }
 
     @Override
-    public ActionResultType use(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockRayTraceResult hit) {
+    public ActionResultType use(BlockState state, L world, BlockPos pos, PlayerEntity player, Hand hand, BlockRayTraceResult hit) {
         ItemStack held = player.getItemInHand(hand);
 
         if (FluidUtil.interactWithFluidHandler(player, hand, world, pos, hit.getDirection()) || held.getCapability(CapabilityFluidHandler.FLUID_HANDLER_ITEM_CAPABILITY).isPresent()) {
@@ -258,18 +234,6 @@ public class TankBlock extends BaseTileBlock<TankTile> implements IHasRenderType
             String fluidName = fluid.getDisplayName().getString();
             colorFluidName(fluidName, tooltip);
             tooltip.add(new StringTextComponent(TextHelper.formatCapacityInfo(fluid.getAmount(), ConfigOptions.Tanks.tankCapacity, "mB")));
-        }
-    }
-
-    @Override
-    public void getWailaBody(List<ITextComponent> tooltip, IDataAccessor accessor, IPluginConfig config) {
-        TankTile tank = getTank(accessor.getWorld(), accessor.getPosition());
-        if (tank != null) {
-            tooltip.add(new StringTextComponent(TextHelper.formatCapacityInfo(tank.getTank().getFluidAmount(), tank.getTank().getCapacity(), "mB")));
-            if(tank.getFluid().getFluid() != null) {
-                String fluidName = Objects.requireNonNull(tank.getTank().getFluid().getDisplayName().getString());
-                colorFluidName(fluidName, tooltip);
-            }
         }
     }
 

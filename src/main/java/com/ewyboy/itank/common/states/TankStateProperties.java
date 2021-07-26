@@ -1,6 +1,6 @@
 package com.ewyboy.itank.common.states;
 
-import net.minecraft.state.EnumProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 
 public class TankStateProperties {
 

@@ -3,13 +3,13 @@ package com.ewyboy.itank.server;
 import com.ewyboy.itank.ITank;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
-import net.minecraft.command.CommandSource;
+import net.minecraft.commands.CommandSourceStack;
 
 public class CommandCenter {
 
-    public CommandCenter(CommandDispatcher<CommandSource> dispatcher) {
+    public CommandCenter(CommandDispatcher<CommandSourceStack> dispatcher) {
         dispatcher.register(
-                LiteralArgumentBuilder.<CommandSource> literal(ITank.MOD_ID)
+                LiteralArgumentBuilder.<CommandSourceStack> literal(ITank.MOD_ID)
                         .executes(ctx -> 0)
         );
     }

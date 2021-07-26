@@ -1,8 +1,8 @@
 package com.ewyboy.itank.common.states;
 
-import net.minecraft.util.IStringSerializable;
+import net.minecraft.util.StringRepresentable;
 
-public enum TankColor implements IStringSerializable {
+public enum TankColor implements StringRepresentable {
 
     WHITE("white"),
     RED("red"),

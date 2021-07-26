@@ -1,8 +1,8 @@
 package com.ewyboy.itank.common.states;
 
-import net.minecraft.util.IStringSerializable;
+import net.minecraft.util.StringRepresentable;
 
-public enum TankState implements IStringSerializable {
+public enum TankState implements StringRepresentable {
 
     ONE("one"),
     BOT("bot"),

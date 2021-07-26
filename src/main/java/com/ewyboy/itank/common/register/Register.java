@@ -7,9 +7,9 @@ import com.ewyboy.itank.common.content.tank.*;
 import com.ewyboy.itank.common.states.TankColor;
 import com.ewyboy.itank.util.ColorHandler;
 import com.google.common.collect.Sets;
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
-import net.minecraft.tileentity.TileEntityType;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -81,7 +81,7 @@ public class Register {
     }
 
     public static final class TILE {
-        public static final TileEntityType<TankTile> TANK = new TileEntityType<>(TankTile :: new, Sets.newHashSet(TANKS), null);
+        public static final BlockEntityType<TankTile> TANK = new BlockEntityType<>(TankTile :: new, Sets.newHashSet(TANKS), null);
     }
 
     public static final class COLORED_BLOCKS {

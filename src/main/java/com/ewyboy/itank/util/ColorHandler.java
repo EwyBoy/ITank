@@ -4,12 +4,10 @@ import com.ewyboy.itank.common.content.tank.TankBlock;
 import com.ewyboy.itank.common.register.Register;
 import com.ewyboy.itank.common.states.TankColor;
 import com.ewyboy.itank.config.ConfigOptions;
-import net.minecraft.block.Block;
-import net.minecraft.block.material.MaterialColor;
-import net.minecraft.item.Item;
-import net.minecraft.item.Items;
+import net.minecraft.world.level.material.MaterialColor;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 
-import java.awt.*;
 import java.util.HashMap;
 
 public class ColorHandler {
