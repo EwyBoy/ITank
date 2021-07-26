@@ -15,7 +15,7 @@ public enum TankState implements IStringSerializable {
         this.state = state;
     }
 
-    public String getString() {
+    public String getSerializedName() {
         return this.state;
     }
 

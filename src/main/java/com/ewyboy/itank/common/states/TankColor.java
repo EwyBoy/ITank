@@ -27,7 +27,7 @@ public enum TankColor implements IStringSerializable {
         this.color = color;
     }
 
-    public String getString() {
+    public String getSerializedName() {
         return this.color;
     }
 
