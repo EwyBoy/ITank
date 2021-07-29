@@ -1,18 +1,18 @@
 package com.ewyboy.itank.common.content.tank;
 
 import com.ewyboy.itank.common.register.Register;
-import com.ewyboy.itank.config.Config;
 import com.ewyboy.itank.config.ConfigOptions;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
-import net.minecraft.world.level.block.entity.TickableBlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.core.Direction;
-import net.minecraft.world.level.ChunkPos;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.level.ChunkPos;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.fluids.FluidStack;
@@ -25,17 +25,15 @@ import javax.annotation.Nullable;
 import java.util.Objects;
 import java.util.stream.Stream;
 
-import net.minecraftforge.fluids.capability.IFluidHandler.FluidAction;
-
-public class TankTile extends BlockEntity implements TickableBlockEntity {
+public class TankTile extends BlockEntity {
 
     private FluidTank tank;
     public static int capacity = ConfigOptions.Tanks.tankCapacity;
     private final String compoundKey = "FluidCap";
     private final LazyOptional<IFluidHandler> handler = LazyOptional.of(() -> tank);
 
-    public TankTile() {
-        super(Register.TILE.TANK);
+    public TankTile(BlockPos pos, BlockState state) {
+        super(Register.TILE.TANK, pos, state);
 
         capacity = ConfigOptions.Tanks.tankCapacity;
 
@@ -70,6 +68,33 @@ public class TankTile extends BlockEntity implements TickableBlockEntity {
 
     }
 
+
+    public static void serverTick(Level level, BlockPos pos, BlockState state, TankTile tile) {
+        if (tile.tank.getFluidAmount() > 0) {
+            TankTile tank_below = null;
+
+            if (level != null) {
+                if (level.getBlockEntity(pos.below()) instanceof TankTile) {
+                    tank_below = (TankTile) level.getBlockEntity(pos.below());
+                }
+            }
+
+            // Fluid always drain to the bottom tank
+            if (tank_below != null && tank_below.getBlockState().getValue(TankBlock.COLOR) == state.getValue(TankBlock.COLOR)) {
+                tank_below.getCapability(CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY, Direction.UP).ifPresent(
+                        fluidHandler -> tile.tank.drain(
+                                fluidHandler.fill(
+                                        tile.tank.drain(
+                                                tile.tank.getCapacity(), IFluidHandler.FluidAction.SIMULATE
+                                        ), IFluidHandler.FluidAction.EXECUTE
+                                ), IFluidHandler.FluidAction.EXECUTE
+                        )
+                );
+            }
+        }
+
+
+    /*
     @Override
     public void tick() {
         if (tank.getFluidAmount() > 0) {
@@ -94,10 +119,10 @@ public class TankTile extends BlockEntity implements TickableBlockEntity {
                 );
             }
         }
+    }*/
     }
 
     // Data Handling Section
-
     public void clientSync() {
         if (Objects.requireNonNull(this.getLevel()).isClientSide) {
             return;
@@ -112,6 +137,7 @@ public class TankTile extends BlockEntity implements TickableBlockEntity {
         });
     }
 
+
     @Override
     public CompoundTag getUpdateTag() {
         return this.save(new CompoundTag());
@@ -124,18 +150,18 @@ public class TankTile extends BlockEntity implements TickableBlockEntity {
     }
 
     @Override
-    public void handleUpdateTag(BlockState state, CompoundTag tag) {
-        this.load(state, tag);
+    public void handleUpdateTag(CompoundTag tag) {
+        this.load(tag);
     }
 
     @Override
     public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt) {
-        this.load(level.getBlockState(getBlockPos()), pkt.getTag());
+        this.load(pkt.getTag());
     }
 
     @Override
-    public void load(BlockState state, CompoundTag nbt) {
-        super.load(state, nbt);
+    public void load(CompoundTag nbt) {
+        super.load(nbt);
         tank.readFromNBT(nbt);
         tank.setCapacity(nbt.getInt(compoundKey));
     }

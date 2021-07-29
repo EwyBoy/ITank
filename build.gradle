@@ -68,14 +68,13 @@ repositories {
             includeGroup "curse.maven"
         }
     }
-    mavenLocal()
 }
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
     minecraft "net.minecraftforge:forge:${MC_VERSION}-${FORGE_VERSION}"
-    implementation ("com.ewyboy.bibliotheca:Bibliotheca:1.17.1-1.7.0")
+    implementation fg.deobf("curse.maven:worldstripper-250603:${BIBLIOTHECA}")
 }
 
 jar {
