@@ -83,21 +83,21 @@ public class ColorHandler {
 
     static {
         stateColorToMaterialColorMap.put(TankColor.WHITE, MaterialColor.SNOW);
-        stateColorToMaterialColorMap.put(TankColor.RED, MaterialColor.RED);
-        stateColorToMaterialColorMap.put(TankColor.ORANGE, MaterialColor.ADOBE);
-        stateColorToMaterialColorMap.put(TankColor.PINK, MaterialColor.PINK);
-        stateColorToMaterialColorMap.put(TankColor.YELLOW, MaterialColor.YELLOW);
-        stateColorToMaterialColorMap.put(TankColor.GREEN, MaterialColor.GREEN);
-        stateColorToMaterialColorMap.put(TankColor.LIME, MaterialColor.LIME);
-        stateColorToMaterialColorMap.put(TankColor.LIGHT_BLUE, MaterialColor.BLUE);
-        stateColorToMaterialColorMap.put(TankColor.CYAN, MaterialColor.CYAN);
-        stateColorToMaterialColorMap.put(TankColor.BLUE, MaterialColor.BLUE);
-        stateColorToMaterialColorMap.put(TankColor.MAGENTA, MaterialColor.MAGENTA);
-        stateColorToMaterialColorMap.put(TankColor.PURPLE, MaterialColor.MAGENTA);
-        stateColorToMaterialColorMap.put(TankColor.BROWN, MaterialColor.BROWN);
-        stateColorToMaterialColorMap.put(TankColor.GRAY, MaterialColor.GRAY);
-        stateColorToMaterialColorMap.put(TankColor.LIGHT_GRAY, MaterialColor.LIGHT_GRAY);
-        stateColorToMaterialColorMap.put(TankColor.BLACK, MaterialColor.BLACK);
+        stateColorToMaterialColorMap.put(TankColor.RED, MaterialColor.COLOR_RED);
+        stateColorToMaterialColorMap.put(TankColor.ORANGE, MaterialColor.COLOR_ORANGE);
+        stateColorToMaterialColorMap.put(TankColor.PINK, MaterialColor.COLOR_PINK);
+        stateColorToMaterialColorMap.put(TankColor.YELLOW, MaterialColor.COLOR_YELLOW);
+        stateColorToMaterialColorMap.put(TankColor.GREEN, MaterialColor.COLOR_GREEN);
+        stateColorToMaterialColorMap.put(TankColor.LIME, MaterialColor.COLOR_LIGHT_GREEN);
+        stateColorToMaterialColorMap.put(TankColor.LIGHT_BLUE, MaterialColor.COLOR_BLUE);
+        stateColorToMaterialColorMap.put(TankColor.CYAN, MaterialColor.COLOR_CYAN);
+        stateColorToMaterialColorMap.put(TankColor.BLUE, MaterialColor.COLOR_BLUE);
+        stateColorToMaterialColorMap.put(TankColor.MAGENTA, MaterialColor.COLOR_MAGENTA);
+        stateColorToMaterialColorMap.put(TankColor.PURPLE, MaterialColor.COLOR_MAGENTA);
+        stateColorToMaterialColorMap.put(TankColor.BROWN, MaterialColor.COLOR_BROWN);
+        stateColorToMaterialColorMap.put(TankColor.GRAY, MaterialColor.COLOR_GRAY);
+        stateColorToMaterialColorMap.put(TankColor.LIGHT_GRAY, MaterialColor.COLOR_LIGHT_GRAY);
+        stateColorToMaterialColorMap.put(TankColor.BLACK, MaterialColor.COLOR_BLACK);
     }
 
     public static MaterialColor getMaterialColorFromState(TankColor color) {

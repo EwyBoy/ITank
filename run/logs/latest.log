@@ -1,218 +1,164 @@
-[11Jun2021 14:06:48.421] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--gameDir, ., --launchTarget, fmluserdevclient, --fml.mcpVersion, 20210115.111550, --fml.mcVersion, 1.16.5, --fml.forgeGroup, net.minecraftforge, --fml.forgeVersion, 36.1.25, --version, MOD_DEV, --assetIndex, 1.16, --assetsDir, C:\Users\Eivind\.gradle\caches\forge_gradle\assets, --username, Dev, --accessToken, ❄❄❄❄❄❄❄❄, --userProperties, {}]
-[11Jun2021 14:06:48.426] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 8.0.9+86+master.3cf110c starting: java version 1.8.0_292 by AdoptOpenJDK
-[11Jun2021 14:06:48.644] [main/INFO] [net.minecraftforge.fml.loading.FixSSL/CORE]: Added Lets Encrypt root certificates as additional trust
-[11Jun2021 14:06:48.695] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.2 Source=file:/C:/Users/Eivind/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.2/1cf212283d26f706fd3074318870bebd14d2a9ed/mixin-0.8.2.jar Service=ModLauncher Env=CLIENT
-[11Jun2021 14:06:49.609] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'fmluserdevclient' with arguments [--version, MOD_DEV, --gameDir, ., --assetsDir, C:\Users\Eivind\.gradle\caches\forge_gradle\assets, --assetIndex, 1.16, --username, Dev, --accessToken, ❄❄❄❄❄❄❄❄, --userProperties, {}]
-[11Jun2021 14:06:53.310] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[11Jun2021 14:06:53.954] [Render thread/ERROR] [net.minecraft.client.Minecraft/]: Failed to verify authentication
+[30Aug2021 11:52:49.521] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--gameDir, ., --launchTarget, fmluserdevclient, --fml.mcpVersion, 20210115.111550, --fml.mcVersion, 1.16.5, --fml.forgeGroup, net.minecraftforge, --fml.forgeVersion, 36.1.25, --assetIndex, 1.16, --assetsDir, C:\Users\Eivind\.gradle\caches\forge_gradle\assets, --version, MOD_DEV, --username, Dev, --accessToken, ❄❄❄❄❄❄❄❄, --userProperties, {}]
+[30Aug2021 11:52:49.525] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 8.0.9+86+master.3cf110c starting: java version 1.8.0_292 by AdoptOpenJDK
+[30Aug2021 11:52:49.799] [main/INFO] [net.minecraftforge.fml.loading.FixSSL/CORE]: Added Lets Encrypt root certificates as additional trust
+[30Aug2021 11:52:49.855] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.2 Source=file:/C:/Users/Eivind/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.2/1cf212283d26f706fd3074318870bebd14d2a9ed/mixin-0.8.2.jar Service=ModLauncher Env=CLIENT
+[30Aug2021 11:52:50.746] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'fmluserdevclient' with arguments [--version, MOD_DEV, --gameDir, ., --assetsDir, C:\Users\Eivind\.gradle\caches\forge_gradle\assets, --assetIndex, 1.16, --username, Dev, --accessToken, ❄❄❄❄❄❄❄❄, --userProperties, {}]
+[30Aug2021 11:52:54.529] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[30Aug2021 11:52:55.219] [Render thread/ERROR] [net.minecraft.client.Minecraft/]: Failed to verify authentication
 com.mojang.authlib.exceptions.AuthenticationUnavailableException: null
 	at com.mojang.authlib.yggdrasil.YggdrasilSocialInteractionsService.checkPrivileges(YggdrasilSocialInteractionsService.java:97) ~[authlib-2.1.28.jar:?]
 	at com.mojang.authlib.yggdrasil.YggdrasilSocialInteractionsService.<init>(YggdrasilSocialInteractionsService.java:40) ~[authlib-2.1.28.jar:?]
 	at com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService.createSocialInteractionsService(YggdrasilAuthenticationService.java:152) ~[authlib-2.1.28.jar:?]
-	at net.minecraft.client.Minecraft.func_244735_a(Minecraft.java:556) ~[forge-1.16.5-36.1.30_mapped_snapshot_20210309-1.16.5-recomp.jar:?]
-	at net.minecraft.client.Minecraft.<init>(Minecraft.java:388) ~[forge-1.16.5-36.1.30_mapped_snapshot_20210309-1.16.5-recomp.jar:?]
-	at net.minecraft.client.main.Main.main(Main.java:149) ~[forge-1.16.5-36.1.30_mapped_snapshot_20210309-1.16.5-recomp.jar:?]
+	at net.minecraft.client.Minecraft.func_244735_a(Minecraft.java:551) ~[forge-1.16.5-36.2.2_mapped_snapshot_20210309-1.16.5.jar:?]
+	at net.minecraft.client.Minecraft.<init>(Minecraft.java:383) ~[forge-1.16.5-36.2.2_mapped_snapshot_20210309-1.16.5.jar:?]
+	at net.minecraft.client.main.Main.main(Main.java:149) ~[forge-1.16.5-36.2.2_mapped_snapshot_20210309-1.16.5.jar:?]
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_292]
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_292]
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_292]
 	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_292]
-	at net.minecraftforge.userdev.FMLUserdevClientLaunchProvider.lambda$launchService$0(FMLUserdevClientLaunchProvider.java:52) ~[forge-1.16.5-36.1.30_mapped_snapshot_20210309-1.16.5-recomp.jar:?]
+	at net.minecraftforge.userdev.FMLUserdevClientLaunchProvider.lambda$launchService$0(FMLUserdevClientLaunchProvider.java:52) ~[forge-1.16.5-36.2.2_mapped_snapshot_20210309-1.16.5.jar:?]
 	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:37) [modlauncher-8.0.9.jar:?]
 	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:54) [modlauncher-8.0.9.jar:?]
 	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:72) [modlauncher-8.0.9.jar:?]
 	at cpw.mods.modlauncher.Launcher.run(Launcher.java:82) [modlauncher-8.0.9.jar:?]
 	at cpw.mods.modlauncher.Launcher.main(Launcher.java:66) [modlauncher-8.0.9.jar:?]
-	at net.minecraftforge.userdev.LaunchTesting.main(LaunchTesting.java:105) [forge-1.16.5-36.1.30_mapped_snapshot_20210309-1.16.5-recomp.jar:?]
-[11Jun2021 14:06:53.966] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: Dev
-[11Jun2021 14:06:54.185] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.2.2 build 10
-[11Jun2021 14:06:55.543] [modloading-worker-2/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 36.1.30, for MC 1.16.5 with MCP 20210115.111550
-[11Jun2021 14:06:55.543] [modloading-worker-2/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v36.1.30 Initialized
-[11Jun2021 14:06:55.576] [modloading-worker-4/INFO] [itank/]: Registering content for itank
-[11Jun2021 14:06:55.653] [modloading-worker-4/INFO] [itank/]: [BLOCK]: tank has been registered by Bibliotheca for ITank
-[11Jun2021 14:06:55.654] [modloading-worker-4/INFO] [itank/]: [BLOCK]: tank_white has been registered by Bibliotheca for ITank
-[11Jun2021 14:06:55.654] [modloading-worker-4/INFO] [itank/]: [BLOCK]: tank_orange has been registered by Bibliotheca for ITank
-[11Jun2021 14:06:55.654] [modloading-worker-4/INFO] [itank/]: [BLOCK]: tank_magenta has been registered by Bibliotheca for ITank
-[11Jun2021 14:06:55.654] [modloading-worker-4/INFO] [itank/]: [BLOCK]: tank_light_blue has been registered by Bibliotheca for ITank
-[11Jun2021 14:06:55.654] [modloading-worker-4/INFO] [itank/]: [BLOCK]: tank_yellow has been registered by Bibliotheca for ITank
-[11Jun2021 14:06:55.654] [modloading-worker-4/INFO] [itank/]: [BLOCK]: tank_lime has been registered by Bibliotheca for ITank
-[11Jun2021 14:06:55.654] [modloading-worker-4/INFO] [itank/]: [BLOCK]: tank_pink has been registered by Bibliotheca for ITank
-[11Jun2021 14:06:55.654] [modloading-worker-4/INFO] [itank/]: [BLOCK]: tank_light_gray has been registered by Bibliotheca for ITank
-[11Jun2021 14:06:55.654] [modloading-worker-4/INFO] [itank/]: [BLOCK]: tank_cyan has been registered by Bibliotheca for ITank
-[11Jun2021 14:06:55.654] [modloading-worker-4/INFO] [itank/]: [BLOCK]: tank_purple has been registered by Bibliotheca for ITank
-[11Jun2021 14:06:55.655] [modloading-worker-4/INFO] [itank/]: [BLOCK]: tank_blue has been registered by Bibliotheca for ITank
-[11Jun2021 14:06:55.659] [modloading-worker-4/INFO] [itank/]: [BLOCK]: tank_brown has been registered by Bibliotheca for ITank
-[11Jun2021 14:06:55.659] [modloading-worker-4/INFO] [itank/]: [BLOCK]: tank_green has been registered by Bibliotheca for ITank
-[11Jun2021 14:06:55.659] [modloading-worker-4/INFO] [itank/]: [BLOCK]: tank_red has been registered by Bibliotheca for ITank
-[11Jun2021 14:06:55.659] [modloading-worker-4/INFO] [itank/]: [BLOCK]: tank_black has been registered by Bibliotheca for ITank
-[11Jun2021 14:06:55.664] [modloading-worker-4/INFO] [itank/]: [ITEM]: tank has been registered by Bibliotheca for ITank
-[11Jun2021 14:06:55.664] [modloading-worker-4/INFO] [itank/]: [ITEM]: tank_white has been registered by Bibliotheca for ITank
-[11Jun2021 14:06:55.664] [modloading-worker-4/INFO] [itank/]: [ITEM]: tank_orange has been registered by Bibliotheca for ITank
-[11Jun2021 14:06:55.664] [modloading-worker-4/INFO] [itank/]: [ITEM]: tank_magenta has been registered by Bibliotheca for ITank
-[11Jun2021 14:06:55.664] [modloading-worker-4/INFO] [itank/]: [ITEM]: tank_light_blue has been registered by Bibliotheca for ITank
-[11Jun2021 14:06:55.665] [modloading-worker-4/INFO] [itank/]: [ITEM]: tank_yellow has been registered by Bibliotheca for ITank
-[11Jun2021 14:06:55.665] [modloading-worker-4/INFO] [itank/]: [ITEM]: tank_lime has been registered by Bibliotheca for ITank
-[11Jun2021 14:06:55.665] [modloading-worker-4/INFO] [itank/]: [ITEM]: tank_pink has been registered by Bibliotheca for ITank
-[11Jun2021 14:06:55.665] [modloading-worker-4/INFO] [itank/]: [ITEM]: tank_light_gray has been registered by Bibliotheca for ITank
-[11Jun2021 14:06:55.665] [modloading-worker-4/INFO] [itank/]: [ITEM]: tank_cyan has been registered by Bibliotheca for ITank
-[11Jun2021 14:06:55.665] [modloading-worker-4/INFO] [itank/]: [ITEM]: tank_purple has been registered by Bibliotheca for ITank
-[11Jun2021 14:06:55.665] [modloading-worker-4/INFO] [itank/]: [ITEM]: tank_blue has been registered by Bibliotheca for ITank
-[11Jun2021 14:06:55.666] [modloading-worker-4/INFO] [itank/]: [ITEM]: tank_brown has been registered by Bibliotheca for ITank
-[11Jun2021 14:06:55.666] [modloading-worker-4/INFO] [itank/]: [ITEM]: tank_green has been registered by Bibliotheca for ITank
-[11Jun2021 14:06:55.666] [modloading-worker-4/INFO] [itank/]: [ITEM]: tank_red has been registered by Bibliotheca for ITank
-[11Jun2021 14:06:55.666] [modloading-worker-4/INFO] [itank/]: [ITEM]: tank_black has been registered by Bibliotheca for ITank
-[11Jun2021 14:06:55.674] [modloading-worker-4/INFO] [itank/]: [TILE-ENTITY]: tank has been registered by Bibliotheca for ITank
-[11Jun2021 14:06:56.522] [Render thread/INFO] [com.mojang.text2speech.NarratorWindows/]: Narrator library for x64 successfully loaded
-[11Jun2021 14:06:56.564] [Render thread/INFO] [net.minecraft.resources.SimpleReloadableResourceManager/]: Reloading ResourceManager: Default, Mod Resources
-[11Jun2021 14:06:56.669] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/net/minecraftforge/forge/promotions_slim.json
-[11Jun2021 14:06:56.857] [Worker-Main-10/INFO] [bibliotheca/]: [RENDER-TYPE] Loaded in special render type: RenderType[CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], no_transparency, diffuse_lighting[false], shade_model[smooth], alpha[0.5], depth_test[<=], cull[true], lightmap[true], overlay[false], fog, no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_light_blue
-[11Jun2021 14:06:56.857] [Worker-Main-10/INFO] [bibliotheca/]: [RENDER-TYPE] Loaded in special render type: RenderType[CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], no_transparency, diffuse_lighting[false], shade_model[smooth], alpha[0.5], depth_test[<=], cull[true], lightmap[true], overlay[false], fog, no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_blue
-[11Jun2021 14:06:56.857] [Worker-Main-10/INFO] [bibliotheca/]: [RENDER-TYPE] Loaded in special render type: RenderType[CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], no_transparency, diffuse_lighting[false], shade_model[smooth], alpha[0.5], depth_test[<=], cull[true], lightmap[true], overlay[false], fog, no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank
-[11Jun2021 14:06:56.858] [Worker-Main-10/INFO] [bibliotheca/]: [RENDER-TYPE] Loaded in special render type: RenderType[CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], no_transparency, diffuse_lighting[false], shade_model[smooth], alpha[0.5], depth_test[<=], cull[true], lightmap[true], overlay[false], fog, no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_magenta
-[11Jun2021 14:06:56.858] [Worker-Main-10/INFO] [bibliotheca/]: [RENDER-TYPE] Loaded in special render type: RenderType[CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], no_transparency, diffuse_lighting[false], shade_model[smooth], alpha[0.5], depth_test[<=], cull[true], lightmap[true], overlay[false], fog, no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_light_gray
-[11Jun2021 14:06:56.858] [Worker-Main-10/INFO] [bibliotheca/]: [RENDER-TYPE] Loaded in special render type: RenderType[CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], no_transparency, diffuse_lighting[false], shade_model[smooth], alpha[0.5], depth_test[<=], cull[true], lightmap[true], overlay[false], fog, no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_white
-[11Jun2021 14:06:56.858] [Worker-Main-10/INFO] [bibliotheca/]: [RENDER-TYPE] Loaded in special render type: RenderType[CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], no_transparency, diffuse_lighting[false], shade_model[smooth], alpha[0.5], depth_test[<=], cull[true], lightmap[true], overlay[false], fog, no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_brown
-[11Jun2021 14:06:56.858] [Worker-Main-10/INFO] [bibliotheca/]: [RENDER-TYPE] Loaded in special render type: RenderType[CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], no_transparency, diffuse_lighting[false], shade_model[smooth], alpha[0.5], depth_test[<=], cull[true], lightmap[true], overlay[false], fog, no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_red
-[11Jun2021 14:06:56.858] [Worker-Main-10/INFO] [bibliotheca/]: [RENDER-TYPE] Loaded in special render type: RenderType[CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], no_transparency, diffuse_lighting[false], shade_model[smooth], alpha[0.5], depth_test[<=], cull[true], lightmap[true], overlay[false], fog, no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_green
-[11Jun2021 14:06:56.858] [Worker-Main-10/INFO] [bibliotheca/]: [RENDER-TYPE] Loaded in special render type: RenderType[CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], no_transparency, diffuse_lighting[false], shade_model[smooth], alpha[0.5], depth_test[<=], cull[true], lightmap[true], overlay[false], fog, no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_purple
-[11Jun2021 14:06:56.858] [Worker-Main-10/INFO] [bibliotheca/]: [RENDER-TYPE] Loaded in special render type: RenderType[CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], no_transparency, diffuse_lighting[false], shade_model[smooth], alpha[0.5], depth_test[<=], cull[true], lightmap[true], overlay[false], fog, no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_orange
-[11Jun2021 14:06:56.858] [Worker-Main-10/INFO] [bibliotheca/]: [RENDER-TYPE] Loaded in special render type: RenderType[CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], no_transparency, diffuse_lighting[false], shade_model[smooth], alpha[0.5], depth_test[<=], cull[true], lightmap[true], overlay[false], fog, no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_yellow
-[11Jun2021 14:06:56.859] [Worker-Main-10/INFO] [bibliotheca/]: [RENDER-TYPE] Loaded in special render type: RenderType[CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], no_transparency, diffuse_lighting[false], shade_model[smooth], alpha[0.5], depth_test[<=], cull[true], lightmap[true], overlay[false], fog, no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_lime
-[11Jun2021 14:06:56.859] [Worker-Main-10/INFO] [bibliotheca/]: [RENDER-TYPE] Loaded in special render type: RenderType[CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], no_transparency, diffuse_lighting[false], shade_model[smooth], alpha[0.5], depth_test[<=], cull[true], lightmap[true], overlay[false], fog, no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_black
-[11Jun2021 14:06:56.859] [Worker-Main-10/INFO] [bibliotheca/]: [RENDER-TYPE] Loaded in special render type: RenderType[CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], no_transparency, diffuse_lighting[false], shade_model[smooth], alpha[0.5], depth_test[<=], cull[true], lightmap[true], overlay[false], fog, no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_cyan
-[11Jun2021 14:06:56.859] [Worker-Main-10/INFO] [bibliotheca/]: [RENDER-TYPE] Loaded in special render type: RenderType[CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], no_transparency, diffuse_lighting[false], shade_model[smooth], alpha[0.5], depth_test[<=], cull[true], lightmap[true], overlay[false], fog, no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_pink
-[11Jun2021 14:06:56.860] [Worker-Main-8/INFO] [itank/]: [BLOCK-COLOR]: 696969 :: itank:tank has been registered by Bibliotheca for itank
-[11Jun2021 14:06:56.860] [Worker-Main-8/INFO] [itank/]: [BLOCK-COLOR]: ffffff :: itank:tank_white has been registered by Bibliotheca for itank
-[11Jun2021 14:06:56.860] [Worker-Main-8/INFO] [itank/]: [BLOCK-COLOR]: ff6d00 :: itank:tank_orange has been registered by Bibliotheca for itank
-[11Jun2021 14:06:56.860] [Worker-Main-8/INFO] [itank/]: [BLOCK-COLOR]: bc37b6 :: itank:tank_magenta has been registered by Bibliotheca for itank
-[11Jun2021 14:06:56.860] [Worker-Main-8/INFO] [itank/]: [BLOCK-COLOR]: 2ea5c7 :: itank:tank_light_blue has been registered by Bibliotheca for itank
-[11Jun2021 14:06:56.860] [Worker-Main-8/INFO] [itank/]: [BLOCK-COLOR]: ceae27 :: itank:tank_yellow has been registered by Bibliotheca for itank
-[11Jun2021 14:06:56.860] [Worker-Main-8/INFO] [itank/]: [BLOCK-COLOR]: 83c825 :: itank:tank_lime has been registered by Bibliotheca for itank
-[11Jun2021 14:06:56.860] [Worker-Main-8/INFO] [itank/]: [BLOCK-COLOR]: ff4e87 :: itank:tank_pink has been registered by Bibliotheca for itank
-[11Jun2021 14:06:56.860] [Worker-Main-8/INFO] [itank/]: [BLOCK-COLOR]: c0c0c0 :: itank:tank_light_gray has been registered by Bibliotheca for itank
-[11Jun2021 14:06:56.860] [Worker-Main-8/INFO] [itank/]: [BLOCK-COLOR]: cffff :: itank:tank_cyan has been registered by Bibliotheca for itank
-[11Jun2021 14:06:56.860] [Worker-Main-8/INFO] [itank/]: [BLOCK-COLOR]: 68268d :: itank:tank_purple has been registered by Bibliotheca for itank
-[11Jun2021 14:06:56.860] [Worker-Main-8/INFO] [itank/]: [BLOCK-COLOR]: 3035a4 :: itank:tank_blue has been registered by Bibliotheca for itank
-[11Jun2021 14:06:56.860] [Worker-Main-8/INFO] [itank/]: [BLOCK-COLOR]: 49311d :: itank:tank_brown has been registered by Bibliotheca for itank
-[11Jun2021 14:06:56.860] [Worker-Main-8/INFO] [itank/]: [BLOCK-COLOR]: 546f17 :: itank:tank_green has been registered by Bibliotheca for itank
-[11Jun2021 14:06:56.860] [Worker-Main-8/INFO] [itank/]: [BLOCK-COLOR]: cd352c :: itank:tank_red has been registered by Bibliotheca for itank
-[11Jun2021 14:06:56.861] [Worker-Main-8/INFO] [itank/]: [BLOCK-COLOR]: 151517 :: itank:tank_black has been registered by Bibliotheca for itank
-[11Jun2021 14:06:56.862] [Worker-Main-8/INFO] [itank/]: [ITEM-COLOR]: 696969 :: itank:tank has been registered by Bibliotheca for itank
-[11Jun2021 14:06:56.862] [Worker-Main-8/INFO] [itank/]: [ITEM-COLOR]: ffffff :: itank:tank_white has been registered by Bibliotheca for itank
-[11Jun2021 14:06:56.862] [Worker-Main-8/INFO] [itank/]: [ITEM-COLOR]: ff6d00 :: itank:tank_orange has been registered by Bibliotheca for itank
-[11Jun2021 14:06:56.862] [Worker-Main-8/INFO] [itank/]: [ITEM-COLOR]: bc37b6 :: itank:tank_magenta has been registered by Bibliotheca for itank
-[11Jun2021 14:06:56.862] [Worker-Main-8/INFO] [itank/]: [ITEM-COLOR]: 2ea5c7 :: itank:tank_light_blue has been registered by Bibliotheca for itank
-[11Jun2021 14:06:56.862] [Worker-Main-8/INFO] [itank/]: [ITEM-COLOR]: ceae27 :: itank:tank_yellow has been registered by Bibliotheca for itank
-[11Jun2021 14:06:56.862] [Worker-Main-8/INFO] [itank/]: [ITEM-COLOR]: 83c825 :: itank:tank_lime has been registered by Bibliotheca for itank
-[11Jun2021 14:06:56.862] [Worker-Main-8/INFO] [itank/]: [ITEM-COLOR]: ff4e87 :: itank:tank_pink has been registered by Bibliotheca for itank
-[11Jun2021 14:06:56.862] [Worker-Main-8/INFO] [itank/]: [ITEM-COLOR]: c0c0c0 :: itank:tank_light_gray has been registered by Bibliotheca for itank
-[11Jun2021 14:06:56.862] [Worker-Main-8/INFO] [itank/]: [ITEM-COLOR]: cffff :: itank:tank_cyan has been registered by Bibliotheca for itank
-[11Jun2021 14:06:56.863] [Worker-Main-8/INFO] [itank/]: [ITEM-COLOR]: 68268d :: itank:tank_purple has been registered by Bibliotheca for itank
-[11Jun2021 14:06:56.863] [Worker-Main-8/INFO] [itank/]: [ITEM-COLOR]: 3035a4 :: itank:tank_blue has been registered by Bibliotheca for itank
-[11Jun2021 14:06:56.863] [Worker-Main-8/INFO] [itank/]: [ITEM-COLOR]: 49311d :: itank:tank_brown has been registered by Bibliotheca for itank
-[11Jun2021 14:06:56.863] [Worker-Main-8/INFO] [itank/]: [ITEM-COLOR]: 546f17 :: itank:tank_green has been registered by Bibliotheca for itank
-[11Jun2021 14:06:56.863] [Worker-Main-8/INFO] [itank/]: [ITEM-COLOR]: cd352c :: itank:tank_red has been registered by Bibliotheca for itank
-[11Jun2021 14:06:56.863] [Worker-Main-8/INFO] [itank/]: [ITEM-COLOR]: 151517 :: itank:tank_black has been registered by Bibliotheca for itank
-[11Jun2021 14:06:56.883] [Worker-Main-10/INFO] [bibliotheca/]: [RENDERING] Loaded in special renderer for itank:tank_light_blue
-[11Jun2021 14:06:56.883] [Worker-Main-10/INFO] [bibliotheca/]: [RENDERING] Loaded in special renderer for itank:tank_blue
-[11Jun2021 14:06:56.883] [Worker-Main-10/INFO] [bibliotheca/]: [RENDERING] Loaded in special renderer for itank:tank
-[11Jun2021 14:06:56.883] [Worker-Main-10/INFO] [bibliotheca/]: [RENDERING] Loaded in special renderer for itank:tank_magenta
-[11Jun2021 14:06:56.883] [Worker-Main-10/INFO] [bibliotheca/]: [RENDERING] Loaded in special renderer for itank:tank_light_gray
-[11Jun2021 14:06:56.883] [Worker-Main-10/INFO] [bibliotheca/]: [RENDERING] Loaded in special renderer for itank:tank_white
-[11Jun2021 14:06:56.883] [Worker-Main-10/INFO] [bibliotheca/]: [RENDERING] Loaded in special renderer for itank:tank_brown
-[11Jun2021 14:06:56.883] [Worker-Main-10/INFO] [bibliotheca/]: [RENDERING] Loaded in special renderer for itank:tank_red
-[11Jun2021 14:06:56.883] [Worker-Main-10/INFO] [bibliotheca/]: [RENDERING] Loaded in special renderer for itank:tank_green
-[11Jun2021 14:06:56.883] [Worker-Main-10/INFO] [bibliotheca/]: [RENDERING] Loaded in special renderer for itank:tank_purple
-[11Jun2021 14:06:56.883] [Worker-Main-10/INFO] [bibliotheca/]: [RENDERING] Loaded in special renderer for itank:tank_orange
-[11Jun2021 14:06:56.883] [Worker-Main-10/INFO] [bibliotheca/]: [RENDERING] Loaded in special renderer for itank:tank_yellow
-[11Jun2021 14:06:56.883] [Worker-Main-10/INFO] [bibliotheca/]: [RENDERING] Loaded in special renderer for itank:tank_lime
-[11Jun2021 14:06:56.883] [Worker-Main-10/INFO] [bibliotheca/]: [RENDERING] Loaded in special renderer for itank:tank_black
-[11Jun2021 14:06:56.883] [Worker-Main-10/INFO] [bibliotheca/]: [RENDERING] Loaded in special renderer for itank:tank_cyan
-[11Jun2021 14:06:56.883] [Worker-Main-10/INFO] [bibliotheca/]: [RENDERING] Loaded in special renderer for itank:tank_pink
-[11Jun2021 14:06:57.239] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Found status: OUTDATED Current: 36.1.25 Target: 36.1.31
-[11Jun2021 14:07:01.740] [Worker-Main-9/INFO] [waila/]: Waila information registered for itank:tank_light_blue
-[11Jun2021 14:07:01.740] [Worker-Main-9/INFO] [waila/]: Waila information registered for itank:tank_blue
-[11Jun2021 14:07:01.740] [Worker-Main-9/INFO] [waila/]: Waila information registered for itank:tank
-[11Jun2021 14:07:01.740] [Worker-Main-9/INFO] [waila/]: Waila information registered for itank:tank_magenta
-[11Jun2021 14:07:01.740] [Worker-Main-9/INFO] [waila/]: Waila information registered for itank:tank_light_gray
-[11Jun2021 14:07:01.740] [Worker-Main-9/INFO] [waila/]: Waila information registered for itank:tank_white
-[11Jun2021 14:07:01.740] [Worker-Main-9/INFO] [waila/]: Waila information registered for itank:tank_brown
-[11Jun2021 14:07:01.740] [Worker-Main-9/INFO] [waila/]: Waila information registered for itank:tank_red
-[11Jun2021 14:07:01.740] [Worker-Main-9/INFO] [waila/]: Waila information registered for itank:tank_green
-[11Jun2021 14:07:01.740] [Worker-Main-9/INFO] [waila/]: Waila information registered for itank:tank_purple
-[11Jun2021 14:07:01.740] [Worker-Main-9/INFO] [waila/]: Waila information registered for itank:tank_orange
-[11Jun2021 14:07:01.740] [Worker-Main-9/INFO] [waila/]: Waila information registered for itank:tank_yellow
-[11Jun2021 14:07:01.740] [Worker-Main-9/INFO] [waila/]: Waila information registered for itank:tank_lime
-[11Jun2021 14:07:01.740] [Worker-Main-9/INFO] [waila/]: Waila information registered for itank:tank_black
-[11Jun2021 14:07:01.740] [Worker-Main-9/INFO] [waila/]: Waila information registered for itank:tank_cyan
-[11Jun2021 14:07:01.741] [Worker-Main-9/INFO] [waila/]: Waila information registered for itank:tank_pink
-[11Jun2021 14:07:01.741] [Worker-Main-9/INFO] [Waila/]: Registered plugin at com.ewyboy.bibliotheca.compatibilities.hwyla.WailaCompatibility
-[11Jun2021 14:07:01.747] [Worker-Main-9/INFO] [Waila/]: Registered plugin at mcp.mobius.waila.addons.minecraft.PluginMinecraft
-[11Jun2021 14:07:02.236] [Render thread/INFO] [net.minecraft.client.audio.SoundSystem/]: OpenAL initialized.
-[11Jun2021 14:07:02.237] [Render thread/INFO] [net.minecraft.client.audio.SoundEngine/SOUNDS]: Sound engine started
-[11Jun2021 14:07:02.395] [Render thread/INFO] [net.minecraft.client.renderer.texture.AtlasTexture/]: Created: 256x128x0 jei:textures/atlas/gui.png-atlas
-[11Jun2021 14:07:02.395] [Render thread/INFO] [net.minecraft.client.renderer.texture.AtlasTexture/]: Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
-[11Jun2021 14:07:02.416] [Render thread/INFO] [net.minecraft.client.renderer.texture.AtlasTexture/]: Created: 256x128x4 minecraft:textures/atlas/signs.png-atlas
-[11Jun2021 14:07:02.416] [Render thread/INFO] [net.minecraft.client.renderer.texture.AtlasTexture/]: Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
-[11Jun2021 14:07:02.417] [Render thread/INFO] [net.minecraft.client.renderer.texture.AtlasTexture/]: Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
-[11Jun2021 14:07:02.418] [Render thread/INFO] [net.minecraft.client.renderer.texture.AtlasTexture/]: Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
-[11Jun2021 14:07:02.418] [Render thread/INFO] [net.minecraft.client.renderer.texture.AtlasTexture/]: Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
-[11Jun2021 14:07:02.418] [Render thread/INFO] [net.minecraft.client.renderer.texture.AtlasTexture/]: Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
-[11Jun2021 14:07:02.660] [Render thread/INFO] [net.minecraft.client.renderer.texture.AtlasTexture/]: Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
-[11Jun2021 14:07:02.661] [Render thread/INFO] [net.minecraft.client.renderer.texture.AtlasTexture/]: Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
-[11Jun2021 14:07:02.661] [Render thread/INFO] [net.minecraft.client.renderer.texture.AtlasTexture/]: Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
-[11Jun2021 14:07:03.187] [Realms Notification Availability checker #1/INFO] [com.mojang.realmsclient.client.RealmsClient/]: Could not authorize you against Realms server: Invalid session id
-[11Jun2021 14:08:04.148] [Render thread/WARN] [net.minecraft.command.Commands/]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
-[11Jun2021 14:08:04.149] [Render thread/WARN] [net.minecraft.command.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
-[11Jun2021 14:08:04.149] [Render thread/WARN] [net.minecraft.command.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
-[11Jun2021 14:08:04.150] [Render thread/WARN] [net.minecraft.command.Commands/]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
-[11Jun2021 14:08:04.150] [Render thread/WARN] [net.minecraft.command.Commands/]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
-[11Jun2021 14:08:04.153] [Render thread/INFO] [net.minecraft.resources.SimpleReloadableResourceManager/]: Reloading ResourceManager: Default, forge-1.16.5-36.1.30_mapped_snapshot_20210309-1.16.5-recomp.jar, bibliotheca-268210-3346785_mapped_snapshot_20210309-1.16.5.jar, main, Hwyla-1.10.11-B78_1.16.2_mapped_snapshot_20210309-1.16.5.jar, jei-238222-3345971_mapped_snapshot_20210309-1.16.5.jar
-[11Jun2021 14:08:04.967] [Render thread/INFO] [net.minecraft.item.crafting.RecipeManager/]: Loaded 7 recipes
-[11Jun2021 14:08:05.884] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 927 advancements
-[11Jun2021 14:08:06.276] [Render thread/WARN] [net.minecraft.command.Commands/]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
-[11Jun2021 14:08:06.276] [Render thread/WARN] [net.minecraft.command.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
-[11Jun2021 14:08:06.277] [Render thread/WARN] [net.minecraft.command.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
-[11Jun2021 14:08:06.277] [Render thread/WARN] [net.minecraft.command.Commands/]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
-[11Jun2021 14:08:06.277] [Render thread/WARN] [net.minecraft.command.Commands/]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
-[11Jun2021 14:08:06.278] [Render thread/INFO] [net.minecraft.resources.SimpleReloadableResourceManager/]: Reloading ResourceManager: Default, forge-1.16.5-36.1.30_mapped_snapshot_20210309-1.16.5-recomp.jar, bibliotheca-268210-3346785_mapped_snapshot_20210309-1.16.5.jar, main, Hwyla-1.10.11-B78_1.16.2_mapped_snapshot_20210309-1.16.5.jar, jei-238222-3345971_mapped_snapshot_20210309-1.16.5.jar
-[11Jun2021 14:08:07.032] [Render thread/INFO] [net.minecraft.item.crafting.RecipeManager/]: Loaded 7 recipes
-[11Jun2021 14:08:07.625] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 927 advancements
-[11Jun2021 14:08:08.197] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[11Jun2021 14:08:08.216] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer/]: Starting integrated minecraft server version 1.16.5
-[11Jun2021 14:08:08.216] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
-[11Jun2021 14:08:08.333] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld
-[11Jun2021 14:08:08.623] [Render thread/INFO] [net.minecraft.world.chunk.listener.LoggingChunkStatusListener/]: Preparing spawn area: 0%
-[11Jun2021 14:08:08.878] [Render thread/INFO] [net.minecraft.world.chunk.listener.LoggingChunkStatusListener/]: Time elapsed: 521 ms
-[11Jun2021 14:08:08.983] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer/]: Changing view distance to 11, from 10
-[11Jun2021 14:08:10.306] [Netty Local Client IO #0/INFO] [net.minecraftforge.fml.network.NetworkHooks/]: Connected to a modded server.
-[11Jun2021 14:08:10.331] [Server thread/INFO] [net.minecraftforge.common.AdvancementLoadFix/]: Using new advancement loading for net.minecraft.advancements.PlayerAdvancements@7d676f48
-[11Jun2021 14:08:10.341] [Server thread/INFO] [net.minecraft.server.management.PlayerList/]: Dev[local:E:f8ba7e2e] logged in with entity id 28 at (268.2654717112362, 3.6718523687365954, -230.00024039716737)
-[11Jun2021 14:08:10.359] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev joined the game
-[11Jun2021 14:08:10.399] [Server thread/INFO] [Waila/]: Syncing config to Dev (380df991-f603-344c-a090-369bad2a924a)
-[11Jun2021 14:08:10.503] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer/]: Saving and pausing game...
-[11Jun2021 14:08:10.515] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[11Jun2021 14:08:10.569] [Render thread/INFO] [mezz.jei.util.LoggedTimer/]: Starting JEI...
-[11Jun2021 14:08:10.643] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[11Jun2021 14:08:10.644] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[11Jun2021 14:08:10.791] [Render thread/INFO] [mezz.jei.util.LoggedTimer/]: Building ingredient list...
-[11Jun2021 14:08:10.797] [Render thread/INFO] [mezz.jei.util.LoggedTimer/]: Building ingredient list took 6.384 ms
-[11Jun2021 14:08:10.798] [Render thread/INFO] [mezz.jei.util.LoggedTimer/]: Building ingredient filter...
-[11Jun2021 14:08:10.922] [Render thread/INFO] [mezz.jei.util.LoggedTimer/]: Building ingredient filter took 124.3 ms
-[11Jun2021 14:08:10.922] [Render thread/INFO] [mezz.jei.util.LoggedTimer/]: Building bookmarks...
-[11Jun2021 14:08:10.924] [Render thread/INFO] [mezz.jei.util.LoggedTimer/]: Building bookmarks took 1.613 ms
-[11Jun2021 14:08:10.924] [Render thread/INFO] [mezz.jei.util.LoggedTimer/]: Building recipe registry...
-[11Jun2021 14:08:10.960] [Render thread/INFO] [mezz.jei.util.LoggedTimer/]: Building recipe registry took 36.01 ms
-[11Jun2021 14:08:10.969] [Render thread/INFO] [mezz.jei.util.LoggedTimer/]: Building runtime...
-[11Jun2021 14:08:11.035] [Render thread/INFO] [mezz.jei.util.LoggedTimer/]: Building runtime took 65.08 ms
-[11Jun2021 14:08:11.061] [Render thread/INFO] [mezz.jei.util.LoggedTimer/]: Starting JEI took 492.6 ms
-[11Jun2021 14:08:11.115] [Render thread/INFO] [Waila/]: Received config from the server: {"minecraft:hide_infestations":true}
-[11Jun2021 14:08:11.116] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 73 advancements
-[11Jun2021 14:08:12.904] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer/]: Saving and pausing game...
-[11Jun2021 14:08:12.908] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[11Jun2021 14:08:12.923] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[11Jun2021 14:08:12.924] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[11Jun2021 14:26:26.522] [Render thread/INFO] [net.minecraft.client.gui.NewChatGui/]: [CHAT] Saved screenshot as 2021-06-11_14.26.26.png
-[11Jun2021 14:26:27.203] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer/]: Saving and pausing game...
-[11Jun2021 14:26:27.207] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[11Jun2021 14:26:27.212] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[11Jun2021 14:26:27.212] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+	at net.minecraftforge.userdev.LaunchTesting.main(LaunchTesting.java:108) [forge-1.16.5-36.2.2_mapped_snapshot_20210309-1.16.5.jar:?]
+[30Aug2021 11:52:55.228] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: Dev
+[30Aug2021 11:52:55.394] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.2.2 build 10
+[30Aug2021 11:52:56.539] [modloading-worker-2/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 36.2.2, for MC 1.16.5 with MCP 20210115.111550
+[30Aug2021 11:52:56.541] [modloading-worker-2/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v36.2.2 Initialized
+[30Aug2021 11:52:56.619] [modloading-worker-4/INFO] [itank/]: Registering content for itank
+[30Aug2021 11:52:56.683] [modloading-worker-4/INFO] [itank/]: [BLOCK]: tank has been registered by Bibliotheca for ITank
+[30Aug2021 11:52:56.683] [modloading-worker-4/INFO] [itank/]: [BLOCK]: tank_white has been registered by Bibliotheca for ITank
+[30Aug2021 11:52:56.683] [modloading-worker-4/INFO] [itank/]: [BLOCK]: tank_orange has been registered by Bibliotheca for ITank
+[30Aug2021 11:52:56.683] [modloading-worker-4/INFO] [itank/]: [BLOCK]: tank_magenta has been registered by Bibliotheca for ITank
+[30Aug2021 11:52:56.683] [modloading-worker-4/INFO] [itank/]: [BLOCK]: tank_light_blue has been registered by Bibliotheca for ITank
+[30Aug2021 11:52:56.683] [modloading-worker-4/INFO] [itank/]: [BLOCK]: tank_yellow has been registered by Bibliotheca for ITank
+[30Aug2021 11:52:56.683] [modloading-worker-4/INFO] [itank/]: [BLOCK]: tank_lime has been registered by Bibliotheca for ITank
+[30Aug2021 11:52:56.687] [modloading-worker-4/INFO] [itank/]: [BLOCK]: tank_pink has been registered by Bibliotheca for ITank
+[30Aug2021 11:52:56.687] [modloading-worker-4/INFO] [itank/]: [BLOCK]: tank_light_gray has been registered by Bibliotheca for ITank
+[30Aug2021 11:52:56.687] [modloading-worker-4/INFO] [itank/]: [BLOCK]: tank_cyan has been registered by Bibliotheca for ITank
+[30Aug2021 11:52:56.687] [modloading-worker-4/INFO] [itank/]: [BLOCK]: tank_purple has been registered by Bibliotheca for ITank
+[30Aug2021 11:52:56.688] [modloading-worker-4/INFO] [itank/]: [BLOCK]: tank_blue has been registered by Bibliotheca for ITank
+[30Aug2021 11:52:56.688] [modloading-worker-4/INFO] [itank/]: [BLOCK]: tank_brown has been registered by Bibliotheca for ITank
+[30Aug2021 11:52:56.688] [modloading-worker-4/INFO] [itank/]: [BLOCK]: tank_green has been registered by Bibliotheca for ITank
+[30Aug2021 11:52:56.688] [modloading-worker-4/INFO] [itank/]: [BLOCK]: tank_red has been registered by Bibliotheca for ITank
+[30Aug2021 11:52:56.688] [modloading-worker-4/INFO] [itank/]: [BLOCK]: tank_black has been registered by Bibliotheca for ITank
+[30Aug2021 11:52:56.691] [modloading-worker-4/INFO] [itank/]: [ITEM]: tank has been registered by Bibliotheca for ITank
+[30Aug2021 11:52:56.692] [modloading-worker-4/INFO] [itank/]: [ITEM]: tank_white has been registered by Bibliotheca for ITank
+[30Aug2021 11:52:56.692] [modloading-worker-4/INFO] [itank/]: [ITEM]: tank_orange has been registered by Bibliotheca for ITank
+[30Aug2021 11:52:56.692] [modloading-worker-4/INFO] [itank/]: [ITEM]: tank_magenta has been registered by Bibliotheca for ITank
+[30Aug2021 11:52:56.692] [modloading-worker-4/INFO] [itank/]: [ITEM]: tank_light_blue has been registered by Bibliotheca for ITank
+[30Aug2021 11:52:56.693] [modloading-worker-4/INFO] [itank/]: [ITEM]: tank_yellow has been registered by Bibliotheca for ITank
+[30Aug2021 11:52:56.693] [modloading-worker-4/INFO] [itank/]: [ITEM]: tank_lime has been registered by Bibliotheca for ITank
+[30Aug2021 11:52:56.693] [modloading-worker-4/INFO] [itank/]: [ITEM]: tank_pink has been registered by Bibliotheca for ITank
+[30Aug2021 11:52:56.693] [modloading-worker-4/INFO] [itank/]: [ITEM]: tank_light_gray has been registered by Bibliotheca for ITank
+[30Aug2021 11:52:56.693] [modloading-worker-4/INFO] [itank/]: [ITEM]: tank_cyan has been registered by Bibliotheca for ITank
+[30Aug2021 11:52:56.693] [modloading-worker-4/INFO] [itank/]: [ITEM]: tank_purple has been registered by Bibliotheca for ITank
+[30Aug2021 11:52:56.693] [modloading-worker-4/INFO] [itank/]: [ITEM]: tank_blue has been registered by Bibliotheca for ITank
+[30Aug2021 11:52:56.693] [modloading-worker-4/INFO] [itank/]: [ITEM]: tank_brown has been registered by Bibliotheca for ITank
+[30Aug2021 11:52:56.693] [modloading-worker-4/INFO] [itank/]: [ITEM]: tank_green has been registered by Bibliotheca for ITank
+[30Aug2021 11:52:56.693] [modloading-worker-4/INFO] [itank/]: [ITEM]: tank_red has been registered by Bibliotheca for ITank
+[30Aug2021 11:52:56.693] [modloading-worker-4/INFO] [itank/]: [ITEM]: tank_black has been registered by Bibliotheca for ITank
+[30Aug2021 11:52:56.704] [modloading-worker-4/INFO] [itank/]: [TILE-ENTITY]: tank has been registered by Bibliotheca for ITank
+[30Aug2021 11:52:57.524] [Render thread/INFO] [com.mojang.text2speech.NarratorWindows/]: Narrator library for x64 successfully loaded
+[30Aug2021 11:52:57.561] [Render thread/INFO] [net.minecraft.resources.SimpleReloadableResourceManager/]: Reloading ResourceManager: Default, Mod Resources
+[30Aug2021 11:52:57.628] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/net/minecraftforge/forge/promotions_slim.json
+[30Aug2021 11:52:57.880] [Worker-Main-11/INFO] [bibliotheca/]: [RENDER-TYPE] Loaded in special render type: RenderType[CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], no_transparency, diffuse_lighting[false], shade_model[smooth], alpha[0.5], depth_test[<=], cull[true], lightmap[true], overlay[false], fog, no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_light_blue
+[30Aug2021 11:52:57.880] [Worker-Main-8/INFO] [itank/]: [BLOCK-COLOR]: 696969 :: itank:tank has been registered by Bibliotheca for itank
+[30Aug2021 11:52:57.880] [Worker-Main-11/INFO] [bibliotheca/]: [RENDER-TYPE] Loaded in special render type: RenderType[CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], no_transparency, diffuse_lighting[false], shade_model[smooth], alpha[0.5], depth_test[<=], cull[true], lightmap[true], overlay[false], fog, no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_blue
+[30Aug2021 11:52:57.880] [Worker-Main-8/INFO] [itank/]: [BLOCK-COLOR]: ffffff :: itank:tank_white has been registered by Bibliotheca for itank
+[30Aug2021 11:52:57.880] [Worker-Main-8/INFO] [itank/]: [BLOCK-COLOR]: ff6d00 :: itank:tank_orange has been registered by Bibliotheca for itank
+[30Aug2021 11:52:57.880] [Worker-Main-11/INFO] [bibliotheca/]: [RENDER-TYPE] Loaded in special render type: RenderType[CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], no_transparency, diffuse_lighting[false], shade_model[smooth], alpha[0.5], depth_test[<=], cull[true], lightmap[true], overlay[false], fog, no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank
+[30Aug2021 11:52:57.881] [Worker-Main-8/INFO] [itank/]: [BLOCK-COLOR]: bc37b6 :: itank:tank_magenta has been registered by Bibliotheca for itank
+[30Aug2021 11:52:57.881] [Worker-Main-11/INFO] [bibliotheca/]: [RENDER-TYPE] Loaded in special render type: RenderType[CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], no_transparency, diffuse_lighting[false], shade_model[smooth], alpha[0.5], depth_test[<=], cull[true], lightmap[true], overlay[false], fog, no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_magenta
+[30Aug2021 11:52:57.881] [Worker-Main-8/INFO] [itank/]: [BLOCK-COLOR]: 2ea5c7 :: itank:tank_light_blue has been registered by Bibliotheca for itank
+[30Aug2021 11:52:57.881] [Worker-Main-11/INFO] [bibliotheca/]: [RENDER-TYPE] Loaded in special render type: RenderType[CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], no_transparency, diffuse_lighting[false], shade_model[smooth], alpha[0.5], depth_test[<=], cull[true], lightmap[true], overlay[false], fog, no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_light_gray
+[30Aug2021 11:52:57.881] [Worker-Main-8/INFO] [itank/]: [BLOCK-COLOR]: ceae27 :: itank:tank_yellow has been registered by Bibliotheca for itank
+[30Aug2021 11:52:57.881] [Worker-Main-11/INFO] [bibliotheca/]: [RENDER-TYPE] Loaded in special render type: RenderType[CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], no_transparency, diffuse_lighting[false], shade_model[smooth], alpha[0.5], depth_test[<=], cull[true], lightmap[true], overlay[false], fog, no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_white
+[30Aug2021 11:52:57.881] [Worker-Main-8/INFO] [itank/]: [BLOCK-COLOR]: 83c825 :: itank:tank_lime has been registered by Bibliotheca for itank
+[30Aug2021 11:52:57.881] [Worker-Main-11/INFO] [bibliotheca/]: [RENDER-TYPE] Loaded in special render type: RenderType[CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], no_transparency, diffuse_lighting[false], shade_model[smooth], alpha[0.5], depth_test[<=], cull[true], lightmap[true], overlay[false], fog, no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_brown
+[30Aug2021 11:52:57.881] [Worker-Main-8/INFO] [itank/]: [BLOCK-COLOR]: ff4e87 :: itank:tank_pink has been registered by Bibliotheca for itank
+[30Aug2021 11:52:57.881] [Worker-Main-11/INFO] [bibliotheca/]: [RENDER-TYPE] Loaded in special render type: RenderType[CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], no_transparency, diffuse_lighting[false], shade_model[smooth], alpha[0.5], depth_test[<=], cull[true], lightmap[true], overlay[false], fog, no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_red
+[30Aug2021 11:52:57.881] [Worker-Main-8/INFO] [itank/]: [BLOCK-COLOR]: c0c0c0 :: itank:tank_light_gray has been registered by Bibliotheca for itank
+[30Aug2021 11:52:57.881] [Worker-Main-8/INFO] [itank/]: [BLOCK-COLOR]: cffff :: itank:tank_cyan has been registered by Bibliotheca for itank
+[30Aug2021 11:52:57.881] [Worker-Main-8/INFO] [itank/]: [BLOCK-COLOR]: 68268d :: itank:tank_purple has been registered by Bibliotheca for itank
+[30Aug2021 11:52:57.881] [Worker-Main-11/INFO] [bibliotheca/]: [RENDER-TYPE] Loaded in special render type: RenderType[CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], no_transparency, diffuse_lighting[false], shade_model[smooth], alpha[0.5], depth_test[<=], cull[true], lightmap[true], overlay[false], fog, no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_green
+[30Aug2021 11:52:57.881] [Worker-Main-8/INFO] [itank/]: [BLOCK-COLOR]: 3035a4 :: itank:tank_blue has been registered by Bibliotheca for itank
+[30Aug2021 11:52:57.881] [Worker-Main-11/INFO] [bibliotheca/]: [RENDER-TYPE] Loaded in special render type: RenderType[CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], no_transparency, diffuse_lighting[false], shade_model[smooth], alpha[0.5], depth_test[<=], cull[true], lightmap[true], overlay[false], fog, no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_purple
+[30Aug2021 11:52:57.881] [Worker-Main-8/INFO] [itank/]: [BLOCK-COLOR]: 49311d :: itank:tank_brown has been registered by Bibliotheca for itank
+[30Aug2021 11:52:57.881] [Worker-Main-11/INFO] [bibliotheca/]: [RENDER-TYPE] Loaded in special render type: RenderType[CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], no_transparency, diffuse_lighting[false], shade_model[smooth], alpha[0.5], depth_test[<=], cull[true], lightmap[true], overlay[false], fog, no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_orange
+[30Aug2021 11:52:57.882] [Worker-Main-8/INFO] [itank/]: [BLOCK-COLOR]: 546f17 :: itank:tank_green has been registered by Bibliotheca for itank
+[30Aug2021 11:52:57.882] [Worker-Main-11/INFO] [bibliotheca/]: [RENDER-TYPE] Loaded in special render type: RenderType[CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], no_transparency, diffuse_lighting[false], shade_model[smooth], alpha[0.5], depth_test[<=], cull[true], lightmap[true], overlay[false], fog, no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_yellow
+[30Aug2021 11:52:57.882] [Worker-Main-8/INFO] [itank/]: [BLOCK-COLOR]: cd352c :: itank:tank_red has been registered by Bibliotheca for itank
+[30Aug2021 11:52:57.882] [Worker-Main-8/INFO] [itank/]: [BLOCK-COLOR]: 151517 :: itank:tank_black has been registered by Bibliotheca for itank
+[30Aug2021 11:52:57.882] [Worker-Main-11/INFO] [bibliotheca/]: [RENDER-TYPE] Loaded in special render type: RenderType[CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], no_transparency, diffuse_lighting[false], shade_model[smooth], alpha[0.5], depth_test[<=], cull[true], lightmap[true], overlay[false], fog, no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_lime
+[30Aug2021 11:52:57.882] [Worker-Main-11/INFO] [bibliotheca/]: [RENDER-TYPE] Loaded in special render type: RenderType[CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], no_transparency, diffuse_lighting[false], shade_model[smooth], alpha[0.5], depth_test[<=], cull[true], lightmap[true], overlay[false], fog, no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_black
+[30Aug2021 11:52:57.882] [Worker-Main-11/INFO] [bibliotheca/]: [RENDER-TYPE] Loaded in special render type: RenderType[CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], no_transparency, diffuse_lighting[false], shade_model[smooth], alpha[0.5], depth_test[<=], cull[true], lightmap[true], overlay[false], fog, no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_cyan
+[30Aug2021 11:52:57.882] [Worker-Main-11/INFO] [bibliotheca/]: [RENDER-TYPE] Loaded in special render type: RenderType[CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], no_transparency, diffuse_lighting[false], shade_model[smooth], alpha[0.5], depth_test[<=], cull[true], lightmap[true], overlay[false], fog, no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_pink
+[30Aug2021 11:52:57.883] [Worker-Main-8/INFO] [itank/]: [ITEM-COLOR]: 696969 :: itank:tank has been registered by Bibliotheca for itank
+[30Aug2021 11:52:57.883] [Worker-Main-8/INFO] [itank/]: [ITEM-COLOR]: ffffff :: itank:tank_white has been registered by Bibliotheca for itank
+[30Aug2021 11:52:57.883] [Worker-Main-8/INFO] [itank/]: [ITEM-COLOR]: ff6d00 :: itank:tank_orange has been registered by Bibliotheca for itank
+[30Aug2021 11:52:57.883] [Worker-Main-8/INFO] [itank/]: [ITEM-COLOR]: bc37b6 :: itank:tank_magenta has been registered by Bibliotheca for itank
+[30Aug2021 11:52:57.883] [Worker-Main-8/INFO] [itank/]: [ITEM-COLOR]: 2ea5c7 :: itank:tank_light_blue has been registered by Bibliotheca for itank
+[30Aug2021 11:52:57.883] [Worker-Main-8/INFO] [itank/]: [ITEM-COLOR]: ceae27 :: itank:tank_yellow has been registered by Bibliotheca for itank
+[30Aug2021 11:52:57.883] [Worker-Main-8/INFO] [itank/]: [ITEM-COLOR]: 83c825 :: itank:tank_lime has been registered by Bibliotheca for itank
+[30Aug2021 11:52:57.883] [Worker-Main-8/INFO] [itank/]: [ITEM-COLOR]: ff4e87 :: itank:tank_pink has been registered by Bibliotheca for itank
+[30Aug2021 11:52:57.883] [Worker-Main-8/INFO] [itank/]: [ITEM-COLOR]: c0c0c0 :: itank:tank_light_gray has been registered by Bibliotheca for itank
+[30Aug2021 11:52:57.884] [Worker-Main-8/INFO] [itank/]: [ITEM-COLOR]: cffff :: itank:tank_cyan has been registered by Bibliotheca for itank
+[30Aug2021 11:52:57.884] [Worker-Main-8/INFO] [itank/]: [ITEM-COLOR]: 68268d :: itank:tank_purple has been registered by Bibliotheca for itank
+[30Aug2021 11:52:57.884] [Worker-Main-8/INFO] [itank/]: [ITEM-COLOR]: 3035a4 :: itank:tank_blue has been registered by Bibliotheca for itank
+[30Aug2021 11:52:57.884] [Worker-Main-8/INFO] [itank/]: [ITEM-COLOR]: 49311d :: itank:tank_brown has been registered by Bibliotheca for itank
+[30Aug2021 11:52:57.884] [Worker-Main-8/INFO] [itank/]: [ITEM-COLOR]: 546f17 :: itank:tank_green has been registered by Bibliotheca for itank
+[30Aug2021 11:52:57.884] [Worker-Main-8/INFO] [itank/]: [ITEM-COLOR]: cd352c :: itank:tank_red has been registered by Bibliotheca for itank
+[30Aug2021 11:52:57.884] [Worker-Main-8/INFO] [itank/]: [ITEM-COLOR]: 151517 :: itank:tank_black has been registered by Bibliotheca for itank
+[30Aug2021 11:52:57.902] [Worker-Main-11/INFO] [bibliotheca/]: [RENDERING] Loaded in special renderer for itank:tank_light_blue
+[30Aug2021 11:52:57.902] [Worker-Main-11/INFO] [bibliotheca/]: [RENDERING] Loaded in special renderer for itank:tank_blue
+[30Aug2021 11:52:57.902] [Worker-Main-11/INFO] [bibliotheca/]: [RENDERING] Loaded in special renderer for itank:tank
+[30Aug2021 11:52:57.903] [Worker-Main-11/INFO] [bibliotheca/]: [RENDERING] Loaded in special renderer for itank:tank_magenta
+[30Aug2021 11:52:57.903] [Worker-Main-11/INFO] [bibliotheca/]: [RENDERING] Loaded in special renderer for itank:tank_light_gray
+[30Aug2021 11:52:57.903] [Worker-Main-11/INFO] [bibliotheca/]: [RENDERING] Loaded in special renderer for itank:tank_white
+[30Aug2021 11:52:57.903] [Worker-Main-11/INFO] [bibliotheca/]: [RENDERING] Loaded in special renderer for itank:tank_brown
+[30Aug2021 11:52:57.903] [Worker-Main-11/INFO] [bibliotheca/]: [RENDERING] Loaded in special renderer for itank:tank_red
+[30Aug2021 11:52:57.903] [Worker-Main-11/INFO] [bibliotheca/]: [RENDERING] Loaded in special renderer for itank:tank_green
+[30Aug2021 11:52:57.903] [Worker-Main-11/INFO] [bibliotheca/]: [RENDERING] Loaded in special renderer for itank:tank_purple
+[30Aug2021 11:52:57.903] [Worker-Main-11/INFO] [bibliotheca/]: [RENDERING] Loaded in special renderer for itank:tank_orange
+[30Aug2021 11:52:57.903] [Worker-Main-11/INFO] [bibliotheca/]: [RENDERING] Loaded in special renderer for itank:tank_yellow
+[30Aug2021 11:52:57.903] [Worker-Main-11/INFO] [bibliotheca/]: [RENDERING] Loaded in special renderer for itank:tank_lime
+[30Aug2021 11:52:57.903] [Worker-Main-11/INFO] [bibliotheca/]: [RENDERING] Loaded in special renderer for itank:tank_black
+[30Aug2021 11:52:57.903] [Worker-Main-11/INFO] [bibliotheca/]: [RENDERING] Loaded in special renderer for itank:tank_cyan
+[30Aug2021 11:52:57.903] [Worker-Main-11/INFO] [bibliotheca/]: [RENDERING] Loaded in special renderer for itank:tank_pink
+[30Aug2021 11:52:58.229] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Found status: OUTDATED Current: 36.1.25 Target: 36.2.0
+[30Aug2021 11:53:02.929] [Worker-Main-12/INFO] [waila/]: Waila information registered for itank:tank_light_blue
+[30Aug2021 11:53:02.929] [Worker-Main-12/INFO] [waila/]: Waila information registered for itank:tank_blue
+[30Aug2021 11:53:02.929] [Worker-Main-12/INFO] [waila/]: Waila information registered for itank:tank
+[30Aug2021 11:53:02.930] [Worker-Main-12/INFO] [waila/]: Waila information registered for itank:tank_magenta
+[30Aug2021 11:53:02.930] [Worker-Main-12/INFO] [waila/]: Waila information registered for itank:tank_light_gray
+[30Aug2021 11:53:02.930] [Worker-Main-12/INFO] [waila/]: Waila information registered for itank:tank_white
+[30Aug2021 11:53:02.930] [Worker-Main-12/INFO] [waila/]: Waila information registered for itank:tank_brown
+[30Aug2021 11:53:02.930] [Worker-Main-12/INFO] [waila/]: Waila information registered for itank:tank_red
+[30Aug2021 11:53:02.930] [Worker-Main-12/INFO] [waila/]: Waila information registered for itank:tank_green
+[30Aug2021 11:53:02.930] [Worker-Main-12/INFO] [waila/]: Waila information registered for itank:tank_purple
+[30Aug2021 11:53:02.930] [Worker-Main-12/INFO] [waila/]: Waila information registered for itank:tank_orange
+[30Aug2021 11:53:02.930] [Worker-Main-12/INFO] [waila/]: Waila information registered for itank:tank_yellow
+[30Aug2021 11:53:02.930] [Worker-Main-12/INFO] [waila/]: Waila information registered for itank:tank_lime
+[30Aug2021 11:53:02.930] [Worker-Main-12/INFO] [waila/]: Waila information registered for itank:tank_black
+[30Aug2021 11:53:02.930] [Worker-Main-12/INFO] [waila/]: Waila information registered for itank:tank_cyan
+[30Aug2021 11:53:02.930] [Worker-Main-12/INFO] [waila/]: Waila information registered for itank:tank_pink
+[30Aug2021 11:53:02.930] [Worker-Main-12/INFO] [Waila/]: Registered plugin at com.ewyboy.bibliotheca.compatibilities.hwyla.WailaCompatibility
+[30Aug2021 11:53:02.936] [Worker-Main-12/INFO] [Waila/]: Registered plugin at mcp.mobius.waila.addons.minecraft.PluginMinecraft
+[30Aug2021 11:53:03.420] [Render thread/INFO] [net.minecraft.client.audio.SoundSystem/]: OpenAL initialized.
+[30Aug2021 11:53:03.421] [Render thread/INFO] [net.minecraft.client.audio.SoundEngine/SOUNDS]: Sound engine started
+[30Aug2021 11:53:03.591] [Render thread/INFO] [net.minecraft.client.renderer.texture.AtlasTexture/]: Created: 256x128x0 jei:textures/atlas/gui.png-atlas
+[30Aug2021 11:53:03.591] [Render thread/INFO] [net.minecraft.client.renderer.texture.AtlasTexture/]: Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
+[30Aug2021 11:53:03.612] [Render thread/INFO] [net.minecraft.client.renderer.texture.AtlasTexture/]: Created: 256x128x4 minecraft:textures/atlas/signs.png-atlas
+[30Aug2021 11:53:03.613] [Render thread/INFO] [net.minecraft.client.renderer.texture.AtlasTexture/]: Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[30Aug2021 11:53:03.613] [Render thread/INFO] [net.minecraft.client.renderer.texture.AtlasTexture/]: Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[30Aug2021 11:53:03.614] [Render thread/INFO] [net.minecraft.client.renderer.texture.AtlasTexture/]: Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
+[30Aug2021 11:53:03.614] [Render thread/INFO] [net.minecraft.client.renderer.texture.AtlasTexture/]: Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[30Aug2021 11:53:03.614] [Render thread/INFO] [net.minecraft.client.renderer.texture.AtlasTexture/]: Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[30Aug2021 11:53:03.878] [Render thread/INFO] [net.minecraft.client.renderer.texture.AtlasTexture/]: Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
+[30Aug2021 11:53:03.879] [Render thread/INFO] [net.minecraft.client.renderer.texture.AtlasTexture/]: Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
+[30Aug2021 11:53:03.879] [Render thread/INFO] [net.minecraft.client.renderer.texture.AtlasTexture/]: Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[30Aug2021 11:53:04.428] [Realms Notification Availability checker #1/INFO] [com.mojang.realmsclient.client.RealmsClient/]: Could not authorize you against Realms server: Invalid session id
+[30Aug2021 11:53:20.041] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Stopping!

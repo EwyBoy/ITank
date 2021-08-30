@@ -40,22 +40,22 @@ public class Register {
     public static final class ITEM {
 
 
-        public static final TankItem TANK = new TankItem(BLOCK.TANK, new Item.Properties().group(ITank.itemGroup));
-        public static final TankItem TANK_WHITE = new TankItem(BLOCK.TANK_WHITE, new Item.Properties().group(ITank.itemGroup));
-        public static final TankItem TANK_ORANGE = new TankItem(BLOCK.TANK_ORANGE, new Item.Properties().group(ITank.itemGroup));
-        public static final TankItem TANK_MAGENTA = new TankItem(BLOCK.TANK_MAGENTA, new Item.Properties().group(ITank.itemGroup));
-        public static final TankItem TANK_LIGHT_BLUE = new TankItem(BLOCK.TANK_LIGHT_BLUE, new Item.Properties().group(ITank.itemGroup));
-        public static final TankItem TANK_YELLOW = new TankItem(BLOCK.TANK_YELLOW, new Item.Properties().group(ITank.itemGroup));
-        public static final TankItem TANK_LIME = new TankItem(BLOCK.TANK_LIME, new Item.Properties().group(ITank.itemGroup));
-        public static final TankItem TANK_PINK = new TankItem(BLOCK.TANK_PINK, new Item.Properties().group(ITank.itemGroup));
-        public static final TankItem TANK_LIGHT_GRAY = new TankItem(BLOCK.TANK_LIGHT_GRAY, new Item.Properties().group(ITank.itemGroup));
-        public static final TankItem TANK_CYAN = new TankItem(BLOCK.TANK_CYAN, new Item.Properties().group(ITank.itemGroup));
-        public static final TankItem TANK_PURPLE = new TankItem(BLOCK.TANK_PURPLE, new Item.Properties().group(ITank.itemGroup));
-        public static final TankItem TANK_BLUE = new TankItem(BLOCK.TANK_BLUE, new Item.Properties().group(ITank.itemGroup));
-        public static final TankItem TANK_BROWN = new TankItem(BLOCK.TANK_BROWN, new Item.Properties().group(ITank.itemGroup));
-        public static final TankItem TANK_GREEN = new TankItem(BLOCK.TANK_GREEN, new Item.Properties().group(ITank.itemGroup));
-        public static final TankItem TANK_RED = new TankItem(BLOCK.TANK_RED, new Item.Properties().group(ITank.itemGroup));
-        public static final TankItem TANK_BLACK = new TankItem(BLOCK.TANK_BLACK, new Item.Properties().group(ITank.itemGroup));
+        public static final TankItem TANK = new TankItem(BLOCK.TANK, new Item.Properties().tab(ITank.itemGroup));
+        public static final TankItem TANK_WHITE = new TankItem(BLOCK.TANK_WHITE, new Item.Properties().tab(ITank.itemGroup));
+        public static final TankItem TANK_ORANGE = new TankItem(BLOCK.TANK_ORANGE, new Item.Properties().tab(ITank.itemGroup));
+        public static final TankItem TANK_MAGENTA = new TankItem(BLOCK.TANK_MAGENTA, new Item.Properties().tab(ITank.itemGroup));
+        public static final TankItem TANK_LIGHT_BLUE = new TankItem(BLOCK.TANK_LIGHT_BLUE, new Item.Properties().tab(ITank.itemGroup));
+        public static final TankItem TANK_YELLOW = new TankItem(BLOCK.TANK_YELLOW, new Item.Properties().tab(ITank.itemGroup));
+        public static final TankItem TANK_LIME = new TankItem(BLOCK.TANK_LIME, new Item.Properties().tab(ITank.itemGroup));
+        public static final TankItem TANK_PINK = new TankItem(BLOCK.TANK_PINK, new Item.Properties().tab(ITank.itemGroup));
+        public static final TankItem TANK_LIGHT_GRAY = new TankItem(BLOCK.TANK_LIGHT_GRAY, new Item.Properties().tab(ITank.itemGroup));
+        public static final TankItem TANK_CYAN = new TankItem(BLOCK.TANK_CYAN, new Item.Properties().tab(ITank.itemGroup));
+        public static final TankItem TANK_PURPLE = new TankItem(BLOCK.TANK_PURPLE, new Item.Properties().tab(ITank.itemGroup));
+        public static final TankItem TANK_BLUE = new TankItem(BLOCK.TANK_BLUE, new Item.Properties().tab(ITank.itemGroup));
+        public static final TankItem TANK_BROWN = new TankItem(BLOCK.TANK_BROWN, new Item.Properties().tab(ITank.itemGroup));
+        public static final TankItem TANK_GREEN = new TankItem(BLOCK.TANK_GREEN, new Item.Properties().tab(ITank.itemGroup));
+        public static final TankItem TANK_RED = new TankItem(BLOCK.TANK_RED, new Item.Properties().tab(ITank.itemGroup));
+        public static final TankItem TANK_BLACK = new TankItem(BLOCK.TANK_BLACK, new Item.Properties().tab(ITank.itemGroup));
 
     }
 

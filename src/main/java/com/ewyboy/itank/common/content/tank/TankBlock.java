@@ -59,22 +59,22 @@ public class TankBlock extends BaseTileBlock<TankTile> implements IHasRenderType
     public static final EnumProperty<TankColor> COLOR = TankStateProperties.TANK_COLOR;
 
     public TankBlock(TankColor color) {
-        super(TankBlock.Properties.create(Material.GLASS).notSolid().sound(SoundType.GLASS).hardnessAndResistance(2.0f, 6.0f));
-        setDefaultState(this.getDefaultState().with(STATE, TankState.ONE).with(COLOR, color));
+        super(TankBlock.Properties.of(Material.GLASS).noOcclusion().sound(SoundType.GLASS).strength(2.0f, 6.0f));
+        registerDefaultState(this.defaultBlockState().setValue(STATE, TankState.ONE).setValue(COLOR, color));
     }
 
     @Override
-    public MaterialColor getMaterialColor() {
-        return ColorHandler.getMaterialColorFromState(getDefaultState().get(COLOR));
+    public MaterialColor defaultMaterialColor() {
+        return ColorHandler.getMaterialColorFromState(defaultBlockState().getValue(COLOR));
     }
 
     @Override
     public void neighborChanged(BlockState state, World world, BlockPos pos, Block blockIn, BlockPos fromPos, boolean isMoving) {
-        if (world.getBlockState(pos.up()).getBlock() == this && world.getBlockState(pos.down()).getBlock() == this) {
+        if (world.getBlockState(pos.above()).getBlock() == this && world.getBlockState(pos.below()).getBlock() == this) {
             setTankState(world, pos, TankState.MID);
-        } else if (world.getBlockState(pos.up()).getBlock() == this && world.getBlockState(pos.down()).getBlock() != this) {
+        } else if (world.getBlockState(pos.above()).getBlock() == this && world.getBlockState(pos.below()).getBlock() != this) {
             setTankState(world, pos, TankState.BOT);
-        } else if (world.getBlockState(pos.up()).getBlock() != this && world.getBlockState(pos.down()).getBlock() == this) {
+        } else if (world.getBlockState(pos.above()).getBlock() != this && world.getBlockState(pos.below()).getBlock() == this) {
             setTankState(world, pos, TankState.TOP);
         } else {
             setTankState(world, pos, TankState.ONE);
@@ -82,35 +82,48 @@ public class TankBlock extends BaseTileBlock<TankTile> implements IHasRenderType
     }
 
     @Override
-    public ActionResultType onBlockActivated(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockRayTraceResult hit) {
-        ItemStack held = player.getHeldItem(hand);
+    public int getAnalogOutputSignal(BlockState blockState, World world, BlockPos blockPos) {
+        TankTile tank = getTank(world, blockPos);
+        int amount = tank.getTank().getFluidAmount();
 
-        if (FluidUtil.interactWithFluidHandler(player, hand, world, pos, hit.getFace()) || held.getCapability(CapabilityFluidHandler.FLUID_HANDLER_ITEM_CAPABILITY).isPresent()) {
+        return amount / 1000;
+    }
+
+    @Override
+    public boolean hasAnalogOutputSignal(BlockState blockState) {
+        return true;
+    }
+
+    @Override
+    public ActionResultType use(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockRayTraceResult hit) {
+        ItemStack held = player.getItemInHand(hand);
+
+        if (FluidUtil.interactWithFluidHandler(player, hand, world, pos, hit.getDirection()) || held.getCapability(CapabilityFluidHandler.FLUID_HANDLER_ITEM_CAPABILITY).isPresent()) {
             return ActionResultType.SUCCESS;
         }
 
         // Smart/Easy - Tank building
-        if (!world.isRemote) {
-            player.getHeldItem(hand);
-            if (player.getHeldItem(hand).getItem() instanceof TankItem) {
-                ItemStack stack = player.getHeldItem(hand);
-                TankItem item = (TankItem) player.getHeldItem(hand).getItem();
-                if (item.getBlock().getDefaultState().get(COLOR) == world.getBlockState(pos).get(COLOR)) {
+        if (!world.isClientSide) {
+            player.getItemInHand(hand);
+            if (player.getItemInHand(hand).getItem() instanceof TankItem) {
+                ItemStack stack = player.getItemInHand(hand);
+                TankItem item = (TankItem) player.getItemInHand(hand).getItem();
+                if (item.getBlock().defaultBlockState().getValue(COLOR) == world.getBlockState(pos).getValue(COLOR)) {
                     for (int i = 0; i < pos.getY() + 4; i++) {
-                        if (world.isAirBlock(pos.add(0, i, 0))) {
-                            world.setBlockState(pos.up(i), this.getDefaultState(), 3);
-                            setRetainedFluidInTank(world, pos.up(i), state, stack);
-                            if (!player.isCreative()) player.getHeldItem(hand).shrink(1);
-                            world.playSound(player, pos, SoundEvents.BLOCK_GLASS_PLACE, SoundCategory.BLOCKS, 0.0f, 0.0f);
+                        if (world.isEmptyBlock(pos.offset(0, i, 0))) {
+                            world.setBlock(pos.above(i), this.defaultBlockState(), 3);
+                            setRetainedFluidInTank(world, pos.above(i), state, stack);
+                            if (!player.isCreative()) player.getItemInHand(hand).shrink(1);
+                            world.playSound(player, pos, SoundEvents.GLASS_PLACE, SoundCategory.BLOCKS, 0.0f, 0.0f);
                             break;
-                        } else if (!world.isAirBlock(pos.up(i)) && world.getBlockState(pos.up(i)).getBlock() != this) {
+                        } else if (!world.isEmptyBlock(pos.above(i)) && world.getBlockState(pos.above(i)).getBlock() != this) {
                             break;
                         }
                     }
                 }
                 // Dye tanks
-            } else if (player.getHeldItem(hand).getItem() instanceof DyeItem) {
-                DyeItem dye = (DyeItem) player.getHeldItem(hand).getItem();
+            } else if (player.getItemInHand(hand).getItem() instanceof DyeItem) {
+                DyeItem dye = (DyeItem) player.getItemInHand(hand).getItem();
                 switch(dye.getDyeColor()) {
                     case GRAY: default: setTankColor(world, pos, TankColor.GRAY); break;
                     case WHITE: setTankColor(world, pos, TankColor.WHITE); break;
@@ -129,7 +142,7 @@ public class TankBlock extends BaseTileBlock<TankTile> implements IHasRenderType
                     case RED: setTankColor(world, pos, TankColor.RED); break;
                     case BLACK: setTankColor(world, pos, TankColor.BLACK); break;
                 }
-                world.playSound(player, pos, SoundEvents.BLOCK_SLIME_BLOCK_PLACE, SoundCategory.BLOCKS, 0.0f, 0.0f);
+                world.playSound(player, pos, SoundEvents.SLIME_BLOCK_PLACE, SoundCategory.BLOCKS, 0.0f, 0.0f);
             }
         }
         return ActionResultType.SUCCESS;
@@ -138,17 +151,17 @@ public class TankBlock extends BaseTileBlock<TankTile> implements IHasRenderType
     @Override
     public void onBlockExploded(BlockState state, World world, BlockPos pos, Explosion explosion) {
         if (ConfigOptions.Tanks.retainFluidAfterExplosions) {
-            ItemStacker.dropStackInWorld(world, pos, ItemStacker.createStackFromTileEntity(Objects.requireNonNull(world.getTileEntity(pos))));
+            ItemStacker.dropStackInWorld(world, pos, ItemStacker.createStackFromTileEntity(Objects.requireNonNull(world.getBlockEntity(pos))));
             world.destroyBlock(pos, false);
         } else {
             ItemStacker.dropStackInWorld(world, pos, new ItemStack(this));
         }
-        this.onExplosionDestroy(world, pos, explosion);
+        this.wasExploded(world, pos, explosion);
     }
 
     @Override
     public ItemStack getPickBlock(BlockState state, RayTraceResult target, IBlockReader world, BlockPos pos, PlayerEntity player) {
-        final TankTile tank = (TankTile) world.getTileEntity(pos);
+        final TankTile tank = (TankTile) world.getBlockEntity(pos);
         return tank != null ? ItemStacker.createStackFromTileEntity(tank) : super.getPickBlock(state, target, world, pos, player);
     }
 
@@ -160,55 +173,55 @@ public class TankBlock extends BaseTileBlock<TankTile> implements IHasRenderType
     @Override
     public boolean removedByPlayer(BlockState state, World world, BlockPos pos, PlayerEntity player, boolean willHarvest, FluidState fluid) {
         if (!player.isCreative()) {
-            if (player.isSneaking()) {
+            if (player.isShiftKeyDown()) {
                 ItemStacker.dropStackInWorld(world, pos, new ItemStack(this));
             } else {
-                final TankTile tank = (TankTile) world.getTileEntity(pos);
+                final TankTile tank = (TankTile) world.getBlockEntity(pos);
                 if (tank != null) {
                     ItemStacker.dropStackInWorld(world, pos, tank.getFluid().isEmpty() ? new ItemStack(this) : ItemStacker.createStackFromTileEntity(Objects.requireNonNull(tank)));
                 }
             }
-            world.playSound(player, pos, SoundEvents.BLOCK_GLASS_BREAK, SoundCategory.BLOCKS, 1.0f, 0.0f);
+            world.playSound(player, pos, SoundEvents.GLASS_BREAK, SoundCategory.BLOCKS, 1.0f, 0.0f);
             world.removeBlock(pos, false);
         }
         return super.removedByPlayer(state, world, pos, player, willHarvest, fluid);
     }
 
     @Override
-    public void onBlockPlacedBy(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
+    public void setPlacedBy(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
        setRetainedFluidInTank(world, pos, state, stack);
     }
 
     private void setRetainedFluidInTank(World world, BlockPos pos, BlockState state, ItemStack stack) {
         if (stack.hasTag()) {
-            final TankTile tank = (TankTile) world.getTileEntity(pos);
+            final TankTile tank = (TankTile) world.getBlockEntity(pos);
             if (tank != null) {
                 if (stack.getTag() != null) {
                     CompoundNBT tag = stack.getTag().getCompound("TileData");
                     tag.putInt("x", pos.getX());
                     tag.putInt("y", pos.getY());
                     tag.putInt("z", pos.getZ());
-                    tank.read(state, tag);
+                    tank.load(state, tag);
                 }
             }
         }
     }
 
     private void setTankState(World world, BlockPos pos, TankState state) {
-        world.setBlockState(pos, getDefaultState().with(STATE, state));
+        world.setBlockAndUpdate(pos, defaultBlockState().setValue(STATE, state));
     }
 
     private void setTankColor(World world, BlockPos pos, TankColor color) {
-        if (!world.getBlockState(pos).get(COLOR).equals(color)) {
+        if (!world.getBlockState(pos).getValue(COLOR).equals(color)) {
             TankBlock tank = ColorHandler.getBlockColorFromState(color);
-            final TankTile oldTile = (TankTile) world.getTileEntity(pos);
+            final TankTile oldTile = (TankTile) world.getBlockEntity(pos);
             CompoundNBT tag;
             if (oldTile != null) {
-                tag = oldTile.write(new CompoundNBT());
-                world.setBlockState(pos, tank.getDefaultState().with(COLOR, color));
-                final TankTile newTile = (TankTile) world.getTileEntity(pos);
+                tag = oldTile.save(new CompoundNBT());
+                world.setBlockAndUpdate(pos, tank.defaultBlockState().setValue(COLOR, color));
+                final TankTile newTile = (TankTile) world.getBlockEntity(pos);
                 if (newTile != null) {
-                    newTile.read(world.getBlockState(pos), tag);
+                    newTile.load(world.getBlockState(pos), tag);
                 }
             }
         }
@@ -216,7 +229,7 @@ public class TankBlock extends BaseTileBlock<TankTile> implements IHasRenderType
 
     @Override
     public RenderType getRenderType() {
-        return RenderType.getCutoutMipped();
+        return RenderType.cutoutMipped();
     }
 
     @Override
@@ -225,7 +238,7 @@ public class TankBlock extends BaseTileBlock<TankTile> implements IHasRenderType
     }
 
     @Override
-    protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
+    protected void createBlockStateDefinition(StateContainer.Builder<Block, BlockState> builder) {
         builder.add(STATE).add(COLOR);
     }
 
@@ -235,7 +248,7 @@ public class TankBlock extends BaseTileBlock<TankTile> implements IHasRenderType
     }
 
     public TankTile getTank(IBlockReader world, BlockPos pos) {
-        return (TankTile) world.getTileEntity(pos);
+        return (TankTile) world.getBlockEntity(pos);
     }
 
     private void colorFluidName(String fluidName, List<ITextComponent> tooltip) {
@@ -249,7 +262,7 @@ public class TankBlock extends BaseTileBlock<TankTile> implements IHasRenderType
     }
 
     @Override
-    public void addInformation(ItemStack stack, @Nullable IBlockReader worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+    public void appendHoverText(ItemStack stack, @Nullable IBlockReader worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         FluidStack fluid = null;
         if (stack.getTag() != null && stack.hasTag() && stack.getTag().contains("TileData")) {
             fluid = FluidStack.loadFluidStackFromNBT(stack.getTag().getCompound("TileData"));

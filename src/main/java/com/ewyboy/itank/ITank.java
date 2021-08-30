@@ -38,13 +38,13 @@ public class ITank {
     }
 
     public void onServerStart(FMLServerStartingEvent event) {
-        new CommandCenter(event.getServer().getCommandManager().getDispatcher());
+        new CommandCenter(event.getServer().getCommands().getDispatcher());
     }
 
     public static final ItemGroup itemGroup = new ItemGroup(ITank.MOD_ID) {
         @Override
         @OnlyIn(Dist.CLIENT)
-        public ItemStack createIcon() {
+        public ItemStack makeIcon() {
             return new ItemStack(Register.BLOCK.TANK);
         }
     };
