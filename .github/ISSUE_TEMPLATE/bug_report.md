@@ -16,6 +16,9 @@ assignees: EwyBoy
 ###### **Mod Version**
 > Type here
 
+###### **Bibliotheca Version**
+> Type here
+
 ###### **Describe the bug**
 > Type here
 

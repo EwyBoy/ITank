@@ -1,6 +1,8 @@
 package com.ewyboy.itank.client;
 
+import com.ewyboy.itank.common.content.tank.TankBlock;
 import com.ewyboy.itank.common.content.tank.TankTile;
+import com.ewyboy.itank.common.register.Register;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 import net.minecraft.client.Minecraft;
@@ -61,7 +63,11 @@ public class TankRenderer extends TileEntityRenderer<TankTile> {
 
         if (world.getBlockEntity(pos.above()) instanceof TankTile) {
             above = (TankTile) world.getBlockEntity(pos.above());
+<<<<<<< HEAD
             if(Objects.requireNonNull(above).getFluid() == null || above.getFluid().getAmount() <= 0 || !fluid.isSame(above.getFluid().getFluid())) {
+=======
+            if(Objects.requireNonNull(above).getFluid() == null || !above.getBlockState().getValue(TankBlock.COLOR).equals(world.getBlockState(pos).getValue(TankBlock.COLOR)) || above.getFluid().getAmount() <= 0 || !fluid.isSame(above.getFluid().getFluid())) {
+>>>>>>> 1.16
                 this.renderTopFluidFace(fluidTexture, matrix4f, matrix3f, builder, color, percent);
             }
         } else {

@@ -98,6 +98,10 @@ public class TankBlock extends BaseTileBlock<TankTile> implements IHasRenderType
     public ActionResultType use(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockRayTraceResult hit) {
         ItemStack held = player.getItemInHand(hand);
 
+    public ActionResultType use(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockRayTraceResult hit) {
+        ItemStack held = player.getItemInHand(hand);
+
+
         if (FluidUtil.interactWithFluidHandler(player, hand, world, pos, hit.getDirection()) || held.getCapability(CapabilityFluidHandler.FLUID_HANDLER_ITEM_CAPABILITY).isPresent()) {
             return ActionResultType.SUCCESS;
         }
