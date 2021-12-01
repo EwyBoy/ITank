@@ -6,6 +6,7 @@ import com.ewyboy.bibliotheca.common.content.block.BaseTileBlock;
 import com.ewyboy.bibliotheca.common.helpers.TextHelper;
 import com.ewyboy.bibliotheca.common.loaders.ContentLoader;
 import com.ewyboy.bibliotheca.util.ItemStacker;
+import com.ewyboy.bibliotheca.util.ModLogger;
 import com.ewyboy.itank.client.TankRenderer;
 import com.ewyboy.itank.common.register.Register;
 import com.ewyboy.itank.common.states.TankColor;
@@ -48,7 +49,6 @@ import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidUtil;
 import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
-import net.minecraftforge.fmlclient.registry.ClientRegistry;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -100,7 +100,7 @@ public class TankBlock extends BaseTileBlock<TankTile> implements IHasRenderType
                     for (int i = 0; i < pos.getY() + 4; i++) {
                         if (world.isEmptyBlock(pos.offset(0, i, 0))) {
                             world.setBlock(pos.above(i), this.defaultBlockState(), 3);
-                            setRetainedFluidInTank(world, pos.above(i), state, stack);
+                            setRetainedFluidInTank(world, pos.above(i), stack);
                             if (!player.isCreative()) player.getItemInHand(hand).shrink(1);
                             world.playSound(player, pos, SoundEvents.GLASS_PLACE, SoundSource.BLOCKS, 0.0f, 0.0f);
                             break;
@@ -131,6 +131,12 @@ public class TankBlock extends BaseTileBlock<TankTile> implements IHasRenderType
                     case BLACK: setTankColor(world, pos, TankColor.BLACK); break;
                 }
                 world.playSound(player, pos, SoundEvents.SLIME_BLOCK_PLACE, SoundSource.BLOCKS, 0.0f, 0.0f);
+            } else {
+                TankTile tank = getTank(world, pos);
+                ModLogger.info("getTank :: " + tank.getTank().toString());
+                ModLogger.info("getFluid :: " + tank.getFluid().getTranslationKey());
+                ModLogger.info("getFluidAmount :: " + tank.getTank().getFluidAmount());
+                ModLogger.info("\n");
             }
         }
         return InteractionResult.SUCCESS;
@@ -148,9 +154,9 @@ public class TankBlock extends BaseTileBlock<TankTile> implements IHasRenderType
     }
 
     @Override
-    public ItemStack getPickBlock(BlockState state, HitResult hit, BlockGetter world, BlockPos pos, Player player) {
+    public ItemStack getCloneItemStack(BlockState state, HitResult target, BlockGetter world, BlockPos pos, Player player) {
         final TankTile tank = (TankTile) world.getBlockEntity(pos);
-        return tank != null ? ItemStacker.createStackFromTileEntity(tank) : super.getPickBlock(state, hit, world, pos, player);
+        return tank != null ? ItemStacker.createStackFromTileEntity(tank) : super.getCloneItemStack(state, target, world, pos, player);
     }
 
     @Override
@@ -159,28 +165,28 @@ public class TankBlock extends BaseTileBlock<TankTile> implements IHasRenderType
     }
 
     @Override
-    public boolean removedByPlayer(BlockState state, Level world, BlockPos pos, Player player, boolean willHarvest, FluidState fluid) {
+    public boolean onDestroyedByPlayer(BlockState state, Level level, BlockPos pos, Player player, boolean willHarvest, FluidState fluid) {
         if (!player.isCreative()) {
             if (player.isShiftKeyDown()) {
-                ItemStacker.dropStackInWorld(world, pos, new ItemStack(this));
+                ItemStacker.dropStackInWorld(level, pos, new ItemStack(this));
             } else {
-                final TankTile tank = (TankTile) world.getBlockEntity(pos);
+                final TankTile tank = (TankTile) level.getBlockEntity(pos);
                 if (tank != null) {
-                    ItemStacker.dropStackInWorld(world, pos, tank.getFluid().isEmpty() ? new ItemStack(this) : ItemStacker.createStackFromTileEntity(Objects.requireNonNull(tank)));
+                    ItemStacker.dropStackInWorld(level, pos, tank.getFluid().isEmpty() ? new ItemStack(this) : ItemStacker.createStackFromTileEntity(Objects.requireNonNull(tank)));
                 }
             }
-            world.playSound(player, pos, SoundEvents.GLASS_BREAK, SoundSource.BLOCKS, 1.0f, 0.0f);
-            world.removeBlock(pos, false);
+            level.playSound(player, pos, SoundEvents.GLASS_BREAK, SoundSource.BLOCKS, 1.0f, 0.0f);
+            level.removeBlock(pos, false);
         }
-        return super.removedByPlayer(state, world, pos, player, willHarvest, fluid);
+        return super.onDestroyedByPlayer(state, level, pos, player, willHarvest, fluid);
     }
 
     @Override
     public void setPlacedBy(Level world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
-       setRetainedFluidInTank(world, pos, state, stack);
+       setRetainedFluidInTank(world, pos, stack);
     }
 
-    private void setRetainedFluidInTank(Level world, BlockPos pos, BlockState state, ItemStack stack) {
+    private void setRetainedFluidInTank(Level world, BlockPos pos, ItemStack stack) {
         if (stack.hasTag()) {
             final TankTile tank = (TankTile) world.getBlockEntity(pos);
             if (tank != null) {

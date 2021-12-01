@@ -1,5 +1,6 @@
 package com.ewyboy.itank.common.content.tank;
 
+import com.ewyboy.bibliotheca.util.ModLogger;
 import com.ewyboy.itank.common.register.Register;
 import com.ewyboy.itank.config.ConfigOptions;
 import net.minecraft.core.BlockPos;
@@ -19,6 +20,7 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
 import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.fluids.capability.templates.FluidTank;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -92,34 +94,6 @@ public class TankTile extends BlockEntity {
                 );
             }
         }
-
-
-    /*
-    @Override
-    public void tick() {
-        if (tank.getFluidAmount() > 0) {
-            TankTile tank_below = null;
-
-            if (level != null) {
-                if (level.getBlockEntity(worldPosition.below()) instanceof TankTile) {
-                    tank_below = (TankTile) level.getBlockEntity(worldPosition.below());
-                }
-            }
-
-            // Fluid always drain to the bottom tank
-            if (tank_below != null && tank_below.getBlockState().getValue(TankBlock.COLOR) == getBlockState().getValue(TankBlock.COLOR)) {
-                tank_below.getCapability(CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY, Direction.UP).ifPresent(
-                        fluidHandler -> tank.drain(
-                                fluidHandler.fill(
-                                        tank.drain(
-                                                tank.getCapacity(), IFluidHandler.FluidAction.SIMULATE
-                                        ), IFluidHandler.FluidAction.EXECUTE
-                                ), IFluidHandler.FluidAction.EXECUTE
-                        )
-                );
-            }
-        }
-    }*/
     }
 
     // Data Handling Section
@@ -128,7 +102,7 @@ public class TankTile extends BlockEntity {
             return;
         }
         ServerLevel world = (ServerLevel) this.getLevel();
-        Stream<ServerPlayer> entities = world.getChunkSource().chunkMap.getPlayers(new ChunkPos(this.worldPosition), false);
+        Stream<ServerPlayer> entities = world.getChunkSource().chunkMap.getPlayers(new ChunkPos(this.worldPosition), false).stream();
         ClientboundBlockEntityDataPacket updatePacket = this.getUpdatePacket();
         entities.forEach(e -> {
             if (updatePacket != null) {
@@ -137,16 +111,15 @@ public class TankTile extends BlockEntity {
         });
     }
 
-
     @Override
-    public CompoundTag getUpdateTag() {
+    public @NotNull CompoundTag getUpdateTag() {
         return this.save(new CompoundTag());
     }
 
     @Nullable
     @Override
     public ClientboundBlockEntityDataPacket getUpdatePacket() {
-        return new ClientboundBlockEntityDataPacket(this.worldPosition, 0, this.getUpdateTag());
+        return ClientboundBlockEntityDataPacket.create(this, blockEntity ->  this.getUpdateTag());
     }
 
     @Override
@@ -156,25 +129,24 @@ public class TankTile extends BlockEntity {
 
     @Override
     public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt) {
-        this.load(pkt.getTag());
+        this.load(Objects.requireNonNull(pkt.getTag()));
     }
 
     @Override
-    public void load(CompoundTag nbt) {
+    public void load(@NotNull CompoundTag nbt) {
         super.load(nbt);
         tank.readFromNBT(nbt);
         tank.setCapacity(nbt.getInt(compoundKey));
+        ModLogger.info("Load :: " + nbt);
     }
+
 
     @Override
-    public CompoundTag save(CompoundTag nbt) {
-        nbt = super.save(nbt);
-        tank.writeToNBT(nbt);
-        nbt.putInt(compoundKey, tank.getCapacity());
-
-        return nbt;
+    protected void saveAdditional(CompoundTag tag) {
+        //tag.putInt(compoundKey, tank.getCapacity());
+        //tank.writeToNBT(tag);
+        // Call this in save() ??
     }
-
 
     // Liquid & Fluid Handling Section
 
