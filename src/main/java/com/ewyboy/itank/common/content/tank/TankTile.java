@@ -62,6 +62,7 @@ public class TankTile extends BlockEntity {
 
             @Override
             protected void onContentsChanged() {
+                TankTile.this.setChanged();
                 TankTile.this.clientSync();
             }
         };
@@ -92,34 +93,6 @@ public class TankTile extends BlockEntity {
                 );
             }
         }
-
-
-    /*
-    @Override
-    public void tick() {
-        if (tank.getFluidAmount() > 0) {
-            TankTile tank_below = null;
-
-            if (level != null) {
-                if (level.getBlockEntity(worldPosition.below()) instanceof TankTile) {
-                    tank_below = (TankTile) level.getBlockEntity(worldPosition.below());
-                }
-            }
-
-            // Fluid always drain to the bottom tank
-            if (tank_below != null && tank_below.getBlockState().getValue(TankBlock.COLOR) == getBlockState().getValue(TankBlock.COLOR)) {
-                tank_below.getCapability(CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY, Direction.UP).ifPresent(
-                        fluidHandler -> tank.drain(
-                                fluidHandler.fill(
-                                        tank.drain(
-                                                tank.getCapacity(), IFluidHandler.FluidAction.SIMULATE
-                                        ), IFluidHandler.FluidAction.EXECUTE
-                                ), IFluidHandler.FluidAction.EXECUTE
-                        )
-                );
-            }
-        }
-    }*/
     }
 
     // Data Handling Section

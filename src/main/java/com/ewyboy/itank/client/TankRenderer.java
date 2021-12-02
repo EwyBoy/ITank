@@ -2,24 +2,22 @@ package com.ewyboy.itank.client;
 
 import com.ewyboy.itank.common.content.tank.TankBlock;
 import com.ewyboy.itank.common.content.tank.TankTile;
-import com.ewyboy.itank.common.register.Register;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
-import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.client.renderer.texture.TextureAtlasSprite;
-import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
-import net.minecraft.client.renderer.blockentity.BlockEntityRenderDispatcher;
-import net.minecraft.world.level.material.Fluid;
-import net.minecraft.world.inventory.InventoryMenu;
-import net.minecraft.core.BlockPos;
 import com.mojang.math.Matrix3f;
 import com.mojang.math.Matrix4f;
 import com.mojang.math.Vector3f;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
+import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
+import net.minecraft.client.renderer.texture.OverlayTexture;
+import net.minecraft.client.renderer.texture.TextureAtlasSprite;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.world.level.BlockAndTintGetter;
+import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.fluids.FluidAttributes;
 import net.minecraftforge.fluids.FluidStack;
 
@@ -61,16 +59,25 @@ public class TankRenderer implements BlockEntityRenderer<TankTile> {
         }
 
         TankTile above;
+        TankTile target;
 
         if (world.getBlockEntity(pos.above()) instanceof TankTile) {
+
             above = (TankTile) world.getBlockEntity(pos.above());
-            if(Objects.requireNonNull(above).getFluid() == null || !above.getBlockState().getValue(TankBlock.COLOR).equals(world.getBlockState(pos).getValue(TankBlock.COLOR)) || above.getFluid().getAmount() <= 0 || !fluid.isSame(above.getFluid().getFluid())) {
-                this.renderTopFluidFace(fluidTexture, matrix4f, matrix3f, builder, color, percent);
+            target = (TankTile) world.getBlockEntity(pos);
+
+            if (above != null && target != null) {
+                if (above.getBlockState().hasProperty(TankBlock.COLOR) && target.getBlockState().hasProperty(TankBlock.COLOR)) {
+                    if (!above.getBlockState().getValue(TankBlock.COLOR).equals(world.getBlockState(pos).getValue(TankBlock.COLOR))) {
+                        this.renderTopFluidFace(fluidTexture, matrix4f, matrix3f, builder, color, percent);
+                    } else if (above.getFluid().getAmount() <= 0 || !fluid.isSame(above.getFluid().getFluid())) {
+                        this.renderTopFluidFace(fluidTexture, matrix4f, matrix3f, builder, color, percent);
+                    }
+                }
             }
         } else {
             if (percent != 1.0f) this.renderTopFluidFace(fluidTexture, matrix4f, matrix3f, builder, color, percent);
         }
-
 
         matrix.popPose();
     }
