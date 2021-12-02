@@ -20,7 +20,6 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
 import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.fluids.capability.templates.FluidTank;
-import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -67,9 +66,7 @@ public class TankTile extends BlockEntity {
                 TankTile.this.clientSync();
             }
         };
-
     }
-
 
     public static void serverTick(Level level, BlockPos pos, BlockState state, TankTile tile) {
         if (tile.tank.getFluidAmount() > 0) {
@@ -111,41 +108,57 @@ public class TankTile extends BlockEntity {
         });
     }
 
+
+    private CompoundTag saveTag;
+
     @Override
-    public @NotNull CompoundTag getUpdateTag() {
-        return this.save(new CompoundTag());
+    public CompoundTag getUpdateTag() {
+        saveAdditional(new CompoundTag());
+        ModLogger.info("getUpdateTag :: " + saveTag);
+        return saveTag;
     }
 
     @Nullable
     @Override
     public ClientboundBlockEntityDataPacket getUpdatePacket() {
-        return ClientboundBlockEntityDataPacket.create(this, blockEntity ->  this.getUpdateTag());
+        return ClientboundBlockEntityDataPacket.create(this);
     }
 
     @Override
     public void handleUpdateTag(CompoundTag tag) {
         this.load(tag);
+        ModLogger.info("handleUpdateTag :: " + tag);
     }
 
     @Override
     public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt) {
-        this.load(Objects.requireNonNull(pkt.getTag()));
+        this.load(pkt.getTag());
+        ModLogger.info("onDataPacket :: " + pkt.getTag());
     }
 
     @Override
-    public void load(@NotNull CompoundTag nbt) {
-        super.load(nbt);
-        tank.readFromNBT(nbt);
-        tank.setCapacity(nbt.getInt(compoundKey));
-        ModLogger.info("Load :: " + nbt);
+    public void load(CompoundTag tag) {
+        super.load(tag);
+        tank.readFromNBT(tag);
+        tank.setCapacity(tag.getInt(compoundKey));
+        ModLogger.info("load :: " + tag);
     }
-
 
     @Override
     protected void saveAdditional(CompoundTag tag) {
-        //tag.putInt(compoundKey, tank.getCapacity());
-        //tank.writeToNBT(tag);
-        // Call this in save() ??
+        tank.writeToNBT(tag);
+        tag.putInt(compoundKey, tank.getCapacity());
+        saveTag = tag;
+        super.saveAdditional(tag);
+        ModLogger.info("saveAdditional tag :: " + tag);
+        ModLogger.info("saveAdditional saveTag :: " + saveTag);
+    }
+
+    @Override
+    public CompoundTag save(CompoundTag tag) {
+        saveAdditional(tag);
+        ModLogger.info("save :: " + tag);
+        return tag;
     }
 
     // Liquid & Fluid Handling Section
