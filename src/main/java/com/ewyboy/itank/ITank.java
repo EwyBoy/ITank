@@ -24,7 +24,6 @@ import org.apache.logging.log4j.Logger;
 public class ITank {
 
     public static final String MOD_ID = "itank";
-    private static final Logger LOGGER = LogManager.getLogger();
 
     public ITank() {
         Config.setInsertionOrderPreserved(true);
