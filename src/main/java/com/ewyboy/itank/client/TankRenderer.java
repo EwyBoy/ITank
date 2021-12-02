@@ -1,37 +1,29 @@
 package com.ewyboy.itank.client;
 
-import com.ewyboy.bibliotheca.util.ModLogger;
 import com.ewyboy.itank.common.content.tank.TankBlock;
 import com.ewyboy.itank.common.content.tank.TankTile;
-import com.ewyboy.itank.common.register.Register;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
-import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.client.renderer.texture.TextureAtlasSprite;
-import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
-import net.minecraft.client.renderer.blockentity.BlockEntityRenderDispatcher;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.material.Fluid;
-import net.minecraft.world.inventory.InventoryMenu;
-import net.minecraft.core.BlockPos;
 import com.mojang.math.Matrix3f;
 import com.mojang.math.Matrix4f;
 import com.mojang.math.Vector3f;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
+import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
+import net.minecraft.client.renderer.texture.OverlayTexture;
+import net.minecraft.client.renderer.texture.TextureAtlasSprite;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.world.level.BlockAndTintGetter;
+import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.fluids.FluidAttributes;
 import net.minecraftforge.fluids.FluidStack;
 
-import java.util.Objects;
-
 public class TankRenderer implements BlockEntityRenderer<TankTile> {
 
-    public TankRenderer(BlockEntityRendererProvider.Context ctx) {
-
-    }
+    public TankRenderer(BlockEntityRendererProvider.Context ctx) {}
 
     @Override
     public void render(TankTile tank, float partialTicks, PoseStack matrix, MultiBufferSource buffer, int light, int overlay) {
