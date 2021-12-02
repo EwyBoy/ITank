@@ -131,12 +131,6 @@ public class TankBlock extends BaseTileBlock<TankTile> implements IHasRenderType
                     case BLACK: setTankColor(world, pos, TankColor.BLACK); break;
                 }
                 world.playSound(player, pos, SoundEvents.SLIME_BLOCK_PLACE, SoundSource.BLOCKS, 0.0f, 0.0f);
-            } else {
-                TankTile tank = getTank(world, pos);
-                ModLogger.info("getTank :: " + tank.getTank().toString());
-                ModLogger.info("getFluid :: " + tank.getFluid().getTranslationKey());
-                ModLogger.info("getFluidAmount :: " + tank.getTank().getFluidAmount());
-                ModLogger.info("\n");
             }
         }
         return InteractionResult.SUCCESS;

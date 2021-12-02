@@ -32,6 +32,7 @@ minecraft {
         client {
             workingDirectory project.file('run')
             property 'fml.earlyprogresswindow', 'false'
+            property 'forge.logging.console.level', 'debug'
             mods {
                 itank {
                     source sourceSets.main

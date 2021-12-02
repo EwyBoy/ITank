@@ -1,585 +1,168 @@
-[02Dec2021 00:57:01.039] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeclientuserdev, --version, MOD_DEV, --assetIndex, 1.18, --assetsDir, C:\Users\Eivin\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 38.0.4, --fml.mcVersion, 1.18, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20211130.085255]
-[02Dec2021 00:57:01.049] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 9.0.7+91+master.8569cdf starting: java version 17.0.1 by Eclipse Adoptium
-[02Dec2021 00:57:03.684] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeclientuserdev' with arguments [--version, MOD_DEV, --gameDir, ., --assetsDir, C:\Users\Eivin\.gradle\caches\forge_gradle\assets, --assetIndex, 1.18]
-[00:57:11] [Render thread/WARN]: Assets URL 'union:/C:/Users/Eivin/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.18-38.0.4_mapped_official_1.18/forge-1.18-38.0.4_mapped_official_1.18-recomp.jar%2376!/assets/.mcassetsroot' uses unexpected schema
-[00:57:11] [Render thread/WARN]: Assets URL 'union:/C:/Users/Eivin/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.18-38.0.4_mapped_official_1.18/forge-1.18-38.0.4_mapped_official_1.18-recomp.jar%2376!/data/.mcassetsroot' uses unexpected schema
-[02Dec2021 00:57:11.930] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[00:57:11] [Render thread/INFO]: Setting user: Dev
-[00:57:12] [Render thread/INFO]: Backend library: LWJGL version 3.2.2 SNAPSHOT
-[00:57:14] [modloading-worker-0/INFO]: Forge mod loading, version 38.0.4, for MC 1.18 with MCP 20211130.085255
-[00:57:14] [modloading-worker-0/INFO]: MinecraftForge v38.0.4 Initialized
-[00:57:14] [modloading-worker-0/INFO]: Registering content for itank
-[00:57:14] [modloading-worker-0/INFO]: [BLOCK]: tank has been registered by Bibliotheca for ITank
-[00:57:14] [modloading-worker-0/INFO]: [BLOCK]: tank_white has been registered by Bibliotheca for ITank
-[00:57:14] [modloading-worker-0/INFO]: [BLOCK]: tank_orange has been registered by Bibliotheca for ITank
-[00:57:14] [modloading-worker-0/INFO]: [BLOCK]: tank_magenta has been registered by Bibliotheca for ITank
-[00:57:14] [modloading-worker-0/INFO]: [BLOCK]: tank_light_blue has been registered by Bibliotheca for ITank
-[00:57:14] [modloading-worker-0/INFO]: [BLOCK]: tank_yellow has been registered by Bibliotheca for ITank
-[00:57:14] [modloading-worker-0/INFO]: [BLOCK]: tank_lime has been registered by Bibliotheca for ITank
-[00:57:14] [modloading-worker-0/INFO]: [BLOCK]: tank_pink has been registered by Bibliotheca for ITank
-[00:57:14] [modloading-worker-0/INFO]: [BLOCK]: tank_light_gray has been registered by Bibliotheca for ITank
-[00:57:14] [modloading-worker-0/INFO]: [BLOCK]: tank_cyan has been registered by Bibliotheca for ITank
-[00:57:14] [modloading-worker-0/INFO]: [BLOCK]: tank_purple has been registered by Bibliotheca for ITank
-[00:57:14] [modloading-worker-0/INFO]: [BLOCK]: tank_blue has been registered by Bibliotheca for ITank
-[00:57:14] [modloading-worker-0/INFO]: [BLOCK]: tank_brown has been registered by Bibliotheca for ITank
-[00:57:14] [modloading-worker-0/INFO]: [BLOCK]: tank_green has been registered by Bibliotheca for ITank
-[00:57:14] [modloading-worker-0/INFO]: [BLOCK]: tank_red has been registered by Bibliotheca for ITank
-[00:57:14] [modloading-worker-0/INFO]: [BLOCK]: tank_black has been registered by Bibliotheca for ITank
-[00:57:14] [modloading-worker-0/INFO]: [ITEM]: tank has been registered by Bibliotheca for ITank
-[00:57:14] [modloading-worker-0/INFO]: [ITEM]: tank_white has been registered by Bibliotheca for ITank
-[00:57:14] [modloading-worker-0/INFO]: [ITEM]: tank_orange has been registered by Bibliotheca for ITank
-[00:57:14] [modloading-worker-0/INFO]: [ITEM]: tank_magenta has been registered by Bibliotheca for ITank
-[00:57:14] [modloading-worker-0/INFO]: [ITEM]: tank_light_blue has been registered by Bibliotheca for ITank
-[00:57:14] [modloading-worker-0/INFO]: [ITEM]: tank_yellow has been registered by Bibliotheca for ITank
-[00:57:14] [modloading-worker-0/INFO]: [ITEM]: tank_lime has been registered by Bibliotheca for ITank
-[00:57:14] [modloading-worker-0/INFO]: [ITEM]: tank_pink has been registered by Bibliotheca for ITank
-[00:57:14] [modloading-worker-0/INFO]: [ITEM]: tank_light_gray has been registered by Bibliotheca for ITank
-[00:57:14] [modloading-worker-0/INFO]: [ITEM]: tank_cyan has been registered by Bibliotheca for ITank
-[00:57:14] [modloading-worker-0/INFO]: [ITEM]: tank_purple has been registered by Bibliotheca for ITank
-[00:57:14] [modloading-worker-0/INFO]: [ITEM]: tank_blue has been registered by Bibliotheca for ITank
-[00:57:14] [modloading-worker-0/INFO]: [ITEM]: tank_brown has been registered by Bibliotheca for ITank
-[00:57:14] [modloading-worker-0/INFO]: [ITEM]: tank_green has been registered by Bibliotheca for ITank
-[00:57:14] [modloading-worker-0/INFO]: [ITEM]: tank_red has been registered by Bibliotheca for ITank
-[00:57:14] [modloading-worker-0/INFO]: [ITEM]: tank_black has been registered by Bibliotheca for ITank
-[00:57:14] [modloading-worker-0/INFO]: [BLOCK-ENTITY]: tank has been registered by Bibliotheca for ITank
-[02Dec2021 00:57:17.443] [Render thread/INFO] [com.mojang.text2speech.NarratorWindows/]: Narrator library for x64 successfully loaded
-[00:57:18] [Render thread/INFO]: Reloading ResourceManager: Default, Mod Resources
-[00:57:18] [Worker-Main-23/INFO]: [BLOCK-COLOR]: 696969 :: itank:tank has been registered by Bibliotheca for itank
-[00:57:18] [Worker-Main-23/INFO]: [BLOCK-COLOR]: ffffff :: itank:tank_white has been registered by Bibliotheca for itank
-[00:57:18] [Worker-Main-23/INFO]: [BLOCK-COLOR]: ff6d00 :: itank:tank_orange has been registered by Bibliotheca for itank
-[00:57:18] [Worker-Main-23/INFO]: [BLOCK-COLOR]: bc37b6 :: itank:tank_magenta has been registered by Bibliotheca for itank
-[00:57:18] [Worker-Main-23/INFO]: [BLOCK-COLOR]: 2ea5c7 :: itank:tank_light_blue has been registered by Bibliotheca for itank
-[00:57:18] [Worker-Main-23/INFO]: [BLOCK-COLOR]: ceae27 :: itank:tank_yellow has been registered by Bibliotheca for itank
-[00:57:18] [Worker-Main-23/INFO]: [BLOCK-COLOR]: 83c825 :: itank:tank_lime has been registered by Bibliotheca for itank
-[00:57:18] [Worker-Main-23/INFO]: [BLOCK-COLOR]: ff4e87 :: itank:tank_pink has been registered by Bibliotheca for itank
-[00:57:18] [Worker-Main-23/INFO]: [BLOCK-COLOR]: c0c0c0 :: itank:tank_light_gray has been registered by Bibliotheca for itank
-[00:57:18] [Worker-Main-23/INFO]: [BLOCK-COLOR]: cffff :: itank:tank_cyan has been registered by Bibliotheca for itank
-[00:57:18] [Worker-Main-23/INFO]: [BLOCK-COLOR]: 68268d :: itank:tank_purple has been registered by Bibliotheca for itank
-[00:57:18] [Worker-Main-23/INFO]: [BLOCK-COLOR]: 3035a4 :: itank:tank_blue has been registered by Bibliotheca for itank
-[00:57:18] [Worker-Main-23/INFO]: [BLOCK-COLOR]: 49311d :: itank:tank_brown has been registered by Bibliotheca for itank
-[00:57:18] [Worker-Main-23/INFO]: [BLOCK-COLOR]: 546f17 :: itank:tank_green has been registered by Bibliotheca for itank
-[00:57:18] [Worker-Main-23/INFO]: [BLOCK-COLOR]: cd352c :: itank:tank_red has been registered by Bibliotheca for itank
-[00:57:18] [Worker-Main-23/INFO]: [BLOCK-COLOR]: 151517 :: itank:tank_black has been registered by Bibliotheca for itank
-[00:57:18] [Worker-Main-23/INFO]: [ITEM-COLOR]: 696969 :: itank:tank has been registered by Bibliotheca for itank
-[00:57:18] [Worker-Main-23/INFO]: [ITEM-COLOR]: ffffff :: itank:tank_white has been registered by Bibliotheca for itank
-[00:57:18] [Worker-Main-23/INFO]: [ITEM-COLOR]: ff6d00 :: itank:tank_orange has been registered by Bibliotheca for itank
-[00:57:18] [Worker-Main-23/INFO]: [ITEM-COLOR]: bc37b6 :: itank:tank_magenta has been registered by Bibliotheca for itank
-[00:57:18] [Worker-Main-23/INFO]: [ITEM-COLOR]: 2ea5c7 :: itank:tank_light_blue has been registered by Bibliotheca for itank
-[00:57:18] [Worker-Main-23/INFO]: [ITEM-COLOR]: ceae27 :: itank:tank_yellow has been registered by Bibliotheca for itank
-[00:57:18] [Worker-Main-23/INFO]: [ITEM-COLOR]: 83c825 :: itank:tank_lime has been registered by Bibliotheca for itank
-[00:57:18] [Worker-Main-23/INFO]: [ITEM-COLOR]: ff4e87 :: itank:tank_pink has been registered by Bibliotheca for itank
-[00:57:18] [Worker-Main-23/INFO]: [ITEM-COLOR]: c0c0c0 :: itank:tank_light_gray has been registered by Bibliotheca for itank
-[00:57:18] [Worker-Main-23/INFO]: [ITEM-COLOR]: cffff :: itank:tank_cyan has been registered by Bibliotheca for itank
-[00:57:18] [Worker-Main-23/INFO]: [ITEM-COLOR]: 68268d :: itank:tank_purple has been registered by Bibliotheca for itank
-[00:57:18] [Worker-Main-23/INFO]: [ITEM-COLOR]: 3035a4 :: itank:tank_blue has been registered by Bibliotheca for itank
-[00:57:18] [Worker-Main-23/INFO]: [ITEM-COLOR]: 49311d :: itank:tank_brown has been registered by Bibliotheca for itank
-[00:57:18] [Worker-Main-23/INFO]: [ITEM-COLOR]: 546f17 :: itank:tank_green has been registered by Bibliotheca for itank
-[00:57:18] [Worker-Main-23/INFO]: [ITEM-COLOR]: cd352c :: itank:tank_red has been registered by Bibliotheca for itank
-[00:57:18] [Worker-Main-23/INFO]: [ITEM-COLOR]: 151517 :: itank:tank_black has been registered by Bibliotheca for itank
-[00:57:18] [Worker-Main-19/INFO]: [RENDER-TYPE] Loaded in special render type: RenderType[cutout_mipped:CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], shader[Optional[net.minecraft.client.renderer.RenderStateShard$$Lambda$4517/0x000000080167da38@505659b0]], no_transparency, depth_test[<=], cull[true], lightmap[true], overlay[false], no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_light_blue
-[00:57:18] [Worker-Main-19/INFO]: [RENDER-TYPE] Loaded in special render type: RenderType[cutout_mipped:CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], shader[Optional[net.minecraft.client.renderer.RenderStateShard$$Lambda$4517/0x000000080167da38@505659b0]], no_transparency, depth_test[<=], cull[true], lightmap[true], overlay[false], no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_blue
-[00:57:18] [Worker-Main-19/INFO]: [RENDER-TYPE] Loaded in special render type: RenderType[cutout_mipped:CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], shader[Optional[net.minecraft.client.renderer.RenderStateShard$$Lambda$4517/0x000000080167da38@505659b0]], no_transparency, depth_test[<=], cull[true], lightmap[true], overlay[false], no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank
-[00:57:18] [Worker-Main-19/INFO]: [RENDER-TYPE] Loaded in special render type: RenderType[cutout_mipped:CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], shader[Optional[net.minecraft.client.renderer.RenderStateShard$$Lambda$4517/0x000000080167da38@505659b0]], no_transparency, depth_test[<=], cull[true], lightmap[true], overlay[false], no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_magenta
-[00:57:18] [Worker-Main-19/INFO]: [RENDER-TYPE] Loaded in special render type: RenderType[cutout_mipped:CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], shader[Optional[net.minecraft.client.renderer.RenderStateShard$$Lambda$4517/0x000000080167da38@505659b0]], no_transparency, depth_test[<=], cull[true], lightmap[true], overlay[false], no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_light_gray
-[00:57:18] [Worker-Main-19/INFO]: [RENDER-TYPE] Loaded in special render type: RenderType[cutout_mipped:CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], shader[Optional[net.minecraft.client.renderer.RenderStateShard$$Lambda$4517/0x000000080167da38@505659b0]], no_transparency, depth_test[<=], cull[true], lightmap[true], overlay[false], no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_white
-[00:57:18] [Worker-Main-19/INFO]: [RENDER-TYPE] Loaded in special render type: RenderType[cutout_mipped:CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], shader[Optional[net.minecraft.client.renderer.RenderStateShard$$Lambda$4517/0x000000080167da38@505659b0]], no_transparency, depth_test[<=], cull[true], lightmap[true], overlay[false], no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_brown
-[00:57:18] [Worker-Main-19/INFO]: [RENDER-TYPE] Loaded in special render type: RenderType[cutout_mipped:CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], shader[Optional[net.minecraft.client.renderer.RenderStateShard$$Lambda$4517/0x000000080167da38@505659b0]], no_transparency, depth_test[<=], cull[true], lightmap[true], overlay[false], no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_red
-[00:57:18] [Worker-Main-19/INFO]: [RENDER-TYPE] Loaded in special render type: RenderType[cutout_mipped:CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], shader[Optional[net.minecraft.client.renderer.RenderStateShard$$Lambda$4517/0x000000080167da38@505659b0]], no_transparency, depth_test[<=], cull[true], lightmap[true], overlay[false], no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_green
-[00:57:18] [Worker-Main-19/INFO]: [RENDER-TYPE] Loaded in special render type: RenderType[cutout_mipped:CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], shader[Optional[net.minecraft.client.renderer.RenderStateShard$$Lambda$4517/0x000000080167da38@505659b0]], no_transparency, depth_test[<=], cull[true], lightmap[true], overlay[false], no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_purple
-[00:57:18] [Worker-Main-19/INFO]: [RENDER-TYPE] Loaded in special render type: RenderType[cutout_mipped:CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], shader[Optional[net.minecraft.client.renderer.RenderStateShard$$Lambda$4517/0x000000080167da38@505659b0]], no_transparency, depth_test[<=], cull[true], lightmap[true], overlay[false], no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_orange
-[00:57:18] [Worker-Main-19/INFO]: [RENDER-TYPE] Loaded in special render type: RenderType[cutout_mipped:CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], shader[Optional[net.minecraft.client.renderer.RenderStateShard$$Lambda$4517/0x000000080167da38@505659b0]], no_transparency, depth_test[<=], cull[true], lightmap[true], overlay[false], no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_yellow
-[00:57:18] [Worker-Main-19/INFO]: [RENDER-TYPE] Loaded in special render type: RenderType[cutout_mipped:CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], shader[Optional[net.minecraft.client.renderer.RenderStateShard$$Lambda$4517/0x000000080167da38@505659b0]], no_transparency, depth_test[<=], cull[true], lightmap[true], overlay[false], no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_lime
-[00:57:18] [Worker-Main-19/INFO]: [RENDER-TYPE] Loaded in special render type: RenderType[cutout_mipped:CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], shader[Optional[net.minecraft.client.renderer.RenderStateShard$$Lambda$4517/0x000000080167da38@505659b0]], no_transparency, depth_test[<=], cull[true], lightmap[true], overlay[false], no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_black
-[00:57:18] [Worker-Main-19/INFO]: [RENDER-TYPE] Loaded in special render type: RenderType[cutout_mipped:CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], shader[Optional[net.minecraft.client.renderer.RenderStateShard$$Lambda$4517/0x000000080167da38@505659b0]], no_transparency, depth_test[<=], cull[true], lightmap[true], overlay[false], no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_cyan
-[00:57:18] [Worker-Main-19/INFO]: [RENDER-TYPE] Loaded in special render type: RenderType[cutout_mipped:CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], shader[Optional[net.minecraft.client.renderer.RenderStateShard$$Lambda$4517/0x000000080167da38@505659b0]], no_transparency, depth_test[<=], cull[true], lightmap[true], overlay[false], no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_pink
-[00:57:18] [Worker-Main-19/INFO]: [RENDERING] Loaded in special renderer for itank:tank_light_blue
-[00:57:18] [Worker-Main-19/INFO]: [RENDERING] Loaded in special renderer for itank:tank_blue
-[00:57:18] [Worker-Main-19/INFO]: [RENDERING] Loaded in special renderer for itank:tank
-[00:57:18] [Worker-Main-19/INFO]: [RENDERING] Loaded in special renderer for itank:tank_magenta
-[00:57:18] [Worker-Main-19/INFO]: [RENDERING] Loaded in special renderer for itank:tank_light_gray
-[00:57:18] [Worker-Main-19/INFO]: [RENDERING] Loaded in special renderer for itank:tank_white
-[00:57:18] [Worker-Main-19/INFO]: [RENDERING] Loaded in special renderer for itank:tank_brown
-[00:57:18] [Worker-Main-19/INFO]: [RENDERING] Loaded in special renderer for itank:tank_red
-[00:57:18] [Worker-Main-19/INFO]: [RENDERING] Loaded in special renderer for itank:tank_green
-[00:57:18] [Worker-Main-19/INFO]: [RENDERING] Loaded in special renderer for itank:tank_purple
-[00:57:18] [Worker-Main-19/INFO]: [RENDERING] Loaded in special renderer for itank:tank_orange
-[00:57:18] [Worker-Main-19/INFO]: [RENDERING] Loaded in special renderer for itank:tank_yellow
-[00:57:18] [Worker-Main-19/INFO]: [RENDERING] Loaded in special renderer for itank:tank_lime
-[00:57:18] [Worker-Main-19/INFO]: [RENDERING] Loaded in special renderer for itank:tank_black
-[00:57:18] [Worker-Main-19/INFO]: [RENDERING] Loaded in special renderer for itank:tank_cyan
-[00:57:18] [Worker-Main-19/INFO]: [RENDERING] Loaded in special renderer for itank:tank_pink
-[02Dec2021 00:57:19.479] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/net/minecraftforge/forge/promotions_slim.json
-[02Dec2021 00:57:20.605] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Found status: BETA_OUTDATED Current: 38.0.4 Target: 38.0.6
-[00:57:32] [Render thread/INFO]: OpenAL initialized on device OpenAL Soft on Headphones (Realtek(R) Audio)
-[00:57:32] [Render thread/INFO]: Sound engine started
-[00:57:32] [Render thread/INFO]: Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
-[00:57:32] [Render thread/INFO]: Created: 256x128x4 minecraft:textures/atlas/signs.png-atlas
-[00:57:32] [Render thread/INFO]: Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
-[00:57:32] [Render thread/INFO]: Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
-[00:57:32] [Render thread/INFO]: Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
-[00:57:32] [Render thread/INFO]: Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
-[00:57:32] [Render thread/INFO]: Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
-[00:57:34] [Render thread/INFO]: Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
-[00:57:34] [Render thread/INFO]: Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
-[00:57:34] [Render thread/INFO]: Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
-[00:57:43] [Render thread/WARN]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
-[00:57:43] [Render thread/WARN]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
-[00:57:43] [Render thread/WARN]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
-[00:57:43] [Render thread/WARN]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
-[00:57:43] [Render thread/WARN]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
-[00:57:43] [Render thread/INFO]: Reloading ResourceManager: Default, , worldstripper-250603-3543594_mapped_official_1.18.jar, main
-[00:57:45] [Render thread/INFO]: Loaded 7 recipes
-[00:57:47] [Render thread/INFO]: Loaded 1141 advancements
-[00:57:47] [Render thread/INFO]: Injecting existing registry data into this CLIENT instance
-[00:57:48] [Render thread/WARN]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
-[00:57:48] [Render thread/WARN]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
-[00:57:48] [Render thread/WARN]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
-[00:57:48] [Render thread/WARN]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
-[00:57:48] [Render thread/WARN]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
-[00:57:48] [Render thread/INFO]: Reloading ResourceManager: Default, , worldstripper-250603-3543594_mapped_official_1.18.jar, main
-[00:57:50] [Render thread/INFO]: Loaded 7 recipes
-[00:57:51] [Render thread/INFO]: Loaded 1141 advancements
-[00:57:51] [Render thread/INFO]: Injecting existing registry data into this CLIENT instance
-[02Dec2021 00:57:52.300] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[00:57:52] [Server thread/INFO]: Starting integrated minecraft server version 1.18
-[00:57:52] [Server thread/INFO]: Generating keypair
-[00:57:52] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[00:57:53] [Render thread/INFO]: Preparing spawn area: 0%
-[00:57:53] [Render thread/INFO]: Preparing spawn area: 0%
-[00:57:53] [Render thread/INFO]: Preparing spawn area: 0%
-[00:57:55] [Render thread/INFO]: Preparing spawn area: 0%
-[00:57:55] [Render thread/INFO]: Preparing spawn area: 0%
-[00:57:55] [Render thread/INFO]: Preparing spawn area: 0%
-[00:57:55] [Render thread/INFO]: Preparing spawn area: 0%
-[00:57:55] [Server thread/INFO]: load :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water",id:"itank:tank",keepPacked:0b,x:187,y:74,z:72}
-[00:57:55] [Server thread/INFO]: load :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water",id:"itank:tank",keepPacked:0b,x:187,y:75,z:72}
-[00:57:55] [Server thread/INFO]: load :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water",id:"itank:tank",keepPacked:0b,x:187,y:73,z:72}
-[00:57:55] [Server thread/INFO]: load :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water",id:"itank:tank",keepPacked:0b,x:188,y:75,z:73}
-[00:57:55] [Server thread/INFO]: load :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water",id:"itank:tank",keepPacked:0b,x:190,y:74,z:73}
-[00:57:55] [Server thread/INFO]: load :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water",id:"itank:tank",keepPacked:0b,x:188,y:73,z:73}
-[00:57:56] [Render thread/INFO]: Preparing spawn area: 10%
-[00:57:56] [Render thread/INFO]: Preparing spawn area: 18%
-[00:57:57] [Render thread/INFO]: Preparing spawn area: 37%
-[00:57:57] [Render thread/INFO]: Preparing spawn area: 54%
-[00:57:58] [Render thread/INFO]: Preparing spawn area: 76%
-[00:57:58] [Render thread/INFO]: Time elapsed: 5950 ms
-[00:57:58] [Server thread/INFO]: Changing view distance to 12, from 10
-[00:57:58] [Server thread/INFO]: Changing simulation distance to 12, from 0
-[00:57:58] [Server thread/INFO]: saveAdditional tag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:57:58] [Server thread/INFO]: saveAdditional saveTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:57:58] [Server thread/INFO]: saveAdditional tag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:57:58] [Server thread/INFO]: saveAdditional saveTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:57:58] [Server thread/INFO]: saveAdditional tag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:57:58] [Server thread/INFO]: saveAdditional saveTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:57:58] [Server thread/INFO]: saveAdditional tag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:57:58] [Server thread/INFO]: saveAdditional saveTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:57:58] [Server thread/INFO]: saveAdditional tag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:57:58] [Server thread/INFO]: saveAdditional saveTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:57:58] [Server thread/INFO]: saveAdditional tag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:57:58] [Server thread/INFO]: saveAdditional saveTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:57:59] [Netty Local Client IO #0/INFO]: Connected to a modded server.
-[00:57:59] [Server thread/INFO]: Using new advancement loading for net.minecraft.server.PlayerAdvancements@11a44138
-[00:57:59] [Server thread/INFO]: Dev[local:E:83aa8f9c] logged in with entity id 213 at (189.72823018256773, 73.0, 71.11912403197465)
-[00:57:59] [Server thread/INFO]: Dev joined the game
-[00:57:59] [Server thread/INFO]: saveAdditional tag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:57:59] [Server thread/INFO]: saveAdditional saveTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:57:59] [Server thread/INFO]: getUpdateTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:57:59] [Server thread/INFO]: saveAdditional tag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:57:59] [Server thread/INFO]: saveAdditional saveTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:57:59] [Server thread/INFO]: getUpdateTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:57:59] [Server thread/INFO]: saveAdditional tag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:57:59] [Server thread/INFO]: saveAdditional saveTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:57:59] [Server thread/INFO]: getUpdateTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:57:59] [Server thread/INFO]: saveAdditional tag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:57:59] [Server thread/INFO]: saveAdditional saveTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:57:59] [Server thread/INFO]: getUpdateTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:57:59] [Server thread/INFO]: saveAdditional tag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:57:59] [Server thread/INFO]: saveAdditional saveTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:57:59] [Server thread/INFO]: getUpdateTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:57:59] [Server thread/INFO]: saveAdditional tag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:57:59] [Server thread/INFO]: saveAdditional saveTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:57:59] [Server thread/INFO]: getUpdateTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:00] [Render thread/INFO]: load :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:00] [Render thread/INFO]: load :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:00] [Render thread/INFO]: load :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:00] [Render thread/INFO]: load :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:00] [Render thread/INFO]: load :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:00] [Render thread/INFO]: load :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:00] [Render thread/INFO]: Loaded 2 advancements
-[00:58:24] [Server thread/INFO]: saveAdditional tag :: {Amount:0,FluidCap:8000,FluidName:"minecraft:empty"}
-[00:58:24] [Server thread/INFO]: saveAdditional saveTag :: {Amount:0,FluidCap:8000,FluidName:"minecraft:empty"}
-[00:58:24] [Server thread/INFO]: getUpdateTag :: {Amount:0,FluidCap:8000,FluidName:"minecraft:empty"}
-[00:58:24] [Server thread/INFO]: saveAdditional tag :: {Amount:0,FluidCap:8000,FluidName:"minecraft:empty"}
-[00:58:24] [Server thread/INFO]: saveAdditional saveTag :: {Amount:0,FluidCap:8000,FluidName:"minecraft:empty"}
-[00:58:24] [Render thread/INFO]: load :: {Amount:0,FluidCap:8000,FluidName:"minecraft:empty"}
-[00:58:24] [Render thread/INFO]: onDataPacket :: {Amount:0,FluidCap:8000,FluidName:"minecraft:empty"}
-[00:58:25] [Render thread/INFO]: saveAdditional tag :: {Amount:1000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:25] [Render thread/INFO]: saveAdditional saveTag :: {Amount:1000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:25] [Render thread/INFO]: getUpdateTag :: {Amount:1000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:25] [Server thread/INFO]: saveAdditional tag :: {Amount:1000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:25] [Server thread/INFO]: saveAdditional saveTag :: {Amount:1000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:25] [Server thread/INFO]: getUpdateTag :: {Amount:1000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:25] [Server thread/INFO]: saveAdditional tag :: {Amount:1000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:25] [Server thread/INFO]: saveAdditional saveTag :: {Amount:1000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:25] [Server thread/INFO]: getUpdateTag :: {Amount:1000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:25] [Render thread/INFO]: load :: {Amount:1000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:25] [Render thread/INFO]: onDataPacket :: {Amount:1000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:26] [Render thread/INFO]: saveAdditional tag :: {Amount:2000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:26] [Render thread/INFO]: saveAdditional saveTag :: {Amount:2000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:26] [Render thread/INFO]: getUpdateTag :: {Amount:2000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:26] [Server thread/INFO]: saveAdditional tag :: {Amount:2000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:26] [Server thread/INFO]: saveAdditional saveTag :: {Amount:2000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:26] [Server thread/INFO]: getUpdateTag :: {Amount:2000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:26] [Server thread/INFO]: saveAdditional tag :: {Amount:2000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:26] [Server thread/INFO]: saveAdditional saveTag :: {Amount:2000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:26] [Server thread/INFO]: getUpdateTag :: {Amount:2000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:26] [Render thread/INFO]: load :: {Amount:2000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:26] [Render thread/INFO]: onDataPacket :: {Amount:2000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:26] [Render thread/INFO]: saveAdditional tag :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:26] [Render thread/INFO]: saveAdditional saveTag :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:26] [Render thread/INFO]: getUpdateTag :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:26] [Server thread/INFO]: saveAdditional tag :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:26] [Server thread/INFO]: saveAdditional saveTag :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:26] [Server thread/INFO]: getUpdateTag :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:26] [Server thread/INFO]: saveAdditional tag :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:26] [Server thread/INFO]: saveAdditional saveTag :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:26] [Server thread/INFO]: getUpdateTag :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:26] [Render thread/INFO]: load :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:26] [Render thread/INFO]: onDataPacket :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:26] [Render thread/INFO]: saveAdditional tag :: {Amount:4000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:26] [Render thread/INFO]: saveAdditional saveTag :: {Amount:4000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:26] [Render thread/INFO]: getUpdateTag :: {Amount:4000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:26] [Server thread/INFO]: saveAdditional tag :: {Amount:4000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:26] [Server thread/INFO]: saveAdditional saveTag :: {Amount:4000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:26] [Server thread/INFO]: getUpdateTag :: {Amount:4000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:26] [Server thread/INFO]: saveAdditional tag :: {Amount:4000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:26] [Server thread/INFO]: saveAdditional saveTag :: {Amount:4000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:26] [Server thread/INFO]: getUpdateTag :: {Amount:4000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:26] [Render thread/INFO]: load :: {Amount:4000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:26] [Render thread/INFO]: onDataPacket :: {Amount:4000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:26] [Server thread/INFO]: Saving and pausing game...
-[00:58:26] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[00:58:26] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[00:58:26] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[00:58:28] [Server thread/INFO]: Saving and pausing game...
-[00:58:28] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[00:58:28] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[00:58:28] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[00:58:28] [Server thread/INFO]: Dev lost connection: Disconnected
-[00:58:28] [Server thread/INFO]: Dev left the game
-[00:58:28] [Server thread/INFO]: Stopping singleplayer server as player logged out
-[00:58:28] [Server thread/INFO]: Stopping server
-[00:58:28] [Server thread/INFO]: Saving players
-[00:58:28] [Server thread/INFO]: Saving worlds
-[00:58:28] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[00:58:29] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[00:58:29] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[00:58:29] [Server thread/INFO]: ThreadedAnvilChunkStorage (New World (2)): All chunks are saved
-[00:58:29] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[00:58:29] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[00:58:29] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
-[00:58:30] [Realms Notification Availability checker #1/INFO]: Could not authorize you against Realms server: Invalid session id
-[00:58:30] [Render thread/WARN]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
-[00:58:30] [Render thread/WARN]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
-[00:58:30] [Render thread/WARN]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
-[00:58:30] [Render thread/WARN]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
-[00:58:30] [Render thread/WARN]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
-[00:58:30] [Render thread/INFO]: Reloading ResourceManager: Default, , worldstripper-250603-3543594_mapped_official_1.18.jar, main
-[00:58:32] [Render thread/INFO]: Loaded 7 recipes
-[00:58:33] [Render thread/INFO]: Loaded 1141 advancements
-[00:58:33] [Render thread/INFO]: Injecting existing registry data into this CLIENT instance
-[00:58:34] [Render thread/WARN]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
-[00:58:34] [Render thread/WARN]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
-[00:58:34] [Render thread/WARN]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
-[00:58:34] [Render thread/WARN]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
-[00:58:34] [Render thread/WARN]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
-[00:58:34] [Render thread/INFO]: Reloading ResourceManager: Default, , worldstripper-250603-3543594_mapped_official_1.18.jar, main
-[00:58:36] [Render thread/INFO]: Loaded 7 recipes
-[00:58:37] [Render thread/INFO]: Loaded 1141 advancements
-[00:58:37] [Render thread/INFO]: Injecting existing registry data into this CLIENT instance
-[02Dec2021 00:58:38.302] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[00:58:38] [Server thread/INFO]: Starting integrated minecraft server version 1.18
-[00:58:38] [Server thread/INFO]: Generating keypair
-[00:58:38] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[00:58:38] [Render thread/INFO]: Preparing spawn area: 0%
-[00:58:38] [Render thread/INFO]: Preparing spawn area: 0%
-[00:58:39] [Render thread/INFO]: Preparing spawn area: 0%
-[00:58:40] [Server thread/INFO]: load :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water",id:"itank:tank",keepPacked:0b,x:187,y:74,z:72}
-[00:58:40] [Server thread/INFO]: load :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water",id:"itank:tank",keepPacked:0b,x:187,y:75,z:72}
-[00:58:40] [Server thread/INFO]: load :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water",id:"itank:tank",keepPacked:0b,x:187,y:73,z:72}
-[00:58:40] [Server thread/INFO]: load :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water",id:"itank:tank",keepPacked:0b,x:188,y:75,z:73}
-[00:58:40] [Server thread/INFO]: load :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water",id:"itank:tank",keepPacked:0b,x:190,y:74,z:73}
-[00:58:40] [Server thread/INFO]: load :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water",id:"itank:tank",keepPacked:0b,x:188,y:73,z:73}
-[00:58:40] [Server thread/INFO]: load :: {Amount:0,FluidCap:8000,FluidName:"minecraft:empty",id:"itank:tank",keepPacked:0b,x:194,y:72,z:76}
-[00:58:40] [Render thread/INFO]: Preparing spawn area: 1%
-[00:58:40] [Render thread/INFO]: Preparing spawn area: 1%
-[00:58:40] [Render thread/INFO]: Preparing spawn area: 4%
-[00:58:41] [Render thread/INFO]: Preparing spawn area: 25%
-[00:58:41] [Render thread/INFO]: Preparing spawn area: 50%
-[00:58:42] [Render thread/INFO]: Preparing spawn area: 74%
-[00:58:42] [Server thread/INFO]: Changing view distance to 12, from 10
-[00:58:42] [Server thread/INFO]: Changing simulation distance to 12, from 0
-[00:58:42] [Render thread/INFO]: Time elapsed: 4395 ms
-[00:58:42] [Server thread/INFO]: saveAdditional tag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:42] [Server thread/INFO]: saveAdditional saveTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:42] [Server thread/INFO]: saveAdditional tag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:42] [Server thread/INFO]: saveAdditional saveTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:42] [Server thread/INFO]: saveAdditional tag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:42] [Server thread/INFO]: saveAdditional saveTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:42] [Server thread/INFO]: saveAdditional tag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:42] [Server thread/INFO]: saveAdditional saveTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:42] [Server thread/INFO]: saveAdditional tag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:42] [Server thread/INFO]: saveAdditional saveTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:42] [Server thread/INFO]: saveAdditional tag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:42] [Server thread/INFO]: saveAdditional saveTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:42] [Server thread/INFO]: saveAdditional tag :: {Amount:0,FluidCap:8000,FluidName:"minecraft:empty"}
-[00:58:42] [Server thread/INFO]: saveAdditional saveTag :: {Amount:0,FluidCap:8000,FluidName:"minecraft:empty"}
-[00:58:42] [Netty Local Client IO #1/INFO]: Connected to a modded server.
-[00:58:42] [Server thread/INFO]: Using new advancement loading for net.minecraft.server.PlayerAdvancements@503d14c0
-[00:58:42] [Server thread/INFO]: Dev[local:E:cec1bc55] logged in with entity id 720 at (193.113066162427, 72.0, 74.57937521700498)
-[00:58:42] [Server thread/INFO]: Dev joined the game
-[00:58:42] [Server thread/INFO]: saveAdditional tag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:42] [Server thread/INFO]: saveAdditional saveTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:42] [Server thread/INFO]: getUpdateTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:42] [Server thread/INFO]: saveAdditional tag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:42] [Server thread/INFO]: saveAdditional saveTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:42] [Server thread/INFO]: getUpdateTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:42] [Server thread/INFO]: saveAdditional tag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:42] [Server thread/INFO]: saveAdditional saveTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:42] [Server thread/INFO]: getUpdateTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:42] [Server thread/INFO]: saveAdditional tag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:42] [Server thread/INFO]: saveAdditional saveTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:42] [Server thread/INFO]: getUpdateTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:42] [Server thread/INFO]: saveAdditional tag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:42] [Server thread/INFO]: saveAdditional saveTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:42] [Server thread/INFO]: getUpdateTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:42] [Server thread/INFO]: saveAdditional tag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:42] [Server thread/INFO]: saveAdditional saveTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:42] [Server thread/INFO]: getUpdateTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:42] [Server thread/INFO]: saveAdditional tag :: {Amount:0,FluidCap:8000,FluidName:"minecraft:empty"}
-[00:58:42] [Server thread/INFO]: saveAdditional saveTag :: {Amount:0,FluidCap:8000,FluidName:"minecraft:empty"}
-[00:58:42] [Server thread/INFO]: getUpdateTag :: {Amount:0,FluidCap:8000,FluidName:"minecraft:empty"}
-[00:58:43] [Render thread/INFO]: load :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:43] [Render thread/INFO]: load :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:43] [Render thread/INFO]: load :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:43] [Render thread/INFO]: load :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:43] [Render thread/INFO]: load :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:43] [Render thread/INFO]: load :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:43] [Render thread/INFO]: load :: {Amount:0,FluidCap:8000,FluidName:"minecraft:empty"}
-[00:58:43] [Render thread/INFO]: Loaded 2 advancements
-[00:58:47] [Server thread/INFO]: saveAdditional tag :: {Amount:0,FluidCap:8000,FluidName:"minecraft:empty"}
-[00:58:47] [Server thread/INFO]: saveAdditional saveTag :: {Amount:0,FluidCap:8000,FluidName:"minecraft:empty"}
-[00:58:47] [Server thread/INFO]: getUpdateTag :: {Amount:0,FluidCap:8000,FluidName:"minecraft:empty"}
-[00:58:47] [Server thread/INFO]: saveAdditional tag :: {Amount:0,FluidCap:8000,FluidName:"minecraft:empty"}
-[00:58:47] [Server thread/INFO]: saveAdditional saveTag :: {Amount:0,FluidCap:8000,FluidName:"minecraft:empty"}
-[00:58:47] [Render thread/INFO]: load :: {Amount:0,FluidCap:8000,FluidName:"minecraft:empty"}
-[00:58:47] [Render thread/INFO]: onDataPacket :: {Amount:0,FluidCap:8000,FluidName:"minecraft:empty"}
-[00:58:48] [Render thread/INFO]: saveAdditional tag :: {Amount:1000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:48] [Render thread/INFO]: saveAdditional saveTag :: {Amount:1000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:48] [Render thread/INFO]: getUpdateTag :: {Amount:1000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:48] [Server thread/INFO]: saveAdditional tag :: {Amount:1000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:48] [Server thread/INFO]: saveAdditional saveTag :: {Amount:1000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:48] [Server thread/INFO]: getUpdateTag :: {Amount:1000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:48] [Server thread/INFO]: saveAdditional tag :: {Amount:1000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:48] [Server thread/INFO]: saveAdditional saveTag :: {Amount:1000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:48] [Server thread/INFO]: getUpdateTag :: {Amount:1000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:48] [Render thread/INFO]: load :: {Amount:1000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:48] [Render thread/INFO]: onDataPacket :: {Amount:1000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:49] [Render thread/INFO]: saveAdditional tag :: {Amount:2000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:49] [Render thread/INFO]: saveAdditional saveTag :: {Amount:2000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:49] [Render thread/INFO]: getUpdateTag :: {Amount:2000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:49] [Server thread/INFO]: saveAdditional tag :: {Amount:2000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:49] [Server thread/INFO]: saveAdditional saveTag :: {Amount:2000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:49] [Server thread/INFO]: getUpdateTag :: {Amount:2000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:49] [Server thread/INFO]: saveAdditional tag :: {Amount:2000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:49] [Server thread/INFO]: saveAdditional saveTag :: {Amount:2000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:49] [Server thread/INFO]: getUpdateTag :: {Amount:2000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:49] [Render thread/INFO]: load :: {Amount:2000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:49] [Render thread/INFO]: onDataPacket :: {Amount:2000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:49] [Render thread/INFO]: saveAdditional tag :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:49] [Render thread/INFO]: saveAdditional saveTag :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:49] [Render thread/INFO]: getUpdateTag :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:49] [Server thread/INFO]: saveAdditional tag :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:49] [Server thread/INFO]: saveAdditional saveTag :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:49] [Server thread/INFO]: getUpdateTag :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:49] [Server thread/INFO]: saveAdditional tag :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:49] [Server thread/INFO]: saveAdditional saveTag :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:49] [Server thread/INFO]: getUpdateTag :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:49] [Render thread/INFO]: load :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:49] [Render thread/INFO]: onDataPacket :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:50] [Server thread/INFO]: saveAdditional tag :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:50] [Server thread/INFO]: saveAdditional saveTag :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:52] [Server thread/INFO]: saveAdditional tag :: {Amount:0,FluidCap:8000,FluidName:"minecraft:empty"}
-[00:58:52] [Server thread/INFO]: saveAdditional saveTag :: {Amount:0,FluidCap:8000,FluidName:"minecraft:empty"}
-[00:58:52] [Server thread/INFO]: getUpdateTag :: {Amount:0,FluidCap:8000,FluidName:"minecraft:empty"}
-[00:58:52] [Server thread/INFO]: saveAdditional tag :: {Amount:0,FluidCap:8000,FluidName:"minecraft:empty"}
-[00:58:52] [Server thread/INFO]: saveAdditional saveTag :: {Amount:0,FluidCap:8000,FluidName:"minecraft:empty"}
-[00:58:52] [Server thread/INFO]: saveAdditional tag :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:52] [Server thread/INFO]: saveAdditional saveTag :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:52] [Render thread/INFO]: load :: {Amount:0,FluidCap:8000,FluidName:"minecraft:empty"}
-[00:58:52] [Render thread/INFO]: onDataPacket :: {Amount:0,FluidCap:8000,FluidName:"minecraft:empty"}
-[00:58:53] [Render thread/INFO]: saveAdditional tag :: {Amount:1000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:53] [Render thread/INFO]: saveAdditional saveTag :: {Amount:1000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:53] [Render thread/INFO]: getUpdateTag :: {Amount:1000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:53] [Server thread/INFO]: saveAdditional tag :: {Amount:1000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:53] [Server thread/INFO]: saveAdditional saveTag :: {Amount:1000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:53] [Server thread/INFO]: getUpdateTag :: {Amount:1000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:53] [Server thread/INFO]: saveAdditional tag :: {Amount:1000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:53] [Server thread/INFO]: saveAdditional saveTag :: {Amount:1000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:53] [Server thread/INFO]: getUpdateTag :: {Amount:1000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:53] [Render thread/INFO]: load :: {Amount:1000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:53] [Render thread/INFO]: onDataPacket :: {Amount:1000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:53] [Render thread/INFO]: saveAdditional tag :: {Amount:2000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:53] [Render thread/INFO]: saveAdditional saveTag :: {Amount:2000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:53] [Render thread/INFO]: getUpdateTag :: {Amount:2000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:53] [Server thread/INFO]: saveAdditional tag :: {Amount:2000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:53] [Server thread/INFO]: saveAdditional saveTag :: {Amount:2000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:53] [Server thread/INFO]: getUpdateTag :: {Amount:2000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:53] [Server thread/INFO]: saveAdditional tag :: {Amount:2000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:53] [Server thread/INFO]: saveAdditional saveTag :: {Amount:2000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:53] [Server thread/INFO]: getUpdateTag :: {Amount:2000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:53] [Render thread/INFO]: load :: {Amount:2000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:53] [Render thread/INFO]: onDataPacket :: {Amount:2000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:53] [Render thread/INFO]: saveAdditional tag :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:53] [Render thread/INFO]: saveAdditional saveTag :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:53] [Render thread/INFO]: getUpdateTag :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:53] [Server thread/INFO]: saveAdditional tag :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:53] [Server thread/INFO]: saveAdditional saveTag :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:53] [Server thread/INFO]: getUpdateTag :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:53] [Server thread/INFO]: saveAdditional tag :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:53] [Server thread/INFO]: saveAdditional saveTag :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:53] [Server thread/INFO]: getUpdateTag :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:53] [Render thread/INFO]: load :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:53] [Render thread/INFO]: onDataPacket :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:58:55] [Server thread/INFO]: Saving and pausing game...
-[00:58:55] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[00:58:55] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[00:58:55] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[00:58:55] [Server thread/INFO]: Dev lost connection: Disconnected
-[00:58:55] [Server thread/INFO]: Dev left the game
-[00:58:55] [Server thread/INFO]: Stopping singleplayer server as player logged out
-[00:58:55] [Server thread/INFO]: Stopping server
-[00:58:55] [Server thread/INFO]: Saving players
-[00:58:55] [Server thread/INFO]: Saving worlds
-[00:58:55] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[00:58:56] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[00:58:56] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[00:58:56] [Server thread/INFO]: ThreadedAnvilChunkStorage (New World (2)): All chunks are saved
-[00:58:56] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[00:58:56] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[00:58:56] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
-[00:58:57] [Render thread/WARN]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
-[00:58:57] [Render thread/WARN]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
-[00:58:57] [Render thread/WARN]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
-[00:58:57] [Render thread/WARN]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
-[00:58:57] [Render thread/WARN]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
-[00:58:57] [Render thread/INFO]: Reloading ResourceManager: Default, , worldstripper-250603-3543594_mapped_official_1.18.jar, main
-[00:58:59] [Render thread/INFO]: Loaded 7 recipes
-[00:59:00] [Render thread/INFO]: Loaded 1141 advancements
-[00:59:01] [Render thread/INFO]: Injecting existing registry data into this CLIENT instance
-[00:59:01] [Render thread/WARN]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
-[00:59:01] [Render thread/WARN]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
-[00:59:01] [Render thread/WARN]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
-[00:59:01] [Render thread/WARN]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
-[00:59:01] [Render thread/WARN]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
-[00:59:01] [Render thread/INFO]: Reloading ResourceManager: Default, , worldstripper-250603-3543594_mapped_official_1.18.jar, main
-[00:59:03] [Render thread/INFO]: Loaded 7 recipes
-[00:59:04] [Render thread/INFO]: Loaded 1141 advancements
-[00:59:04] [Render thread/INFO]: Injecting existing registry data into this CLIENT instance
-[02Dec2021 00:59:05.259] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[00:59:05] [Server thread/INFO]: Starting integrated minecraft server version 1.18
-[00:59:05] [Server thread/INFO]: Generating keypair
-[00:59:05] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[00:59:05] [Render thread/INFO]: Preparing spawn area: 0%
-[00:59:07] [Render thread/INFO]: Preparing spawn area: 0%
-[00:59:07] [Render thread/INFO]: Preparing spawn area: 0%
-[00:59:07] [Render thread/INFO]: Preparing spawn area: 0%
-[00:59:07] [Server thread/INFO]: load :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water",id:"itank:tank",keepPacked:0b,x:187,y:74,z:72}
-[00:59:07] [Server thread/INFO]: load :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water",id:"itank:tank",keepPacked:0b,x:187,y:75,z:72}
-[00:59:07] [Server thread/INFO]: load :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water",id:"itank:tank",keepPacked:0b,x:187,y:73,z:72}
-[00:59:07] [Server thread/INFO]: load :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water",id:"itank:tank",keepPacked:0b,x:188,y:75,z:73}
-[00:59:07] [Server thread/INFO]: load :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water",id:"itank:tank",keepPacked:0b,x:190,y:74,z:73}
-[00:59:07] [Server thread/INFO]: load :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water",id:"itank:tank",keepPacked:0b,x:188,y:73,z:73}
-[00:59:07] [Server thread/INFO]: load :: {Amount:0,FluidCap:8000,FluidName:"minecraft:empty",id:"itank:tank",keepPacked:0b,x:195,y:72,z:76}
-[00:59:07] [Server thread/INFO]: load :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water",id:"itank:tank",keepPacked:0b,x:194,y:72,z:76}
-[00:59:07] [Render thread/INFO]: Preparing spawn area: 1%
-[00:59:07] [Render thread/INFO]: Preparing spawn area: 32%
-[00:59:08] [Render thread/INFO]: Preparing spawn area: 65%
-[00:59:08] [Server thread/INFO]: Changing view distance to 12, from 10
-[00:59:08] [Server thread/INFO]: Changing simulation distance to 12, from 0
-[00:59:08] [Render thread/INFO]: Time elapsed: 3396 ms
-[00:59:08] [Server thread/INFO]: saveAdditional tag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:59:08] [Server thread/INFO]: saveAdditional saveTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:59:08] [Server thread/INFO]: saveAdditional tag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:59:08] [Server thread/INFO]: saveAdditional saveTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:59:08] [Server thread/INFO]: saveAdditional tag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:59:08] [Server thread/INFO]: saveAdditional saveTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:59:08] [Server thread/INFO]: saveAdditional tag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:59:08] [Server thread/INFO]: saveAdditional saveTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:59:08] [Server thread/INFO]: saveAdditional tag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:59:08] [Server thread/INFO]: saveAdditional saveTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:59:08] [Server thread/INFO]: saveAdditional tag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:59:08] [Server thread/INFO]: saveAdditional saveTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:59:08] [Server thread/INFO]: saveAdditional tag :: {Amount:0,FluidCap:8000,FluidName:"minecraft:empty"}
-[00:59:08] [Server thread/INFO]: saveAdditional saveTag :: {Amount:0,FluidCap:8000,FluidName:"minecraft:empty"}
-[00:59:08] [Server thread/INFO]: saveAdditional tag :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:59:08] [Server thread/INFO]: saveAdditional saveTag :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:59:08] [Netty Local Client IO #2/INFO]: Connected to a modded server.
-[00:59:08] [Server thread/INFO]: Using new advancement loading for net.minecraft.server.PlayerAdvancements@76327666
-[00:59:08] [Server thread/INFO]: Dev[local:E:870b60f3] logged in with entity id 1203 at (193.113066162427, 72.0, 74.57937521700498)
-[00:59:08] [Server thread/INFO]: Dev joined the game
-[00:59:08] [Server thread/INFO]: saveAdditional tag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:59:08] [Server thread/INFO]: saveAdditional saveTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:59:08] [Server thread/INFO]: getUpdateTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:59:08] [Server thread/INFO]: saveAdditional tag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:59:08] [Server thread/INFO]: saveAdditional saveTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:59:08] [Server thread/INFO]: getUpdateTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:59:08] [Server thread/INFO]: saveAdditional tag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:59:08] [Server thread/INFO]: saveAdditional saveTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:59:08] [Server thread/INFO]: getUpdateTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:59:08] [Server thread/INFO]: saveAdditional tag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:59:08] [Server thread/INFO]: saveAdditional saveTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:59:08] [Server thread/INFO]: getUpdateTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:59:08] [Server thread/INFO]: saveAdditional tag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:59:08] [Server thread/INFO]: saveAdditional saveTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:59:08] [Server thread/INFO]: getUpdateTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:59:08] [Server thread/INFO]: saveAdditional tag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:59:08] [Server thread/INFO]: saveAdditional saveTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:59:08] [Server thread/INFO]: getUpdateTag :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:59:08] [Server thread/INFO]: saveAdditional tag :: {Amount:0,FluidCap:8000,FluidName:"minecraft:empty"}
-[00:59:08] [Server thread/INFO]: saveAdditional saveTag :: {Amount:0,FluidCap:8000,FluidName:"minecraft:empty"}
-[00:59:08] [Server thread/INFO]: getUpdateTag :: {Amount:0,FluidCap:8000,FluidName:"minecraft:empty"}
-[00:59:08] [Server thread/INFO]: saveAdditional tag :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:59:08] [Server thread/INFO]: saveAdditional saveTag :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:59:08] [Server thread/INFO]: getUpdateTag :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:59:09] [Render thread/INFO]: load :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:59:09] [Render thread/INFO]: load :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:59:09] [Render thread/INFO]: load :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:59:09] [Render thread/INFO]: load :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:59:09] [Render thread/INFO]: load :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:59:09] [Render thread/INFO]: load :: {Amount:8000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:59:09] [Render thread/INFO]: load :: {Amount:0,FluidCap:8000,FluidName:"minecraft:empty"}
-[00:59:09] [Render thread/INFO]: load :: {Amount:3000,FluidCap:8000,FluidName:"minecraft:water"}
-[00:59:09] [Render thread/INFO]: Loaded 2 advancements
-[00:59:10] [Server thread/INFO]: saveAdditional tag :: {Amount:0,FluidCap:8000,FluidName:"minecraft:empty"}
-[00:59:10] [Server thread/INFO]: saveAdditional saveTag :: {Amount:0,FluidCap:8000,FluidName:"minecraft:empty"}
-[00:59:10] [Server thread/INFO]: saveAdditional tag :: {Amount:0,FluidCap:8000,FluidName:"minecraft:empty"}
-[00:59:10] [Server thread/INFO]: saveAdditional saveTag :: {Amount:0,FluidCap:8000,FluidName:"minecraft:empty"}
-[00:59:11] [Server thread/INFO]: Saving and pausing game...
-[00:59:11] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[00:59:11] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[00:59:11] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[00:59:11] [Server thread/INFO]: Dev lost connection: Disconnected
-[00:59:11] [Server thread/INFO]: Dev left the game
-[00:59:11] [Server thread/INFO]: Stopping singleplayer server as player logged out
-[00:59:11] [Server thread/INFO]: Stopping server
-[00:59:11] [Server thread/INFO]: Saving players
-[00:59:11] [Server thread/INFO]: Saving worlds
-[00:59:11] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[00:59:14] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[00:59:14] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[00:59:14] [Server thread/INFO]: ThreadedAnvilChunkStorage (New World (2)): All chunks are saved
-[00:59:14] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[00:59:14] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[00:59:14] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
-[00:59:15] [Render thread/INFO]: Stopping!
+[02Dec2021 03:05:19.518] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeclientuserdev, --version, MOD_DEV, --assetIndex, 1.18, --assetsDir, C:\Users\Eivin\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 38.0.8, --fml.mcVersion, 1.18, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20211130.085255]
+[02Dec2021 03:05:19.519] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 9.0.7+91+master.8569cdf starting: java version 17.0.1 by Eclipse Adoptium
+[02Dec2021 03:05:19.654] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/Eivin/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%2327! Service=ModLauncher Env=CLIENT
+[02Dec2021 03:05:22.173] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeclientuserdev' with arguments [--version, MOD_DEV, --gameDir, ., --assetsDir, C:\Users\Eivin\.gradle\caches\forge_gradle\assets, --assetIndex, 1.18]
+[03:05:29] [Render thread/WARN]: Assets URL 'union:/C:/Users/Eivin/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.18-38.0.8_mapped_official_1.18/forge-1.18-38.0.8_mapped_official_1.18-recomp.jar%2377!/assets/.mcassetsroot' uses unexpected schema
+[03:05:29] [Render thread/WARN]: Assets URL 'union:/C:/Users/Eivin/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.18-38.0.8_mapped_official_1.18/forge-1.18-38.0.8_mapped_official_1.18-recomp.jar%2377!/data/.mcassetsroot' uses unexpected schema
+[02Dec2021 03:05:29.874] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[03:05:29] [Render thread/INFO]: Setting user: Dev
+[03:05:30] [Render thread/INFO]: Backend library: LWJGL version 3.2.2 SNAPSHOT
+[03:05:31] [modloading-worker-0/INFO]: Forge mod loading, version 38.0.8, for MC 1.18 with MCP 20211130.085255
+[03:05:31] [modloading-worker-0/INFO]: MinecraftForge v38.0.8 Initialized
+[03:05:31] [modloading-worker-0/INFO]: Registering content for itank
+[03:05:31] [modloading-worker-0/INFO]: [BLOCK]: tank has been registered by Bibliotheca for ITank
+[03:05:31] [modloading-worker-0/INFO]: [BLOCK]: tank_white has been registered by Bibliotheca for ITank
+[03:05:31] [modloading-worker-0/INFO]: [BLOCK]: tank_orange has been registered by Bibliotheca for ITank
+[03:05:31] [modloading-worker-0/INFO]: [BLOCK]: tank_magenta has been registered by Bibliotheca for ITank
+[03:05:31] [modloading-worker-0/INFO]: [BLOCK]: tank_light_blue has been registered by Bibliotheca for ITank
+[03:05:31] [modloading-worker-0/INFO]: [BLOCK]: tank_yellow has been registered by Bibliotheca for ITank
+[03:05:31] [modloading-worker-0/INFO]: [BLOCK]: tank_lime has been registered by Bibliotheca for ITank
+[03:05:31] [modloading-worker-0/INFO]: [BLOCK]: tank_pink has been registered by Bibliotheca for ITank
+[03:05:31] [modloading-worker-0/INFO]: [BLOCK]: tank_light_gray has been registered by Bibliotheca for ITank
+[03:05:31] [modloading-worker-0/INFO]: [BLOCK]: tank_cyan has been registered by Bibliotheca for ITank
+[03:05:31] [modloading-worker-0/INFO]: [BLOCK]: tank_purple has been registered by Bibliotheca for ITank
+[03:05:31] [modloading-worker-0/INFO]: [BLOCK]: tank_blue has been registered by Bibliotheca for ITank
+[03:05:31] [modloading-worker-0/INFO]: [BLOCK]: tank_brown has been registered by Bibliotheca for ITank
+[03:05:31] [modloading-worker-0/INFO]: [BLOCK]: tank_green has been registered by Bibliotheca for ITank
+[03:05:31] [modloading-worker-0/INFO]: [BLOCK]: tank_red has been registered by Bibliotheca for ITank
+[03:05:31] [modloading-worker-0/INFO]: [BLOCK]: tank_black has been registered by Bibliotheca for ITank
+[03:05:31] [modloading-worker-0/INFO]: [ITEM]: tank has been registered by Bibliotheca for ITank
+[03:05:31] [modloading-worker-0/INFO]: [ITEM]: tank_white has been registered by Bibliotheca for ITank
+[03:05:31] [modloading-worker-0/INFO]: [ITEM]: tank_orange has been registered by Bibliotheca for ITank
+[03:05:31] [modloading-worker-0/INFO]: [ITEM]: tank_magenta has been registered by Bibliotheca for ITank
+[03:05:31] [modloading-worker-0/INFO]: [ITEM]: tank_light_blue has been registered by Bibliotheca for ITank
+[03:05:31] [modloading-worker-0/INFO]: [ITEM]: tank_yellow has been registered by Bibliotheca for ITank
+[03:05:31] [modloading-worker-0/INFO]: [ITEM]: tank_lime has been registered by Bibliotheca for ITank
+[03:05:31] [modloading-worker-0/INFO]: [ITEM]: tank_pink has been registered by Bibliotheca for ITank
+[03:05:31] [modloading-worker-0/INFO]: [ITEM]: tank_light_gray has been registered by Bibliotheca for ITank
+[03:05:31] [modloading-worker-0/INFO]: [ITEM]: tank_cyan has been registered by Bibliotheca for ITank
+[03:05:31] [modloading-worker-0/INFO]: [ITEM]: tank_purple has been registered by Bibliotheca for ITank
+[03:05:31] [modloading-worker-0/INFO]: [ITEM]: tank_blue has been registered by Bibliotheca for ITank
+[03:05:31] [modloading-worker-0/INFO]: [ITEM]: tank_brown has been registered by Bibliotheca for ITank
+[03:05:31] [modloading-worker-0/INFO]: [ITEM]: tank_green has been registered by Bibliotheca for ITank
+[03:05:31] [modloading-worker-0/INFO]: [ITEM]: tank_red has been registered by Bibliotheca for ITank
+[03:05:31] [modloading-worker-0/INFO]: [ITEM]: tank_black has been registered by Bibliotheca for ITank
+[03:05:31] [modloading-worker-0/INFO]: [BLOCK-ENTITY]: tank has been registered by Bibliotheca for ITank
+[02Dec2021 03:05:33.837] [Render thread/INFO] [com.mojang.text2speech.NarratorWindows/]: Narrator library for x64 successfully loaded
+[03:05:34] [Render thread/INFO]: Reloading ResourceManager: Default, Mod Resources
+[03:05:34] [Worker-Main-15/INFO]: [RENDER-TYPE] Loaded in special render type: RenderType[cutout_mipped:CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], shader[Optional[net.minecraft.client.renderer.RenderStateShard$$Lambda$4490/0x00000008016b9710@61884143]], no_transparency, depth_test[<=], cull[true], lightmap[true], overlay[false], no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_light_blue
+[03:05:34] [Worker-Main-15/INFO]: [RENDER-TYPE] Loaded in special render type: RenderType[cutout_mipped:CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], shader[Optional[net.minecraft.client.renderer.RenderStateShard$$Lambda$4490/0x00000008016b9710@61884143]], no_transparency, depth_test[<=], cull[true], lightmap[true], overlay[false], no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_blue
+[03:05:34] [Worker-Main-15/INFO]: [RENDER-TYPE] Loaded in special render type: RenderType[cutout_mipped:CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], shader[Optional[net.minecraft.client.renderer.RenderStateShard$$Lambda$4490/0x00000008016b9710@61884143]], no_transparency, depth_test[<=], cull[true], lightmap[true], overlay[false], no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank
+[03:05:34] [Worker-Main-15/INFO]: [RENDER-TYPE] Loaded in special render type: RenderType[cutout_mipped:CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], shader[Optional[net.minecraft.client.renderer.RenderStateShard$$Lambda$4490/0x00000008016b9710@61884143]], no_transparency, depth_test[<=], cull[true], lightmap[true], overlay[false], no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_magenta
+[03:05:34] [Worker-Main-15/INFO]: [RENDER-TYPE] Loaded in special render type: RenderType[cutout_mipped:CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], shader[Optional[net.minecraft.client.renderer.RenderStateShard$$Lambda$4490/0x00000008016b9710@61884143]], no_transparency, depth_test[<=], cull[true], lightmap[true], overlay[false], no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_light_gray
+[03:05:34] [Worker-Main-15/INFO]: [RENDER-TYPE] Loaded in special render type: RenderType[cutout_mipped:CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], shader[Optional[net.minecraft.client.renderer.RenderStateShard$$Lambda$4490/0x00000008016b9710@61884143]], no_transparency, depth_test[<=], cull[true], lightmap[true], overlay[false], no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_white
+[03:05:34] [Worker-Main-15/INFO]: [RENDER-TYPE] Loaded in special render type: RenderType[cutout_mipped:CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], shader[Optional[net.minecraft.client.renderer.RenderStateShard$$Lambda$4490/0x00000008016b9710@61884143]], no_transparency, depth_test[<=], cull[true], lightmap[true], overlay[false], no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_brown
+[03:05:34] [Worker-Main-15/INFO]: [RENDER-TYPE] Loaded in special render type: RenderType[cutout_mipped:CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], shader[Optional[net.minecraft.client.renderer.RenderStateShard$$Lambda$4490/0x00000008016b9710@61884143]], no_transparency, depth_test[<=], cull[true], lightmap[true], overlay[false], no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_red
+[03:05:34] [Worker-Main-15/INFO]: [RENDER-TYPE] Loaded in special render type: RenderType[cutout_mipped:CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], shader[Optional[net.minecraft.client.renderer.RenderStateShard$$Lambda$4490/0x00000008016b9710@61884143]], no_transparency, depth_test[<=], cull[true], lightmap[true], overlay[false], no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_green
+[03:05:34] [Worker-Main-15/INFO]: [RENDER-TYPE] Loaded in special render type: RenderType[cutout_mipped:CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], shader[Optional[net.minecraft.client.renderer.RenderStateShard$$Lambda$4490/0x00000008016b9710@61884143]], no_transparency, depth_test[<=], cull[true], lightmap[true], overlay[false], no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_purple
+[03:05:34] [Worker-Main-15/INFO]: [RENDER-TYPE] Loaded in special render type: RenderType[cutout_mipped:CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], shader[Optional[net.minecraft.client.renderer.RenderStateShard$$Lambda$4490/0x00000008016b9710@61884143]], no_transparency, depth_test[<=], cull[true], lightmap[true], overlay[false], no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_orange
+[03:05:34] [Worker-Main-15/INFO]: [RENDER-TYPE] Loaded in special render type: RenderType[cutout_mipped:CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], shader[Optional[net.minecraft.client.renderer.RenderStateShard$$Lambda$4490/0x00000008016b9710@61884143]], no_transparency, depth_test[<=], cull[true], lightmap[true], overlay[false], no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_yellow
+[03:05:34] [Worker-Main-15/INFO]: [RENDER-TYPE] Loaded in special render type: RenderType[cutout_mipped:CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], shader[Optional[net.minecraft.client.renderer.RenderStateShard$$Lambda$4490/0x00000008016b9710@61884143]], no_transparency, depth_test[<=], cull[true], lightmap[true], overlay[false], no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_lime
+[03:05:34] [Worker-Main-15/INFO]: [RENDER-TYPE] Loaded in special render type: RenderType[cutout_mipped:CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], shader[Optional[net.minecraft.client.renderer.RenderStateShard$$Lambda$4490/0x00000008016b9710@61884143]], no_transparency, depth_test[<=], cull[true], lightmap[true], overlay[false], no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_black
+[03:05:34] [Worker-Main-15/INFO]: [RENDER-TYPE] Loaded in special render type: RenderType[cutout_mipped:CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], shader[Optional[net.minecraft.client.renderer.RenderStateShard$$Lambda$4490/0x00000008016b9710@61884143]], no_transparency, depth_test[<=], cull[true], lightmap[true], overlay[false], no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_cyan
+[03:05:34] [Worker-Main-15/INFO]: [RENDER-TYPE] Loaded in special render type: RenderType[cutout_mipped:CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], shader[Optional[net.minecraft.client.renderer.RenderStateShard$$Lambda$4490/0x00000008016b9710@61884143]], no_transparency, depth_test[<=], cull[true], lightmap[true], overlay[false], no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], line_width[1.0]], outlineProperty=affects_outline]] for itank:tank_pink
+[03:05:34] [Worker-Main-15/INFO]: [RENDERING] Loaded in special renderer for itank:tank_light_blue
+[03:05:34] [Worker-Main-15/INFO]: [RENDERING] Loaded in special renderer for itank:tank_blue
+[03:05:34] [Worker-Main-15/INFO]: [RENDERING] Loaded in special renderer for itank:tank
+[03:05:34] [Worker-Main-15/INFO]: [RENDERING] Loaded in special renderer for itank:tank_magenta
+[03:05:34] [Worker-Main-15/INFO]: [RENDERING] Loaded in special renderer for itank:tank_light_gray
+[03:05:34] [Worker-Main-15/INFO]: [RENDERING] Loaded in special renderer for itank:tank_white
+[03:05:34] [Worker-Main-15/INFO]: [RENDERING] Loaded in special renderer for itank:tank_brown
+[03:05:34] [Worker-Main-15/INFO]: [RENDERING] Loaded in special renderer for itank:tank_red
+[03:05:34] [Worker-Main-15/INFO]: [RENDERING] Loaded in special renderer for itank:tank_green
+[03:05:34] [Worker-Main-15/INFO]: [RENDERING] Loaded in special renderer for itank:tank_purple
+[03:05:34] [Worker-Main-15/INFO]: [RENDERING] Loaded in special renderer for itank:tank_orange
+[03:05:34] [Worker-Main-15/INFO]: [RENDERING] Loaded in special renderer for itank:tank_yellow
+[03:05:34] [Worker-Main-15/INFO]: [RENDERING] Loaded in special renderer for itank:tank_lime
+[03:05:34] [Worker-Main-15/INFO]: [RENDERING] Loaded in special renderer for itank:tank_black
+[03:05:34] [Worker-Main-15/INFO]: [RENDERING] Loaded in special renderer for itank:tank_cyan
+[03:05:34] [Worker-Main-15/INFO]: [RENDERING] Loaded in special renderer for itank:tank_pink
+[03:05:34] [Worker-Main-15/INFO]: [BLOCK-COLOR]: 696969 :: itank:tank has been registered by Bibliotheca for itank
+[03:05:34] [Worker-Main-15/INFO]: [BLOCK-COLOR]: ffffff :: itank:tank_white has been registered by Bibliotheca for itank
+[03:05:34] [Worker-Main-15/INFO]: [BLOCK-COLOR]: ff6d00 :: itank:tank_orange has been registered by Bibliotheca for itank
+[03:05:34] [Worker-Main-15/INFO]: [BLOCK-COLOR]: bc37b6 :: itank:tank_magenta has been registered by Bibliotheca for itank
+[03:05:34] [Worker-Main-15/INFO]: [BLOCK-COLOR]: 2ea5c7 :: itank:tank_light_blue has been registered by Bibliotheca for itank
+[03:05:34] [Worker-Main-15/INFO]: [BLOCK-COLOR]: ceae27 :: itank:tank_yellow has been registered by Bibliotheca for itank
+[03:05:34] [Worker-Main-15/INFO]: [BLOCK-COLOR]: 83c825 :: itank:tank_lime has been registered by Bibliotheca for itank
+[03:05:34] [Worker-Main-15/INFO]: [BLOCK-COLOR]: ff4e87 :: itank:tank_pink has been registered by Bibliotheca for itank
+[03:05:34] [Worker-Main-15/INFO]: [BLOCK-COLOR]: c0c0c0 :: itank:tank_light_gray has been registered by Bibliotheca for itank
+[03:05:34] [Worker-Main-15/INFO]: [BLOCK-COLOR]: cffff :: itank:tank_cyan has been registered by Bibliotheca for itank
+[03:05:34] [Worker-Main-15/INFO]: [BLOCK-COLOR]: 68268d :: itank:tank_purple has been registered by Bibliotheca for itank
+[03:05:34] [Worker-Main-15/INFO]: [BLOCK-COLOR]: 3035a4 :: itank:tank_blue has been registered by Bibliotheca for itank
+[03:05:34] [Worker-Main-15/INFO]: [BLOCK-COLOR]: 49311d :: itank:tank_brown has been registered by Bibliotheca for itank
+[03:05:34] [Worker-Main-15/INFO]: [BLOCK-COLOR]: 546f17 :: itank:tank_green has been registered by Bibliotheca for itank
+[03:05:34] [Worker-Main-15/INFO]: [BLOCK-COLOR]: cd352c :: itank:tank_red has been registered by Bibliotheca for itank
+[03:05:34] [Worker-Main-15/INFO]: [BLOCK-COLOR]: 151517 :: itank:tank_black has been registered by Bibliotheca for itank
+[03:05:34] [Worker-Main-15/INFO]: [ITEM-COLOR]: 696969 :: itank:tank has been registered by Bibliotheca for itank
+[03:05:34] [Worker-Main-15/INFO]: [ITEM-COLOR]: ffffff :: itank:tank_white has been registered by Bibliotheca for itank
+[03:05:34] [Worker-Main-15/INFO]: [ITEM-COLOR]: ff6d00 :: itank:tank_orange has been registered by Bibliotheca for itank
+[03:05:34] [Worker-Main-15/INFO]: [ITEM-COLOR]: bc37b6 :: itank:tank_magenta has been registered by Bibliotheca for itank
+[03:05:34] [Worker-Main-15/INFO]: [ITEM-COLOR]: 2ea5c7 :: itank:tank_light_blue has been registered by Bibliotheca for itank
+[03:05:34] [Worker-Main-15/INFO]: [ITEM-COLOR]: ceae27 :: itank:tank_yellow has been registered by Bibliotheca for itank
+[03:05:34] [Worker-Main-15/INFO]: [ITEM-COLOR]: 83c825 :: itank:tank_lime has been registered by Bibliotheca for itank
+[03:05:34] [Worker-Main-15/INFO]: [ITEM-COLOR]: ff4e87 :: itank:tank_pink has been registered by Bibliotheca for itank
+[03:05:34] [Worker-Main-15/INFO]: [ITEM-COLOR]: c0c0c0 :: itank:tank_light_gray has been registered by Bibliotheca for itank
+[03:05:34] [Worker-Main-15/INFO]: [ITEM-COLOR]: cffff :: itank:tank_cyan has been registered by Bibliotheca for itank
+[03:05:34] [Worker-Main-15/INFO]: [ITEM-COLOR]: 68268d :: itank:tank_purple has been registered by Bibliotheca for itank
+[03:05:34] [Worker-Main-15/INFO]: [ITEM-COLOR]: 3035a4 :: itank:tank_blue has been registered by Bibliotheca for itank
+[03:05:34] [Worker-Main-15/INFO]: [ITEM-COLOR]: 49311d :: itank:tank_brown has been registered by Bibliotheca for itank
+[03:05:34] [Worker-Main-15/INFO]: [ITEM-COLOR]: 546f17 :: itank:tank_green has been registered by Bibliotheca for itank
+[03:05:34] [Worker-Main-15/INFO]: [ITEM-COLOR]: cd352c :: itank:tank_red has been registered by Bibliotheca for itank
+[03:05:34] [Worker-Main-15/INFO]: [ITEM-COLOR]: 151517 :: itank:tank_black has been registered by Bibliotheca for itank
+[02Dec2021 03:05:35.436] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/net/minecraftforge/forge/promotions_slim.json
+[02Dec2021 03:05:36.387] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Found status: BETA Current: 38.0.8 Target: 38.0.8
+[03:05:48] [Render thread/INFO]: OpenAL initialized on device OpenAL Soft on Headphones (Realtek(R) Audio)
+[03:05:48] [Render thread/INFO]: Sound engine started
+[03:05:48] [Render thread/INFO]: Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
+[03:05:48] [Render thread/INFO]: Created: 256x128x4 minecraft:textures/atlas/signs.png-atlas
+[03:05:48] [Render thread/INFO]: Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[03:05:48] [Render thread/INFO]: Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[03:05:48] [Render thread/INFO]: Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
+[03:05:49] [Render thread/INFO]: Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[03:05:49] [Render thread/INFO]: Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[03:05:50] [Render thread/INFO]: Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
+[03:05:50] [Render thread/INFO]: Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
+[03:05:50] [Render thread/INFO]: Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[03:05:50] [Realms Notification Availability checker #1/INFO]: Could not authorize you against Realms server: Invalid session id
+[03:05:54] [Render thread/WARN]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[03:05:54] [Render thread/WARN]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
+[03:05:54] [Render thread/WARN]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[03:05:54] [Render thread/WARN]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[03:05:54] [Render thread/WARN]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[03:05:54] [Render thread/INFO]: Reloading ResourceManager: Default, , worldstripper-250603-3543594_mapped_official_1.18.jar, main
+[03:05:56] [Render thread/INFO]: Loaded 7 recipes
+[03:05:57] [Render thread/INFO]: Loaded 1141 advancements
+[03:05:58] [Render thread/INFO]: Injecting existing registry data into this CLIENT instance
+[03:05:58] [Render thread/WARN]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[03:05:58] [Render thread/WARN]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
+[03:05:58] [Render thread/WARN]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[03:05:58] [Render thread/WARN]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[03:05:58] [Render thread/WARN]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[03:05:58] [Render thread/INFO]: Reloading ResourceManager: Default, , worldstripper-250603-3543594_mapped_official_1.18.jar, main
+[03:06:00] [Render thread/INFO]: Loaded 7 recipes
+[03:06:01] [Render thread/INFO]: Loaded 1141 advancements
+[03:06:01] [Render thread/INFO]: Injecting existing registry data into this CLIENT instance
+[02Dec2021 03:06:02.703] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[03:06:02] [Server thread/INFO]: Starting integrated minecraft server version 1.18
+[03:06:02] [Server thread/INFO]: Generating keypair
+[03:06:02] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[03:06:03] [Render thread/INFO]: Preparing spawn area: 0%
+[03:06:05] [Render thread/INFO]: Preparing spawn area: 0%
+[03:06:05] [Render thread/INFO]: Preparing spawn area: 0%
+[03:06:05] [Render thread/INFO]: Preparing spawn area: 0%
+[03:06:05] [Render thread/INFO]: Preparing spawn area: 0%
+[03:06:05] [Render thread/INFO]: Preparing spawn area: 4%
+[03:06:06] [Render thread/INFO]: Preparing spawn area: 25%
+[03:06:06] [Render thread/INFO]: Preparing spawn area: 42%
+[03:06:07] [Render thread/INFO]: Preparing spawn area: 55%
+[03:06:07] [Render thread/INFO]: Preparing spawn area: 83%
+[03:06:08] [Render thread/INFO]: Preparing spawn area: 89%
+[03:06:08] [Render thread/INFO]: Preparing spawn area: 93%
+[03:06:08] [Render thread/INFO]: Time elapsed: 5763 ms
+[03:06:08] [Server thread/INFO]: Changing view distance to 12, from 10
+[03:06:08] [Server thread/INFO]: Changing simulation distance to 12, from 0
+[03:06:10] [Netty Local Client IO #0/INFO]: Connected to a modded server.
+[03:06:10] [Server thread/INFO]: Using new advancement loading for net.minecraft.server.PlayerAdvancements@5430911
+[03:06:10] [Server thread/INFO]: Dev[local:E:96891d84] logged in with entity id 172 at (-82.55056310386666, 63.0, -294.81466154553976)
+[03:06:10] [Server thread/INFO]: Dev joined the game
+[03:06:10] [Render thread/INFO]: Loaded 2 advancements

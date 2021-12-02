@@ -13,6 +13,7 @@ import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderDispatcher;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.core.BlockPos;
@@ -64,8 +65,10 @@ public class TankRenderer implements BlockEntityRenderer<TankTile> {
 
         if (world.getBlockEntity(pos.above()) instanceof TankTile) {
             above = (TankTile) world.getBlockEntity(pos.above());
-            if(Objects.requireNonNull(above).getFluid() == null || !above.getBlockState().getValue(TankBlock.COLOR).equals(world.getBlockState(pos).getValue(TankBlock.COLOR)) || above.getFluid().getAmount() <= 0 || !fluid.isSame(above.getFluid().getFluid())) {
-                this.renderTopFluidFace(fluidTexture, matrix4f, matrix3f, builder, color, percent);
+            if (above != null && above.getBlockState().getBlock() != Blocks.AIR) {
+                if(!above.getBlockState().getValue(TankBlock.COLOR).equals(world.getBlockState(pos).getValue(TankBlock.COLOR)) || above.getFluid().getAmount() <= 0 || !fluid.isSame(above.getFluid().getFluid())) {
+                    this.renderTopFluidFace(fluidTexture, matrix4f, matrix3f, builder, color, percent);
+                }
             }
         } else {
             if (percent != 1.0f) this.renderTopFluidFace(fluidTexture, matrix4f, matrix3f, builder, color, percent);

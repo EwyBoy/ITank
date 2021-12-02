@@ -29,6 +29,7 @@ import java.util.stream.Stream;
 public class TankTile extends BlockEntity {
 
     private FluidTank tank;
+    private CompoundTag updateTag;
     public static int capacity = ConfigOptions.Tanks.tankCapacity;
     private final String compoundKey = "FluidCap";
     private final LazyOptional<IFluidHandler> handler = LazyOptional.of(() -> tank);
@@ -37,6 +38,7 @@ public class TankTile extends BlockEntity {
         super(Register.TILE.TANK, pos, state);
 
         capacity = ConfigOptions.Tanks.tankCapacity;
+        updateTag = getTileData();
 
         this.tank = new FluidTank(capacity) {
 
@@ -63,6 +65,7 @@ public class TankTile extends BlockEntity {
 
             @Override
             protected void onContentsChanged() {
+                TankTile.this.setChanged();
                 TankTile.this.clientSync();
             }
         };
@@ -109,13 +112,10 @@ public class TankTile extends BlockEntity {
     }
 
 
-    private CompoundTag saveTag;
-
     @Override
     public CompoundTag getUpdateTag() {
-        saveAdditional(new CompoundTag());
-        ModLogger.info("getUpdateTag :: " + saveTag);
-        return saveTag;
+        this.saveAdditional(updateTag);
+        return updateTag;
     }
 
     @Nullable
@@ -127,41 +127,34 @@ public class TankTile extends BlockEntity {
     @Override
     public void handleUpdateTag(CompoundTag tag) {
         this.load(tag);
-        ModLogger.info("handleUpdateTag :: " + tag);
     }
 
     @Override
     public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt) {
         this.load(pkt.getTag());
-        ModLogger.info("onDataPacket :: " + pkt.getTag());
     }
 
     @Override
-    public void load(CompoundTag tag) {
-        super.load(tag);
-        tank.readFromNBT(tag);
-        tank.setCapacity(tag.getInt(compoundKey));
-        ModLogger.info("load :: " + tag);
-    }
-
-    @Override
-    protected void saveAdditional(CompoundTag tag) {
-        tank.writeToNBT(tag);
-        tag.putInt(compoundKey, tank.getCapacity());
-        saveTag = tag;
-        super.saveAdditional(tag);
-        ModLogger.info("saveAdditional tag :: " + tag);
-        ModLogger.info("saveAdditional saveTag :: " + saveTag);
+    public void load(CompoundTag nbt) {
+        super.load(nbt);
+        tank.readFromNBT(nbt);
+        tank.setCapacity(nbt.getInt(compoundKey));
     }
 
     @Override
     public CompoundTag save(CompoundTag tag) {
         saveAdditional(tag);
-        ModLogger.info("save :: " + tag);
-        return tag;
+        return super.save(tag);
     }
 
-    // Liquid & Fluid Handling Section
+    @Override
+    protected void saveAdditional(CompoundTag nbt) {
+        super.saveAdditional(nbt);
+        tank.writeToNBT(nbt);
+        nbt.putInt(compoundKey, tank.getCapacity());
+        updateTag = nbt;
+    }
+
 
     public FluidStack getFluid() {
         return this.tank.getFluid();
