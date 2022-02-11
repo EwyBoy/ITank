@@ -1,6 +1,5 @@
 package com.ewyboy.itank.common.content.tank;
 
-import com.ewyboy.bibliotheca.util.ModLogger;
 import com.ewyboy.itank.common.register.Register;
 import com.ewyboy.itank.config.ConfigOptions;
 import net.minecraft.core.BlockPos;
@@ -142,19 +141,12 @@ public class TankTile extends BlockEntity {
     }
 
     @Override
-    public CompoundTag save(CompoundTag tag) {
-        saveAdditional(tag);
-        return super.save(tag);
-    }
-
-    @Override
     protected void saveAdditional(CompoundTag nbt) {
         super.saveAdditional(nbt);
         tank.writeToNBT(nbt);
         nbt.putInt(compoundKey, tank.getCapacity());
         updateTag = nbt;
     }
-
 
     public FluidStack getFluid() {
         return this.tank.getFluid();

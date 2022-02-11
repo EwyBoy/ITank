@@ -3710,13 +3710,13 @@ acv net/minecraft/server/level/ChunkMap
 	a (Lcqb;I)Lcqb; m_140262_
 		0 o p_140263_
 		1 o p_140264_
-	a (IIIII)Z m_183720_
+	a (IIIII)Z m_200878_
 		static
-		0 o p_183721_
-		1 o p_183722_
-		2 o p_183723_
-		3 o p_183724_
-		4 o p_183725_
+		0 o p_200879_
+		1 o p_200880_
+		2 o p_200881_
+		3 o p_200882_
+		4 o p_200883_
 	a (Lawt;)V m_140199_
 		0 o p_140200_
 	a (Lcqi;)Ljava/lang/String; m_199369_
@@ -3735,12 +3735,6 @@ acv net/minecraft/server/level/ChunkMap
 		2 o p_199352_
 		3 o p_199353_
 		4 o p_199354_
-	a (Lbzk;Ladj;ZI)Z m_183789_
-		static
-		0 o p_183790_
-		1 o p_183791_
-		2 o p_183792_
-		3 o p_183793_
 	a (Lacu$a;)Ljava/lang/String; m_199330_
 		static
 		0 o p_199331_
@@ -3771,12 +3765,6 @@ acv net/minecraft/server/level/ChunkMap
 		1 o p_140231_
 	a (I)V m_140167_
 		0 o p_140168_
-	a (Lbzk;III)Z m_183764_
-		static
-		0 o p_183765_
-		1 o p_183766_
-		2 o p_183767_
-		3 o p_183768_
 	a (Ljava/util/concurrent/CompletableFuture;)Ljava/lang/String; m_140278_
 		static
 		0 o p_140279_
@@ -3902,12 +3890,6 @@ acv net/minecraft/server/level/ChunkMap
 		2 o p_183831_
 		3 o p_183832_
 		4 o p_183833_
-	b (Lbzk;Ladj;ZI)Z m_183840_
-		static
-		0 o p_183841_
-		1 o p_183842_
-		2 o p_183843_
-		3 o p_183844_
 	b (Lcqb;I)Lcqb; m_198863_
 		0 o p_198864_
 		1 o p_198865_
@@ -4345,6 +4327,10 @@ ad net/minecraft/Util
 	a (Ljava/nio/file/spi/FileSystemProvider;)Z m_143793_
 		static
 		0 o p_143794_
+	a (Lorg/apache/logging/log4j/core/LoggerContext;Ljava/beans/PropertyChangeEvent;)V m_201391_
+		static
+		0 o p_201392_
+		1 o p_201393_
 	a (Lo;I)Ljava/lang/String; m_183975_
 		static
 		0 o p_183976_
@@ -4394,8 +4380,6 @@ ad net/minecraft/Util
 	a (Ljava/util/function/BiFunction;)Ljava/util/function/BiFunction; m_143821_
 		static
 		0 o p_143822_
-	a ()Ljava/util/stream/Collector; m_137448_
-		static
 	a (Ljava/lang/String;Ljava/util/concurrent/ForkJoinPool;)Ljava/util/concurrent/ForkJoinWorkerThread; m_183943_
 		static
 		0 o p_183944_
@@ -4448,6 +4432,8 @@ ad net/minecraft/Util
 		0 o p_137522_
 		1 o p_137523_
 		2 o p_137524_
+	a ()V m_201353_
+		static
 	a (Ljava/util/stream/IntStream;I)Lcom/mojang/serialization/DataResult; m_137539_
 		static
 		0 o p_137540_
@@ -4501,6 +4487,10 @@ ad net/minecraft/Util
 		static
 		0 o p_137493_
 		1 o p_137494_
+	a (Ljava/lang/String;Ljava/lang/Throwable;)V m_200890_
+		static
+		0 o p_200891_
+		1 o p_200892_
 	a (Ljava/nio/file/Path;Ljava/nio/file/Path;)Ljava/util/function/BooleanSupplier; m_137502_
 		static
 		0 o p_137503_
@@ -4513,10 +4503,12 @@ ad net/minecraft/Util
 		static
 		0 o p_137555_
 		1 o p_137556_
-	b (Ljava/lang/String;Ljava/util/function/Supplier;)Ljava/lang/Object; m_183981_
+	b (Ljava/lang/String;Ljava/util/function/Supplier;)Ljava/lang/Object; m_201397_
 		static
-		0 o p_183982_
-		1 o p_183983_
+		0 o p_201398_
+		1 o p_201399_
+	b ()Ljava/util/stream/Collector; m_137448_
+		static
 	b (Ljava/nio/file/Path;)Ljava/util/function/BooleanSupplier; m_137561_
 		static
 		0 o p_137562_
@@ -4539,19 +4531,17 @@ ad net/minecraft/Util
 		static
 		0 o p_137552_
 		1 o p_137553_
-	b (Ljava/lang/String;Ljava/lang/Runnable;)V m_183978_
+	b (Ljava/lang/String;Ljava/lang/Runnable;)V m_201394_
 		static
-		0 o p_183979_
-		1 o p_183980_
+		0 o p_201395_
+		1 o p_201396_
 	b (Ljava/lang/String;)Ljava/util/concurrent/ExecutorService; m_137477_
 		static
 		0 o p_137478_
-	b ()J m_137550_
-		static
 	c (Ljava/lang/Throwable;)Ljava/lang/Throwable; m_137570_
 		static
 		0 o p_137571_
-	c ()J m_137569_
+	c ()J m_137550_
 		static
 	c (Ljava/util/List;)Ljava/util/concurrent/CompletableFuture; m_143840_
 		static
@@ -4568,32 +4558,34 @@ ad net/minecraft/Util
 	d (Ljava/lang/String;)Z m_183986_
 		static
 		0 o p_183987_
-	d ()J m_137574_
-		static
-	e ()Ljava/util/concurrent/ExecutorService; m_183988_
+	d ()J m_137569_
 		static
 	e (Ljava/lang/String;)V m_183989_
 		static
 		0 o p_183990_
-	f ()Ljava/util/concurrent/ExecutorService; m_183991_
+	e ()J m_137574_
 		static
-	g ()Ljava/util/concurrent/ExecutorService; m_183992_
+	f ()Ljava/util/concurrent/ExecutorService; m_183988_
 		static
-	h ()V m_137580_
+	g ()Ljava/util/concurrent/ExecutorService; m_183991_
 		static
-	i ()Lad$b; m_137581_
+	h ()Ljava/util/concurrent/ExecutorService; m_183992_
 		static
-	j ()Ljava/util/stream/Stream; m_137582_
+	i ()V m_137580_
 		static
-	k ()Lit/unimi/dsi/fastutil/Hash$Strategy; m_137583_
+	j ()Lad$b; m_137581_
 		static
-	l ()V m_137584_
+	k ()Ljava/util/stream/Stream; m_137582_
 		static
-	m ()I m_183993_
+	l ()Lit/unimi/dsi/fastutil/Hash$Strategy; m_137583_
 		static
-	n ()Ljava/util/concurrent/ExecutorService; m_137586_
+	m ()V m_137584_
 		static
-	o ()Ljava/lang/IllegalStateException; m_143843_
+	n ()I m_183993_
+		static
+	o ()Ljava/util/concurrent/ExecutorService; m_137586_
+		static
+	p ()Ljava/lang/IllegalStateException; m_201407_
 		static
 ad$1 net/minecraft/Util$1
 	<init> (Ljava/util/concurrent/ForkJoinPool;)V <init>
@@ -5281,16 +5273,17 @@ adi net/minecraft/server/level/ServerLevel
 	T f_8553_
 	U f_184047_
 	V f_143246_
-	W f_8556_
-	X f_184048_
-	Y f_8557_
-	Z f_8558_
+	W f_200893_
+	X f_8556_
+	Y f_184048_
+	Z f_8557_
 	a f_8562_
-	aa f_8559_
-	ab f_143247_
-	ac f_8560_
-	ad f_196556_
-	ae f_8561_
+	aa f_8558_
+	ab f_8559_
+	ac f_143247_
+	ad f_8560_
+	ae f_196556_
+	af f_8561_
 	b f_8564_
 	c f_8565_
 	z f_184049_
@@ -7190,17 +7183,19 @@ aeg net/minecraft/server/network/TextFilterClient
 	g f_10104_
 	h f_10105_
 	i f_10106_
-	j f_10107_
-	k f_10108_
+	j f_200894_
+	k f_10107_
+	l f_10108_
 	<clinit> ()V <clinit>
 		static
-	<init> (Ljava/net/URI;Ljava/lang/String;ILjava/lang/String;Laeg$a;I)V <init>
-		0 o p_143726_
-		1 o p_143727_
-		2 o p_143728_
-		3 o p_143729_
-		4 o p_143730_
-		5 o p_143731_
+	<init> (Ljava/net/URI;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Laeg$a;I)V <init>
+		0 o p_200896_
+		1 o p_200897_
+		2 o p_200898_
+		3 o p_200899_
+		4 o p_200900_
+		5 o p_200901_
+		6 o p_200902_
 	a (Lcom/mojang/authlib/GameProfile;Ljava/lang/String;Laeg$a;Ljava/util/concurrent/Executor;)Ljava/util/concurrent/CompletableFuture; m_10136_
 		0 o p_10137_
 		1 o p_10138_
@@ -11728,25 +11723,25 @@ ahz net/minecraft/util/CrudeIncrementalIntIdentityHashBiMap
 	b ()I m_183450_
 	b (Ljava/lang/Object;)Z m_144609_
 		0 o p_144610_
-	b (I)Lahz; m_184237_
-		static
-		0 o p_184238_
 	b (Ljava/lang/Object;I)I m_13563_
 		0 o p_13564_
 		1 o p_13565_
 	c (Ljava/lang/Object;)I m_13569_
 		0 o p_13570_
+	c (I)Lahz; m_184237_
+		static
+		0 o p_184238_
 	c ()Lahz; m_199846_
-	c (I)Z m_144607_
+	d (I)Z m_144607_
 		0 o p_144608_
 	d ()I m_13566_
 	d (Ljava/lang/Object;)I m_13573_
 		0 o p_13574_
-	d (I)I m_13567_
+	e (I)I m_13567_
 		0 o p_13568_
-	e (I)V m_13571_
+	f (I)V m_13571_
 		0 o p_13572_
-	f (I)I m_13575_
+	g (I)I m_13575_
 		0 o p_13576_
 	iterator ()Ljava/util/Iterator; iterator
 ai net/minecraft/advancements/AdvancementRewards
@@ -15525,11 +15520,6 @@ alf net/minecraft/util/datafix/fixes/ChunkToProtochunkFix
 	<init> (Lcom/mojang/datafixers/schemas/Schema;Z)V <init>
 		0 o p_15285_
 		1 o p_15286_
-	a (Lcom/google/common/collect/ImmutableMap$Builder;Lcom/mojang/serialization/Dynamic;Lcom/mojang/serialization/Dynamic;)V m_199851_
-		static
-		0 o p_199852_
-		1 o p_199853_
-		2 o p_199854_
 	a (III)S m_15290_
 		static
 		0 o p_15291_
@@ -15568,18 +15558,10 @@ alf net/minecraft/util/datafix/fixes/ChunkToProtochunkFix
 	b (Lcom/mojang/serialization/Dynamic;)Lcom/mojang/serialization/Dynamic; m_199879_
 		static
 		0 o p_199880_
-	b (Lcom/google/common/collect/ImmutableMap$Builder;Lcom/mojang/serialization/Dynamic;Lcom/mojang/serialization/Dynamic;)V m_199875_
-		static
-		0 o p_199876_
-		1 o p_199877_
-		2 o p_199878_
 	c (Lcom/mojang/serialization/Dynamic;)Lcom/mojang/serialization/Dynamic; m_199881_
 		static
 		0 o p_199882_
-	d (Lcom/mojang/serialization/Dynamic;)Lcom/mojang/serialization/Dynamic; m_199883_
-		static
-		0 o p_199884_
-	e (Lcom/mojang/serialization/Dynamic;)Lcom/mojang/serialization/Dynamic; m_199885_
+	d (Lcom/mojang/serialization/Dynamic;)Lcom/mojang/serialization/Dynamic; m_199885_
 		static
 		0 o p_199886_
 	makeRule ()Lcom/mojang/datafixers/TypeRewriteRule; makeRule
@@ -32265,7 +32247,7 @@ bfm net/minecraft/world/entity/ai/navigation/GroundPathNavigation
 		0 o p_26491_
 	e ()Z m_148216_
 	f ()Z m_26492_
-	u ()I m_26493_
+	t ()I m_26493_
 bfn net/minecraft/world/entity/ai/navigation/PathNavigation
 	a f_26494_
 	b f_26495_
@@ -32352,8 +32334,8 @@ bfn net/minecraft/world/entity/ai/navigation/PathNavigation
 	b ()Ldom; m_7475_
 	b (Ldom;)V m_6481_
 		0 o p_26539_
-	b (Lgh;)V m_26561_
-		0 o p_26562_
+	b (Lgh;)Z m_200903_
+		0 o p_200904_
 	c ()V m_7638_
 	c (Ldom;)Z m_26559_
 		0 o p_26560_
@@ -32363,18 +32345,17 @@ bfn net/minecraft/world/entity/ai/navigation/PathNavigation
 	f ()V m_26565_
 	g ()V m_26566_
 	h ()Lgh; m_26567_
-	i ()Z m_26568_
-	j ()V m_26569_
-	k ()Ldil; m_26570_
-	l ()V m_7636_
-	m ()Z m_26571_
-	n ()Z m_26572_
-	o ()V m_26573_
-	p ()Z m_26574_
-	q ()Ldik; m_26575_
-	r ()Z m_26576_
-	s ()F m_148228_
-	t ()Z m_26577_
+	i ()V m_26569_
+	j ()Ldil; m_26570_
+	k ()V m_7636_
+	l ()Z m_26571_
+	m ()Z m_26572_
+	n ()V m_26573_
+	o ()Z m_26574_
+	p ()Ldik; m_26575_
+	q ()Z m_26576_
+	r ()F m_148228_
+	s ()Z m_26577_
 bfo net/minecraft/world/entity/ai/navigation/WallClimberNavigation
 	p f_26578_
 	<init> (Laxj;Lcad;)V <init>
@@ -77819,6 +77800,7 @@ com/mojang/blaze3d/systems/RenderSystem com/mojang/blaze3d/systems/RenderSystem
 	RENDER_THREAD_TESSELATOR f_69379_
 	apiDescription f_187550_
 	gameThread f_69380_
+	inverseViewRotationMatrix f_200905_
 	isInInit f_69381_
 	isReplayingQueue f_69382_
 	lastDrawTime f_69383_
@@ -78009,6 +77991,8 @@ com/mojang/blaze3d/systems/RenderSystem com/mojang/blaze3d/systems/RenderSystem
 		static
 	getCapsString ()Ljava/lang/String; m_69518_
 		static
+	getInverseViewRotationMatrix ()Lc; m_200906_
+		static
 	getModelViewMatrix ()Ld; m_157190_
 		static
 	getModelViewStack ()Ldsj; m_157191_
@@ -78142,10 +78126,10 @@ com/mojang/blaze3d/systems/RenderSystem com/mojang/blaze3d/systems/RenderSystem
 	lambda$activeTexture$13 (I)V m_157217_
 		static
 		0 o p_157218_
-	lambda$applyModelViewMatrix$66 (Ld;)V m_157219_
+	lambda$applyModelViewMatrix$67 (Ld;)V m_200907_
 		static
-		0 o p_157220_
-	lambda$backupProjectionMatrix$67 ()V m_157221_
+		0 o p_200908_
+	lambda$backupProjectionMatrix$68 ()V m_200909_
 		static
 	lambda$bindTexture$16 (I)V m_157222_
 		static
@@ -78319,10 +78303,13 @@ com/mojang/blaze3d/systems/RenderSystem com/mojang/blaze3d/systems/RenderSystem
 	lambda$renderCrosshair$36 (I)V m_157350_
 		static
 		0 o p_157351_
-	lambda$resetTextureMatrix$65 ()V m_157352_
+	lambda$resetTextureMatrix$66 ()V m_200910_
 		static
-	lambda$restoreProjectionMatrix$68 ()V m_157353_
+	lambda$restoreProjectionMatrix$69 ()V m_200911_
 		static
+	lambda$setInverseViewRotationMatrix$64 (Lc;)V m_200912_
+		static
+		0 o p_200913_
 	lambda$setProjectionMatrix$63 (Ld;)V m_157354_
 		static
 		0 o p_157355_
@@ -78347,9 +78334,9 @@ com/mojang/blaze3d/systems/RenderSystem com/mojang/blaze3d/systems/RenderSystem
 	lambda$setShaderFogStart$26 (F)V m_157370_
 		static
 		0 o p_157371_
-	lambda$setShaderGameTime$69 (F)V m_157372_
+	lambda$setShaderGameTime$70 (F)V m_200914_
 		static
-		0 o p_157373_
+		0 o p_200915_
 	lambda$setShaderLights$29 (Lk;Lk;)V m_157374_
 		static
 		0 o p_157375_
@@ -78362,9 +78349,9 @@ com/mojang/blaze3d/systems/RenderSystem com/mojang/blaze3d/systems/RenderSystem
 		static
 		0 o p_157381_
 		1 o p_157382_
-	lambda$setTextureMatrix$64 (Ld;)V m_157383_
+	lambda$setTextureMatrix$65 (Ld;)V m_200916_
 		static
-		0 o p_157384_
+		0 o p_200917_
 	lambda$setupGui3DDiffuseLighting$57 (Lk;Lk;)V m_157385_
 		static
 		0 o p_157386_
@@ -78467,6 +78454,9 @@ com/mojang/blaze3d/systems/RenderSystem com/mojang/blaze3d/systems/RenderSystem
 	setErrorCallback (Lorg/lwjgl/glfw/GLFWErrorCallbackI;)V m_69900_
 		static
 		0 o p_69901_
+	setInverseViewRotationMatrix (Lc;)V m_200918_
+		static
+		0 o p_200919_
 	setProjectionMatrix (Ld;)V m_157425_
 		static
 		0 o p_157426_
@@ -108227,11 +108217,6 @@ dpt net/minecraft/world/ticks/LevelTicks
 	a (Ldeh;Ldpt$a;)V m_193236_
 		0 o p_193237_
 		1 o p_193238_
-	a (Ljava/util/List;JLdpr;)V m_193263_
-		static
-		0 o p_193264_
-		1 o p_193265_
-		2 o p_193266_
 	a (Lgh;Ljava/lang/Object;)Z m_183582_
 		0 o p_193254_
 		1 o p_193255_
@@ -108267,10 +108252,16 @@ dpt net/minecraft/world/ticks/LevelTicks
 		0 o p_193275_
 		1 o p_193276_
 		2 o p_193277_
-	a (Ldeh;Ldpw;)Z m_193239_
+	a (Ljava/util/function/Predicate;Ljava/util/List;JLdpr;)V m_200928_
 		static
-		0 o p_193240_
-		1 o p_193241_
+		0 o p_200929_
+		1 o p_200930_
+		2 o p_200931_
+		3 o p_200932_
+	a (Ldeh;Ldpw;)Z m_200920_
+		static
+		0 o p_200921_
+		1 o p_200922_
 	a (Ldpr;Ldpr;)I m_193245_
 		static
 		0 o p_193246_
@@ -108295,6 +108286,10 @@ dpt net/minecraft/world/ticks/LevelTicks
 	b (Lgh;Ljava/lang/Object;)Z m_183588_
 		0 o p_193282_
 		1 o p_193283_
+	b (Ldeh;Ldpw;)Z m_193239_
+		static
+		0 o p_193240_
+		1 o p_193241_
 	b ()V m_193278_
 	c (Ldpw;)V m_193285_
 		0 o p_193286_
@@ -110036,10 +110031,6 @@ drs$a com/mojang/blaze3d/preprocessor/GlslPreprocessor$Context
 drt com/mojang/blaze3d/preprocessor/package-info
 dru com/mojang/blaze3d/shaders/AbstractUniform
 	<init> ()V <init>
-	a (I)V m_142617_
-		0 o p_166536_
-	a (F)V m_5985_
-		0 o p_85479_
 	a (II)V m_142326_
 		0 o p_166537_
 		1 o p_166538_
@@ -110069,9 +110060,6 @@ dru com/mojang/blaze3d/shaders/AbstractUniform
 		1 o p_85486_
 		2 o p_85487_
 		3 o p_85488_
-	a (FF)V m_7971_
-		0 o p_85480_
-		1 o p_85481_
 	a (FFFFFF)V m_141964_
 		0 o p_166485_
 		1 o p_166486_
@@ -110079,17 +110067,8 @@ dru com/mojang/blaze3d/shaders/AbstractUniform
 		3 o p_166488_
 		4 o p_166489_
 		5 o p_166490_
-	a (IIII)V m_7401_
-		0 o p_85489_
-		1 o p_85490_
-		2 o p_85491_
-		3 o p_85492_
-	a (Ld;)V m_5679_
-		0 o p_85493_
-	a (FFF)V m_5889_
-		0 o p_85482_
-		1 o p_85483_
-		2 o p_85484_
+	a (Lc;)V m_200759_
+		0 o p_200933_
 	a (FFFFFFFFFFFF)V m_142604_
 		0 o p_166508_
 		1 o p_166509_
@@ -110105,6 +110084,26 @@ dru com/mojang/blaze3d/shaders/AbstractUniform
 		11 o p_166519_
 	a ([F)V m_5941_
 		0 o p_85494_
+	a (Lk;)V m_142276_
+		0 o p_166542_
+	a (I)V m_142617_
+		0 o p_166536_
+	a (F)V m_5985_
+		0 o p_85479_
+	a (FF)V m_7971_
+		0 o p_85480_
+		1 o p_85481_
+	a (IIII)V m_7401_
+		0 o p_85489_
+		1 o p_85490_
+		2 o p_85491_
+		3 o p_85492_
+	a (Ld;)V m_5679_
+		0 o p_85493_
+	a (FFF)V m_5889_
+		0 o p_85482_
+		1 o p_85483_
+		2 o p_85484_
 	a (FFFFFFFFF)V m_142217_
 		0 o p_166499_
 		1 o p_166500_
@@ -110115,8 +110114,6 @@ dru com/mojang/blaze3d/shaders/AbstractUniform
 		6 o p_166505_
 		7 o p_166506_
 		8 o p_166507_
-	a (Lk;)V m_142276_
-		0 o p_166542_
 	a (Ll;)V m_142558_
 		0 o p_166543_
 	a (FFFFFFFF)V m_142005_
@@ -110128,6 +110125,18 @@ dru com/mojang/blaze3d/shaders/AbstractUniform
 		5 o p_166496_
 		6 o p_166497_
 		7 o p_166498_
+	b (FFFF)V m_5808_
+		0 o p_85495_
+		1 o p_85496_
+		2 o p_85497_
+		3 o p_85498_
+	b (FFFFFF)V m_141963_
+		0 o p_166544_
+		1 o p_166545_
+		2 o p_166546_
+		3 o p_166547_
+		4 o p_166548_
+		5 o p_166549_
 	b (FFFFFFFFFFFF)V m_142605_
 		0 o p_166558_
 		1 o p_166559_
@@ -110141,11 +110150,6 @@ dru com/mojang/blaze3d/shaders/AbstractUniform
 		9 o p_166567_
 		10 o p_166568_
 		11 o p_166569_
-	b (FFFF)V m_5808_
-		0 o p_85495_
-		1 o p_85496_
-		2 o p_85497_
-		3 o p_85498_
 	b (FFFFFFFF)V m_142004_
 		0 o p_166550_
 		1 o p_166551_
@@ -110155,13 +110159,6 @@ dru com/mojang/blaze3d/shaders/AbstractUniform
 		5 o p_166555_
 		6 o p_166556_
 		7 o p_166557_
-	b (FFFFFF)V m_141963_
-		0 o p_166544_
-		1 o p_166545_
-		2 o p_166546_
-		3 o p_166547_
-		4 o p_166548_
-		5 o p_166549_
 	b (IIII)V m_142492_
 		0 o p_166570_
 		1 o p_166571_
@@ -110416,6 +110413,8 @@ dsb com/mojang/blaze3d/shaders/Uniform
 	a (Ljava/lang/String;)I m_85629_
 		static
 		0 o p_85630_
+	a (Lc;)V m_200759_
+		0 o p_200935_
 	a (FFFFFFFFFFFF)V m_142604_
 		0 o p_166669_
 		1 o p_166670_
@@ -112336,6 +112335,9 @@ dsy com/mojang/realmsclient/client/RealmsClient
 		2 o p_87194_
 	a (Ljava/lang/String;)V m_87201_
 		0 o p_87202_
+	a (I)Ljava/lang/String; m_200936_
+		static
+		0 o p_200937_
 	a (JLjava/lang/String;)V m_87183_
 		0 o p_87184_
 		1 o p_87185_
@@ -113146,22 +113148,21 @@ dui com/mojang/realmsclient/exception/RealmsHttpException
 		1 o p_87772_
 duj com/mojang/realmsclient/exception/RealmsServiceException
 	a f_87773_
-	b f_87774_
-	c f_87775_
-	d f_87776_
-	<init> (ILjava/lang/String;ILjava/lang/String;)V <init>
-		0 o p_87778_
-		1 o p_87779_
-		2 o p_87780_
-		3 o p_87781_
+	b f_200940_
+	c f_200941_
+	<init> (ILjava/lang/String;)V <init>
+		0 o p_200943_
+		1 o p_200944_
 	<init> (ILjava/lang/String;Ldta;)V <init>
 		0 o p_87783_
 		1 o p_87784_
 		2 o p_87785_
+	a (I)I m_200945_
+		0 o p_200946_
 	toString ()Ljava/lang/String; toString
 duk com/mojang/realmsclient/exception/RetryCallException
-	e f_167328_
-	f f_87787_
+	d f_167328_
+	e f_87787_
 	<init> (II)V <init>
 		0 o p_87789_
 		1 o p_87790_
@@ -114014,8 +114015,8 @@ duy$a com/mojang/realmsclient/gui/screens/RealmsDownloadLatestWorldScreen$Downlo
 	<init> ()V <init>
 duz com/mojang/realmsclient/gui/screens/RealmsGenericErrorScreen
 	a f_88665_
-	b f_88666_
-	c f_88667_
+	b f_200947_
+	c f_200948_
 	<init> (Lduj;Lecr;)V <init>
 		0 o p_88669_
 		1 o p_88670_
@@ -114026,20 +114027,23 @@ duz com/mojang/realmsclient/gui/screens/RealmsGenericErrorScreen
 	<init> (Lpz;Lecr;)V <init>
 		0 o p_88672_
 		1 o p_88673_
-	a (Lpz;Lpz;)V m_88689_
-		0 o p_88690_
-		1 o p_88691_
-	a (Lpz;)V m_88687_
-		0 o p_88688_
-	a (Lduj;)V m_88683_
-		0 o p_88684_
+	a (Lpz;Lpz;)Lcom/mojang/datafixers/util/Pair; m_200953_
+		static
+		0 o p_200954_
+		1 o p_200955_
 	a (Ldsj;IIF)V m_6305_
 		0 o p_88679_
 		1 o p_88680_
 		2 o p_88681_
 		3 o p_88682_
+	a (Lpz;)Lcom/mojang/datafixers/util/Pair; m_200951_
+		static
+		0 o p_200952_
 	a (Ldza;)V m_88685_
 		0 o p_88686_
+	a (Lduj;)Lcom/mojang/datafixers/util/Pair; m_200949_
+		static
+		0 o p_200950_
 	ae_ ()Lpz; m_142562_
 	b ()V m_7856_
 dv net/minecraft/commands/arguments/EntityAnchorArgument
@@ -141511,41 +141515,42 @@ epv net/minecraft/client/renderer/ScreenEffectRenderer
 		0 o p_110729_
 		1 o p_110730_
 epw net/minecraft/client/renderer/ShaderInstance
-	A f_173299_
-	B f_173300_
-	C f_173301_
-	D f_173302_
-	E f_173303_
-	F f_173304_
-	G f_173305_
-	H f_173306_
-	I f_173307_
+	A f_173333_
+	B f_173299_
+	C f_173300_
+	D f_173301_
+	E f_173302_
+	F f_173303_
+	G f_173304_
+	H f_173305_
+	I f_173306_
+	J f_173307_
 	a f_173308_
 	b f_173309_
-	c f_173310_
-	d f_173311_
-	e f_173312_
-	f f_173313_
-	g f_173314_
-	h f_173315_
-	i f_173316_
-	j f_173317_
-	k f_173318_
-	l f_173319_
-	m f_173320_
-	n f_173321_
-	o f_173322_
-	p f_173323_
-	q f_173324_
-	r f_173325_
-	s f_173326_
-	t f_173327_
-	u f_173328_
-	v f_173329_
-	w f_173330_
-	x f_173331_
-	y f_173332_
-	z f_173333_
+	c f_200956_
+	d f_173310_
+	e f_173311_
+	f f_173312_
+	g f_173313_
+	h f_173314_
+	i f_173315_
+	j f_173316_
+	k f_173317_
+	l f_173318_
+	m f_173319_
+	n f_173320_
+	o f_173321_
+	p f_173322_
+	q f_173323_
+	r f_173324_
+	s f_173325_
+	t f_173326_
+	u f_173327_
+	v f_173328_
+	w f_173329_
+	x f_173330_
+	y f_173331_
+	z f_173332_
 	<clinit> ()V <clinit>
 		static
 	<init> (Lafm;Ljava/lang/String;Ldso;)V <init>
@@ -156043,6 +156048,8 @@ gq net/minecraft/core/IdMap
 		0 o p_122651_
 	a (Ljava/lang/Object;)I m_7447_
 		0 o p_122652_
+	b (I)Ljava/lang/Object; m_200957_
+		0 o p_200958_
 	b ()I m_183450_
 gr net/minecraft/core/IdMapper
 	b f_122653_
@@ -156059,10 +156066,10 @@ gr net/minecraft/core/IdMapper
 	a (Ljava/lang/Object;)I m_7447_
 		0 o p_122663_
 	b ()I m_183450_
-	b (I)Z m_175380_
-		0 o p_175381_
 	b (Ljava/lang/Object;)V m_122667_
 		0 o p_122668_
+	c (I)Z m_175380_
+		0 o p_175381_
 	iterator ()Ljava/util/Iterator; iterator
 gs net/minecraft/core/MappedRegistry
 	b f_122670_
@@ -156145,9 +156152,6 @@ gs net/minecraft/core/MappedRegistry
 		0 o p_122684_
 	a (Ljava/lang/Object;)I m_7447_
 		0 o p_122706_
-	b (I)[Ljava/lang/Object; m_194553_
-		static
-		0 o p_194554_
 	b (Lyg;)Z m_142003_
 		0 o p_175392_
 	b ()I m_183450_
@@ -156163,6 +156167,9 @@ gs net/minecraft/core/MappedRegistry
 		0 o p_122746_
 	c (Ljava/lang/Object;)Ljava/util/Optional; m_7854_
 		0 o p_122755_
+	c (I)[Ljava/lang/Object; m_194553_
+		static
+		0 o p_194554_
 	c (Lyh;)Z m_7804_
 		0 o p_122761_
 	c (Lyg;Lcom/mojang/serialization/Lifecycle;Lcom/mojang/serialization/Codec;)Lcom/mojang/serialization/Codec; m_122756_
