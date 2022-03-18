@@ -1,18 +1,16 @@
 package com.ewyboy.itank.common.content.tank;
 
-import com.ewyboy.bibliotheca.client.interfaces.IHasRenderType;
-import com.ewyboy.bibliotheca.client.interfaces.IHasSpecialRenderer;
-import com.ewyboy.bibliotheca.common.content.block.BaseBlockEntity;
-import com.ewyboy.bibliotheca.common.helpers.TextHelper;
-import com.ewyboy.bibliotheca.common.loaders.ContentLoader;
-import com.ewyboy.bibliotheca.util.ItemStacker;
 import com.ewyboy.itank.client.TankRenderer;
+import com.ewyboy.itank.client.interfaces.IHasRenderType;
+import com.ewyboy.itank.client.interfaces.IHasSpecialRenderer;
 import com.ewyboy.itank.common.register.Register;
 import com.ewyboy.itank.common.states.TankColor;
 import com.ewyboy.itank.common.states.TankState;
 import com.ewyboy.itank.common.states.TankStateProperties;
 import com.ewyboy.itank.config.ConfigOptions;
 import com.ewyboy.itank.util.ColorHandler;
+import com.ewyboy.itank.util.ItemStacker;
+import com.ewyboy.itank.util.TextHelper;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
@@ -54,7 +52,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Objects;
 
-public class TankBlock extends BaseBlockEntity<TankTile> implements IHasRenderType, IHasSpecialRenderer, ContentLoader.IHasNoBlockItem {
+public class TankBlock extends BaseTankEntity<TankTile> implements IHasRenderType, IHasSpecialRenderer {
 
     public static final EnumProperty<TankState> STATE = TankStateProperties.TANK_STATE;
     public static final EnumProperty<TankColor> COLOR = TankStateProperties.TANK_COLOR;

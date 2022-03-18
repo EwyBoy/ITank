@@ -1,26 +1,22 @@
 package com.ewyboy.itank.common.register;
 
-import com.ewyboy.bibliotheca.client.color.ColoredBlock;
-import com.ewyboy.bibliotheca.client.color.ColoredItem;
 import com.ewyboy.itank.ITank;
-import com.ewyboy.itank.common.content.tank.*;
+import com.ewyboy.itank.client.color.ColoredBlock;
+import com.ewyboy.itank.client.color.ColoredItem;
+import com.ewyboy.itank.common.content.tank.TankBlock;
+import com.ewyboy.itank.common.content.tank.TankItem;
+import com.ewyboy.itank.common.content.tank.TankTile;
 import com.ewyboy.itank.common.states.TankColor;
 import com.ewyboy.itank.util.ColorHandler;
-import com.google.common.collect.Sets;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import java.util.HashSet;
-import java.util.Set;
-
 public class Register {
-
-    private static final Set<Block> TANKS = new HashSet<>();
 
     public static void init() {
         BLOCK.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
@@ -74,29 +70,30 @@ public class Register {
 
     }
 
-
-    public static void setBlockSet() {
-        Register.TANKS.add(BLOCK.TANK.get());
-        Register.TANKS.add(BLOCK.TANK_WHITE.get());
-        Register.TANKS.add(BLOCK.TANK_ORANGE.get());
-        Register.TANKS.add(BLOCK.TANK_MAGENTA.get());
-        Register.TANKS.add(BLOCK.TANK_LIGHT_BLUE.get());
-        Register.TANKS.add(BLOCK.TANK_YELLOW.get());
-        Register.TANKS.add(BLOCK.TANK_LIME.get());
-        Register.TANKS.add(BLOCK.TANK_PINK.get());
-        Register.TANKS.add(BLOCK.TANK_LIGHT_GRAY.get());
-        Register.TANKS.add(BLOCK.TANK_CYAN.get());
-        Register.TANKS.add(BLOCK.TANK_PURPLE.get());
-        Register.TANKS.add(BLOCK.TANK_BLUE.get());
-        Register.TANKS.add(BLOCK.TANK_BROWN.get());
-        Register.TANKS.add(BLOCK.TANK_GREEN.get());
-        Register.TANKS.add(BLOCK.TANK_RED.get());
-        Register.TANKS.add(BLOCK.TANK_BLACK.get());
-    }
-
     public static final class TILE {
         public static final DeferredRegister<BlockEntityType<?>> TILES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITIES, ITank.MOD_ID);
-        public static final RegistryObject<BlockEntityType<TankTile>> TANK = TILES.register("tank", () -> new BlockEntityType<>(TankTile :: new, Sets.newHashSet(TANKS), null));
+        public static final RegistryObject<BlockEntityType<TankTile>> TANK = TILES.register("tank", () ->
+                BlockEntityType.Builder.of(
+                        TankTile :: new,
+                                BLOCK.TANK.get(),
+                                BLOCK.TANK_WHITE.get(),
+                                BLOCK.TANK_ORANGE.get(),
+                                BLOCK.TANK_MAGENTA.get(),
+                                BLOCK.TANK_LIGHT_BLUE.get(),
+                                BLOCK.TANK_YELLOW.get(),
+                                BLOCK.TANK_LIME.get(),
+                                BLOCK.TANK_PINK.get(),
+                                BLOCK.TANK_LIGHT_GRAY.get(),
+                                BLOCK.TANK_CYAN.get(),
+                                BLOCK.TANK_PURPLE.get(),
+                                BLOCK.TANK_BLUE.get(),
+                                BLOCK.TANK_BROWN.get(),
+                                BLOCK.TANK_GREEN.get(),
+                                BLOCK.TANK_RED.get(),
+                                BLOCK.TANK_BLACK.get()
+                        )
+                .build(null)
+        );
     }
 
     public static final class COLORED_BLOCKS {

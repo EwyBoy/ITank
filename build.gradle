@@ -73,7 +73,7 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
     minecraft "net.minecraftforge:forge:${MC_VERSION}-${FORGE_VERSION}"
-    implementation fg.deobf("curse.maven:worldstripper-250603:${BIBLIOTHECA}")
+    //implementation fg.deobf("curse.maven:worldstripper-250603:${BIBLIOTHECA}")
 }
 
 jar {
@@ -103,11 +103,7 @@ curseforge {
         releaseType = "${RELEASE_TYPE}"
         addGameVersion 'Forge'
         addGameVersion 'Java 17'
-        addGameVersion '1.18'
-
-        relations {
-            requiredDependency 'bibliotheca'
-        }
+        addGameVersion '1.18.2'
 
         mainArtifact(jar) {
             displayName = "${MODNAME}-${MC_VERSION}-${VERSION}.jar"

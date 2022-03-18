@@ -1,8 +1,9 @@
 package com.ewyboy.itank;
 
 import com.electronwill.nightconfig.core.Config;
-import com.ewyboy.bibliotheca.client.color.ColorLoader;
-import com.ewyboy.bibliotheca.common.loaders.ContentLoader;
+
+import com.ewyboy.itank.client.ClientInitialization;
+import com.ewyboy.itank.client.color.ColorLoader;
 import com.ewyboy.itank.common.register.Register;
 import com.ewyboy.itank.config.ConfigHolder;
 import com.ewyboy.itank.server.CommandCenter;
@@ -13,6 +14,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -30,13 +32,17 @@ public class ITank {
         ConfigHolder.init();
         Register.init();
         MOD_BUS.addListener(this :: clientSetup);
+        DistExecutor.unsafeCallWhenOn(Dist.CLIENT, () -> () -> {
+            FMLJavaModLoadingContext.get().getModEventBus().addListener(ClientInitialization :: initRenderTypes);
+            FMLJavaModLoadingContext.get().getModEventBus().addListener(ClientInitialization :: initSpecialRenders);
+            return null;
+        });
         MinecraftForge.EVENT_BUS.register(CommandCenter.class);
         MinecraftForge.EVENT_BUS.addListener(this :: registerCommands);
-        Register.setBlockSet();
     }
 
     private void clientSetup(final FMLClientSetupEvent event) {
-        ColorLoader.init(MOD_ID, Register.COLORED_BLOCKS.class, Register.COLORED_ITEMS.class);
+        ColorLoader.init(Register.COLORED_BLOCKS.class, Register.COLORED_ITEMS.class);
     }
 
     public void registerCommands(RegisterCommandsEvent event) {
