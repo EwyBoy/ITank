@@ -219,7 +219,7 @@ public class TankBlock extends BaseBlockEntity<TankTile> implements IHasRenderTy
 
     @Override
     public void initSpecialRenderer() {
-        BlockEntityRenderers.register(Register.TILE.TANK, TankRenderer :: new);
+        BlockEntityRenderers.register(Register.TILE.TANK.get(), TankRenderer :: new);
     }
 
     @Override

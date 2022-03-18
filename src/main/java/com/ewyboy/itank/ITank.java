@@ -16,8 +16,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 
 @Mod(ITank.MOD_ID)
 @Mod.EventBusSubscriber(modid = ITank.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -29,10 +28,11 @@ public class ITank {
         Config.setInsertionOrderPreserved(true);
         IEventBus MOD_BUS = FMLJavaModLoadingContext.get().getModEventBus();
         ConfigHolder.init();
-        ContentLoader.init(ITank.MOD_ID, ITank.itemGroup, Register.BLOCK.class, Register.ITEM.class, Register.TILE.class);
+        Register.init();
         MOD_BUS.addListener(this :: clientSetup);
         MinecraftForge.EVENT_BUS.register(CommandCenter.class);
         MinecraftForge.EVENT_BUS.addListener(this :: registerCommands);
+        Register.setBlockSet();
     }
 
     private void clientSetup(final FMLClientSetupEvent event) {
@@ -46,8 +46,8 @@ public class ITank {
     public static final CreativeModeTab itemGroup = new CreativeModeTab(ITank.MOD_ID) {
         @Override
         @OnlyIn(Dist.CLIENT)
-        public ItemStack makeIcon() {
-            return new ItemStack(Register.BLOCK.TANK);
+        public @NotNull ItemStack makeIcon() {
+            return new ItemStack(Register.BLOCK.TANK.get());
         }
     };
 

@@ -34,7 +34,7 @@ public class TankTile extends BlockEntity {
     private final LazyOptional<IFluidHandler> handler = LazyOptional.of(() -> tank);
 
     public TankTile(BlockPos pos, BlockState state) {
-        super(Register.TILE.TANK, pos, state);
+        super(Register.TILE.TANK.get(), pos, state);
 
         capacity = ConfigOptions.Tanks.tankCapacity;
         updateTag = getTileData();

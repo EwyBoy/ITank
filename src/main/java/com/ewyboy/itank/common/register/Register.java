@@ -10,119 +10,131 @@ import com.google.common.collect.Sets;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 import java.util.HashSet;
 import java.util.Set;
 
 public class Register {
 
+    private static final Set<Block> TANKS = new HashSet<>();
+
+    public static void init() {
+        BLOCK.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        ITEM.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        TILE.TILES.register(FMLJavaModLoadingContext.get().getModEventBus());
+    }
+
     public static final class BLOCK {
-        
-        public static final TankBlock TANK = new TankBlock(TankColor.GRAY);
-        public static final TankBlock TANK_WHITE = new TankBlock(TankColor.WHITE);
-        public static final TankBlock TANK_ORANGE = new TankBlock(TankColor.ORANGE);
-        public static final TankBlock TANK_MAGENTA = new TankBlock(TankColor.MAGENTA);
-        public static final TankBlock TANK_LIGHT_BLUE = new TankBlock(TankColor.LIGHT_BLUE);
-        public static final TankBlock TANK_YELLOW = new TankBlock(TankColor.YELLOW);
-        public static final TankBlock TANK_LIME = new TankBlock(TankColor.LIME);
-        public static final TankBlock TANK_PINK = new TankBlock(TankColor.PINK);
-        public static final TankBlock TANK_LIGHT_GRAY = new TankBlock(TankColor.LIGHT_GRAY);
-        public static final TankBlock TANK_CYAN = new TankBlock(TankColor.CYAN);
-        public static final TankBlock TANK_PURPLE = new TankBlock(TankColor.PURPLE);
-        public static final TankBlock TANK_BLUE = new TankBlock(TankColor.BLUE);
-        public static final TankBlock TANK_BROWN = new TankBlock(TankColor.BROWN);
-        public static final TankBlock TANK_GREEN = new TankBlock(TankColor.GREEN);
-        public static final TankBlock TANK_RED = new TankBlock(TankColor.RED);
-        public static final TankBlock TANK_BLACK = new TankBlock(TankColor.BLACK);
+
+        public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, ITank.MOD_ID);
+
+        public static final RegistryObject<TankBlock> TANK = BLOCKS.register("tank", () -> new TankBlock(TankColor.GRAY));
+        public static final RegistryObject<TankBlock> TANK_WHITE = BLOCKS.register("tank_white", () -> new TankBlock(TankColor.WHITE));
+        public static final RegistryObject<TankBlock> TANK_ORANGE = BLOCKS.register("tank_orange", () -> new TankBlock(TankColor.ORANGE));
+        public static final RegistryObject<TankBlock> TANK_MAGENTA = BLOCKS.register("tank_magenta", () -> new TankBlock(TankColor.MAGENTA));
+        public static final RegistryObject<TankBlock> TANK_LIGHT_BLUE = BLOCKS.register("tank_light_blue", () -> new TankBlock(TankColor.LIGHT_BLUE));
+        public static final RegistryObject<TankBlock> TANK_YELLOW = BLOCKS.register("tank_yellow", () -> new TankBlock(TankColor.YELLOW));
+        public static final RegistryObject<TankBlock> TANK_LIME = BLOCKS.register("tank_lime", () -> new TankBlock(TankColor.LIME));
+        public static final RegistryObject<TankBlock> TANK_PINK = BLOCKS.register("tank_pink", () -> new TankBlock(TankColor.PINK));
+        public static final RegistryObject<TankBlock> TANK_LIGHT_GRAY = BLOCKS.register("tank_light_gray", () -> new TankBlock(TankColor.LIGHT_GRAY));
+        public static final RegistryObject<TankBlock> TANK_CYAN = BLOCKS.register("tank_cyan", () -> new TankBlock(TankColor.CYAN));
+        public static final RegistryObject<TankBlock> TANK_PURPLE = BLOCKS.register("tank_purple", () -> new TankBlock(TankColor.PURPLE));
+        public static final RegistryObject<TankBlock> TANK_BLUE = BLOCKS.register("tank_blue", () -> new TankBlock(TankColor.BLUE));
+        public static final RegistryObject<TankBlock> TANK_BROWN = BLOCKS.register("tank_brown", () -> new TankBlock(TankColor.BROWN));
+        public static final RegistryObject<TankBlock> TANK_GREEN = BLOCKS.register("tank_green", () -> new TankBlock(TankColor.GREEN));
+        public static final RegistryObject<TankBlock> TANK_RED = BLOCKS.register("tank_red", () -> new TankBlock(TankColor.RED));
+        public static final RegistryObject<TankBlock> TANK_BLACK = BLOCKS.register("tank_black", () -> new TankBlock(TankColor.BLACK));
 
     }
 
     public static final class ITEM {
 
+        public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, ITank.MOD_ID);
 
-        public static final TankItem TANK = new TankItem(BLOCK.TANK, new Item.Properties().tab(ITank.itemGroup));
-        public static final TankItem TANK_WHITE = new TankItem(BLOCK.TANK_WHITE, new Item.Properties().tab(ITank.itemGroup));
-        public static final TankItem TANK_ORANGE = new TankItem(BLOCK.TANK_ORANGE, new Item.Properties().tab(ITank.itemGroup));
-        public static final TankItem TANK_MAGENTA = new TankItem(BLOCK.TANK_MAGENTA, new Item.Properties().tab(ITank.itemGroup));
-        public static final TankItem TANK_LIGHT_BLUE = new TankItem(BLOCK.TANK_LIGHT_BLUE, new Item.Properties().tab(ITank.itemGroup));
-        public static final TankItem TANK_YELLOW = new TankItem(BLOCK.TANK_YELLOW, new Item.Properties().tab(ITank.itemGroup));
-        public static final TankItem TANK_LIME = new TankItem(BLOCK.TANK_LIME, new Item.Properties().tab(ITank.itemGroup));
-        public static final TankItem TANK_PINK = new TankItem(BLOCK.TANK_PINK, new Item.Properties().tab(ITank.itemGroup));
-        public static final TankItem TANK_LIGHT_GRAY = new TankItem(BLOCK.TANK_LIGHT_GRAY, new Item.Properties().tab(ITank.itemGroup));
-        public static final TankItem TANK_CYAN = new TankItem(BLOCK.TANK_CYAN, new Item.Properties().tab(ITank.itemGroup));
-        public static final TankItem TANK_PURPLE = new TankItem(BLOCK.TANK_PURPLE, new Item.Properties().tab(ITank.itemGroup));
-        public static final TankItem TANK_BLUE = new TankItem(BLOCK.TANK_BLUE, new Item.Properties().tab(ITank.itemGroup));
-        public static final TankItem TANK_BROWN = new TankItem(BLOCK.TANK_BROWN, new Item.Properties().tab(ITank.itemGroup));
-        public static final TankItem TANK_GREEN = new TankItem(BLOCK.TANK_GREEN, new Item.Properties().tab(ITank.itemGroup));
-        public static final TankItem TANK_RED = new TankItem(BLOCK.TANK_RED, new Item.Properties().tab(ITank.itemGroup));
-        public static final TankItem TANK_BLACK = new TankItem(BLOCK.TANK_BLACK, new Item.Properties().tab(ITank.itemGroup));
+        public static final RegistryObject<TankItem> TANK = ITEMS.register("tank", () -> new TankItem(BLOCK.TANK.get(), new Item.Properties().tab(ITank.itemGroup)));
+        public static final RegistryObject<TankItem> TANK_WHITE = ITEMS.register("tank_white", () -> new TankItem(BLOCK.TANK_WHITE.get(), new Item.Properties().tab(ITank.itemGroup)));
+        public static final RegistryObject<TankItem> TANK_ORANGE = ITEMS.register("tank_orange", () -> new TankItem(BLOCK.TANK_ORANGE.get(), new Item.Properties().tab(ITank.itemGroup)));
+        public static final RegistryObject<TankItem> TANK_MAGENTA = ITEMS.register("tank_magenta", () -> new TankItem(BLOCK.TANK_MAGENTA.get(), new Item.Properties().tab(ITank.itemGroup)));
+        public static final RegistryObject<TankItem> TANK_LIGHT_BLUE = ITEMS.register("tank_light_blue", () -> new TankItem(BLOCK.TANK_LIGHT_BLUE.get(), new Item.Properties().tab(ITank.itemGroup)));
+        public static final RegistryObject<TankItem> TANK_YELLOW = ITEMS.register("tank_yellow", () -> new TankItem(BLOCK.TANK_YELLOW.get(), new Item.Properties().tab(ITank.itemGroup)));
+        public static final RegistryObject<TankItem> TANK_LIME = ITEMS.register("tank_lime", () -> new TankItem(BLOCK.TANK_LIME.get(), new Item.Properties().tab(ITank.itemGroup)));
+        public static final RegistryObject<TankItem> TANK_PINK = ITEMS.register("tank_pink", () -> new TankItem(BLOCK.TANK_PINK.get(), new Item.Properties().tab(ITank.itemGroup)));
+        public static final RegistryObject<TankItem> TANK_LIGHT_GRAY = ITEMS.register("tank_light_gray", () -> new TankItem(BLOCK.TANK_LIGHT_GRAY.get(), new Item.Properties().tab(ITank.itemGroup)));
+        public static final RegistryObject<TankItem> TANK_CYAN = ITEMS.register("tank_cyan", () -> new TankItem(BLOCK.TANK_CYAN.get(), new Item.Properties().tab(ITank.itemGroup)));
+        public static final RegistryObject<TankItem> TANK_PURPLE = ITEMS.register("tank_purple", () -> new TankItem(BLOCK.TANK_PURPLE.get(), new Item.Properties().tab(ITank.itemGroup)));
+        public static final RegistryObject<TankItem> TANK_BLUE = ITEMS.register("tank_blue", () -> new TankItem(BLOCK.TANK_BLUE.get(), new Item.Properties().tab(ITank.itemGroup)));
+        public static final RegistryObject<TankItem> TANK_BROWN = ITEMS.register("tank_brown", () -> new TankItem(BLOCK.TANK_BROWN.get(), new Item.Properties().tab(ITank.itemGroup)));
+        public static final RegistryObject<TankItem> TANK_GREEN = ITEMS.register("tank_green", () -> new TankItem(BLOCK.TANK_GREEN.get(), new Item.Properties().tab(ITank.itemGroup)));
+        public static final RegistryObject<TankItem> TANK_RED = ITEMS.register("tank_red", () -> new TankItem(BLOCK.TANK_RED.get(), new Item.Properties().tab(ITank.itemGroup)));
+        public static final RegistryObject<TankItem> TANK_BLACK = ITEMS.register("tank_black", () -> new TankItem(BLOCK.TANK_BLACK.get(), new Item.Properties().tab(ITank.itemGroup)));
 
     }
 
-    private static final Set<Block> TANKS = new HashSet<>();
 
-    static {
-        TANKS.add(BLOCK.TANK);
-        TANKS.add(BLOCK.TANK_WHITE);
-        TANKS.add(BLOCK.TANK_ORANGE);
-        TANKS.add(BLOCK.TANK_MAGENTA);
-        TANKS.add(BLOCK.TANK_LIGHT_BLUE);
-        TANKS.add(BLOCK.TANK_YELLOW);
-        TANKS.add(BLOCK.TANK_LIME );
-        TANKS.add(BLOCK.TANK_PINK );
-        TANKS.add(BLOCK.TANK_LIGHT_GRAY);
-        TANKS.add(BLOCK.TANK_CYAN );
-        TANKS.add(BLOCK.TANK_PURPLE);
-        TANKS.add(BLOCK.TANK_BLUE );
-        TANKS.add(BLOCK.TANK_BROWN);
-        TANKS.add(BLOCK.TANK_GREEN);
-        TANKS.add(BLOCK.TANK_RED);
-        TANKS.add(BLOCK.TANK_BLACK);
+    public static void setBlockSet() {
+        Register.TANKS.add(BLOCK.TANK.get());
+        Register.TANKS.add(BLOCK.TANK_WHITE.get());
+        Register.TANKS.add(BLOCK.TANK_ORANGE.get());
+        Register.TANKS.add(BLOCK.TANK_MAGENTA.get());
+        Register.TANKS.add(BLOCK.TANK_LIGHT_BLUE.get());
+        Register.TANKS.add(BLOCK.TANK_YELLOW.get());
+        Register.TANKS.add(BLOCK.TANK_LIME.get());
+        Register.TANKS.add(BLOCK.TANK_PINK.get());
+        Register.TANKS.add(BLOCK.TANK_LIGHT_GRAY.get());
+        Register.TANKS.add(BLOCK.TANK_CYAN.get());
+        Register.TANKS.add(BLOCK.TANK_PURPLE.get());
+        Register.TANKS.add(BLOCK.TANK_BLUE.get());
+        Register.TANKS.add(BLOCK.TANK_BROWN.get());
+        Register.TANKS.add(BLOCK.TANK_GREEN.get());
+        Register.TANKS.add(BLOCK.TANK_RED.get());
+        Register.TANKS.add(BLOCK.TANK_BLACK.get());
     }
 
     public static final class TILE {
-        public static final BlockEntityType<TankTile> TANK = new BlockEntityType<>(TankTile :: new, Sets.newHashSet(TANKS), null);
+        public static final DeferredRegister<BlockEntityType<?>> TILES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITIES, ITank.MOD_ID);
+        public static final RegistryObject<BlockEntityType<TankTile>> TANK = TILES.register("tank", () -> new BlockEntityType<>(TankTile :: new, Sets.newHashSet(TANKS), null));
     }
 
     public static final class COLORED_BLOCKS {
-
-        public static final ColoredBlock TANK = new ColoredBlock(BLOCK.TANK, ColorHandler.getIntegerColorFromState(TankColor.GRAY));
-        public static final ColoredBlock TANK_WHITE = new ColoredBlock(BLOCK.TANK_WHITE, ColorHandler.getIntegerColorFromState(TankColor.WHITE));
-        public static final ColoredBlock TANK_ORANGE = new ColoredBlock(BLOCK.TANK_ORANGE, ColorHandler.getIntegerColorFromState(TankColor.ORANGE));
-        public static final ColoredBlock TANK_MAGENTA = new ColoredBlock(BLOCK.TANK_MAGENTA, ColorHandler.getIntegerColorFromState(TankColor.MAGENTA));
-        public static final ColoredBlock TANK_LIGHT_BLUE = new ColoredBlock(BLOCK.TANK_LIGHT_BLUE, ColorHandler.getIntegerColorFromState(TankColor.LIGHT_BLUE));
-        public static final ColoredBlock TANK_YELLOW = new ColoredBlock(BLOCK.TANK_YELLOW, ColorHandler.getIntegerColorFromState(TankColor.YELLOW));
-        public static final ColoredBlock TANK_LIME  = new ColoredBlock(BLOCK.TANK_LIME, ColorHandler.getIntegerColorFromState(TankColor.LIME));
-        public static final ColoredBlock TANK_PINK  = new ColoredBlock(BLOCK.TANK_PINK, ColorHandler.getIntegerColorFromState(TankColor.PINK));
-        public static final ColoredBlock TANK_LIGHT_GRAY = new ColoredBlock(BLOCK.TANK_LIGHT_GRAY, ColorHandler.getIntegerColorFromState(TankColor.LIGHT_GRAY));
-        public static final ColoredBlock TANK_CYAN  = new ColoredBlock(BLOCK.TANK_CYAN, ColorHandler.getIntegerColorFromState(TankColor.CYAN));
-        public static final ColoredBlock TANK_PURPLE = new ColoredBlock(BLOCK.TANK_PURPLE, ColorHandler.getIntegerColorFromState(TankColor.PURPLE));
-        public static final ColoredBlock TANK_BLUE  = new ColoredBlock(BLOCK.TANK_BLUE, ColorHandler.getIntegerColorFromState(TankColor.BLUE));
-        public static final ColoredBlock TANK_BROWN = new ColoredBlock(BLOCK.TANK_BROWN, ColorHandler.getIntegerColorFromState(TankColor.BROWN));
-        public static final ColoredBlock TANK_GREEN = new ColoredBlock(BLOCK.TANK_GREEN, ColorHandler.getIntegerColorFromState(TankColor.GREEN));
-        public static final ColoredBlock TANK_RED = new ColoredBlock(BLOCK.TANK_RED, ColorHandler.getIntegerColorFromState(TankColor.RED));
-        public static final ColoredBlock TANK_BLACK = new ColoredBlock(BLOCK.TANK_BLACK, ColorHandler.getIntegerColorFromState(TankColor.BLACK));
-
+        public static final ColoredBlock TANK = new ColoredBlock(BLOCK.TANK.get(), ColorHandler.getIntegerColorFromState(TankColor.GRAY));
+        public static final ColoredBlock TANK_WHITE = new ColoredBlock(BLOCK.TANK_WHITE.get(), ColorHandler.getIntegerColorFromState(TankColor.WHITE));
+        public static final ColoredBlock TANK_ORANGE = new ColoredBlock(BLOCK.TANK_ORANGE.get(), ColorHandler.getIntegerColorFromState(TankColor.ORANGE));
+        public static final ColoredBlock TANK_MAGENTA = new ColoredBlock(BLOCK.TANK_MAGENTA.get(), ColorHandler.getIntegerColorFromState(TankColor.MAGENTA));
+        public static final ColoredBlock TANK_LIGHT_BLUE = new ColoredBlock(BLOCK.TANK_LIGHT_BLUE.get(), ColorHandler.getIntegerColorFromState(TankColor.LIGHT_BLUE));
+        public static final ColoredBlock TANK_YELLOW = new ColoredBlock(BLOCK.TANK_YELLOW.get(), ColorHandler.getIntegerColorFromState(TankColor.YELLOW));
+        public static final ColoredBlock TANK_LIME  = new ColoredBlock(BLOCK.TANK_LIME.get(), ColorHandler.getIntegerColorFromState(TankColor.LIME));
+        public static final ColoredBlock TANK_PINK  = new ColoredBlock(BLOCK.TANK_PINK.get(), ColorHandler.getIntegerColorFromState(TankColor.PINK));
+        public static final ColoredBlock TANK_LIGHT_GRAY = new ColoredBlock(BLOCK.TANK_LIGHT_GRAY.get(), ColorHandler.getIntegerColorFromState(TankColor.LIGHT_GRAY));
+        public static final ColoredBlock TANK_CYAN  = new ColoredBlock(BLOCK.TANK_CYAN.get(), ColorHandler.getIntegerColorFromState(TankColor.CYAN));
+        public static final ColoredBlock TANK_PURPLE = new ColoredBlock(BLOCK.TANK_PURPLE.get(), ColorHandler.getIntegerColorFromState(TankColor.PURPLE));
+        public static final ColoredBlock TANK_BLUE  = new ColoredBlock(BLOCK.TANK_BLUE.get(), ColorHandler.getIntegerColorFromState(TankColor.BLUE));
+        public static final ColoredBlock TANK_BROWN = new ColoredBlock(BLOCK.TANK_BROWN.get(), ColorHandler.getIntegerColorFromState(TankColor.BROWN));
+        public static final ColoredBlock TANK_GREEN = new ColoredBlock(BLOCK.TANK_GREEN.get(), ColorHandler.getIntegerColorFromState(TankColor.GREEN));
+        public static final ColoredBlock TANK_RED = new ColoredBlock(BLOCK.TANK_RED.get(), ColorHandler.getIntegerColorFromState(TankColor.RED));
+        public static final ColoredBlock TANK_BLACK = new ColoredBlock(BLOCK.TANK_BLACK.get(), ColorHandler.getIntegerColorFromState(TankColor.BLACK));
     }
 
     public static final class COLORED_ITEMS {
-
-        public static final ColoredItem TANK  = new ColoredItem(ITEM.TANK, ColorHandler.getIntegerColorFromState(TankColor.GRAY));
-        public static final ColoredItem TANK_WHITE = new ColoredItem(ITEM.TANK_WHITE, ColorHandler.getIntegerColorFromState(TankColor.WHITE));
-        public static final ColoredItem TANK_ORANGE = new ColoredItem(ITEM.TANK_ORANGE, ColorHandler.getIntegerColorFromState(TankColor.ORANGE));
-        public static final ColoredItem TANK_MAGENTA = new ColoredItem(ITEM.TANK_MAGENTA, ColorHandler.getIntegerColorFromState(TankColor.MAGENTA));
-        public static final ColoredItem TANK_LIGHT_BLUE = new ColoredItem(ITEM.TANK_LIGHT_BLUE, ColorHandler.getIntegerColorFromState(TankColor.LIGHT_BLUE));
-        public static final ColoredItem TANK_YELLOW = new ColoredItem(ITEM.TANK_YELLOW, ColorHandler.getIntegerColorFromState(TankColor.YELLOW));
-        public static final ColoredItem TANK_LIME  = new ColoredItem(ITEM.TANK_LIME, ColorHandler.getIntegerColorFromState(TankColor.LIME));
-        public static final ColoredItem TANK_PINK  = new ColoredItem(ITEM.TANK_PINK, ColorHandler.getIntegerColorFromState(TankColor.PINK));
-        public static final ColoredItem TANK_LIGHT_GRAY = new ColoredItem(ITEM.TANK_LIGHT_GRAY, ColorHandler.getIntegerColorFromState(TankColor.LIGHT_GRAY));
-        public static final ColoredItem TANK_CYAN  = new ColoredItem(ITEM.TANK_CYAN, ColorHandler.getIntegerColorFromState(TankColor.CYAN));
-        public static final ColoredItem TANK_PURPLE = new ColoredItem(ITEM.TANK_PURPLE, ColorHandler.getIntegerColorFromState(TankColor.PURPLE));
-        public static final ColoredItem TANK_BLUE  = new ColoredItem(ITEM.TANK_BLUE, ColorHandler.getIntegerColorFromState(TankColor.BLUE));
-        public static final ColoredItem TANK_BROWN = new ColoredItem(ITEM.TANK_BROWN, ColorHandler.getIntegerColorFromState(TankColor.BROWN));
-        public static final ColoredItem TANK_GREEN = new ColoredItem(ITEM.TANK_GREEN, ColorHandler.getIntegerColorFromState(TankColor.GREEN));
-        public static final ColoredItem TANK_RED = new ColoredItem(ITEM.TANK_RED, ColorHandler.getIntegerColorFromState(TankColor.RED));
-        public static final ColoredItem TANK_BLACK = new ColoredItem(ITEM.TANK_BLACK, ColorHandler.getIntegerColorFromState(TankColor.BLACK));
+        public static final ColoredItem TANK  = new ColoredItem(ITEM.TANK.get(), ColorHandler.getIntegerColorFromState(TankColor.GRAY));
+        public static final ColoredItem TANK_WHITE = new ColoredItem(ITEM.TANK_WHITE.get(), ColorHandler.getIntegerColorFromState(TankColor.WHITE));
+        public static final ColoredItem TANK_ORANGE = new ColoredItem(ITEM.TANK_ORANGE.get(), ColorHandler.getIntegerColorFromState(TankColor.ORANGE));
+        public static final ColoredItem TANK_MAGENTA = new ColoredItem(ITEM.TANK_MAGENTA.get(), ColorHandler.getIntegerColorFromState(TankColor.MAGENTA));
+        public static final ColoredItem TANK_LIGHT_BLUE = new ColoredItem(ITEM.TANK_LIGHT_BLUE.get(), ColorHandler.getIntegerColorFromState(TankColor.LIGHT_BLUE));
+        public static final ColoredItem TANK_YELLOW = new ColoredItem(ITEM.TANK_YELLOW.get(), ColorHandler.getIntegerColorFromState(TankColor.YELLOW));
+        public static final ColoredItem TANK_LIME  = new ColoredItem(ITEM.TANK_LIME.get(), ColorHandler.getIntegerColorFromState(TankColor.LIME));
+        public static final ColoredItem TANK_PINK  = new ColoredItem(ITEM.TANK_PINK.get(), ColorHandler.getIntegerColorFromState(TankColor.PINK));
+        public static final ColoredItem TANK_LIGHT_GRAY = new ColoredItem(ITEM.TANK_LIGHT_GRAY.get(), ColorHandler.getIntegerColorFromState(TankColor.LIGHT_GRAY));
+        public static final ColoredItem TANK_CYAN  = new ColoredItem(ITEM.TANK_CYAN.get(), ColorHandler.getIntegerColorFromState(TankColor.CYAN));
+        public static final ColoredItem TANK_PURPLE = new ColoredItem(ITEM.TANK_PURPLE.get(), ColorHandler.getIntegerColorFromState(TankColor.PURPLE));
+        public static final ColoredItem TANK_BLUE  = new ColoredItem(ITEM.TANK_BLUE.get(), ColorHandler.getIntegerColorFromState(TankColor.BLUE));
+        public static final ColoredItem TANK_BROWN = new ColoredItem(ITEM.TANK_BROWN.get(), ColorHandler.getIntegerColorFromState(TankColor.BROWN));
+        public static final ColoredItem TANK_GREEN = new ColoredItem(ITEM.TANK_GREEN.get(), ColorHandler.getIntegerColorFromState(TankColor.GREEN));
+        public static final ColoredItem TANK_RED = new ColoredItem(ITEM.TANK_RED.get(), ColorHandler.getIntegerColorFromState(TankColor.RED));
+        public static final ColoredItem TANK_BLACK = new ColoredItem(ITEM.TANK_BLACK.get(), ColorHandler.getIntegerColorFromState(TankColor.BLACK));
 
     }
 

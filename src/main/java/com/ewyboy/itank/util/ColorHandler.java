@@ -36,22 +36,22 @@ public class ColorHandler {
     private static final HashMap<TankColor, TankBlock> stateColorToBlockColorMap = new HashMap<>();
 
     static {
-        stateColorToBlockColorMap.put(TankColor.WHITE, Register.BLOCK.TANK_WHITE);
-        stateColorToBlockColorMap.put(TankColor.RED, Register.BLOCK.TANK_RED);
-        stateColorToBlockColorMap.put(TankColor.ORANGE, Register.BLOCK.TANK_ORANGE);
-        stateColorToBlockColorMap.put(TankColor.PINK, Register.BLOCK.TANK_PINK);
-        stateColorToBlockColorMap.put(TankColor.YELLOW, Register.BLOCK.TANK_YELLOW);
-        stateColorToBlockColorMap.put(TankColor.GREEN, Register.BLOCK.TANK_GREEN);
-        stateColorToBlockColorMap.put(TankColor.LIME, Register.BLOCK.TANK_LIME);
-        stateColorToBlockColorMap.put(TankColor.LIGHT_BLUE, Register.BLOCK.TANK_LIGHT_BLUE);
-        stateColorToBlockColorMap.put(TankColor.CYAN, Register.BLOCK.TANK_CYAN);
-        stateColorToBlockColorMap.put(TankColor.BLUE, Register.BLOCK.TANK_BLUE);
-        stateColorToBlockColorMap.put(TankColor.MAGENTA, Register.BLOCK.TANK_MAGENTA);
-        stateColorToBlockColorMap.put(TankColor.PURPLE, Register.BLOCK.TANK_PURPLE);
-        stateColorToBlockColorMap.put(TankColor.BROWN, Register.BLOCK.TANK_BROWN);
-        stateColorToBlockColorMap.put(TankColor.GRAY, Register.BLOCK.TANK);
-        stateColorToBlockColorMap.put(TankColor.LIGHT_GRAY, Register.BLOCK.TANK_LIGHT_GRAY);
-        stateColorToBlockColorMap.put(TankColor.BLACK, Register.BLOCK.TANK_BLACK);
+        stateColorToBlockColorMap.put(TankColor.WHITE, Register.BLOCK.TANK_WHITE.get());
+        stateColorToBlockColorMap.put(TankColor.RED, Register.BLOCK.TANK_RED.get());
+        stateColorToBlockColorMap.put(TankColor.ORANGE, Register.BLOCK.TANK_ORANGE.get());
+        stateColorToBlockColorMap.put(TankColor.PINK, Register.BLOCK.TANK_PINK.get());
+        stateColorToBlockColorMap.put(TankColor.YELLOW, Register.BLOCK.TANK_YELLOW.get());
+        stateColorToBlockColorMap.put(TankColor.GREEN, Register.BLOCK.TANK_GREEN.get());
+        stateColorToBlockColorMap.put(TankColor.LIME, Register.BLOCK.TANK_LIME.get());
+        stateColorToBlockColorMap.put(TankColor.LIGHT_BLUE, Register.BLOCK.TANK_LIGHT_BLUE.get());
+        stateColorToBlockColorMap.put(TankColor.CYAN, Register.BLOCK.TANK_CYAN.get());
+        stateColorToBlockColorMap.put(TankColor.BLUE, Register.BLOCK.TANK_BLUE.get());
+        stateColorToBlockColorMap.put(TankColor.MAGENTA, Register.BLOCK.TANK_MAGENTA.get());
+        stateColorToBlockColorMap.put(TankColor.PURPLE, Register.BLOCK.TANK_PURPLE.get());
+        stateColorToBlockColorMap.put(TankColor.BROWN, Register.BLOCK.TANK_BROWN.get());
+        stateColorToBlockColorMap.put(TankColor.GRAY, Register.BLOCK.TANK.get());
+        stateColorToBlockColorMap.put(TankColor.LIGHT_GRAY, Register.BLOCK.TANK_LIGHT_GRAY.get());
+        stateColorToBlockColorMap.put(TankColor.BLACK, Register.BLOCK.TANK_BLACK.get());
     }
 
 
