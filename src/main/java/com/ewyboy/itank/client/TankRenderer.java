@@ -18,7 +18,8 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.world.level.BlockAndTintGetter;
 import net.minecraft.world.level.material.Fluid;
-import net.minecraftforge.fluids.FluidAttributes;
+import net.minecraftforge.client.IFluidTypeRenderProperties;
+import net.minecraftforge.client.RenderProperties;
 import net.minecraftforge.fluids.FluidStack;
 
 public class TankRenderer implements BlockEntityRenderer<TankTile> {
@@ -42,10 +43,10 @@ public class TankRenderer implements BlockEntityRenderer<TankTile> {
         Matrix3f matrix3f = matrix.last().normal();
 
         Fluid fluid = fluidStack.getFluid();
-        FluidAttributes fluidAttributes = fluid.getAttributes();
+        IFluidTypeRenderProperties fluidAttributes = RenderProperties.get(fluid);
         TextureAtlasSprite fluidTexture = getFluidStillSprite(fluidAttributes, fluidStack);
 
-        int color = fluidAttributes.getColor(fluidStack);
+        int color = fluidAttributes.getColorTint(fluidStack);
 
         VertexConsumer builder = buffer.getBuffer(RenderType.translucent());
 
@@ -148,16 +149,16 @@ public class TankRenderer implements BlockEntityRenderer<TankTile> {
                 .endVertex();
     }
 
-    private TextureAtlasSprite getFluidStillSprite(FluidAttributes attributes, FluidStack fluidStack) {
+    private TextureAtlasSprite getFluidStillSprite(IFluidTypeRenderProperties properties, FluidStack fluidStack) {
         return Minecraft.getInstance()
                 .getTextureAtlas(InventoryMenu.BLOCK_ATLAS)
-                .apply(attributes.getStillTexture(fluidStack));
+                .apply(properties.getStillTexture(fluidStack));
     }
 
-    private TextureAtlasSprite getFluidFlowingSprite(FluidAttributes attributes, FluidStack fluidStack) {
+    private TextureAtlasSprite getFluidFlowingSprite(IFluidTypeRenderProperties properties, FluidStack fluidStack) {
         return Minecraft.getInstance()
                 .getTextureAtlas(InventoryMenu.BLOCK_ATLAS)
-                .apply(attributes.getFlowingTexture(fluidStack));
+                .apply(properties.getFlowingTexture(fluidStack));
     }
 
 }

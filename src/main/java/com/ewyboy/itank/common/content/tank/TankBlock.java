@@ -17,7 +17,6 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -232,9 +231,9 @@ public class TankBlock extends BaseTankEntity<TankTile> implements IHasRenderTyp
     private void colorFluidName(String fluidName, List<Component> tooltip) {
         if(!Objects.equals(fluidName, "Air")) {
             switch (fluidName) {
-                case "Water" -> tooltip.add(new TextComponent("Fluid: " + ChatFormatting.AQUA + fluidName));
-                case "Lava" -> tooltip.add(new TextComponent("Fluid: " + ChatFormatting.RED + fluidName));
-                default -> tooltip.add(new TextComponent("Fluid: " + ChatFormatting.GREEN + fluidName));
+                case "Water" -> tooltip.add(Component.literal("Fluid: " + ChatFormatting.AQUA + fluidName));
+                case "Lava" -> tooltip.add(Component.literal("Fluid: " + ChatFormatting.RED + fluidName));
+                default -> tooltip.add(Component.literal("Fluid: " + ChatFormatting.GREEN + fluidName));
             }
         }
     }
@@ -248,7 +247,7 @@ public class TankBlock extends BaseTankEntity<TankTile> implements IHasRenderTyp
         if (fluid != null) {
             String fluidName = fluid.getDisplayName().getString();
             colorFluidName(fluidName, tooltip);
-            tooltip.add(new TextComponent(TextHelper.formatCapacityInfo(fluid.getAmount(), ConfigOptions.Tanks.tankCapacity, "mB")));
+            tooltip.add(Component.literal(TextHelper.formatCapacityInfo(fluid.getAmount(), ConfigOptions.Tanks.tankCapacity, "mB")));
         }
     }
 

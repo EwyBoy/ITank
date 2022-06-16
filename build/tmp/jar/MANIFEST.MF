@@ -3,7 +3,7 @@ Implementation-Title: ITank
 Implementation-Version: 2.0.0
 Specification-Vendor: Ewy
 Specification-Title: ITank
-Implementation-Timestamp: 2022-03-18T12:29:18+0100
-Specification-Version: 1.18.2
+Implementation-Timestamp: 2022-06-16T20:32:23+0200
+Specification-Version: 1.19
 Implementation-Vendor: Ewy
 

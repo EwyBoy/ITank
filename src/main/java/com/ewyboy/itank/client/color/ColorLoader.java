@@ -6,6 +6,7 @@ import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.color.item.ItemColor;
 import net.minecraft.client.color.item.ItemColors;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -33,7 +34,7 @@ public class ColorLoader {
                 Object obj = field.get(null);
                 if (obj instanceof ColoredBlock) {
                     ColoredBlock block = (ColoredBlock) obj;
-                    String name = Objects.requireNonNull(block.blockToColor().getRegistryName()).toString();
+                    String name = Objects.requireNonNull(block.blockToColor().getName()).toString();
                     registerColoredBlock(block, name);
                 }
             }
@@ -66,7 +67,7 @@ public class ColorLoader {
 
     @OnlyIn(Dist.CLIENT)
     public static void registerColoredItem(ColoredItem coloredItem) {
-        COLORED_ITEMS.put(Objects.requireNonNull(coloredItem.itemToColor().getRegistryName()).toString(), coloredItem);
+        COLORED_ITEMS.put(Objects.requireNonNull(coloredItem.itemToColor().asItem().getName(new ItemStack(coloredItem.itemToColor().asItem()))).toString(), coloredItem);
 
         BlockColors blockColors = Minecraft.getInstance().getBlockColors();
         ItemColors itemColors = Minecraft.getInstance().getItemColors();
