@@ -1,6 +1,5 @@
 package com.ewyboy.itank.common.register;
 
-import com.ewyboy.itank.ITank;
 import com.ewyboy.itank.client.color.ColoredBlock;
 import com.ewyboy.itank.client.color.ColoredItem;
 import com.ewyboy.itank.common.content.tank.TankBlock;
@@ -16,6 +15,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import static com.ewyboy.itank.ITank.MOD_ID;
+
 public class Register {
 
     public static void init() {
@@ -26,7 +27,7 @@ public class Register {
 
     public static final class BLOCK {
 
-        public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, ITank.MOD_ID);
+        public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MOD_ID);
 
         public static final RegistryObject<TankBlock> TANK = BLOCKS.register("tank", () -> new TankBlock(TankColor.GRAY));
         public static final RegistryObject<TankBlock> TANK_WHITE = BLOCKS.register("tank_white", () -> new TankBlock(TankColor.WHITE));
@@ -49,29 +50,29 @@ public class Register {
 
     public static final class ITEM {
 
-        public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, ITank.MOD_ID);
+        public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MOD_ID);
 
-        public static final RegistryObject<TankItem> TANK = ITEMS.register("tank", () -> new TankItem(BLOCK.TANK.get(), new Item.Properties().tab(ITank.itemGroup)));
-        public static final RegistryObject<TankItem> TANK_WHITE = ITEMS.register("tank_white", () -> new TankItem(BLOCK.TANK_WHITE.get(), new Item.Properties().tab(ITank.itemGroup)));
-        public static final RegistryObject<TankItem> TANK_ORANGE = ITEMS.register("tank_orange", () -> new TankItem(BLOCK.TANK_ORANGE.get(), new Item.Properties().tab(ITank.itemGroup)));
-        public static final RegistryObject<TankItem> TANK_MAGENTA = ITEMS.register("tank_magenta", () -> new TankItem(BLOCK.TANK_MAGENTA.get(), new Item.Properties().tab(ITank.itemGroup)));
-        public static final RegistryObject<TankItem> TANK_LIGHT_BLUE = ITEMS.register("tank_light_blue", () -> new TankItem(BLOCK.TANK_LIGHT_BLUE.get(), new Item.Properties().tab(ITank.itemGroup)));
-        public static final RegistryObject<TankItem> TANK_YELLOW = ITEMS.register("tank_yellow", () -> new TankItem(BLOCK.TANK_YELLOW.get(), new Item.Properties().tab(ITank.itemGroup)));
-        public static final RegistryObject<TankItem> TANK_LIME = ITEMS.register("tank_lime", () -> new TankItem(BLOCK.TANK_LIME.get(), new Item.Properties().tab(ITank.itemGroup)));
-        public static final RegistryObject<TankItem> TANK_PINK = ITEMS.register("tank_pink", () -> new TankItem(BLOCK.TANK_PINK.get(), new Item.Properties().tab(ITank.itemGroup)));
-        public static final RegistryObject<TankItem> TANK_LIGHT_GRAY = ITEMS.register("tank_light_gray", () -> new TankItem(BLOCK.TANK_LIGHT_GRAY.get(), new Item.Properties().tab(ITank.itemGroup)));
-        public static final RegistryObject<TankItem> TANK_CYAN = ITEMS.register("tank_cyan", () -> new TankItem(BLOCK.TANK_CYAN.get(), new Item.Properties().tab(ITank.itemGroup)));
-        public static final RegistryObject<TankItem> TANK_PURPLE = ITEMS.register("tank_purple", () -> new TankItem(BLOCK.TANK_PURPLE.get(), new Item.Properties().tab(ITank.itemGroup)));
-        public static final RegistryObject<TankItem> TANK_BLUE = ITEMS.register("tank_blue", () -> new TankItem(BLOCK.TANK_BLUE.get(), new Item.Properties().tab(ITank.itemGroup)));
-        public static final RegistryObject<TankItem> TANK_BROWN = ITEMS.register("tank_brown", () -> new TankItem(BLOCK.TANK_BROWN.get(), new Item.Properties().tab(ITank.itemGroup)));
-        public static final RegistryObject<TankItem> TANK_GREEN = ITEMS.register("tank_green", () -> new TankItem(BLOCK.TANK_GREEN.get(), new Item.Properties().tab(ITank.itemGroup)));
-        public static final RegistryObject<TankItem> TANK_RED = ITEMS.register("tank_red", () -> new TankItem(BLOCK.TANK_RED.get(), new Item.Properties().tab(ITank.itemGroup)));
-        public static final RegistryObject<TankItem> TANK_BLACK = ITEMS.register("tank_black", () -> new TankItem(BLOCK.TANK_BLACK.get(), new Item.Properties().tab(ITank.itemGroup)));
+        public static final RegistryObject<TankItem> TANK = ITEMS.register("tank", () -> new TankItem(BLOCK.TANK.get(), new Item.Properties()));
+        public static final RegistryObject<TankItem> TANK_WHITE = ITEMS.register("tank_white", () -> new TankItem(BLOCK.TANK_WHITE.get(), new Item.Properties()));
+        public static final RegistryObject<TankItem> TANK_ORANGE = ITEMS.register("tank_orange", () -> new TankItem(BLOCK.TANK_ORANGE.get(), new Item.Properties()));
+        public static final RegistryObject<TankItem> TANK_MAGENTA = ITEMS.register("tank_magenta", () -> new TankItem(BLOCK.TANK_MAGENTA.get(), new Item.Properties()));
+        public static final RegistryObject<TankItem> TANK_LIGHT_BLUE = ITEMS.register("tank_light_blue", () -> new TankItem(BLOCK.TANK_LIGHT_BLUE.get(), new Item.Properties()));
+        public static final RegistryObject<TankItem> TANK_YELLOW = ITEMS.register("tank_yellow", () -> new TankItem(BLOCK.TANK_YELLOW.get(), new Item.Properties()));
+        public static final RegistryObject<TankItem> TANK_LIME = ITEMS.register("tank_lime", () -> new TankItem(BLOCK.TANK_LIME.get(), new Item.Properties()));
+        public static final RegistryObject<TankItem> TANK_PINK = ITEMS.register("tank_pink", () -> new TankItem(BLOCK.TANK_PINK.get(), new Item.Properties()));
+        public static final RegistryObject<TankItem> TANK_LIGHT_GRAY = ITEMS.register("tank_light_gray", () -> new TankItem(BLOCK.TANK_LIGHT_GRAY.get(), new Item.Properties()));
+        public static final RegistryObject<TankItem> TANK_CYAN = ITEMS.register("tank_cyan", () -> new TankItem(BLOCK.TANK_CYAN.get(), new Item.Properties()));
+        public static final RegistryObject<TankItem> TANK_PURPLE = ITEMS.register("tank_purple", () -> new TankItem(BLOCK.TANK_PURPLE.get(), new Item.Properties()));
+        public static final RegistryObject<TankItem> TANK_BLUE = ITEMS.register("tank_blue", () -> new TankItem(BLOCK.TANK_BLUE.get(), new Item.Properties()));
+        public static final RegistryObject<TankItem> TANK_BROWN = ITEMS.register("tank_brown", () -> new TankItem(BLOCK.TANK_BROWN.get(), new Item.Properties()));
+        public static final RegistryObject<TankItem> TANK_GREEN = ITEMS.register("tank_green", () -> new TankItem(BLOCK.TANK_GREEN.get(), new Item.Properties()));
+        public static final RegistryObject<TankItem> TANK_RED = ITEMS.register("tank_red", () -> new TankItem(BLOCK.TANK_RED.get(), new Item.Properties()));
+        public static final RegistryObject<TankItem> TANK_BLACK = ITEMS.register("tank_black", () -> new TankItem(BLOCK.TANK_BLACK.get(), new Item.Properties()));
 
     }
 
     public static final class TILE {
-        public static final DeferredRegister<BlockEntityType<?>> TILES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITIES, ITank.MOD_ID);
+        public static final DeferredRegister<BlockEntityType<?>> TILES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, MOD_ID);
         public static final RegistryObject<BlockEntityType<TankTile>> TANK = TILES.register("tank", () ->
                 BlockEntityType.Builder.of(
                         TankTile :: new,

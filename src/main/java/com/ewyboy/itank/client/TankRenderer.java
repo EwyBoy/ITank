@@ -4,9 +4,7 @@ import com.ewyboy.itank.common.content.tank.TankBlock;
 import com.ewyboy.itank.common.content.tank.TankTile;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.mojang.math.Matrix3f;
-import com.mojang.math.Matrix4f;
-import com.mojang.math.Vector3f;
+import com.mojang.math.Axis;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
@@ -18,9 +16,10 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.world.level.BlockAndTintGetter;
 import net.minecraft.world.level.material.Fluid;
-import net.minecraftforge.client.IFluidTypeRenderProperties;
-import net.minecraftforge.client.RenderProperties;
+import net.minecraftforge.client.extensions.common.IClientFluidTypeExtensions;
 import net.minecraftforge.fluids.FluidStack;
+import org.joml.Matrix3f;
+import org.joml.Matrix4f;
 
 public class TankRenderer implements BlockEntityRenderer<TankTile> {
 
@@ -43,16 +42,16 @@ public class TankRenderer implements BlockEntityRenderer<TankTile> {
         Matrix3f matrix3f = matrix.last().normal();
 
         Fluid fluid = fluidStack.getFluid();
-        IFluidTypeRenderProperties fluidAttributes = RenderProperties.get(fluid);
+        IClientFluidTypeExtensions fluidAttributes = IClientFluidTypeExtensions.of(fluid);
         TextureAtlasSprite fluidTexture = getFluidStillSprite(fluidAttributes, fluidStack);
 
-        int color = fluidAttributes.getColorTint(fluidStack);
+        int color = fluidAttributes.getTintColor(fluidStack);
 
         VertexConsumer builder = buffer.getBuffer(RenderType.translucent());
 
         for (int i = 0; i < 4; i++) {
             this.renderNorthFluidFace(fluidTexture, matrix4f, matrix3f, builder, color, percent);
-            matrix.mulPose(Vector3f.YP.rotationDegrees(90));
+            matrix.mulPose(Axis.YP.rotationDegrees(90));
         }
 
         TankTile above;
@@ -149,13 +148,13 @@ public class TankRenderer implements BlockEntityRenderer<TankTile> {
                 .endVertex();
     }
 
-    private TextureAtlasSprite getFluidStillSprite(IFluidTypeRenderProperties properties, FluidStack fluidStack) {
+    private TextureAtlasSprite getFluidStillSprite(IClientFluidTypeExtensions properties, FluidStack fluidStack) {
         return Minecraft.getInstance()
                 .getTextureAtlas(InventoryMenu.BLOCK_ATLAS)
                 .apply(properties.getStillTexture(fluidStack));
     }
 
-    private TextureAtlasSprite getFluidFlowingSprite(IFluidTypeRenderProperties properties, FluidStack fluidStack) {
+    private TextureAtlasSprite getFluidFlowingSprite(IClientFluidTypeExtensions properties, FluidStack fluidStack) {
         return Minecraft.getInstance()
                 .getTextureAtlas(InventoryMenu.BLOCK_ATLAS)
                 .apply(properties.getFlowingTexture(fluidStack));

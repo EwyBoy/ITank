@@ -1,24 +1,23 @@
 package com.ewyboy.itank;
 
 import com.electronwill.nightconfig.core.Config;
-
 import com.ewyboy.itank.client.ClientInitialization;
 import com.ewyboy.itank.client.color.ColorLoader;
 import com.ewyboy.itank.common.register.Register;
 import com.ewyboy.itank.config.ConfigHolder;
-import com.ewyboy.itank.server.CommandCenter;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.RegisterCommandsEvent;
+import net.minecraftforge.event.CreativeModeTabEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import org.jetbrains.annotations.NotNull;
 
 @Mod(ITank.MOD_ID)
 @Mod.EventBusSubscriber(modid = ITank.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -37,24 +36,61 @@ public class ITank {
             FMLJavaModLoadingContext.get().getModEventBus().addListener(ClientInitialization :: initSpecialRenders);
             return null;
         });
-        MinecraftForge.EVENT_BUS.register(CommandCenter.class);
-        MinecraftForge.EVENT_BUS.addListener(this :: registerCommands);
+        MinecraftForge.EVENT_BUS.register(this);
+        MOD_BUS.addListener(this :: addCreativeModeTab);
     }
 
     private void clientSetup(final FMLClientSetupEvent event) {
         ColorLoader.init(Register.COLORED_BLOCKS.class, Register.COLORED_ITEMS.class);
     }
 
-    public void registerCommands(RegisterCommandsEvent event) {
-        new CommandCenter(event.getDispatcher());
+    public static CreativeModeTab ITANK_TAB;
+
+    @SubscribeEvent
+    public void registerCreativeTab(CreativeModeTabEvent.Register event) {
+        ITANK_TAB = event.registerCreativeModeTab(new ResourceLocation(MOD_ID, "itank_tab"),
+                builder -> builder
+                        .title(Component.literal("ITank"))
+                        .icon(() -> new ItemStack(Register.BLOCK.TANK.get()))
+                        .displayItems((params, output) -> {
+                            output.accept(Register.BLOCK.TANK.get());
+                            output.accept(Register.BLOCK.TANK_WHITE.get());
+                            output.accept(Register.BLOCK.TANK_ORANGE.get());
+                            output.accept(Register.BLOCK.TANK_MAGENTA.get());
+                            output.accept(Register.BLOCK.TANK_LIGHT_BLUE.get());
+                            output.accept(Register.BLOCK.TANK_YELLOW.get());
+                            output.accept(Register.BLOCK.TANK_LIME.get());
+                            output.accept(Register.BLOCK.TANK_PINK.get());
+                            output.accept(Register.BLOCK.TANK_LIGHT_GRAY.get());
+                            output.accept(Register.BLOCK.TANK_CYAN.get());
+                            output.accept(Register.BLOCK.TANK_PURPLE.get());
+                            output.accept(Register.BLOCK.TANK_BLUE.get());
+                            output.accept(Register.BLOCK.TANK_BROWN.get());
+                            output.accept(Register.BLOCK.TANK_GREEN.get());
+                            output.accept(Register.BLOCK.TANK_RED.get());
+                            output.accept(Register.BLOCK.TANK_BLACK.get());
+                        }).build());
     }
 
-    public static final CreativeModeTab itemGroup = new CreativeModeTab(ITank.MOD_ID) {
-        @Override
-        @OnlyIn(Dist.CLIENT)
-        public @NotNull ItemStack makeIcon() {
-            return new ItemStack(Register.BLOCK.TANK.get());
+    private void addCreativeModeTab(CreativeModeTabEvent.BuildContents event) {
+		if (event.getTab().equals(ITANK_TAB)) {
+            event.accept(Register.BLOCK.TANK);
+            event.accept(Register.BLOCK.TANK_WHITE);
+            event.accept(Register.BLOCK.TANK_ORANGE);
+            event.accept(Register.BLOCK.TANK_MAGENTA);
+            event.accept(Register.BLOCK.TANK_LIGHT_BLUE);
+            event.accept(Register.BLOCK.TANK_YELLOW);
+            event.accept(Register.BLOCK.TANK_LIME);
+            event.accept(Register.BLOCK.TANK_PINK);
+            event.accept(Register.BLOCK.TANK_LIGHT_GRAY);
+            event.accept(Register.BLOCK.TANK_CYAN);
+            event.accept(Register.BLOCK.TANK_PURPLE);
+            event.accept(Register.BLOCK.TANK_BLUE);
+            event.accept(Register.BLOCK.TANK_BROWN);
+            event.accept(Register.BLOCK.TANK_GREEN);
+            event.accept(Register.BLOCK.TANK_RED);
+            event.accept(Register.BLOCK.TANK_BLACK);
         }
-    };
+    }
 
 }

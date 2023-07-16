@@ -14,11 +14,12 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.fluids.FluidStack;
-import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
 import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.fluids.capability.templates.FluidTank;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -37,7 +38,7 @@ public class TankTile extends BlockEntity {
         super(Register.TILE.TANK.get(), pos, state);
 
         capacity = ConfigOptions.Tanks.tankCapacity;
-        updateTag = getTileData();
+        updateTag = new CompoundTag();
 
         this.tank = new FluidTank(capacity) {
 
@@ -82,7 +83,7 @@ public class TankTile extends BlockEntity {
 
             // Fluid always drain to the bottom tank
             if (tank_below != null && tank_below.getBlockState().getValue(TankBlock.COLOR) == state.getValue(TankBlock.COLOR)) {
-                tank_below.getCapability(CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY, Direction.UP).ifPresent(
+                tank_below.getCapability(ForgeCapabilities.FLUID_HANDLER, Direction.UP).ifPresent(
                         fluidHandler -> tile.tank.drain(
                                 fluidHandler.fill(
                                         tile.tank.drain(
@@ -112,7 +113,7 @@ public class TankTile extends BlockEntity {
 
 
     @Override
-    public CompoundTag getUpdateTag() {
+    public @NotNull CompoundTag getUpdateTag() {
         this.saveAdditional(updateTag);
         return updateTag;
     }
@@ -130,18 +131,18 @@ public class TankTile extends BlockEntity {
 
     @Override
     public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt) {
-        this.load(pkt.getTag());
+        this.load(Objects.requireNonNull(pkt.getTag()));
     }
 
     @Override
-    public void load(CompoundTag nbt) {
+    public void load(@NotNull CompoundTag nbt) {
         super.load(nbt);
         tank.readFromNBT(nbt);
         tank.setCapacity(nbt.getInt(compoundKey));
     }
 
     @Override
-    protected void saveAdditional(CompoundTag nbt) {
+    protected void saveAdditional(@NotNull CompoundTag nbt) {
         super.saveAdditional(nbt);
         tank.writeToNBT(nbt);
         nbt.putInt(compoundKey, tank.getCapacity());
@@ -159,7 +160,7 @@ public class TankTile extends BlockEntity {
     @Override
     @Nonnull
     public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> capability, @Nullable Direction facing) {
-        if (capability == CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY) {
+        if (capability == ForgeCapabilities.FLUID_HANDLER) {
             return handler.cast();
         }
         return super.getCapability(capability, facing);
