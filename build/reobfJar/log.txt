@@ -1,19 +1,20 @@
 Java Launcher: C:\Program Files\Eclipse Adoptium\jdk-17.0.7.7-hotspot\bin\java.exe
-Arguments: '--in-jar, C:\Dev\Modding\ITank\build\libs\ITank-1.19.4-2.0.0.jar, --out-jar, C:\Dev\Modding\ITank\build\reobfJar\output.jar, --srg-in, C:\Dev\Modding\ITank\build\createMcpToSrg\output.tsrg, --live'
+Arguments: '--in-jar, C:\Dev\Modding\ITank\build\libs\ITank-1.20.1-2.0.0.jar, --out-jar, C:\Dev\Modding\ITank\build\reobfJar\output.jar, --srg-in, C:\Dev\Modding\ITank\build\createMcpToSrg\output.tsrg, --live'
 Classpath:
  - C:\Users\Eivind\.gradle\caches\forge_gradle\maven_downloader\net\md-5\SpecialSource\1.11.0\SpecialSource-1.11.0-shaded.jar
- - C:\Users\Eivind\.gradle\caches\forge_gradle\minecraft_user_repo\net\minecraftforge\forge\1.19.4-45.1.14_mapped_official_1.19.4\forge-1.19.4-45.1.14_mapped_official_1.19.4-recomp.jar
- - C:\Users\Eivind\.gradle\caches\forge_gradle\minecraft_repo\versions\1.19.4\client-extra.jar
- - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlloader\1.19.4-45.1.14\c7f47a2af9c303c5784a6b888006bcfeaa6eabac\fmlloader-1.19.4-45.1.14.jar
+ - C:\Users\Eivind\.gradle\caches\forge_gradle\minecraft_user_repo\net\minecraftforge\forge\1.20.1-47.1.28_mapped_official_1.20.1\forge-1.20.1-47.1.28_mapped_official_1.20.1-recomp.jar
+ - C:\Users\Eivind\.gradle\caches\forge_gradle\minecraft_repo\versions\1.20.1\client-extra.jar
+ - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlloader\1.20.1-47.1.28\ef09334fc39fe7f416f94f63e39babe600939045\fmlloader-1.20.1-47.1.28.jar
  - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\net.minecraftforge\JarJarSelector\0.3.19\376cc9c8ea60720cf027c01fc033de915699801c\JarJarSelector-0.3.19.jar
  - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\net.minecraftforge\JarJarMetadata\0.3.19\83feaa9b770e6ac0e96ee4fc23fa89325c5fe2\JarJarMetadata-0.3.19.jar
  - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\com.google.guava\guava\31.1-jre\60458f877d055d0c9114d9e1a2efb737b4bc282c\guava-31.1-jre.jar
  - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\3.0.2\25ea2e8b0c338a877313bd4672d3fe056ea78f0d\jsr305-3.0.2.jar
  - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\ca.weblite\java-objc-bridge\1.1\1227f9e0666314f9de41477e3ec277e542ed7f7b\java-objc-bridge-1.1.jar
+ - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\net.minecraftforge\forgespi\7.0.1\3b4972a0cdb135853dba219be61a79b22cff1309\forgespi-7.0.1.jar
  - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mergetool\1.1.5\f3da18e12c696d35a47c82cbb2cc8b5aa15e1154\mergetool-1.1.5-api.jar
- - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\org.jetbrains\annotations\23.0.0\8cc20c07506ec18e0834947b84a864bfc094484e\annotations-23.0.0.jar
- - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\cpw.mods\securejarhandler\2.1.6\66c15fc1f522b586476e9e4cccd0cbe192554e8a\securejarhandler-2.1.6.jar
- - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\cpw.mods\modlauncher\10.0.8\658c4ddb704aeeaa94ff3e668785a5eebddd0cb5\modlauncher-10.0.8.jar
+ - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\org.jetbrains\annotations\24.0.1\13c5c75c4206580aa4d683bffee658caae6c9f43\annotations-24.0.1.jar
+ - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\cpw.mods\securejarhandler\2.1.10\51e6a22c6c716beb11e244bf5b8be480f51dd6b5\securejarhandler-2.1.10.jar
+ - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\cpw.mods\modlauncher\10.0.9\6d9443f56f50bb85cea383686ff9c867391458b\modlauncher-10.0.9.jar
  - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\org.openjdk.nashorn\nashorn-core\15.3\43977e804697048fc8d81d333a36c17d07a5b3dd\nashorn-core-15.3.jar
  - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\org.ow2.asm\asm-commons\9.5\19ab5b5800a3910d30d3a3e64fdb00fd0cb42de0\asm-commons-9.5.jar
  - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\org.ow2.asm\asm-util\9.5\64b5a1fc8c1b15ed2efd6a063e976bc8d3dc5ffe\asm-util-9.5.jar
@@ -23,35 +24,35 @@ Classpath:
  - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\net.minecraftforge\accesstransformers\8.0.4\272d240aa73f42195b2a68e2ebd8b701ecf41f63\accesstransformers-8.0.4.jar
  - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\org.antlr\antlr4\4.9.1\e92af8ab33e428461927b484e90bb155a4f3a052\antlr4-4.9.1.jar
  - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\org.antlr\antlr4-runtime\4.9.1\428664f05d2b7f7b7610204b5aa7c1763f62011a\antlr4-runtime-4.9.1.jar
- - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.19.4-45.1.14\5c27a6c36a1afec1346937e78dc2c35de1200fea\fmlcore-1.19.4-45.1.14.jar
- - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\net.minecraftforge\eventbus\6.0.3\42fe522ace1bbcbcbba9c880c42411857baf36a9\eventbus-6.0.3.jar
- - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\net.minecraftforge\forgespi\6.0.0\4a2004591666531f8b30d3402317b1ff6411bd3e\forgespi-6.0.0.jar
+ - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.1.28\bc6e531b0ec18e017085fef0538439117bae74f7\fmlcore-1.20.1-47.1.28.jar
+ - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\net.minecraftforge\eventbus\6.0.5\699143dd438431d06b57416944f7cedbe52e1475\eventbus-6.0.5.jar
  - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\net.minecraftforge\coremods\5.0.1\386b00279628b105b2d507539c46e134e96f6237\coremods-5.0.1.jar
  - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\net.minecraftforge\unsafe\0.2.0\54d7a0a5e8fdb71b973025caa46f341ae5904f39\unsafe-0.2.0.jar
  - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\com.electronwill.night-config\toml\3.6.4\51d6cefb2b55ee55ee26b16391212fb2c7dfb4f4\toml-3.6.4.jar
  - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\com.electronwill.night-config\core\3.6.4\510f174abbf1c947494db50ef2445683bd52c230\core-3.6.4.jar
  - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\org.apache.maven\maven-artifact\3.8.5\4433f50c07debefaed0553bd0068f4f48d449313\maven-artifact-3.8.5.jar
- - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\net.jodah\typetools\0.8.3\98f84f353457629e81cc6827224871b1a8faa7af\typetools-0.8.3.jar
+ - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\net.jodah\typetools\0.6.3\a01aaa6ddaea9ec07ec4f209487b7a46a526283a\typetools-0.6.3.jar
  - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\net.minecrell\terminalconsoleappender\1.2.0\96d02cd3b384ff015a8fef4223bcb4ccf1717c95\terminalconsoleappender-1.2.0.jar
  - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\org.jline\jline-reader\3.12.1\4382ab1382c7b6f379377ed5f665dc2f6e1218bc\jline-reader-3.12.1.jar
  - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\org.jline\jline-terminal\3.12.1\c777448314e050d980a6b697c140f3bfe9eb7416\jline-terminal-3.12.1.jar
  - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\org.spongepowered\mixin\0.8.5\9d1c0c3a304ae6697ecd477218fa61b850bf57fc\mixin-0.8.5.jar
  - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\cpw.mods\bootstraplauncher\1.1.2\c546e00443d8432cda6baa1c860346980742628\bootstraplauncher-1.1.2.jar
  - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\net.minecraftforge\JarJarFileSystems\0.3.19\2464eb7d6b9ddb9db36a82cf8a95193e5c6fe020\JarJarFileSystems-0.3.19.jar
- - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.19.4-45.1.14\75928827b55ec7087b4970c8e752a1ae06d97146\javafmllanguage-1.19.4-45.1.14.jar
- - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.19.4-45.1.14\ce350005cf9957f5cd5e46d7ebedd87f5c481c83\lowcodelanguage-1.19.4-45.1.14.jar
- - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.19.4-45.1.14\b657f84efc955c9931d6bbdd73b4ed33f29283ac\mclanguage-1.19.4-45.1.14.jar
+ - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlearlydisplay\1.20.1-47.1.28\c232a84d64ccef89c8645d1dccdf7fb922f470c2\fmlearlydisplay-1.20.1-47.1.28.jar
+ - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.1.28\fd0cf64673cbf3470ee6f6c7558b5f934684ae7\javafmllanguage-1.20.1-47.1.28.jar
+ - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.1.28\1377f2a5a7a2be44e4cf1e31dc1f2547acf8ad41\lowcodelanguage-1.20.1-47.1.28.jar
+ - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.1.28\e05deb1672462524b53cf7d55c800dd8927f5355\mclanguage-1.20.1-47.1.28.jar
  - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\com.github.oshi\oshi-core\6.2.2\54f5efc19bca95d709d9a37d19ffcbba3d21c1a6\oshi-core-6.2.2.jar
  - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.10\dd9b193aef96e973d5a11ab13cd17430c2e4306b\gson-2.10.jar
  - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\com.google.guava\failureaccess\1.0.1\1dcf1de382a0bf95a3d8b0849546c88bac1292c9\failureaccess-1.0.1.jar
  - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\com.ibm.icu\icu4j\71.1\9e7d3304c23f9ba5cb71915f7cce23231a57a445\icu4j-71.1.jar
- - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\com.mojang\authlib\3.18.38\16106b26bce62bda55bab42785b999e44d77ecb\authlib-3.18.38.jar
+ - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\com.mojang\authlib\4.0.43\2ff9d747a77570a07a60d32ac77eb6162ad2a2d9\authlib-4.0.43.jar
  - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\com.mojang\blocklist\1.0.10\5c685c5ffa94c4cd39496c7184c1d122e515ecef\blocklist-1.0.10.jar
- - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\com.mojang\brigadier\1.0.18\c1ef1234282716483c92183f49bef47b1a89bfa9\brigadier-1.0.18.jar
- - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\com.mojang\datafixerupper\6.0.6\e38e20946530646e866db03b2b192883d0ea6e84\datafixerupper-6.0.6.jar
+ - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\com.mojang\brigadier\1.1.8\5244ce82c3337bba4a196a3ce858bfaecc74404a\brigadier-1.1.8.jar
+ - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\com.mojang\datafixerupper\6.0.8\3ba4a30557a9b057760af4011f909ba619fc5125\datafixerupper-6.0.8.jar
  - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\com.mojang\logging\1.1.1\832b8e6674a9b325a5175a3a6267dfaf34c85139\logging-1.1.1.jar
  - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\com.mojang\patchy\2.2.10\da05971b07cbb379d002cf7eaec6a2048211fefc\patchy-2.2.10.jar
- - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\com.mojang\text2speech\1.16.7\ee4095669061d1fe4bce5fea23d69d1520bc2d58\text2speech-1.16.7.jar
+ - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\com.mojang\text2speech\1.17.9\3cad216e3a7f0c19b4b394388bc9ffc446f13b14\text2speech-1.17.9.jar
  - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\org.apache.httpcomponents\httpclient\4.5.13\e5f6cae5ca7ecaac1ec2827a9e2d65ae2869cada\httpclient-4.5.13.jar
  - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\commons-codec\commons-codec\1.15\49d94806b6e3dc933dacbd8acb0fdbab8ebd1e5d\commons-codec-1.15.jar
  - C:\Users\Eivind\.gradle\caches\modules-2\files-2.1\commons-io\commons-io\2.11.0\a2503f302b11ebde7ebc3df41daebe0e4eea3689\commons-io-2.11.0.jar
@@ -124,7 +125,7 @@ Loading mappings... 20%
 Loading mappings... 30%
 Loading mappings... 40%
 Loading mappings... 50%
-0 packages, 7331 classes, 32664 fields, 62135 methods
+0 packages, 7436 classes, 33135 fields, 63477 methods
 Remapping final jar
 Remapping jar...  1%
 Remapping jar... 10%

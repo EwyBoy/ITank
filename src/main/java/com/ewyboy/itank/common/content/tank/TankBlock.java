@@ -34,12 +34,12 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.FluidState;
-import net.minecraft.world.level.material.Material;
-import net.minecraft.world.level.material.MaterialColor;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
@@ -57,12 +57,12 @@ public class TankBlock extends BaseTankEntity<TankTile> implements IHasRenderTyp
     public static final EnumProperty<TankColor> COLOR = TankStateProperties.TANK_COLOR;
 
     public TankBlock(TankColor color) {
-        super(TankBlock.Properties.of(Material.GLASS).noOcclusion().sound(SoundType.GLASS).strength(2.0f, 6.0f));
+        super(TankBlock.Properties.of().noOcclusion().sound(SoundType.GLASS).strength(2.0f, 6.0f));
         registerDefaultState(this.defaultBlockState().setValue(STATE, TankState.ONE).setValue(COLOR, color));
     }
 
     @Override
-    public @NotNull MaterialColor defaultMaterialColor() {
+    public MapColor getMapColor(BlockState state, BlockGetter level, BlockPos pos, MapColor defaultColor) {
         return ColorHandler.getMaterialColorFromState(defaultBlockState().getValue(COLOR));
     }
 

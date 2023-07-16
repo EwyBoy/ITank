@@ -4,7 +4,7 @@ import com.ewyboy.itank.common.content.tank.TankBlock;
 import com.ewyboy.itank.common.register.Register;
 import com.ewyboy.itank.common.states.TankColor;
 import com.ewyboy.itank.config.ConfigOptions;
-import net.minecraft.world.level.material.MaterialColor;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 
@@ -77,28 +77,28 @@ public class ColorHandler {
     }
 
 
-    private static final HashMap<TankColor, MaterialColor> stateColorToMaterialColorMap = new HashMap<>();
+    private static final HashMap<TankColor, MapColor> stateColorToMaterialColorMap = new HashMap<>();
 
     static {
-        stateColorToMaterialColorMap.put(TankColor.WHITE, MaterialColor.SNOW);
-        stateColorToMaterialColorMap.put(TankColor.RED, MaterialColor.COLOR_RED);
-        stateColorToMaterialColorMap.put(TankColor.ORANGE, MaterialColor.COLOR_ORANGE);
-        stateColorToMaterialColorMap.put(TankColor.PINK, MaterialColor.COLOR_PINK);
-        stateColorToMaterialColorMap.put(TankColor.YELLOW, MaterialColor.COLOR_YELLOW);
-        stateColorToMaterialColorMap.put(TankColor.GREEN, MaterialColor.COLOR_GREEN);
-        stateColorToMaterialColorMap.put(TankColor.LIME, MaterialColor.COLOR_LIGHT_GREEN);
-        stateColorToMaterialColorMap.put(TankColor.LIGHT_BLUE, MaterialColor.COLOR_BLUE);
-        stateColorToMaterialColorMap.put(TankColor.CYAN, MaterialColor.COLOR_CYAN);
-        stateColorToMaterialColorMap.put(TankColor.BLUE, MaterialColor.COLOR_BLUE);
-        stateColorToMaterialColorMap.put(TankColor.MAGENTA, MaterialColor.COLOR_MAGENTA);
-        stateColorToMaterialColorMap.put(TankColor.PURPLE, MaterialColor.COLOR_MAGENTA);
-        stateColorToMaterialColorMap.put(TankColor.BROWN, MaterialColor.COLOR_BROWN);
-        stateColorToMaterialColorMap.put(TankColor.GRAY, MaterialColor.COLOR_GRAY);
-        stateColorToMaterialColorMap.put(TankColor.LIGHT_GRAY, MaterialColor.COLOR_LIGHT_GRAY);
-        stateColorToMaterialColorMap.put(TankColor.BLACK, MaterialColor.COLOR_BLACK);
+        stateColorToMaterialColorMap.put(TankColor.WHITE, MapColor.SNOW);
+        stateColorToMaterialColorMap.put(TankColor.RED, MapColor.COLOR_RED);
+        stateColorToMaterialColorMap.put(TankColor.ORANGE, MapColor.COLOR_ORANGE);
+        stateColorToMaterialColorMap.put(TankColor.PINK, MapColor.COLOR_PINK);
+        stateColorToMaterialColorMap.put(TankColor.YELLOW, MapColor.COLOR_YELLOW);
+        stateColorToMaterialColorMap.put(TankColor.GREEN, MapColor.COLOR_GREEN);
+        stateColorToMaterialColorMap.put(TankColor.LIME, MapColor.COLOR_LIGHT_GREEN);
+        stateColorToMaterialColorMap.put(TankColor.LIGHT_BLUE, MapColor.COLOR_BLUE);
+        stateColorToMaterialColorMap.put(TankColor.CYAN, MapColor.COLOR_CYAN);
+        stateColorToMaterialColorMap.put(TankColor.BLUE, MapColor.COLOR_BLUE);
+        stateColorToMaterialColorMap.put(TankColor.MAGENTA, MapColor.COLOR_MAGENTA);
+        stateColorToMaterialColorMap.put(TankColor.PURPLE, MapColor.COLOR_MAGENTA);
+        stateColorToMaterialColorMap.put(TankColor.BROWN, MapColor.COLOR_BROWN);
+        stateColorToMaterialColorMap.put(TankColor.GRAY, MapColor.COLOR_GRAY);
+        stateColorToMaterialColorMap.put(TankColor.LIGHT_GRAY, MapColor.COLOR_LIGHT_GRAY);
+        stateColorToMaterialColorMap.put(TankColor.BLACK, MapColor.COLOR_BLACK);
     }
 
-    public static MaterialColor getMaterialColorFromState(TankColor color) {
+    public static MapColor getMaterialColorFromState(TankColor color) {
         return stateColorToMaterialColorMap.get(color);
     }
 
