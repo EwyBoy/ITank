@@ -1,5 +1,5 @@
 Java Launcher: C:\Program Files\Eclipse Adoptium\jdk-17.0.7.7-hotspot\bin\java.exe
-Arguments: '--in-jar, C:\Dev\Modding\ITank\build\libs\ITank-1.20.1-2.0.0.jar, --out-jar, C:\Dev\Modding\ITank\build\reobfJar\output.jar, --srg-in, C:\Dev\Modding\ITank\build\createMcpToSrg\output.tsrg, --live'
+Arguments: '--in-jar, C:\Dev\Modding\ITank\build\libs\ITank-1.20.1-2.1.0.jar, --out-jar, C:\Dev\Modding\ITank\build\reobfJar\output.jar, --srg-in, C:\Dev\Modding\ITank\build\createMcpToSrg\output.tsrg, --live'
 Classpath:
  - C:\Users\Eivind\.gradle\caches\forge_gradle\maven_downloader\net\md-5\SpecialSource\1.11.0\SpecialSource-1.11.0-shaded.jar
  - C:\Users\Eivind\.gradle\caches\forge_gradle\minecraft_user_repo\net\minecraftforge\forge\1.20.1-47.1.28_mapped_official_1.20.1\forge-1.20.1-47.1.28_mapped_official_1.20.1-recomp.jar
